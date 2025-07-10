@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans-Saharan Adventure - Complete Crosscutting Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #cd853f, #a0522d);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .crosscutting-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.9);
+            color: #8b4513;
+            padding: 15px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            background: white;
+            border-color: #8b4513;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #8b4513;
+            border-bottom: 3px solid #cd853f;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        .crosscut-highlight {
+            background: linear-gradient(135deg, #fff8dc, #f5deb3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #cd853f;
+        }
+
+        .primary-source {
+            background: #f9f9f9;
+            border: 2px solid #cd853f;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .primary-source-text {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-style: italic;
+            border-left: 4px solid #8b4513;
+            margin: 15px 0;
+        }
+
+        .question-box {
+            background: #e6f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #4a90e2;
+        }
+
+        .activity-worksheet {
+            background: #f0f8ff;
+            border: 2px dashed #4a90e2;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+        }
+
+        .standards-box {
+            background: #e8f5e8;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .print-friendly {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .good-tag {
+            background: #cd853f;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin: 2px;
+            display: inline-block;
+        }
+
+        .route-map {
+            background: #f5f5dc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        @media print {
+            body { background: white; }
+            .section { display: block !important; page-break-before: always; }
+            .crosscutting-nav { display: none; }
+            .header { background: none; color: black; }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐪 Trans-Saharan Adventure</h1>
+            <p>Complete Crosscutting Edition with ELA, Science & Social Studies Integration</p>
+            <p><em>Designed for Rural Title I Schools - Alaska & Beyond</em></p>
+        </div>
+
+        <div class="crosscutting-nav">
+            <a href="#overview" class="nav-button" onclick="showSection('overview')">📋 Overview</a>
+            <a href="#ela" class="nav-button" onclick="showSection('ela')">📚 ELA Integration</a>
+            <a href="#science" class="nav-button" onclick="showSection('science')">🔬 Science Connections</a>
+            <a href="#activities" class="nav-button" onclick="showSection('activities')">🎯 Core Activities</a>
+            <a href="#assessment" class="nav-button" onclick="showSection('assessment')">📊 Assessment</a>
+            <a href="#worksheets" class="nav-button" onclick="showSection('worksheets')">📝 Print Worksheets</a>
+            <a href="#standards" class="nav-button" onclick="showSection('standards')">⭐ Standards</a>
+        </div>
+
+        <!-- Overview Section -->
+        <div id="overview" class="section active">
+            <h2>🌍 Trans-Saharan Adventure Overview</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🎯 Multi-Subject Learning Experience</h4>
+                <p>Students become medieval merchants and travelers crossing the Sahara Desert, integrating geography, history, economics, science, and language arts through authentic primary source documents from Ibn Battuta's famous travels.</p>
+            </div>
+
+            <div class="route-map">
+                <h3>🗺️ Your Desert Trading Route</h3>
+                <p><strong>Morocco → Sijilmasa → Taghaza → Walata → Timbuktu → Mali</strong></p>
+                <div style="margin: 20px 0;">
+                    <span class="good-tag">Salt</span>
+                    <span class="good-tag">Gold</span>
+                    <span class="good-tag">Ivory</span>
+                    <span class="good-tag">Slaves</span>
+                    <span class="good-tag">Copper</span>
+                    <span class="good-tag">Textiles</span>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🎓 Learning Objectives</h4>
+                <ul>
+                    <li><strong>Geography:</strong> Understand desert geography and adaptation strategies</li>
+                    <li><strong>ELA:</strong> Analyze primary sources and develop academic writing skills</li>
+                    <li><strong>Science:</strong> Explore desert survival, navigation, and environmental science</li>
+                    <li><strong>Economics:</strong> Learn about gold-salt trade and medieval African economies</li>
+                    <li><strong>History:</strong> Examine medieval African civilizations and Islamic culture</li>
+                </ul>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🖨️ Complete Print Package</h4>
+                <p>All materials designed for easy printing and offline use. Perfect for schools with limited technology access or for homework assignments.</p>
+            </div>
+        </div>
+
+        <!-- ELA Integration Section -->
+        <div id="ela" class="section">
+            <h2>📚 ELA Integration - Reading, Writing, Speaking & Listening</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>📖 Primary Source Integration</h4>
+                <p>Students read authentic 14th-century travel accounts from Ibn Battuta, the famous Muslim explorer who crossed the Sahara and documented medieval African civilizations, developing critical reading and analytical writing skills.</p>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #1: Ibn Battuta at the Salt Mines of Taghaza (1352)</h5>
+                <div class="primary-source-text">
+                    "After twenty-five days [from Sijilmasa] we reached Taghaza, an unattractive village, with the curious feature that its houses and mosques are built of blocks of salt, roofed with camel skins. There are no trees there, nothing but sand. In the sand is a salt mine; they dig for the salt, and find it in thick slabs, lying one on top of the other, as though they had been tool-squared and laid under the surface of the earth. A camel will carry two of these slabs. No one lives at Taghaza except the slaves of the Massufa tribe, who dig for the salt; they subsist on dates imported from Dar'a and Sijilmasa, camels' flesh, and millet imported from the Negrolands. The negroes come up from their country and take away the salt from there. At Iwalatan a load of salt brings eight to ten mithqals; in the town of Malli [Mali] it sells for twenty to thirty, and sometimes as much as forty. The negroes use salt as a medium of exchange, just as gold and silver is used [elsewhere]; they cut it up into pieces and buy and sell with it."
+                    <br><br><em>- Ibn Battuta, Travels in Africa, 1352</em>
+                </div>
+                <div class="question-box">
+                    <strong>Reading Comprehension Questions:</strong>
+                    <ol>
+                        <li>What materials were used to build houses in Taghaza, and why?</li>
+                        <li>How did the salt trade create economic value across the Sahara?</li>
+                        <li>What does Ibn Battuta's description reveal about desert survival strategies?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #2: Ibn Battuta's Desert Crossing Experience</h5>
+                <div class="primary-source-text">
+                    "We passed ten days of discomfort there, because the water is brackish and the place is plagued with flies. Water supplies are laid in at Taghaza for the crossing of the desert which lies beyond it, which is a ten-nights' journey with no water on the way except on rare occasions. We indeed had the good fortune to find water in plenty, in pools left by the rain. One day we found a pool of sweet water between two rocky prominences. We quenched our thirst at it and then washed our clothes. Truffles are plentiful in this desert and it swarms with lice, so that people wear string necklaces containing mercury, which kills them. At that time we used to go ahead of the caravan, and when we found a place suitable for pasturage we would graze our beasts. We went on doing this until one of our party was lost in the desert; after that I neither went ahead nor lagged behind. We passed a caravan on the way and they told us that some of their party had become separated from them. We found one of them dead under a shrub, of the sort that grows in the sand, with his clothes on and a whip in his hand. The water was only about a mile away from him."
+                    <br><br><em>- Ibn Battuta, Travels in Africa, 1352</em>
+                </div>
+                <div class="question-box">
+                    <strong>Analysis Questions:</strong>
+                    <ol>
+                        <li>What survival challenges did desert travelers face according to Ibn Battuta?</li>
+                        <li>How did caravans organize themselves for safety and survival?</li>
+                        <li>What does the story of the dead traveler teach us about desert dangers?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #3: Ibn Battuta Meets the King of Mali</h5>
+                <div class="primary-source-text">
+                    "The sultan of Malli is Mansa Sulayman, 'mansa' meaning [in Mandingo] sultan, and Sulayman being his proper name. He is a miserly king, not a man from whom one might hope for a rich present. It happened that I spent these two months without seeing him, on account of my illness. Later on he held a banquet in commemoration of our master [the late sultan of Morocco] Abu'l-Hasan, to which the commanders, doctors, qadi and preacher were invited, and I went along with them. Reading-desks were brought in, and the Koran was read through, then they prayed for our master Abu'l-Hasan and also for Mansa Sulayman. When the ceremony was over I went forward and saluted Mansa Sulayman. The qadi, the preacher, and Ibn al-Faqih told him who I was, and he answered them in their tongue. They said to me, 'The sultan says to you Give thanks to God,' so I said, 'Praise be to God and thanks under all circumstances.' When I withdrew the [sultan's] hospitality gift was sent to me. It was taken first to the qadi's house, and the qadi sent it on with his men to Ibn al-Faqih's house. Ibn al-Faqih came hurrying out of his house barefooted, and entered my room saying, 'Stand up; here comes the sultan's stuff and gift to you.' So I stood up thinking--since he had called it 'stuff'--that it consisted of robes of honour and money, and lo!, it was three cakes of bread, and a piece of beef fried in native oil, and a calabash of sour curds. When I saw this I burst out laughing, and thought it a most amazing thing that they could be so foolish and make so much of such a paltry matter."
+                    <br><br><em>- Ibn Battuta, Travels in Africa, 1352</em>
+                </div>
+                <div class="question-box">
+                    <strong>Contemporary Connection Questions:</strong>
+                    <ol>
+                        <li>How does Ibn Battuta's cultural bias show in his description of the Mali king?</li>
+                        <li>What does this account reveal about different cultural values and gift-giving customs?</li>
+                        <li>How might a Mali historian describe this same meeting differently?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>✍️ Academic Writing Development</h4>
+                <p><strong>Argumentative Essay Prompt:</strong> Using evidence from Ibn Battuta's accounts, argue whether the Trans-Saharan trade routes were more important for economic exchange or cultural diffusion. Support your thesis with specific examples from the primary sources.</p>
+                
+                <p><strong>Narrative Writing:</strong> Write a first-person diary entry as a member of Ibn Battuta's caravan crossing the Sahara. Include specific challenges, survival strategies, and cultural observations based on historical evidence.</p>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🗣️ Speaking & Listening Activities</h4>
+                <ul>
+                    <li><strong>Cultural Perspective Debates:</strong> Discuss how different cultural viewpoints affect historical accounts</li>
+                    <li><strong>Survival Strategy Presentations:</strong> Present research on desert survival techniques used by medieval travelers</li>
+                    <li><strong>Primary Source Reliability Analysis:</strong> Evaluate and discuss the strengths and limitations of Ibn Battuta's accounts</li>
+                </ul>
+            </div>
+
+            <div class="standards-box">
+                <h4>📋 Common Core ELA Standards Addressed</h4>
+                <ul>
+                    <li><strong>CCSS.ELA-LITERACY.RST.6-8.6:</strong> Analyze the author's purpose in providing an explanation, describing a procedure, or discussing an experiment</li>
+                    <li><strong>CCSS.ELA-LITERACY.WHST.6-8.1:</strong> Write arguments to support claims with clear reasons and relevant evidence</li>
+                    <li><strong>CCSS.ELA-LITERACY.SL.6-8.3:</strong> Delineate a speaker's argument and specific claims, evaluating the soundness of the reasoning</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Science Connections Section -->
+        <div id="science" class="section">
+            <h2>🔬 Science Connections - Earth, Life & Physical Science</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🌍 Desert Ecosystem Science</h4>
+                <p>Students explore how desert environments shape human adaptation, survival strategies, and trade patterns, while learning about climate systems, water cycles, and ecosystem interactions in arid environments.</p>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>💧 Water Science & Survival</h4>
+                <p><strong>Scientific Concepts:</strong> Desert survival depends on understanding water sources, conservation, and purification. Students investigate how medieval travelers found, stored, and conserved water during months-long desert crossings.</p>
+                
+                <div class="question-box">
+                    <strong>Investigation Questions:</strong>
+                    <ol>
+                        <li>How do oases form in desert environments?</li>
+                        <li>What methods did medieval travelers use to purify brackish water?</li>
+                        <li>How does the human body adapt to extreme heat and water scarcity?</li>
+                        <li>What role do seasonal rains play in desert travel planning?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🧭 Desert Navigation Science</h4>
+                <p><strong>Astronomical Navigation:</strong> Without landmarks, desert travelers relied on celestial navigation, understanding of prevailing winds, and knowledge of seasonal patterns. Students learn how medieval navigators used stars, sun positions, and natural indicators.</p>
+                
+                <div class="question-box">
+                    <strong>Hands-On Investigations:</strong>
+                    <ol>
+                        <li>Practice celestial navigation using the North Star and constellation patterns</li>
+                        <li>Investigate how wind patterns create and move sand dunes</li>
+                        <li>Study how animals and plants indicate water sources in deserts</li>
+                        <li>Experiment with natural methods for determining direction</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🌡️ Climate & Weather Systems</h4>
+                <p><strong>Desert Climate Science:</strong> The Sahara's extreme temperature variations, seasonal patterns, and weather systems determined when and how caravans could travel safely. Students analyze climate data and weather patterns.</p>
+                
+                <div class="question-box">
+                    <strong>Climate Analysis Activities:</strong>
+                    <ol>
+                        <li>Graph daily temperature variations in desert environments</li>
+                        <li>Analyze seasonal rainfall patterns and their impact on travel</li>
+                        <li>Study how desert winds affect navigation and survival</li>
+                        <li>Investigate the formation and movement of sandstorms</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🧪 Material Science & Preservation</h4>
+                <p><strong>Desert Chemistry:</strong> How did merchants preserve food, leather, and textiles in extreme heat and dry conditions? Students investigate salt preservation, natural desiccation, and material properties in desert environments.</p>
+                
+                <div class="question-box">
+                    <strong>Scientific Investigations:</strong>
+                    <ol>
+                        <li>Test different food preservation methods in dry conditions</li>
+                        <li>Investigate the properties of salt as a preservative and currency</li>
+                        <li>Study how extreme temperatures affect different materials</li>
+                        <li>Experiment with natural methods for protecting goods from sand and heat</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🐪 Animal Adaptation Science</h4>
+                <p><strong>Biological Adaptations:</strong> Camels, horses, and other animals were essential for desert travel. Students study animal adaptations to desert environments and how humans utilized these adaptations for survival and commerce.</p>
+                
+                <div class="question-box">
+                    <strong>Biological Investigations:</strong>
+                    <ol>
+                        <li>Study camel adaptations for desert survival</li>
+                        <li>Compare water conservation strategies in desert animals</li>
+                        <li>Investigate how animals navigate in desert environments</li>
+                        <li>Analyze the carrying capacity of different pack animals</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="standards-box">
+                <h4>📋 NGSS Standards Addressed</h4>
+                <ul>
+                    <li><strong>MS-ESS2-4:</strong> Develop a model to describe the cycling of water through Earth's systems</li>
+                    <li><strong>MS-ESS3-3:</strong> Apply scientific principles to design a method for monitoring and minimizing human impact on the environment</li>
+                    <li><strong>MS-LS1-5:</strong> Construct a scientific explanation based on evidence for how environmental and genetic factors influence the growth of organisms</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Core Activities Section -->
+        <div id="activities" class="section">
+            <h2>🎯 Core Learning Activities</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>📚 Activity Progression Overview</h4>
+                <p>15 progressive activities building from basic desert geography concepts to complex analysis of medieval African civilizations, integrating ELA, science, and social studies throughout.</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🗺️ Activity 1: Desert Geography & Route Planning</h3>
+                <p><strong>Objective:</strong> Students map Trans-Saharan trade routes and identify key geographical features</p>
+                <p><strong>Materials:</strong> Africa maps, colored pencils, geographical reference materials</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Trace major Trans-Saharan trade routes from North to West Africa</li>
+                    <li>Identify oases, salt mines, gold fields, and major trading cities</li>
+                    <li>Calculate distances and estimate travel times for caravans</li>
+                    <li>Analyze how geography influenced trade route development</li>
+                </ol>
+                <p><strong>Assessment:</strong> Accurate map with geographical analysis and route justification</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🧂 Activity 2: Salt-Gold Trade Economics</h3>
+                <p><strong>Objective:</strong> Understand the economic principles behind the salt-gold trade</p>
+                <p><strong>Materials:</strong> Trade simulation materials, calculators, historical price data</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Research historical values of salt and gold in different regions</li>
+                    <li>Calculate profit margins for Trans-Saharan merchants</li>
+                    <li>Analyze supply and demand factors affecting trade</li>
+                    <li>Simulate trading negotiations between different cultural groups</li>
+                </ol>
+                <p><strong>Assessment:</strong> Economic analysis with mathematical calculations and reasoning</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>📜 Activity 3: Ibn Battuta Primary Source Analysis</h3>
+                <p><strong>Objective:</strong> Develop critical reading skills using authentic medieval travel accounts</p>
+                <p><strong>Materials:</strong> Ibn Battuta excerpts, analysis worksheets, historical context materials</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Read Ibn Battuta's descriptions of Saharan travel and African kingdoms</li>
+                    <li>Identify cultural bias, perspective, and reliability issues</li>
+                    <li>Compare Ibn Battuta's accounts with archaeological evidence</li>
+                    <li>Write analytical essays on source interpretation and historical value</li>
+                </ol>
+                <p><strong>Assessment:</strong> Source analysis with supported arguments and evidence</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🌡️ Activity 4: Desert Survival Science</h3>
+                <p><strong>Objective:</strong> Explore scientific principles of desert survival and adaptation</p>
+                <p><strong>Materials:</strong> Thermometers, water testing kits, preservation materials</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Investigate water conservation and purification techniques</li>
+                    <li>Study temperature regulation and heat adaptation strategies</li>
+                    <li>Test food preservation methods used by medieval travelers</li>
+                    <li>Design survival kits based on scientific principles</li>
+                </ol>
+                <p><strong>Assessment:</strong> Scientific investigation reports with data analysis</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🏛️ Activity 5: Medieval African Civilizations</h3>
+                <p><strong>Objective:</strong> Analyze the complexity and achievements of medieval African kingdoms</p>
+                <p><strong>Materials:</strong> Historical sources, maps, cultural artifacts (images)</p>
+                <p><strong>Process:</strong></p>
+                <ol>
+                    <li>Research the Mali, Songhai, and Ghana empires</li>
+                    <li>Analyze political, economic, and social structures</li>
+                    <li>Study the role of Islam in West African societies</li>
+                    <li>Create presentations on African contributions to world civilization</li>
+                </ol>
+                <p><strong>Assessment:</strong> Research presentations with historical analysis and evidence</p>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🎭 Extended Activities (6-15)</h4>
+                <ul>
+                    <li><strong>Activity 6:</strong> Astronomical Navigation Techniques</li>
+                    <li><strong>Activity 7:</strong> Cultural Exchange & Islamic Influence</li>
+                    <li><strong>Activity 8:</strong> Desert Ecology & Environmental Science</li>
+                    <li><strong>Activity 9:</strong> Medieval African Architecture & Engineering</li>
+                    <li><strong>Activity 10:</strong> Trade Network Mathematics & Statistics</li>
+                    <li><strong>Activity 11:</strong> Camel Caravan Logistics & Management</li>
+                    <li><strong>Activity 12:</strong> Cross-Cultural Communication & Diplomacy</li>
+                    <li><strong>Activity 13:</strong> Archaeological Evidence & Historical Interpretation</li>
+                    <li><strong>Activity 14:</strong> Modern Sahara & Contemporary Challenges</li>
+                    <li><strong>Activity 15:</strong> Final Portfolio & Cultural Exhibition</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Assessment Section -->
+        <div id="assessment" class="section">
+            <h2>📊 Integrated Assessment System</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🎯 Multi-Subject Assessment Approach</h4>
+                <p>Assessment integrates ELA, science, and social studies standards through authentic tasks that mirror real-world applications of historical analysis, scientific investigation, and cross-cultural understanding.</p>
+            </div>
+
+            <div class="standards-box">
+                <h4>📋 Portfolio-Based Assessment Components</h4>
+                <ul>
+                    <li><strong>Primary Source Analysis Essays (25%):</strong> Critical reading and argumentative writing using Ibn Battuta's accounts</li>
+                    <li><strong>Scientific Investigation Reports (25%):</strong> Desert survival, navigation, and environmental science</li>
+                    <li><strong>Geographic Analysis Projects (20%):</strong> Route mapping and environmental factors</li>
+                    <li><strong>Cultural Research Presentations (15%):</strong> Medieval African civilizations and Islamic influence</li>
+                    <li><strong>Mathematical Trade Analysis (15%):</strong> Economic calculations and statistical reasoning</li>
+                </ul>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>📝 Rubric Categories</h4>
+                <p><strong>Exceeds Standards (4):</strong> Demonstrates deep understanding with sophisticated analysis and clear connections between subjects</p>
+                <p><strong>Meets Standards (3):</strong> Shows solid understanding with accurate analysis and some cross-curricular connections</p>
+                <p><strong>Approaching Standards (2):</strong> Displays basic understanding with simple analysis and limited connections</p>
+                <p><strong>Below Standards (1):</strong> Shows minimal understanding with unclear analysis and no connections</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🎯 Performance Task: Desert Caravan Expedition Plan</h3>
+                <p><strong>Scenario:</strong> You are organizing a 14th-century caravan expedition from Morocco to Mali. Create a comprehensive expedition plan that demonstrates your understanding of geography, science, economics, and cultural factors.</p>
+                
+                <p><strong>Required Components:</strong></p>
+                <ol>
+                    <li><strong>Route Analysis:</strong> Detailed map with geographical challenges and seasonal considerations</li>
+                    <li><strong>Scientific Preparations:</strong> Water management, navigation methods, and survival strategies</li>
+                    <li><strong>Economic Planning:</strong> Trade goods analysis, cost-benefit calculations, and profit projections</li>
+                    <li><strong>Cultural Considerations:</strong> Diplomatic strategies and cross-cultural communication plans</li>
+                    <li><strong>Historical Evidence:</strong> Support all decisions with evidence from Ibn Battuta and other sources</li>
+                </ol>
+                
+                <p><strong>Presentation Format:</strong> 12-minute presentation with visual aids, maps, and Q&A session</p>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🤝 Peer Review & Collaboration</h4>
+                <p>Students engage in structured peer review processes, providing feedback on each other's historical analysis and collaborating on group projects that require diverse perspectives on medieval African civilizations.</p>
+            </div>
+        </div>
+
+        <!-- Print Worksheets Section -->
+        <div id="worksheets" class="section">
+            <h2>📝 Print-Ready Worksheets</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🖨️ Offline Learning Materials</h4>
+                <p>Complete collection of print-friendly worksheets designed for schools with limited technology access. All materials can be photocopied and used independently.</p>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>📖 Primary Source Analysis: Ibn Battuta's Desert Crossing</h3>
+                <p>Read Ibn Battuta's account of crossing the Sahara and answer the questions below:</p>
+                
+                <div class="question-box">
+                    <p><strong>1. What evidence does Ibn Battuta provide about the dangers of desert travel?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. How does Ibn Battuta's description reveal medieval survival strategies?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>3. What cultural biases can you identify in Ibn Battuta's account of meeting the Mali king?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>4. How might a West African historian describe the same events differently?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🗺️ Geography & Trade Route Analysis</h3>
+                <p>Use the map provided to complete the following activities:</p>
+                
+                <div class="question-box">
+                    <p><strong>1. Trace the main Trans-Saharan trade route from Morocco to Mali. Label at least 6 major stops.</strong></p>
+                    <p>Major stops: _______________________________________________</p>
+                    <p>_________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. Identify three major geographical challenges for desert travelers and explain how they overcame each one.</strong></p>
+                    <p>Challenge 1: _______________________________________________</p>
+                    <p>Solution: _________________________________________________</p>
+                    <p>Challenge 2: _______________________________________________</p>
+                    <p>Solution: _________________________________________________</p>
+                    <p>Challenge 3: _______________________________________________</p>
+                    <p>Solution: _________________________________________________</p>
+                </div>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>💰 Salt-Gold Trade Economics</h3>
+                <p>Complete the trade calculations using Ibn Battuta's price data:</p>
+                
+                <div class="question-box">
+                    <p><strong>Scenario:</strong> You buy salt in Taghaza for 2 gold pieces per load. You sell it in Mali for 30 gold pieces per load.</p>
+                    <p><strong>1. What is your profit per load of salt?</strong></p>
+                    <p>Calculation: _______________________________________________</p>
+                    <p>Answer: ___________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. If you transport 20 loads of salt, what is your total profit before expenses?</strong></p>
+                    <p>Calculation: _______________________________________________</p>
+                    <p>Answer: ___________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>3. Why was salt so valuable in West Africa but cheap in the Sahara?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+            </div>
+
+            <div class="activity-worksheet">
+                <h3>🌡️ Desert Survival Science</h3>
+                <p>Investigate medieval desert survival techniques:</p>
+                
+                <div class="question-box">
+                    <p><strong>1. How did medieval travelers find and conserve water in the desert?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. What are three methods for preserving food during long desert journeys?</strong></p>
+                    <p>Method 1: _________________________________________________</p>
+                    <p>Method 2: _________________________________________________</p>
+                    <p>Method 3: _________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>3. Design an experiment to test which materials best protect goods from sand and heat.</strong></p>
+                    <p>Hypothesis: _______________________________________________</p>
+                    <p>Materials: ________________________________________________</p>
+                    <p>Procedure: ________________________________________________</p>
+                    <p>_________________________________________________________</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Standards Section -->
+        <div id="standards" class="section">
+            <h2>⭐ Standards Alignment</h2>
+            
+            <div class="standards-box">
+                <h4>📚 Common Core ELA Standards (Grades 6-8)</h4>
+                <ul>
+                    <li><strong>CCSS.ELA-LITERACY.RST.6-8.1:</strong> Cite specific textual evidence to support analysis of science and technical texts</li>
+                    <li><strong>CCSS.ELA-LITERACY.RST.6-8.6:</strong> Analyze the author's purpose in providing an explanation, describing a procedure, or discussing an experiment</li>
+                    <li><strong>CCSS.ELA-LITERACY.WHST.6-8.1:</strong> Write arguments to support claims with clear reasons and relevant evidence</li>
+                    <li><strong>CCSS.ELA-LITERACY.WHST.6-8.2:</strong> Write informative/explanatory texts to examine a topic and convey ideas clearly</li>
+                    <li><strong>CCSS.ELA-LITERACY.SL.6-8.3:</strong> Delineate a speaker's argument and specific claims, evaluating the soundness of the reasoning</li>
+                    <li><strong>CCSS.ELA-LITERACY.SL.6-8.4:</strong> Present claims and findings, emphasizing salient points in a focused, coherent manner</li>
+                </ul>
+            </div>
+
+            <div class="standards-box">
+                <h4>🔬 Next Generation Science Standards (NGSS)</h4>
+                <ul>
+                    <li><strong>MS-ESS2-4:</strong> Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun and the force of gravity</li>
+                    <li><strong>MS-ESS3-3:</strong> Apply scientific principles to design a method for monitoring and minimizing a human impact on the environment</li>
+                    <li><strong>MS-LS1-5:</strong> Construct a scientific explanation based on evidence for how environmental and genetic factors influence the growth of organisms</li>
+                    <li><strong>MS-ETS1-1:</strong> Define the criteria and constraints of a design problem with sufficient precision to ensure a successful solution</li>
+                    <li><strong>MS-ETS1-2:</strong> Evaluate competing design solutions using a systematic process to determine how well they meet the criteria and constraints</li>
+                </ul>
+            </div>
+
+            <div class="standards-box">
+                <h4>🌍 Social Studies Standards</h4>
+                <ul>
+                    <li><strong>Geography:</strong> Understanding human-environment interaction, spatial organization, and regional characteristics</li>
+                    <li><strong>World History:</strong> Analyzing medieval African civilizations, Islamic expansion, and cross-cultural exchange</li>
+                    <li><strong>Economics:</strong> Understanding trade networks, supply and demand, and economic systems</li>
+                    <li><strong>Anthropology:</strong> Examining cultural practices, belief systems, and social structures</li>
+                </ul>
+            </div>
+
+            <div class="crosscut-highlight">
+                <h4>🎯 21st Century Skills Integration</h4>
+                <ul>
+                    <li><strong>Critical Thinking:</strong> Analyzing primary sources and evaluating historical evidence for bias and reliability</li>
+                    <li><strong>Communication:</strong> Presenting research findings and engaging in cross-cultural discussions</li>
+                    <li><strong>Collaboration:</strong> Working in teams on complex, multi-faceted historical investigations</li>
+                    <li><strong>Cultural Competency:</strong> Understanding diverse perspectives and challenging stereotypes about Africa</li>
+                    <li><strong>Scientific Literacy:</strong> Applying scientific principles to understand historical challenges and solutions</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update navigation buttons
+            const buttons = document.querySelectorAll('.nav-button');
+            buttons.forEach(button => {
+                button.style.background = 'rgba(255, 255, 255, 0.9)';
+            });
+            
+            // Highlight active button
+            event.target.style.background = 'white';
+        }
+    </script>
+</body>
+</html>

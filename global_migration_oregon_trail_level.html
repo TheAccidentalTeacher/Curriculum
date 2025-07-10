@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Migration Challenge - Oregon Trail Level Detail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.4;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .page {
+            background: white;
+            max-width: 8.5in;
+            margin: 20px auto;
+            padding: 1in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            page-break-after: always;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 16pt;
+            font-style: italic;
+        }
+
+        .section-title {
+            font-size: 18pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 2px solid #666;
+            padding-bottom: 5px;
+            margin: 30px 0 15px 0;
+        }
+
+        .subsection {
+            font-size: 14pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+        }
+
+        .content {
+            font-size: 12pt;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .bullet-list {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .bullet-list li {
+            margin-bottom: 8px;
+            font-size: 12pt;
+        }
+
+        .box {
+            border: 2px solid #333;
+            padding: 15px;
+            margin: 20px 0;
+            background: #f9f9f9;
+        }
+
+        .dice-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .dice-table th, .dice-table td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+            font-size: 11pt;
+        }
+
+        .dice-table th {
+            background: #ddd;
+            font-weight: bold;
+        }
+
+        .tracking-sheet {
+            border: 2px solid #333;
+            margin: 20px 0;
+        }
+
+        .tracking-header {
+            background: #333;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tracking-content {
+            padding: 15px;
+        }
+
+        .form-line {
+            border-bottom: 1px solid #333;
+            margin: 10px 0;
+            padding-bottom: 2px;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 10pt;
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        @media print {
+            .page {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+<!-- Page 1: Teacher Guide Cover -->
+<div class="page">
+    <div class="header">
+        <h1>GLOBAL MIGRATION CHALLENGE</h1>
+        <h2>SIMULATION & JOURNALING ACTIVITY</h2>
+        <div style="margin-top: 30px; font-size: 48pt;">🚢</div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 50px;">
+        <div style="font-size: 14pt; margin-bottom: 20px;">
+            <strong>Complete Teacher Implementation Guide</strong><br>
+            Grades 6-8 Social Studies, ELA & Science Integration
+        </div>
+        
+        <div style="border: 2px solid #333; padding: 20px; margin: 30px 0;">
+            <div style="font-size: 12pt; margin-bottom: 15px;">
+                <strong>INCLUDES:</strong>
+            </div>
+            <ul style="text-align: left; font-size: 11pt;">
+                <li>Complete Teacher Implementation Guide</li>
+                <li>Student Instruction Packets</li>
+                <li>Character Role Assignments</li>
+                <li>Journey Tracking Sheets</li>
+                <li>Immigration Processing Activities</li>
+                <li>Primary Source Document Analysis</li>
+                <li>Daily Journaling Prompts</li>
+                <li>Dice Mechanics & Event Charts</li>
+                <li>Assessment Rubrics & Certificates</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project<br>
+        Designed for Title I Schools - Alaska & Beyond
+    </div>
+</div>
+
+<!-- Page 2: Teacher Implementation Guide -->
+<div class="page">
+    <div class="section-title">Teacher Implementation Guide</div>
+    <div class="subsection">Global Migration Challenge</div>
+    
+    <div class="subsection">OVERVIEW</div>
+    <div class="content">
+        This activity is a comprehensive classroom simulation designed to be used in conjunction with your current immigration, cultural geography, or global studies unit. All simulation rules and activities have been tested in rural classroom settings and are designed to be engaging and educational. Students will experience the challenges, decisions, and cultural adaptations faced by immigrants throughout history while developing critical thinking, research, and communication skills.
+    </div>
+    
+    <div class="content">
+        This simulation integrates seamlessly with ELA (primary source analysis, journaling, vocabulary development), Science (population dynamics, environmental adaptation, data analysis), and Social Studies (cultural geography, economics, civics) standards for grades 6-8.
+    </div>
+    
+    <div class="subsection">SAMPLE DAY</div>
+    <div class="content">
+        What does a classroom day look like during the Global Migration Challenge? Below is a sample explanation:
+    </div>
+    
+    <div class="box">
+        <strong>Today we are departing from Ireland during the Potato Famine (1847) and traveling to Ellis Island, New York.</strong> This journey typically took 6-8 weeks by ship and cost approximately $15-20 per person (equivalent to $500-700 today). I discuss the historical context using primary source documents and images from our Ellis Island Immigration Collection.
+        
+        <br><br>After we've studied the historical background, I have a representative from each family group come forward and roll the dice using our interactive Journey Event Chart. Based on their roll, families may experience storms at sea, illness, food shortages, or favorable winds.
+        
+        <br><br>Students then record all necessary information on their Journey Tracking Sheets: money spent, supplies used, family health status, and calendar progression. I help them understand how the immigration process worked and what challenges families faced.
+        
+        <br><br>After the dice roll, we might process through Ellis Island inspection, analyze primary source immigration documents, practice English language skills, or return to our regular social studies curriculum.
+    </div>
+    
+    <div class="subsection">IDEAS FOR IMPLEMENTATION</div>
+    <div class="content">Below are tested classroom strategies you may want to incorporate:</div>
+    
+    <ul class="bullet-list">
+        <li><strong>Character Development:</strong> I typically take a full day to have students develop their immigrant family stories: country of origin, reasons for leaving, family composition, occupations, and dreams for America. Groups then share their stories with the class.</li>
+        
+        <li><strong>Historical Context:</strong> I provide 20 minutes for students to research their country of origin using provided primary sources and historical background materials before beginning the journey.</li>
+        
+        <li><strong>Journey Timing:</strong> I like to start the simulation with departure from the home country because it allows students to experience the full immigration process from decision to settlement.</li>
+        
+        <li><strong>Resource Management:</strong> Families start with limited money and must make difficult decisions about what to bring, how to travel, and where to settle. This creates authentic decision-making scenarios.</li>
+        
+        <li><strong>Language Barriers:</strong> Partway through the simulation, I introduce language challenges where families must communicate basic needs without using English, simulating the immigrant experience.</li>
+        
+        <li><strong>Cultural Adaptation:</strong> Students must research and adapt to American customs, foods, and social expectations while maintaining their cultural identity.</li>
+        
+        <li><strong>Ellis Island Processing:</strong> I create a detailed Ellis Island inspection process where students must pass health, legal, and financial requirements to enter America.</li>
+        
+        <li><strong>Settlement Challenges:</strong> Once in America, families face housing, employment, and education challenges that require problem-solving and collaboration.</li>
+        
+        <li><strong>Journaling:</strong> As homework, students write detailed journal entries from their character's perspective, describing daily experiences, emotions, and observations about their new country.</li>
+        
+        <li><strong>Primary Source Integration:</strong> Students analyze actual immigration documents, letters home, and oral histories to understand the authentic immigrant experience.</li>
+    </ul>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 3: Student Instructions -->
+<div class="page">
+    <div class="section-title">Student Guide</div>
+    <div class="subsection">Global Migration Challenge</div>
+    
+    <div class="subsection">OVERVIEW</div>
+    <div class="content">
+        The year is 1847-1920, and you are about to embark upon one of the most challenging and life-changing journeys in human history. Get ready for adventure, hardship, hope, and determination as you leave your homeland and travel to America seeking a better life. You will start in your country of origin, travel across the ocean, process through Ellis Island, and begin building a new life in America.
+    </div>
+    
+    <div class="subsection">PRE-JOURNEY PREPARATION</div>
+    
+    <div class="content"><strong>Family Background:</strong> You will be part of an immigrant family group with 4-5 members. Each family will determine their background by rolling dice:</div>
+    
+    <div class="box">
+        <strong>Country of Origin (Roll 1 dice):</strong><br>
+        • Roll 1 = Ireland (Potato Famine, 1847-1852)<br>
+        • Roll 2 = Germany (Economic hardship, 1848-1860)<br>
+        • Roll 3 = Italy (Southern poverty, 1880-1920)<br>
+        • Roll 4 = Poland (Political persecution, 1880-1914)<br>
+        • Roll 5 = Russia/Eastern Europe (Religious persecution, 1881-1914)<br>
+        • Roll 6 = China (Economic opportunity, 1849-1882)
+    </div>
+    
+    <div class="box">
+        <strong>Family Occupation & Starting Money (Roll 1 dice):</strong><br>
+        • Roll 1-2 = Farmer/Laborer = $50 (equivalent to $1,500 today)<br>
+        • Roll 3-4 = Craftsman/Tradesman = $75 (equivalent to $2,250 today)<br>
+        • Roll 5-6 = Merchant/Professional = $100 (equivalent to $3,000 today)
+    </div>
+    
+    <div class="subsection">CHARACTER DEVELOPMENT</div>
+    <div class="content">Each family member must develop a detailed character profile:</div>
+    
+    <ul class="bullet-list">
+        <li><strong>Name:</strong> Research authentic names from your country and time period</li>
+        <li><strong>Age:</strong> Determine realistic ages for family members</li>
+        <li><strong>Relationship:</strong> Father, mother, child, grandparent, cousin, etc.</li>
+        <li><strong>Occupation:</strong> What did you do in the old country?</li>
+        <li><strong>Reason for Leaving:</strong> Why is your family immigrating?</li>
+        <li><strong>Dreams for America:</strong> What do you hope to achieve?</li>
+        <li><strong>Special Skills:</strong> Languages, trades, talents that might help</li>
+    </ul>
+    
+    <div class="subsection">FAMILY RESPONSIBILITIES</div>
+    <div class="content">Each family member will have specific duties to help track your immigration journey:</div>
+    
+    <ul class="bullet-list">
+        <li><strong>Money Manager:</strong> Track all financial transactions, expenses, and earnings</li>
+        <li><strong>Supply Keeper:</strong> Monitor possessions, luggage, and important documents</li>
+        <li><strong>Health Monitor:</strong> Track family health, medical needs, and nutrition</li>
+        <li><strong>Journey Recorder:</strong> Maintain calendar, locations, and travel progress</li>
+        <li><strong>Cultural Liaison:</strong> Research customs, language, and adaptation needs</li>
+    </ul>
+    
+    <div class="subsection">THE IMMIGRATION JOURNEY</div>
+    
+    <div class="content"><strong>Phase 1: Departure Preparation</strong></div>
+    <div class="content">Before leaving your homeland, you must make critical decisions about what to bring, how to travel, and how to prepare for the journey. You have limited money and space, so choose wisely!</div>
+    
+    <div class="content"><strong>Phase 2: Ocean Crossing</strong></div>
+    <div class="content">The journey to America takes 6-12 weeks depending on weather, ship conditions, and your class of travel. Each week, you'll roll dice to determine what happens during your voyage. You may face storms, illness, food shortages, or make new friends.</div>
+    
+    <div class="content"><strong>Phase 3: Ellis Island Processing</strong></div>
+    <div class="content">Upon arrival in New York Harbor, you must pass through Ellis Island immigration inspection. This includes health examinations, legal questioning, and financial verification. Not everyone who arrives is allowed to enter America!</div>
+    
+    <div class="content"><strong>Phase 4: American Settlement</strong></div>
+    <div class="content">Once admitted to America, you must find housing, employment, and begin adapting to American culture while maintaining your family's cultural identity and traditions.</div>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 4: Journey Event Chart -->
+<div class="page">
+    <div class="section-title">Journey Event Chart</div>
+    <div class="subsection">Ocean Crossing Events</div>
+    
+    <div class="content">Roll two dice each week of your ocean journey. The first die determines the category, the second die determines the specific event within that category.</div>
+    
+    <table class="dice-table">
+        <tr>
+            <th>First Die</th>
+            <th>Category</th>
+            <th>Second Die</th>
+            <th>Specific Event</th>
+        </tr>
+        <tr>
+            <td rowspan="6">1</td>
+            <td rowspan="6">Weather Challenges</td>
+            <td>1</td>
+            <td>Severe Storm - Lose 1 week, lose $5 in damaged goods</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rough Seas - All family members seasick, lose 1 day</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Fog Delay - Ship lost, add 3 days to journey</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Favorable Winds - Gain 2 days, good progress</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Calm Seas - Perfect sailing weather, gain 1 day</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Hurricane - Lose 1 week, lose $10 in possessions</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="6">2</td>
+            <td rowspan="6">Health & Illness</td>
+            <td>1</td>
+            <td>Cholera Outbreak - Youngest family member dies</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Typhus Fever - Lose $15 for medical care or lose family member</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Seasickness - All family weak, lose 2 days</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Ship's Doctor Helps - Gain health, no penalty</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Good Health - Family stays strong, gain 1 day</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Smallpox - Quarantine required, lose 1 week</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="6">3</td>
+            <td rowspan="6">Food & Supplies</td>
+            <td>1</td>
+            <td>Food Spoiled - Lose $10 worth of food supplies</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Water Shortage - Pay $5 for extra water or lose health</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Rats in Food - Lose half of remaining food</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Share with Hungry Family - Lose $5 but gain friendship</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Extra Rations - Ship provides bonus food, save $5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Fresh Fish Caught - Gain $5 worth of food</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="6">4</td>
+            <td rowspan="6">Social Events</td>
+            <td>1</td>
+            <td>Fight with Passengers - Lose $5 in damages</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Theft - Lose $10 in stolen possessions</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Make New Friends - Learn English, gain advantage</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Help Sick Passenger - Gain respect, possible reward</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Cultural Celebration - Share traditions, gain morale</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Learn from Elder - Gain wisdom about America</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="6">5</td>
+            <td rowspan="6">Ship Conditions</td>
+            <td>1</td>
+            <td>Engine Problems - Add 1 week to journey</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Overcrowding - Uncomfortable conditions, lose morale</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Fire on Ship - Lose $15 in possessions</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Good Captain - Efficient journey, gain 2 days</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Clean Ship - Healthy conditions, no illness</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Modern Ship - Fast crossing, gain 3 days</td>
+        </tr>
+        
+        <tr>
+            <td rowspan="6">6</td>
+            <td rowspan="6">Good Fortune</td>
+            <td>1</td>
+            <td>Find Lost Money - Gain $10</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Helpful Crew Member - Gain useful information</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Perfect Weather - Gain 3 days of travel time</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Meet Future Employer - Job opportunity in America</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Learn English - Gain language skills for Ellis Island</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Sight Land - America ahead! Gain hope and energy</td>
+        </tr>
+    </table>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 5: Ellis Island Processing -->
+<div class="page">
+    <div class="section-title">Ellis Island Immigration Processing</div>
+    
+    <div class="subsection">THE INSPECTION PROCESS</div>
+    <div class="content">
+        Upon arrival at Ellis Island, all immigrants must pass through a series of inspections. Your family's fate in America depends on successfully completing each step. Approximately 2% of immigrants were turned away and sent back to their home countries.
+    </div>
+    
+    <div class="subsection">STEP 1: HEALTH INSPECTION</div>
+    <div class="content">Roll one die to determine your family's health status:</div>
+    
+    <div class="box">
+        <strong>Health Inspection Results:</strong><br>
+        • Roll 1 = Serious illness detected - Family member quarantined for 2 weeks<br>
+        • Roll 2 = Minor health issue - Pay $20 for treatment or be detained<br>
+        • Roll 3 = Eye infection - Must pass additional eye exam (roll again)<br>
+        • Roll 4 = Healthy but tired - Pass inspection with no problems<br>
+        • Roll 5 = Excellent health - Pass quickly, gain advantage<br>
+        • Roll 6 = Perfect health - Inspectors impressed, gain bonus
+    </div>
+    
+    <div class="subsection">STEP 2: LEGAL INSPECTION</div>
+    <div class="content">Immigration officers will ask your family 29 questions. Roll dice to see how well you answer:</div>
+    
+    <div class="box">
+        <strong>Legal Questions (Roll 2 dice, add together):</strong><br>
+        • 2-4 = Language barrier - Struggle with questions, possible detention<br>
+        • 5-7 = Some confusion - Answer most questions correctly<br>
+        • 8-10 = Clear answers - Pass inspection smoothly<br>
+        • 11-12 = Perfect responses - Inspectors approve quickly
+    </div>
+    
+    <div class="subsection">STEP 3: FINANCIAL VERIFICATION</div>
+    <div class="content">You must prove you have enough money to support yourself and won't become a "public charge."</div>
+    
+    <div class="box">
+        <strong>Financial Requirements:</strong><br>
+        • Minimum $25 required (equivalent to $750 today)<br>
+        • If you have less than $25, roll one die:<br>
+        &nbsp;&nbsp;- Roll 1-2 = Detained until sponsor arrives<br>
+        &nbsp;&nbsp;- Roll 3-4 = Allowed entry with warning<br>
+        &nbsp;&nbsp;- Roll 5-6 = Sympathetic inspector allows entry
+    </div>
+    
+    <div class="subsection">PRIMARY SOURCE DOCUMENTS</div>
+    <div class="content">During processing, analyze these authentic Ellis Island documents:</div>
+    
+    <div class="box">
+        <strong>Ship Manifest Entry (1907):</strong><br>
+        "Giuseppe Rossi, age 34, laborer from Napoli, Italy. Traveling with wife Maria, age 29, and children Antonio, age 8, and Lucia, age 5. Destination: New York City. Has $18 and ticket to cousin Salvatore Rossi, 127 Mulberry Street."
+        
+        <br><br><strong>Analysis Questions:</strong>
+        <ul style="margin-left: 20px; margin-top: 10px;">
+            <li>What challenges might this family face at Ellis Island?</li>
+            <li>How does their financial situation compare to requirements?</li>
+            <li>What advantages do they have for successful entry?</li>
+        </ul>
+    </div>
+    
+    <div class="subsection">ELLIS ISLAND OUTCOMES</div>
+    <div class="content">Based on your inspection results, determine your family's fate:</div>
+    
+    <div class="box">
+        <strong>Possible Outcomes:</strong><br>
+        • <strong>Immediate Entry:</strong> Pass all inspections, enter America same day<br>
+        • <strong>Temporary Detention:</strong> Minor issues, held 1-3 days for resolution<br>
+        • <strong>Hospital Care:</strong> Health problems require medical treatment<br>
+        • <strong>Board of Special Inquiry:</strong> Complex cases require hearing<br>
+        • <strong>Deportation:</strong> Failed inspections, must return to home country
+    </div>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 6: Tracking Sheets -->
+<div class="page">
+    <div class="section-title">Family Journey Tracking Sheets</div>
+    
+    <div class="tracking-sheet">
+        <div class="tracking-header">MONEY REGISTER</div>
+        <div class="tracking-content">
+            <div><strong>Family Name:</strong> <span class="form-line"></span></div>
+            <div><strong>Starting Amount:</strong> $<span class="form-line"></span></div>
+            
+            <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #333;">
+                    <th style="text-align: left; padding: 5px;">Date</th>
+                    <th style="text-align: left; padding: 5px;">Transaction</th>
+                    <th style="text-align: left; padding: 5px;">Amount</th>
+                    <th style="text-align: left; padding: 5px;">Balance</th>
+                </tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="tracking-sheet">
+        <div class="tracking-header">SUPPLY & POSSESSIONS REGISTER</div>
+        <div class="tracking-content">
+            <div><strong>Family Name:</strong> <span class="form-line"></span></div>
+            
+            <div style="margin-top: 20px;">
+                <strong>Starting Possessions:</strong>
+                <ul style="margin-left: 20px; margin-top: 10px;">
+                    <li>Clothing: <span class="form-line"></span></li>
+                    <li>Food Supplies: <span class="form-line"></span></li>
+                    <li>Important Documents: <span class="form-line"></span></li>
+                    <li>Tools/Trade Items: <span class="form-line"></span></li>
+                    <li>Personal Items: <span class="form-line"></span></li>
+                    <li>Other: <span class="form-line"></span></li>
+                </ul>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <strong>Items Lost/Gained During Journey:</strong>
+                <table style="width: 100%; margin-top: 10px; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #333;">
+                        <th style="text-align: left; padding: 5px;">Date</th>
+                        <th style="text-align: left; padding: 5px;">Item</th>
+                        <th style="text-align: left; padding: 5px;">Lost/Gained</th>
+                        <th style="text-align: left; padding: 5px;">Reason</th>
+                    </tr>
+                    <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                    <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                    <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 7: More Tracking Sheets -->
+<div class="page">
+    <div class="tracking-sheet">
+        <div class="tracking-header">FAMILY HEALTH MONITOR</div>
+        <div class="tracking-content">
+            <div><strong>Family Name:</strong> <span class="form-line"></span></div>
+            
+            <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #333;">
+                    <th style="text-align: left; padding: 5px;">Family Member</th>
+                    <th style="text-align: left; padding: 5px;">Age</th>
+                    <th style="text-align: left; padding: 5px;">Health Status</th>
+                    <th style="text-align: left; padding: 5px;">Notes</th>
+                </tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+            </table>
+            
+            <div style="margin-top: 20px;">
+                <strong>Health Events During Journey:</strong>
+                <div style="margin-top: 10px;">
+                    <div>Week 1: <span class="form-line" style="width: 400px;"></span></div>
+                    <div>Week 2: <span class="form-line" style="width: 400px;"></span></div>
+                    <div>Week 3: <span class="form-line" style="width: 400px;"></span></div>
+                    <div>Week 4: <span class="form-line" style="width: 400px;"></span></div>
+                    <div>Week 5: <span class="form-line" style="width: 400px;"></span></div>
+                    <div>Week 6: <span class="form-line" style="width: 400px;"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tracking-sheet">
+        <div class="tracking-header">JOURNEY CALENDAR & PROGRESS</div>
+        <div class="tracking-content">
+            <div><strong>Family Name:</strong> <span class="form-line"></span></div>
+            <div><strong>Departure Date:</strong> <span class="form-line"></span></div>
+            <div><strong>Departure Port:</strong> <span class="form-line"></span></div>
+            
+            <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #333;">
+                    <th style="text-align: left; padding: 5px;">Week</th>
+                    <th style="text-align: left; padding: 5px;">Dates</th>
+                    <th style="text-align: left; padding: 5px;">Location/Progress</th>
+                    <th style="text-align: left; padding: 5px;">Events</th>
+                </tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">1</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">2</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">3</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">4</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">5</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+                <tr><td style="padding: 8px; border-bottom: 1px solid #ccc;">6</td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td><td style="border-bottom: 1px solid #ccc;"></td></tr>
+            </table>
+            
+            <div style="margin-top: 20px;">
+                <div><strong>Ellis Island Arrival Date:</strong> <span class="form-line"></span></div>
+                <div><strong>Final Destination in America:</strong> <span class="form-line"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+<!-- Page 8: Journaling Prompts -->
+<div class="page">
+    <div class="section-title">Immigration Journal Prompts</div>
+    
+    <div class="subsection">JOURNAL REQUIREMENTS</div>
+    <div class="content">
+        Throughout your immigration journey, you will maintain a detailed journal from your character's perspective. Each entry should be 1-2 paragraphs and include specific historical details, personal emotions, and authentic experiences based on your research and simulation events.
+    </div>
+    
+    <div class="subsection">WEEKLY JOURNAL PROMPTS</div>
+    
+    <div class="box">
+        <strong>Week 1 - Departure Preparation:</strong><br>
+        Write about your family's decision to leave your homeland. What events or conditions forced this difficult choice? Describe your emotions as you pack your few possessions and say goodbye to everything familiar. What are your fears and hopes for America?
+    </div>
+    
+    <div class="box">
+        <strong>Week 2 - Ocean Crossing Begins:</strong><br>
+        Describe your first week aboard the ship. What are the living conditions like? How do you spend your days? What other passengers have you met, and what are their stories? Include details about food, sleeping arrangements, and daily routines.
+    </div>
+    
+    <div class="box">
+        <strong>Week 3 - Mid-Journey Challenges:</strong><br>
+        Write about any difficulties your family has faced during the voyage. This might include illness, storms, conflicts with other passengers, or homesickness. How is your family coping with these challenges? What gives you strength to continue?
+    </div>
+    
+    <div class="box">
+        <strong>Week 4 - Cultural Connections:</strong><br>
+        Describe interactions with other immigrant families from different countries. What have you learned about their cultures, languages, and reasons for coming to America? How are their experiences similar to or different from yours?
+    </div>
+    
+    <div class="box">
+        <strong>Week 5 - Approaching America:</strong><br>
+        Write about your anticipation as you near America. What have you heard about Ellis Island and the inspection process? What are your concerns about being admitted to the country? Describe your preparations for arrival.
+    </div>
+    
+    <div class="box">
+        <strong>Week 6 - Ellis Island Processing:</strong><br>
+        Describe your experience going through Ellis Island inspections. Include details about the health examination, legal questioning, and any challenges your family faced. What were your emotions during this process? How did it feel to finally be admitted (or not) to America?
+    </div>
+    
+    <div class="subsection">ADDITIONAL JOURNAL TOPICS</div>
+    
+    <ul class="bullet-list">
+        <li><strong>Language Barriers:</strong> Write about attempts to communicate in English and misunderstandings that occurred.</li>
+        <li><strong>Cultural Traditions:</strong> Describe how your family maintains cultural practices while adapting to American ways.</li>
+        <li><strong>Letters Home:</strong> Write a letter to relatives in your homeland describing your journey and new life.</li>
+        <li><strong>American Dreams:</strong> Reflect on whether America is meeting your expectations and what you hope to achieve.</li>
+        <li><strong>Helping Others:</strong> Describe times when you helped other immigrants or received help from strangers.</li>
+        <li><strong>Discrimination:</strong> Write about any prejudice or unfair treatment your family experienced and how you responded.</li>
+    </ul>
+    
+    <div class="subsection">JOURNAL ASSESSMENT CRITERIA</div>
+    
+    <div class="content">Your journal will be evaluated based on:</div>
+    <ul class="bullet-list">
+        <li><strong>Historical Accuracy:</strong> Use of authentic details from research and primary sources</li>
+        <li><strong>Character Development:</strong> Consistent voice and perspective throughout entries</li>
+        <li><strong>Emotional Depth:</strong> Genuine reflection on the immigrant experience</li>
+        <li><strong>Writing Quality:</strong> Clear expression, proper grammar, and engaging narrative</li>
+        <li><strong>Cultural Understanding:</strong> Demonstration of knowledge about immigration history and cultural adaptation</li>
+    </ul>
+    
+    <div class="copyright">
+        © Rural Geography Simulations Project
+    </div>
+</div>
+
+</body>
+</html>

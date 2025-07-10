@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Systems Explorer - Complete Crosscutting Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .crosscutting-nav {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .nav-subject {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+
+        .nav-subject:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .nav-subject.active {
+            border-color: #27ae60;
+            background: white;
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: none;
+            page-break-inside: avoid;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #27ae60;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 15px;
+        }
+
+        .crosscut-highlight {
+            background: linear-gradient(135deg, #e8f5e8, #d5f4d5);
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 6px solid #27ae60;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+
+        .activity-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #3498db;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .primary-source {
+            background: #f0f8ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #4169e1;
+            page-break-inside: avoid;
+        }
+
+        .primary-source-text {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 3px solid #4169e1;
+            font-family: 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        .vocabulary-box {
+            background: #fdf2e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #d35400;
+            page-break-inside: avoid;
+        }
+
+        .vocab-terms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .vocab-term {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 3px solid #d35400;
+        }
+
+        .standards-alignment {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #ff9800;
+            page-break-inside: avoid;
+        }
+
+        .assessment-rubric {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .rubric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .rubric-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .activity-worksheet {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 30px;
+            margin: 20px 0;
+            page-break-before: always;
+        }
+
+        .worksheet-header {
+            text-align: center;
+            border-bottom: 2px solid #27ae60;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .worksheet-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+
+        .fill-in-blank {
+            border-bottom: 2px solid #333;
+            display: inline-block;
+            min-width: 100px;
+            margin: 0 5px;
+        }
+
+        .question-box {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s ease;
+            margin: 10px 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background: #229954;
+        }
+
+        .navigation {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-btn {
+            display: block;
+            width: 100%;
+            margin: 5px 0;
+            padding: 8px 15px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 12pt;
+                line-height: 1.4;
+            }
+            
+            .navigation, .btn, .crosscutting-nav {
+                display: none !important;
+            }
+            
+            .header {
+                background: white !important;
+                color: black !important;
+                text-shadow: none !important;
+                page-break-after: always;
+            }
+            
+            .section {
+                display: block !important;
+                background: white !important;
+                box-shadow: none !important;
+                border: 1px solid #ddd;
+                margin: 0;
+                padding: 20px;
+                page-break-before: always;
+            }
+            
+            .crosscut-highlight, .activity-card, .primary-source, .vocabulary-box, .standards-alignment, .assessment-rubric {
+                background: white !important;
+                border: 1px solid #ddd !important;
+                page-break-inside: avoid;
+                margin: 15px 0;
+            }
+            
+            .activity-worksheet {
+                page-break-before: always;
+                border: 2px solid #000;
+            }
+            
+            h1, h2, h3, h4, h5 {
+                color: black !important;
+                page-break-after: avoid;
+            }
+            
+            .vocab-terms {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .rubric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                position: static;
+                margin-bottom: 20px;
+            }
+            
+            .crosscutting-nav {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="navigation">
+        <a href="#overview" class="nav-btn">Overview</a>
+        <a href="#ela" class="nav-btn">ELA Integration</a>
+        <a href="#earth-science" class="nav-btn">Earth Science</a>
+        <a href="#life-science" class="nav-btn">Life Science</a>
+        <a href="#physical-science" class="nav-btn">Physical Science</a>
+        <button class="nav-btn" onclick="window.print()">Print All</button>
+        <a href="Rural_Geography_Simulations.html" class="nav-btn">Main Menu</a>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🌍 Earth Systems Explorer</h1>
+            <p>Complete Crosscutting Integration - ELA • Earth Science • Life Science • Physical Science</p>
+            <p><strong>Duration:</strong> 5-7 class periods | <strong>Grade Level:</strong> 6-8 | <strong>Group Size:</strong> Pairs</p>
+        </div>
+
+        <div class="crosscutting-nav">
+            <div class="nav-subject active" onclick="showSection('overview')">
+                <h3>🎯 Overview</h3>
+                <p>Integration Summary</p>
+            </div>
+            <div class="nav-subject" onclick="showSection('ela')">
+                <h3>📚 ELA Integration</h3>
+                <p>Reading • Writing • Speaking</p>
+            </div>
+            <div class="nav-subject" onclick="showSection('earth-science')">
+                <h3>🌍 Earth Science</h3>
+                <p>Weather • Geology • Climate</p>
+            </div>
+            <div class="nav-subject" onclick="showSection('life-science')">
+                <h3>🌱 Life Science</h3>
+                <p>Ecosystems • Adaptation</p>
+            </div>
+            <div class="nav-subject" onclick="showSection('physical-science')">
+                <h3>⚗️ Physical Science</h3>
+                <p>Energy • Matter • Forces</p>
+            </div>
+        </div>
+
+        <!-- Overview Section -->
+        <div id="overview" class="section active">
+            <h2>🎯 Complete Integration Overview</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🌟 Why This Integration Works</h4>
+                <p>Earth systems naturally connect all subjects! Students explore the same phenomena through multiple lenses - reading about it, investigating it scientifically, and understanding the physical processes involved. This creates deep, lasting learning that mirrors real-world problem solving.</p>
+            </div>
+
+            <h3>📋 Learning Objectives</h3>
+            <div class="activity-card">
+                <h4>🌍 Geography & Earth Science</h4>
+                <ul>
+                    <li>Understand the four major Earth systems: atmosphere, hydrosphere, geosphere, and biosphere</li>
+                    <li>Explore how these systems interact and affect each other</li>
+                    <li>Investigate climate patterns and weather systems</li>
+                    <li>Examine different ecosystems and their characteristics</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <h4>📚 ELA Integration</h4>
+                <ul>
+                    <li>Read and analyze primary source documents from scientists and explorers</li>
+                    <li>Write scientific reports and persuasive essays about environmental issues</li>
+                    <li>Develop academic vocabulary across all science disciplines</li>
+                    <li>Practice speaking and listening through scientific discussions</li>
+                </ul>
+            </div>
+
+            <div class="activity-card">
+                <h4>🔬 Science Connections</h4>
+                <ul>
+                    <li><strong>Earth Science:</strong> Weather patterns, rock cycle, water cycle</li>
+                    <li><strong>Life Science:</strong> Ecosystem interactions, adaptation, biodiversity</li>
+                    <li><strong>Physical Science:</strong> Energy transfer, states of matter, forces</li>
+                </ul>
+            </div>
+
+            <div class="standards-alignment">
+                <h5>📋 Standards Alignment</h5>
+                <p><strong>ELA:</strong> CCSS.ELA-LITERACY.RST.6-8.1, 2, 4, 7, 8, 9 (Reading), CCSS.ELA-LITERACY.WHST.6-8.1, 2, 4 (Writing)</p>
+                <p><strong>NGSS:</strong> MS-ESS2-4 (Water cycling), MS-LS2-1 (Ecosystem interactions), MS-PS1-4 (Particle model), MS-PS3-3 (Thermal energy)</p>
+            </div>
+
+            <h3>📦 Materials Needed (Basic Supplies Only)</h3>
+            <div class="activity-card">
+                <h4>Per Student Pair:</h4>
+                <ul>
+                    <li>1 notebook (composition book) for Earth Systems journal</li>
+                    <li>Colored pencils for diagrams and mapping</li>
+                    <li>Ruler for measurements and graphs</li>
+                    <li>Calculator for data analysis</li>
+                </ul>
+                
+                <h4>Classroom Supplies:</h4>
+                <ul>
+                    <li>Smart TV with internet access</li>
+                    <li>Poster paper for group presentations</li>
+                    <li>Markers for creating diagrams</li>
+                    <li>Index cards for vocabulary development</li>
+                    <li>Printed worksheets and primary source documents</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ELA Integration Section -->
+        <div id="ela" class="section">
+            <h2>📚 ELA Integration - Reading, Writing, Speaking & Listening</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>📖 Primary Source Integration</h4>
+                <p>Students read authentic documents from climate scientists, explorers, and indigenous knowledge keepers to understand Earth systems through multiple perspectives and time periods.</p>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #1: Rachel Carson's "Silent Spring" (1962)</h5>
+                <div class="primary-source-text">
+                    "In nature nothing exists alone. The earth's vegetation is part of a web of life in which there are intimate and essential relations between plants and the earth, between plants and other plants, between plants and animals. Sometimes we have no choice but to disturb these relationships, but we should do so thoughtfully, with full awareness that what we do may have consequences remote in time and place."
+                </div>
+                <div class="question-box">
+                    <strong>Reading Comprehension Questions:</strong>
+                    <ol>
+                        <li>What does Carson mean by "web of life"? How does this connect to Earth systems?</li>
+                        <li>What evidence does Carson use to support her argument about interconnections?</li>
+                        <li>How does Carson's writing style make scientific concepts accessible to readers?</li>
+                        <li>What is Carson's main message about human responsibility toward nature?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #2: Lewis & Clark Expedition Journal (August 12, 1805)</h5>
+                <div class="primary-source-text">
+                    "The morning was fair and we set out at an early hour. The river is very rapid and difficult to navigate. The weather has been remarkably cold for the season. Ice formed on the water buckets during the night, though it is now the middle of summer. The mountains ahead are covered with snow, creating their own weather patterns that affect our journey daily. The air is thin and breathing is difficult at this elevation."
+                </div>
+                <div class="question-box">
+                    <strong>Analysis Questions:</strong>
+                    <ol>
+                        <li>What weather patterns do Lewis & Clark describe? What can we infer about mountain climates?</li>
+                        <li>How do the explorers' observations connect to what we know about elevation and temperature?</li>
+                        <li>What challenges did the physical environment create for their expedition?</li>
+                        <li>How might indigenous peoples have adapted to these same environmental conditions?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="primary-source">
+                <h5>📜 Primary Source #3: John Muir's Sierra Nevada Observations (1869)</h5>
+                <div class="primary-source-text">
+                    "The weather is calm and bright, not a cloud in all the sky. The air is perfectly transparent, and the mountains are seen with wonderful distinctness. Every peak and ridge stands out in bold relief against the deep blue sky. The temperature varies greatly between day and night - scorching hot in the sun, yet frost forms in the shadows before dawn. This daily cycle shapes everything that lives here."
+                </div>
+                <div class="question-box">
+                    <strong>Scientific Observation Questions:</strong>
+                    <ol>
+                        <li>What specific weather observations does Muir record?</li>
+                        <li>How does Muir connect daily temperature changes to living things?</li>
+                        <li>What does "air is perfectly transparent" tell us about mountain air quality?</li>
+                        <li>How do Muir's observations help us understand mountain ecosystems?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="vocabulary-box">
+                <h5>📝 Academic Vocabulary Development</h5>
+                <div class="vocab-terms">
+                    <div class="vocab-term">
+                        <strong>Atmosphere:</strong> The layer of gases surrounding Earth that contains the air we breathe
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Hydrosphere:</strong> All the water on Earth including oceans, rivers, lakes, and groundwater
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Geosphere:</strong> The solid Earth including rocks, minerals, and landforms
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Biosphere:</strong> All living things on Earth and the places where they live
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Precipitation:</strong> Water falling from clouds as rain, snow, sleet, or hail
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Condensation:</strong> The process of water vapor changing to liquid water
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Evaporation:</strong> The process of liquid water changing to water vapor
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Ecosystem:</strong> A community of living and nonliving things that interact
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Biodiversity:</strong> The variety of different species in an ecosystem
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Climate:</strong> The average weather conditions in a place over many years
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Weather:</strong> The day-to-day conditions of the atmosphere
+                    </div>
+                    <div class="vocab-term">
+                        <strong>Erosion:</strong> The wearing away and movement of rock and soil by water, wind, or ice</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>✍️ Writing Activities</h4>
+                <p><strong>Activity 1: Scientific Observation Report</strong></p>
+                <p>Using data from your virtual weather station, write a detailed weather observation report. Include temperature, humidity, air pressure, and wind speed data. Explain what patterns you notice and what might cause these patterns.</p>
+                
+                <p><strong>Activity 2: Persuasive Essay on Environmental Protection</strong></p>
+                <p>Choose one Earth system (atmosphere, hydrosphere, geosphere, or biosphere) and write a persuasive essay arguing why it needs protection. Use evidence from your research and primary sources to support your argument.</p>
+                
+                <p><strong>Activity 3: Explorer's Journal</strong></p>
+                <p>Write diary entries from the perspective of a scientist exploring a new ecosystem. Describe the interactions between Earth systems you observe and how they affect the living things in that environment.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>🗣️ Speaking & Listening Activities</h4>
+                <p><strong>Activity 1: Climate Change Debate</strong></p>
+                <p>Present arguments about different solutions to climate change using scientific evidence. Practice respectful disagreement and evidence-based reasoning.</p>
+                
+                <p><strong>Activity 2: Ecosystem Presentation</strong></p>
+                <p>Explain how different Earth systems interact in your chosen biome. Use visual aids and clear explanations that your classmates can understand.</p>
+                
+                <p><strong>Activity 3: Scientific Interview</strong></p>
+                <p>Interview classmates about their "expedition experiences" and findings. Practice asking follow-up questions and active listening.</p>
+            </div>
+
+            <div class="standards-alignment">
+                <h5>📋 ELA Standards Addressed</h5>
+                <p><strong>Reading Standards for Literacy in Science and Technical Subjects:</strong></p>
+                <ul>
+                    <li>CCSS.ELA-LITERACY.RST.6-8.1: Cite specific textual evidence</li>
+                    <li>CCSS.ELA-LITERACY.RST.6-8.2: Determine central ideas or conclusions</li>
+                    <li>CCSS.ELA-LITERACY.RST.6-8.4: Determine meaning of symbols, key terms</li>
+                    <li>CCSS.ELA-LITERACY.RST.6-8.7: Integrate quantitative or technical information</li>
+                </ul>
+                <p><strong>Writing Standards for Literacy in Science and Technical Subjects:</strong></p>
+                <ul>
+                    <li>CCSS.ELA-LITERACY.WHST.6-8.1: Write arguments to support claims with clear reasons</li>
+                    <li>CCSS.ELA-LITERACY.WHST.6-8.2: Write informative/explanatory texts</li>
+                    <li>CCSS.ELA-LITERACY.WHST.6-8.4: Produce clear and coherent writing</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Earth Science Integration Section -->
+        <div id="earth-science" class="section">
+            <h2>🌍 Earth Science Integration - Weather, Climate & Geology</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🌡️ Earth Systems Science</h4>
+                <p>Students investigate how the atmosphere, hydrosphere, geosphere, and biosphere interact to create weather patterns, climate zones, and geological processes that shape our planet.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>🌤️ Activity 1: Weather & Climate Systems Investigation</h4>
+                <p><strong>Question:</strong> How do air pressure differences create wind patterns?</p>
+                <p><strong>Materials:</strong> Virtual weather station, data recording sheets, calculators</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Use the interactive weather station to collect data on temperature, pressure, and humidity</li>
+                    <li>Record data for different locations and times of day</li>
+                    <li>Create graphs showing relationships between pressure and wind speed</li>
+                    <li>Compare data from different climate zones</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>What patterns do you notice between air pressure and wind speed?</li>
+                    <li>How do temperature differences affect air pressure?</li>
+                    <li>Why do some regions have more consistent weather than others?</li>
+                    <li>How might these patterns affect the ecosystems in different regions?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-ESS2-4: Develop a model to describe the cycling of water through Earth's systems</p>
+                    <p>MS-ESS2-5: Collect data to provide evidence for how the motions and complex interactions of air masses results in changes in weather conditions</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>🏔️ Activity 2: Geological Processes Investigation</h4>
+                <p><strong>Question:</strong> How do weathering and erosion shape landscapes?</p>
+                <p><strong>Materials:</strong> Rock cycle diagrams, erosion simulation videos, observation sheets</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Watch virtual demonstrations of different types of weathering</li>
+                    <li>Observe how water, wind, and ice break down rocks</li>
+                    <li>Create a diagram showing the rock cycle</li>
+                    <li>Connect geological processes to local landforms</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>What are the main agents of weathering and erosion?</li>
+                    <li>How do different rock types respond to weathering?</li>
+                    <li>What role does climate play in shaping landforms?</li>
+                    <li>How do geological processes affect soil formation?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-ESS2-1: Develop a model to describe the cycling of Earth's materials</p>
+                    <p>MS-ESS2-2: Construct an explanation based on evidence for how geoscience processes have changed Earth's surface</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>💧 Activity 3: Water Systems Investigation</h4>
+                <p><strong>Question:</strong> How does water move through different Earth systems?</p>
+                <p><strong>Materials:</strong> Water cycle interactive, watershed maps, data collection sheets</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Trace water flow from mountains to oceans using interactive maps</li>
+                    <li>Investigate how water moves through different rock types</li>
+                    <li>Study how ocean currents affect global climate patterns</li>
+                    <li>Create a model showing water connections between all Earth systems</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>How does the water cycle connect all four Earth systems?</li>
+                    <li>What happens to water when it encounters different types of rock?</li>
+                    <li>How do ocean currents affect weather patterns on land?</li>
+                    <li>Why is groundwater important for ecosystems?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-ESS2-4: Develop a model to describe the cycling of water through Earth's systems driven by energy from the sun and the force of gravity</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Life Science Integration Section -->
+        <div id="life-science" class="section">
+            <h2>🌱 Life Science Integration - Ecosystems & Adaptation</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>🌿 Living Earth Systems</h4>
+                <p>Students explore how living organisms interact with Earth's physical systems, adapt to different environments, and form complex ecosystems that depend on climate, geology, and water systems.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>🌍 Activity 1: Biome Climate Connections</h4>
+                <p><strong>Question:</strong> How does climate determine which organisms can live in different biomes?</p>
+                <p><strong>Materials:</strong> Biome comparison charts, climate data, species identification guides</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Compare temperature and precipitation data for different biomes</li>
+                    <li>Study how plants and animals adapt to desert vs. rainforest conditions</li>
+                    <li>Create adaptation comparison charts</li>
+                    <li>Investigate how climate change affects species distribution</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>What climate factors most influence which species can survive in a biome?</li>
+                    <li>How do plant adaptations differ between wet and dry climates?</li>
+                    <li>What animal adaptations help species survive in extreme temperatures?</li>
+                    <li>How might climate change force species to adapt or migrate?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-LS2-1: Analyze and interpret data on the scale of properties and interactions in ecosystems</p>
+                    <p>MS-LS2-4: Construct an argument supported by empirical evidence that changes to physical or biological components affect populations</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>🔄 Activity 2: Cycles in Nature</h4>
+                <p><strong>Question:</strong> How do living things participate in Earth's chemical cycles?</p>
+                <p><strong>Materials:</strong> Cycle diagrams, ecosystem models, tracking worksheets</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Trace carbon movement through atmosphere, plants, animals, and soil</li>
+                    <li>Investigate how bacteria help plants get nitrogen from air</li>
+                    <li>Study how decomposers recycle nutrients in ecosystems</li>
+                    <li>Create a model showing matter cycling through living and nonliving parts</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>How do plants and animals participate in the carbon cycle?</li>
+                    <li>Why do plants need bacteria to access nitrogen from the atmosphere?</li>
+                    <li>What would happen to an ecosystem without decomposers?</li>
+                    <li>How do human activities affect natural cycles?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-LS2-3: Develop a model to describe the cycling of matter and flow of energy among living and nonliving parts of an ecosystem</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>🌡️ Activity 3: Environmental Changes and Life</h4>
+                <p><strong>Question:</strong> How do environmental changes affect living populations?</p>
+                <p><strong>Materials:</strong> Population data, migration maps, environmental change scenarios</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Analyze how weather patterns affect animal population sizes</li>
+                    <li>Study why animals migrate with seasonal changes</li>
+                    <li>Investigate how human activities affect ecosystem balance</li>
+                    <li>Predict how species might respond to environmental changes</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>What environmental factors most affect animal population sizes?</li>
+                    <li>How do migration patterns help species survive environmental changes?</li>
+                    <li>What human activities have the biggest impact on ecosystems?</li>
+                    <li>How can humans help protect ecosystem stability?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-LS2-4: Construct an argument supported by empirical evidence that changes to physical or biological components of an ecosystem affect populations</p>
+                    <p>MS-ESS3-3: Apply scientific principles to design a method for monitoring and minimizing a human impact on the environment</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physical Science Integration Section -->
+        <div id="physical-science" class="section">
+            <h2>⚗️ Physical Science Integration - Energy, Matter & Forces</h2>
+            
+            <div class="crosscut-highlight">
+                <h4>⚡ Physical Processes in Earth Systems</h4>
+                <p>Students investigate the physical and chemical processes that drive Earth systems - from the energy that powers weather to the forces that shape landscapes to the matter transformations in the water cycle.</p>
+            </div>
+
+            <div class="activity-card">
+                <h4>🌞 Activity 1: Energy Transfer in Earth Systems</h4>
+                <p><strong>Question:</strong> How does the sun's energy drive weather patterns and ocean currents?</p>
+                <p><strong>Materials:</strong> Energy transfer diagrams, temperature sensors, heat transfer demonstrations</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Investigate how solar energy heats different surfaces (land vs. water)</li>
+                    <li>Study conduction, convection, and radiation in Earth systems</li>
+                    <li>Trace energy from sunlight through food chains to fossil fuels</li>
+                    <li>Model how uneven heating creates wind and ocean currents</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>Why do land and water heat up at different rates?</li>
+                    <li>How does convection create wind patterns?</li>
+                    <li>What role does radiation play in Earth's energy balance?</li>
+                    <li>How is energy stored and released in different Earth systems?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-PS3-3: Apply scientific principles to design, construct, and test a device that either minimizes or maximizes thermal energy transfer</p>
+                    <p>MS-PS3-4: Plan an investigation to determine the relationships among the energy transferred, the type of matter, the mass, and the change in the average kinetic energy of the particles</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>💧 Activity 2: States of Matter in Earth Systems</h4>
+                <p><strong>Question:</strong> How do temperature and pressure affect water's state in different Earth systems?</p>
+                <p><strong>Materials:</strong> Phase change diagrams, particle models, pressure/temperature data</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Use particle diagrams to explain evaporation and condensation</li>
+                    <li>Investigate why ice floats and how this affects aquatic ecosystems</li>
+                    <li>Study how altitude affects the boiling point of water</li>
+                    <li>Model how water changes state in the water cycle</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>How do particle movements change during phase transitions?</li>
+                    <li>Why is it important for ecosystems that ice floats on water?</li>
+                    <li>How does air pressure affect water's boiling point at different altitudes?</li>
+                    <li>What energy changes occur during evaporation and condensation?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-PS1-4: Develop a model that predicts and describes changes in particle motion, temperature, and state of a pure substance when thermal energy is added or removed</p>
+                </div>
+            </div>
+
+            <div class="activity-card">
+                <h4>💨 Activity 3: Forces and Motion in Earth Systems</h4>
+                <p><strong>Question:</strong> How do pressure differences and gravitational forces drive Earth system processes?</p>
+                <p><strong>Materials:</strong> Pressure measurement tools, force diagrams, motion simulations</p>
+                <p><strong>Procedure:</strong></p>
+                <ol>
+                    <li>Investigate how pressure differences create wind</li>
+                    <li>Study how water and air exert forces on objects</li>
+                    <li>Explore how gravity drives water flow and atmospheric circulation</li>
+                    <li>Model how forces shape landforms over time</li>
+                </ol>
+                <p><strong>Analysis Questions:</strong></p>
+                <ol>
+                    <li>What causes air to move from high pressure to low pressure areas?</li>
+                    <li>How do fluid forces affect objects moving through air and water?</li>
+                    <li>What role does gravity play in the water cycle?</li>
+                    <li>How do forces acting over long periods shape Earth's surface?</li>
+                </ol>
+                <div class="standards-alignment">
+                    <h5>NGSS Standards:</h5>
+                    <p>MS-PS2-2: Plan an investigation to provide evidence that the change in an object's motion depends on the sum of the forces on the object and the mass of the object</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Worksheets -->
+        <div class="activity-worksheet">
+            <div class="worksheet-header">
+                <h2>🌍 Earth Systems Explorer - Student Activity Sheet #1</h2>
+                <p><strong>Name:</strong> <span class="fill-in-blank"></span> <strong>Date:</strong> <span class="fill-in-blank"></span> <strong>Period:</strong> <span class="fill-in-blank"></span></p>
+            </div>
+
+            <div class="worksheet-section">
+                <h3>📖 Primary Source Analysis: Rachel Carson</h3>
+                <p>Read the excerpt from Rachel Carson's "Silent Spring" and answer the questions below:</p>
+                
+                <div class="question-box">
+                    <p><strong>1. What does Carson mean by "web of life"?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. How does Carson's description connect to the four Earth systems?</strong></p>
+                    <p>Atmosphere: ___________________________________________________</p>
+                    <p>Hydrosphere: __________________________________________________</p>
+                    <p>Geosphere: ____________________________________________________</p>
+                    <p>Biosphere: ____________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>3. What is Carson's main message about human responsibility?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+            </div>
+
+            <div class="worksheet-section">
+                <h3>🌡️ Weather Data Collection</h3>
+                <p>Use the virtual weather station to collect data for three different locations:</p>
+                
+                <table border="1" style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <th>Location</th>
+                        <th>Temperature (°F)</th>
+                        <th>Humidity (%)</th>
+                        <th>Air Pressure (in)</th>
+                        <th>Wind Speed (mph)</th>
+                    </tr>
+                    <tr>
+                        <td>Location 1: _______________</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                    </tr>
+                    <tr>
+                        <td>Location 2: _______________</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                    </tr>
+                    <tr>
+                        <td>Location 3: _______________</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                        <td>_______</td>
+                    </tr>
+                </table>
+
+                <div class="question-box">
+                    <p><strong>Analysis: What patterns do you notice in your data?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity-worksheet">
+            <div class="worksheet-header">
+                <h2>🌍 Earth Systems Explorer - Student Activity Sheet #2</h2>
+                <p><strong>Name:</strong> <span class="fill-in-blank"></span> <strong>Date:</strong> <span class="fill-in-blank"></span> <strong>Period:</strong> <span class="fill-in-blank"></span></p>
+            </div>
+
+            <div class="worksheet-section">
+                <h3>🔄 Earth Systems Interactions</h3>
+                <p>Draw arrows and write explanations showing how Earth's four systems interact:</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;">
+                    <div style="border: 2px solid #333; padding: 15px; text-align: center;">
+                        <h4>ATMOSPHERE</h4>
+                        <p>(Air and weather)</p>
+                    </div>
+                    <div style="border: 2px solid #333; padding: 15px; text-align: center;">
+                        <h4>HYDROSPHERE</h4>
+                        <p>(All water on Earth)</p>
+                    </div>
+                    <div style="border: 2px solid #333; padding: 15px; text-align: center;">
+                        <h4>GEOSPHERE</h4>
+                        <p>(Rocks and landforms)</p>
+                    </div>
+                    <div style="border: 2px solid #333; padding: 15px; text-align: center;">
+                        <h4>BIOSPHERE</h4>
+                        <p>(All living things)</p>
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>1. How does the atmosphere interact with the hydrosphere?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>2. How does the geosphere affect the biosphere?</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+
+                <div class="question-box">
+                    <p><strong>3. Give an example of how all four systems work together:</strong></p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                    <p>_________________________________________________________________</p>
+                </div>
+            </div>
+
+            <div class="worksheet-section">
+                <h3>📝 Vocabulary Matching</h3>
+                <p>Match each term with its correct definition:</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <p><strong>Terms:</strong></p>
+                        <p>1. Evaporation ____</p>
+                        <p>2. Condensation ____</p>
+                        <p>3. Precipitation ____</p>
+                        <p>4. Ecosystem ____</p>
+                        <p>5. Climate ____</p>
+                        <p>6. Weather ____</p>
+                    </div>
+                    <div>
+                        <p><strong>Definitions:</strong></p>
+                        <p>A. Water falling from clouds</p>
+                        <p>B. Daily atmospheric conditions</p>
+                        <p>C. Water vapor changing to liquid</p>
+                        <p>D. Living and nonliving things interacting</p>
+                        <p>E. Average weather over many years</p>
+                        <p>F. Liquid water changing to vapor</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assessment Rubric -->
+        <div class="assessment-rubric">
+            <h3>📊 Integrated Assessment Rubric - Earth Systems Explorer</h3>
+            <div class="rubric-grid">
+                <div class="rubric-item">
+                    <h4>ELA Integration (25%)</h4>
+                    <p><strong>4 - Excellent:</strong> Effectively analyzes multiple primary sources, writes clear scientific arguments with strong evidence, uses academic vocabulary correctly</p>
+                    <p><strong>3 - Proficient:</strong> Analyzes primary sources well, communicates scientific ideas clearly, uses most vocabulary correctly</p>
+                    <p><strong>2 - Developing:</strong> Basic source analysis, adequate communication of ideas, some vocabulary errors</p>
+                    <p><strong>1 - Beginning:</strong> Limited source analysis, unclear communication, frequent vocabulary errors</p>
+                </div>
+                
+                <div class="rubric-item">
+                    <h4>Earth Science Understanding (25%)</h4>
+                    <p><strong>4 - Excellent:</strong> Explains complex Earth system interactions with detailed evidence, connects weather and climate patterns accurately</p>
+                    <p><strong>3 - Proficient:</strong> Describes Earth systems and their basic connections, understands weather patterns</p>
+                    <p><strong>2 - Developing:</strong> Identifies Earth system components, basic understanding of weather</p>
+                    <p><strong>1 - Beginning:</strong> Limited understanding of Earth systems and weather patterns</p>
+                </div>
+                
+                <div class="rubric-item">
+                    <h4>Life Science Connections (25%)</h4>
+                    <p><strong>4 - Excellent:</strong> Thoroughly analyzes ecosystem interactions and adaptations, explains how organisms respond to environmental changes</p>
+                    <p><strong>3 - Proficient:</strong> Explains how organisms interact with their environment, understands basic adaptations</p>
+                    <p><strong>2 - Developing:</strong> Identifies basic ecosystem relationships, limited understanding of adaptations</p>
+                    <p><strong>1 - Beginning:</strong> Minimal understanding of organism-environment interactions</p>
+                </div>
+                
+                <div class="rubric-item">
+                    <h4>Physical Science Applications (25%)</h4>
+                    <p><strong>4 - Excellent:</strong> Successfully applies physical science concepts to explain Earth processes, understands energy and matter transformations</p>
+                    <p><strong>3 - Proficient:</strong> Connects energy and matter concepts to Earth systems, understands basic physical processes</p>
+                    <p><strong>2 - Developing:</strong> Identifies some physical processes in nature, limited connections to Earth systems</p>
+                    <p><strong>1 - Beginning:</strong> Minimal understanding of physical science connections to Earth systems</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <button class="btn" onclick="window.print()">🖨️ Print Complete Materials</button>
+            <a href="Rural_Geography_Simulations.html" class="btn">🏠 Back to Main Menu</a>
+            <a href="earth_systems_interactive.html" class="btn">🌐 Interactive Tools</a>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-subject');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked nav item
+            event.target.closest('.nav-subject').classList.add('active');
+        }
+
+        // Smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            // Show all sections for printing
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'block';
+            });
+        });
+
+        window.addEventListener('afterprint', function() {
+            // Restore section visibility after printing
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                if (!section.classList.contains('active')) {
+                    section.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
