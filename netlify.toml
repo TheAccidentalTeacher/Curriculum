@@ -1,0 +1,45 @@
+[build]
+  # No build command needed - static HTML files
+  publish = "."
+
+[build.environment]
+  # Node version (if needed for any future enhancements)
+  NODE_VERSION = "18"
+
+[[headers]]
+  # Apply security headers to all HTML files
+  for = "/*.html"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  # Cache static assets
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  # Cache JavaScript files
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Redirect rules for better SEO and user experience
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/curriculum"
+  to = "/"
+  status = 301
+
+# Custom 404 page (optional - will fallback to index.html if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rural-geography-curriculum.netlify.app/sitemap.xml
+
+# Allow indexing of all educational content
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+
+# Disallow any potential backup or temporary files
+Disallow: /*.bak
+Disallow: /*.tmp
+Disallow: /*~

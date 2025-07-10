@@ -1,0 +1,21 @@
+# Netlify redirects file
+# Handle routing for the rural geography curriculum site
+
+# Main redirects
+/home /
+/curriculum /
+/simulations /
+
+# Individual simulation shortcuts
+/earth-systems /earth_systems_complete.html
+/migration /global_migration_complete.html
+/oregon-trail /global_migration_oregon_trail_level.html
+/nation-builder /nation_builder_complete.html
+/trade /global_trade_complete.html
+/amazon /amazon_expedition_complete.html
+/silk-road /silk_road_complete.html
+/saharan /trans_saharan_complete.html
+/teaching-guide /Rural_Geography_Teaching_Sequence_Guide.html
+
+# Fallback for any other routes
+/* /index.html 200
