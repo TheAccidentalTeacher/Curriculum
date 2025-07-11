@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 24: Natural Resources and Energy - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e8f5e8, #fff3e0);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #FF9800);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "⚡";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #4CAF50, #FF9800);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #4CAF50;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .resource-box {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #4CAF50, #FF9800);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 24: Natural Resources and Energy</h1>
+            <p>Exploring Earth's Resources and Energy Systems</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Natural Resources Basics</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: Types of Natural Resources</h3>
+                <p><strong>Objective:</strong> Students will classify natural resources as renewable or nonrenewable.</p>
+                
+                <div class="content-section">
+                    <h4>🏔️ Natural Resource Categories:</h4>
+                    <div class="resource-box">
+                        <strong>Renewable Resources:</strong>
+                        <ul>
+                            <li>Solar energy - energy from the sun</li>
+                            <li>Wind energy - power from moving air</li>
+                            <li>Water - through the water cycle</li>
+                            <li>Forests - trees can be replanted</li>
+                            <li>Fish - can reproduce naturally</li>
+                        </ul>
+                    </div>
+                    <div class="resource-box">
+                        <strong>Nonrenewable Resources:</strong>
+                        <ul>
+                            <li>Oil - formed over millions of years</li>
+                            <li>Coal - ancient plant matter</li>
+                            <li>Natural gas - fossil fuel</li>
+                            <li>Metals - copper, gold, iron</li>
+                            <li>Minerals - diamonds, salt</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>♻️ Activity: Resource Sort</h4>
+                    <p>Create a two-column chart listing 20 natural resources. Sort them into renewable and nonrenewable categories. Explain your reasoning for three difficult choices.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain the difference between renewable and nonrenewable resources. Give three examples of each and explain why they fit in that category.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: Alaska's Natural Resources</h3>
+                <p><strong>Objective:</strong> Students will identify Alaska's major natural resources and their uses.</p>
+                
+                <div class="content-section">
+                    <h4>🏔️ Alaska's Resource Wealth:</h4>
+                    <ul>
+                        <li><strong>Oil:</strong> North Slope, Trans-Alaska Pipeline</li>
+                        <li><strong>Natural Gas:</strong> Cook Inlet, North Slope</li>
+                        <li><strong>Minerals:</strong> Gold, zinc, lead, coal</li>
+                        <li><strong>Forests:</strong> Tongass and Chugach National Forests</li>
+                        <li><strong>Fish:</strong> Salmon, halibut, crab</li>
+                        <li><strong>Tourism:</strong> Natural beauty as a resource</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Alaska Resource Map</h4>
+                    <p>Create a map of Alaska showing the locations of major natural resources. Use symbols for oil, gas, minerals, forests, and fishing areas. Include the Trans-Alaska Pipeline.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>List five of Alaska's major natural resources and explain how each one benefits Alaska's economy and people.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Energy Sources</h3>
+                <p><strong>Objective:</strong> Students will compare different energy sources and their environmental impacts.</p>
+                
+                <div class="content-section">
+                    <h4>⚡ Energy Sources:</h4>
+                    <ul>
+                        <li><strong>Fossil Fuels:</strong> Coal, oil, natural gas - burned for energy</li>
+                        <li><strong>Solar Power:</strong> Energy from sunlight using solar panels</li>
+                        <li><strong>Wind Power:</strong> Wind turbines generate electricity</li>
+                        <li><strong>Hydroelectric:</strong> Water flowing through dams creates power</li>
+                        <li><strong>Geothermal:</strong> Heat from inside the Earth</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔋 Activity: Energy Source Comparison</h4>
+                    <p>Create a chart comparing five energy sources. Include pros and cons for each, plus whether they work well in Alaska's climate and geography.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Choose two energy sources that would work well in Alaska and explain why they are good choices for Alaska's environment and needs.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Conservation and Sustainability</h3>
+                <p><strong>Objective:</strong> Students will identify ways to conserve natural resources and energy.</p>
+                
+                <div class="content-section">
+                    <h4>🌱 Conservation Strategies:</h4>
+                    <ul>
+                        <li><strong>Reduce:</strong> Use less of a resource</li>
+                        <li><strong>Reuse:</strong> Find new ways to use items</li>
+                        <li><strong>Recycle:</strong> Process materials to make new products</li>
+                        <li><strong>Energy Conservation:</strong> Turn off lights, unplug devices</li>
+                        <li><strong>Water Conservation:</strong> Fix leaks, take shorter showers</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🏠 Activity: Home Energy Audit</h4>
+                    <p>Conduct an energy audit of your home. List 10 ways your family could save energy and estimate how much energy each action would save.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Conservation Action Plan</h4>
+                    <p>Create a personal conservation plan with specific actions you will take to save natural resources and energy. Track your progress for one week.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Resource Distribution and Management</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Global Resource Distribution</h3>
+                <p><strong>Objective:</strong> Students will analyze patterns of natural resource distribution worldwide.</p>
+                
+                <div class="content-section">
+                    <h4>🌍 Resource Distribution Patterns:</h4>
+                    <ul>
+                        <li><strong>Uneven Distribution:</strong> Resources are not equally spread across Earth</li>
+                        <li><strong>Geological Factors:</strong> Rock type, age, tectonic activity affect resources</li>
+                        <li><strong>Climate Influence:</strong> Temperature and precipitation affect renewable resources</li>
+                        <li><strong>Economic Implications:</strong> Resource-rich vs. resource-poor countries</li>
+                        <li><strong>Trade Dependencies:</strong> Countries import what they lack</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Resource Wealth Analysis</h4>
+                    <p>Research and compare the natural resource wealth of five different countries. Create graphs showing their major resources and discuss how this affects their economies and international relationships.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why natural resources are distributed unevenly around the world. Give specific examples of how this affects international trade.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Resource Extraction and Processing</h3>
+                <p><strong>Objective:</strong> Students will examine methods of resource extraction and their environmental impacts.</p>
+                
+                <div class="content-section">
+                    <h4>⛏️ Extraction Methods:</h4>
+                    <ul>
+                        <li><strong>Mining:</strong> Surface mining, underground mining, mountaintop removal</li>
+                        <li><strong>Oil/Gas Drilling:</strong> Wells, offshore platforms, hydraulic fracturing</li>
+                        <li><strong>Forestry:</strong> Clear-cutting, selective harvesting, sustainable practices</li>
+                        <li><strong>Fishing:</strong> Commercial fishing, aquaculture, overfishing concerns</li>
+                        <li><strong>Environmental Costs:</strong> Habitat destruction, pollution, climate impacts</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>⚖️ Activity: Extraction Impact Assessment</h4>
+                    <p>Choose one resource extraction method and create a detailed analysis of its environmental, economic, and social impacts. Include both benefits and costs to communities and ecosystems.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare two different methods of extracting the same resource (e.g., surface vs. underground mining). Discuss the trade-offs between environmental impact and economic efficiency.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Energy Systems and Infrastructure</h3>
+                <p><strong>Objective:</strong> Students will analyze energy systems and the infrastructure needed to deliver energy.</p>
+                
+                <div class="content-section">
+                    <h4>🔌 Energy Infrastructure:</h4>
+                    <ul>
+                        <li><strong>Power Generation:</strong> Power plants, wind farms, solar installations</li>
+                        <li><strong>Transmission:</strong> High-voltage power lines, transformers</li>
+                        <li><strong>Distribution:</strong> Local power grids, substations</li>
+                        <li><strong>Storage:</strong> Batteries, pumped hydro, compressed air</li>
+                        <li><strong>Alaska Challenges:</strong> Remote communities, harsh weather, long distances</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🏗️ Activity: Design a Microgrid</h4>
+                    <p>Design an energy system for a remote Alaskan village. Consider local resources, seasonal variations, storage needs, and backup systems. Present your design with diagrams and justifications.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain the challenges of providing reliable energy to remote Alaskan communities and propose three solutions to improve energy security.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Resource Economics and Trade</h3>
+                <p><strong>Objective:</strong> Students will examine how natural resources affect economic development and international trade.</p>
+                
+                <div class="content-section">
+                    <h4>💰 Resource Economics:</h4>
+                    <ul>
+                        <li><strong>Resource Curse:</strong> How resource wealth can sometimes hinder development</li>
+                        <li><strong>Price Volatility:</strong> Commodity prices fluctuate dramatically</li>
+                        <li><strong>Economic Diversification:</strong> Reducing dependence on single resources</li>
+                        <li><strong>Value-Added Processing:</strong> Processing raw materials domestically</li>
+                        <li><strong>Sustainable Development:</strong> Balancing extraction with long-term prosperity</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📈 Activity: Alaska Resource Economy Timeline</h4>
+                    <p>Create a timeline showing how different natural resources have shaped Alaska's economy from statehood to present. Include boom and bust cycles, and analyze current economic diversification efforts.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Resource Management Policy</h4>
+                    <p>Write a policy proposal for sustainable resource management in Alaska. Address economic benefits, environmental protection, and community impacts. Support your recommendations with data and examples.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Sustainable Resource Systems</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Circular Economy and Resource Efficiency</h3>
+                <p><strong>Objective:</strong> Students will analyze circular economy models and resource efficiency strategies.</p>
+                
+                <div class="content-section">
+                    <h4>♻️ Circular Economy Principles:</h4>
+                    <ul>
+                        <li><strong>Design for Durability:</strong> Products last longer, need fewer resources</li>
+                        <li><strong>Waste as Input:</strong> One process's waste becomes another's input</li>
+                        <li><strong>Material Recovery:</strong> Extract maximum value before disposal</li>
+                        <li><strong>Renewable Energy:</strong> Power systems with renewable sources</li>
+                        <li><strong>Ecosystem Services:</strong> Natural systems provide economic value</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔄 Activity: Circular Economy Design Challenge</h4>
+                    <p>Design a circular economy system for a specific industry (e.g., electronics, clothing, food). Map resource flows, identify waste streams that could become inputs, and calculate potential efficiency gains.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare linear "take-make-dispose" models with circular economy approaches. Analyze the benefits and challenges of implementing circular systems.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Renewable Energy Technology and Policy</h3>
+                <p><strong>Objective:</strong> Students will evaluate renewable energy technologies and policies for sustainable development.</p>
+                
+                <div class="content-section">
+                    <h4>🌞 Advanced Renewable Technologies:</h4>
+                    <ul>
+                        <li><strong>Grid Integration:</strong> Smart grids, demand response, storage systems</li>
+                        <li><strong>Efficiency Improvements:</strong> Higher conversion rates, lower costs</li>
+                        <li><strong>Emerging Technologies:</strong> Wave power, biomass, hydrogen fuel cells</li>
+                        <li><strong>Policy Mechanisms:</strong> Feed-in tariffs, renewable portfolio standards</li>
+                        <li><strong>Alaska Applications:</strong> Remote power, seasonal storage, hybrid systems</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: Renewable Energy Policy Analysis</h4>
+                    <p>Research renewable energy policies in three different countries or states. Analyze their effectiveness, costs, and applicability to Alaska. Present recommendations for Alaska's renewable energy future.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Evaluate the potential for different renewable energy sources in Alaska, considering technical feasibility, economic viability, and policy support needed.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Resource Conflicts and Cooperation</h3>
+                <p><strong>Objective:</strong> Students will analyze how natural resources can lead to conflicts or cooperation between groups.</p>
+                
+                <div class="content-section">
+                    <h4>⚔️ Resource-Related Conflicts:</h4>
+                    <ul>
+                        <li><strong>Water Disputes:</strong> Rivers, aquifers crossing political boundaries</li>
+                        <li><strong>Energy Security:</strong> Dependence on imports, pipeline disputes</li>
+                        <li><strong>Mining Rights:</strong> Indigenous rights, environmental protection</li>
+                        <li><strong>Arctic Resources:</strong> Climate change opening new extraction opportunities</li>
+                        <li><strong>Cooperation Models:</strong> International agreements, resource sharing</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🤝 Activity: Resource Diplomacy Simulation</h4>
+                    <p>Participate in a simulation negotiating Arctic resource development agreements. Represent different stakeholders (countries, indigenous groups, environmental organizations, corporations) and work toward mutually beneficial solutions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze a current resource conflict and propose mechanisms for peaceful resolution. Consider the interests of all stakeholders and potential win-win solutions.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Future Resource Challenges and Innovations</h3>
+                <p><strong>Objective:</strong> Students will project future resource challenges and evaluate innovative solutions.</p>
+                
+                <div class="content-section">
+                    <h4>🚀 Future Challenges and Innovations:</h4>
+                    <ul>
+                        <li><strong>Population Growth:</strong> Increasing demand for resources</li>
+                        <li><strong>Climate Adaptation:</strong> Changing resource availability and needs</li>
+                        <li><strong>Technological Solutions:</strong> Artificial photosynthesis, carbon capture</li>
+                        <li><strong>Space Resources:</strong> Asteroid mining, lunar energy systems</li>
+                        <li><strong>Biotechnology:</strong> Engineered organisms for resource production</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔮 Activity: Future Scenario Planning</h4>
+                    <p>Develop three scenarios for Alaska's resource future in 2060: business as usual, rapid renewable transition, and breakthrough technology. Analyze implications for economy, environment, and society.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Innovation Proposal</h4>
+                    <p>Design an innovative solution to a specific resource challenge facing Alaska. Include technical specifications, implementation timeline, cost-benefit analysis, and stakeholder engagement strategy. Present as a formal proposal to potential investors or policymakers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit23.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit25.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

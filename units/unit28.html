@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 28: Global Health Geography - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #e17055, #00b894);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "🏥";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #e17055, #00b894);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #e17055;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .health-fact {
+            background: #e8f8f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #00b894;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #e17055, #00b894);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 28: Global Health Geography</h1>
+            <p>Understanding Health Patterns and Medical Geography</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Health Around the World</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: What is Health Geography?</h3>
+                <p><strong>Objective:</strong> Students will understand how geography affects health and wellness.</p>
+                
+                <div class="content-section">
+                    <h4>🌍 Geography and Health:</h4>
+                    <ul>
+                        <li><strong>Health Geography:</strong> How place affects health and disease</li>
+                        <li><strong>Environmental Health:</strong> Clean air, water, and food safety</li>
+                        <li><strong>Access to Healthcare:</strong> Hospitals, doctors, and medical services</li>
+                        <li><strong>Climate and Health:</strong> How weather affects illness and wellness</li>
+                        <li><strong>Lifestyle Geography:</strong> Exercise, diet, and healthy living</li>
+                    </ul>
+                    
+                    <div class="health-fact">
+                        <strong>Alaska Health Facts:</strong>
+                        <ul>
+                            <li>Remote communities face challenges accessing healthcare</li>
+                            <li>Cold weather affects respiratory health</li>
+                            <li>Traditional foods like fish and berries are very healthy</li>
+                            <li>Outdoor activities promote physical fitness</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>🏃‍♀️ Activity: Healthy Community Map</h4>
+                    <p>Create a map of your community showing healthy features: parks, walking trails, healthcare facilities, clean water sources, and healthy food stores. Identify areas that promote wellness.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain three ways that geography affects health. Give examples from your own community or Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: Clean Water and Sanitation</h3>
+                <p><strong>Objective:</strong> Students will understand the importance of clean water for health.</p>
+                
+                <div class="content-section">
+                    <h4>💧 Water and Health:</h4>
+                    <ul>
+                        <li><strong>Clean Drinking Water:</strong> Prevents waterborne diseases</li>
+                        <li><strong>Water Treatment:</strong> How communities make water safe</li>
+                        <li><strong>Sanitation:</strong> Proper waste disposal and sewage treatment</li>
+                        <li><strong>Water Scarcity:</strong> Some places don't have enough clean water</li>
+                        <li><strong>Water Quality:</strong> Testing and monitoring water safety</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔬 Activity: Water Quality Investigation</h4>
+                    <p>Research your community's water source and treatment process. Create a poster showing how water gets from source to tap, including safety measures to protect public health.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe the journey of water from source to your home. Why is each step important for health?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Food and Nutrition Geography</h3>
+                <p><strong>Objective:</strong> Students will explore how geography affects food access and nutrition.</p>
+                
+                <div class="content-section">
+                    <h4>🥕 Food Geography:</h4>
+                    <ul>
+                        <li><strong>Food Deserts:</strong> Areas with limited access to healthy food</li>
+                        <li><strong>Local Food Systems:</strong> Growing and eating food locally</li>
+                        <li><strong>Traditional Foods:</strong> Indigenous food knowledge and practices</li>
+                        <li><strong>Food Transportation:</strong> How food travels to remote areas</li>
+                        <li><strong>Climate and Agriculture:</strong> What grows where and why</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Food Source Mapping</h4>
+                    <p>Track where different foods in your school lunch come from. Create a map showing the origins of various foods and discuss the challenges of getting fresh food to Alaska communities.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why it might be harder to get fresh fruits and vegetables in remote Alaska communities. What are some solutions?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Healthcare Access</h3>
+                <p><strong>Objective:</strong> Students will understand how location affects access to medical care.</p>
+                
+                <div class="content-section">
+                    <h4>🏥 Healthcare Geography:</h4>
+                    <ul>
+                        <li><strong>Medical Facilities:</strong> Hospitals, clinics, and health centers</li>
+                        <li><strong>Healthcare Workers:</strong> Doctors, nurses, and specialists</li>
+                        <li><strong>Transportation to Care:</strong> How people reach medical services</li>
+                        <li><strong>Emergency Services:</strong> Ambulances and medical evacuation</li>
+                        <li><strong>Telemedicine:</strong> Using technology for remote healthcare</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📱 Activity: Healthcare Access Survey</h4>
+                    <p>Interview family or community members about accessing healthcare in your area. Create a chart showing challenges and solutions for getting medical care in Alaska.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Community Health Plan</h4>
+                    <p>Design a plan to improve health in your community. Include ideas for better access to healthcare, healthy food, clean water, and exercise opportunities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Disease Patterns and Health Systems</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Disease Distribution and Mapping</h3>
+                <p><strong>Objective:</strong> Students will analyze how diseases spread geographically.</p>
+                
+                <div class="content-section">
+                    <h4>🦠 Disease Geography:</h4>
+                    <ul>
+                        <li><strong>Disease Mapping:</strong> Tracking illness patterns across space</li>
+                        <li><strong>Endemic Diseases:</strong> Diseases that regularly occur in certain areas</li>
+                        <li><strong>Epidemic Patterns:</strong> Rapid spread of disease in populations</li>
+                        <li><strong>Environmental Disease Factors:</strong> Climate, pollution, vectors</li>
+                        <li><strong>Social Determinants:</strong> Poverty, education, housing affect health</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Disease Pattern Analysis</h4>
+                    <p>Research a specific disease and create maps showing its global distribution. Analyze environmental and social factors that influence where the disease is most common. Include prevention strategies.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why malaria is common in tropical areas but not in Alaska. What geographic factors prevent or promote disease transmission?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Environmental Health Hazards</h3>
+                <p><strong>Objective:</strong> Students will identify environmental factors that affect human health.</p>
+                
+                <div class="content-section">
+                    <h4>☠️ Environmental Health Risks:</h4>
+                    <ul>
+                        <li><strong>Air Pollution:</strong> Smog, particulates, industrial emissions</li>
+                        <li><strong>Water Contamination:</strong> Chemical runoff, sewage, industrial waste</li>
+                        <li><strong>Soil Pollution:</strong> Heavy metals, pesticides, landfills</li>
+                        <li><strong>Climate Health Impacts:</strong> Heat waves, extreme weather, vector-borne diseases</li>
+                        <li><strong>Alaska-Specific Hazards:</strong> Permafrost thaw, mining impacts, isolation</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔍 Activity: Environmental Health Assessment</h4>
+                    <p>Conduct an environmental health assessment of your community. Identify potential hazards and positive health factors. Propose solutions for environmental health improvements.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare environmental health challenges in urban and rural Alaska communities. What unique factors does Alaska's environment present?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Global Health Disparities</h3>
+                <p><strong>Objective:</strong> Students will examine health inequalities between different regions and populations.</p>
+                
+                <div class="content-section">
+                    <h4>⚖️ Health Inequalities:</h4>
+                    <ul>
+                        <li><strong>Developed vs. Developing Countries:</strong> Differences in health outcomes</li>
+                        <li><strong>Rural vs. Urban Health:</strong> Access and outcome disparities</li>
+                        <li><strong>Economic Factors:</strong> Income affects health access and outcomes</li>
+                        <li><strong>Cultural Health Practices:</strong> Traditional medicine and modern healthcare</li>
+                        <li><strong>Alaska Native Health:</strong> Addressing historical health disparities</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📈 Activity: Health Indicator Comparison</h4>
+                    <p>Compare health indicators (life expectancy, infant mortality, disease rates) between different countries and regions. Analyze factors that contribute to health disparities and propose solutions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain three factors that contribute to health disparities between different populations. Give specific examples from Alaska or globally.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Healthcare Systems Around the World</h3>
+                <p><strong>Objective:</strong> Students will compare different healthcare delivery systems.</p>
+                
+                <div class="content-section">
+                    <h4>🏥 Healthcare System Models:</h4>
+                    <ul>
+                        <li><strong>Public Healthcare Systems:</strong> Government-funded universal care</li>
+                        <li><strong>Private Healthcare Systems:</strong> Market-based healthcare delivery</li>
+                        <li><strong>Mixed Systems:</strong> Combination of public and private care</li>
+                        <li><strong>Traditional Medicine:</strong> Indigenous and alternative healing practices</li>
+                        <li><strong>Alaska Healthcare:</strong> Challenges and innovations in service delivery</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌍 Activity: Healthcare System Analysis</h4>
+                    <p>Research healthcare systems in three different countries. Compare access, quality, cost, and outcomes. Analyze how Alaska's healthcare system addresses unique geographic challenges.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Healthcare Policy Proposal</h4>
+                    <p>Design a healthcare improvement plan for rural Alaska. Address geographic challenges, cultural considerations, and innovative delivery methods. Support recommendations with research and examples.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Advanced Health Geography and Global Challenges</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Epidemiology and Spatial Analysis</h3>
+                <p><strong>Objective:</strong> Students will apply spatial analysis methods to study disease patterns.</p>
+                
+                <div class="content-section">
+                    <h4>🔬 Advanced Disease Analysis:</h4>
+                    <ul>
+                        <li><strong>Spatial Epidemiology:</strong> Statistical analysis of disease patterns</li>
+                        <li><strong>Disease Clusters:</strong> Identifying unusual concentrations of illness</li>
+                        <li><strong>Risk Factor Mapping:</strong> Geographic analysis of disease causes</li>
+                        <li><strong>Predictive Modeling:</strong> Forecasting disease spread and outbreaks</li>
+                        <li><strong>Public Health Surveillance:</strong> Monitoring and response systems</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Epidemiological Investigation</h4>
+                    <p>Conduct a mock epidemiological investigation using real disease data. Use GIS tools to map disease patterns, identify risk factors, and propose public health interventions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how spatial analysis helps public health officials respond to disease outbreaks. Give examples of how this applies to Alaska's unique geography.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Climate Change and Health</h3>
+                <p><strong>Objective:</strong> Students will analyze the health impacts of climate change.</p>
+                
+                <div class="content-section">
+                    <h4>🌡️ Climate-Health Connections:</h4>
+                    <ul>
+                        <li><strong>Direct Health Effects:</strong> Heat stress, extreme weather injuries</li>
+                        <li><strong>Indirect Effects:</strong> Vector-borne diseases, food security, water quality</li>
+                        <li><strong>Vulnerable Populations:</strong> Children, elderly, indigenous communities</li>
+                        <li><strong>Arctic Health Impacts:</strong> Permafrost thaw, changing disease patterns</li>
+                        <li><strong>Adaptation Strategies:</strong> Public health preparedness and response</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔥 Activity: Climate Health Impact Assessment</h4>
+                    <p>Assess potential health impacts of climate change on Alaska communities. Develop adaptation strategies for specific health risks including infrastructure, emergency preparedness, and community resilience.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze how climate change specifically affects health in Alaska. What adaptation measures should communities implement to protect public health?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Global Health Governance and Policy</h3>
+                <p><strong>Objective:</strong> Students will examine global health institutions and policy frameworks.</p>
+                
+                <div class="content-section">
+                    <h4>🏛️ Global Health Governance:</h4>
+                    <ul>
+                        <li><strong>World Health Organization:</strong> International health leadership and coordination</li>
+                        <li><strong>Health Security:</strong> Preparing for and responding to health emergencies</li>
+                        <li><strong>International Health Regulations:</strong> Global disease surveillance and response</li>
+                        <li><strong>Health Diplomacy:</strong> Foreign policy and international health cooperation</li>
+                        <li><strong>Alaska's Role:</strong> International cooperation in Arctic health issues</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🤝 Activity: Global Health Policy Simulation</h4>
+                    <p>Participate in a simulation addressing a global health crisis. Represent different countries and organizations working to coordinate international response, including Alaska's role in Arctic health cooperation.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Evaluate the effectiveness of international cooperation in addressing global health challenges. How can Alaska contribute to global health security?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Future of Health Geography</h3>
+                <p><strong>Objective:</strong> Students will explore emerging trends and innovations in health geography.</p>
+                
+                <div class="content-section">
+                    <h4>🚀 Emerging Health Technologies:</h4>
+                    <ul>
+                        <li><strong>Digital Health:</strong> Telemedicine, health apps, remote monitoring</li>
+                        <li><strong>Precision Medicine:</strong> Personalized treatment based on genetics and environment</li>
+                        <li><strong>Environmental Genomics:</strong> How environment affects gene expression</li>
+                        <li><strong>AI in Health Geography:</strong> Machine learning for disease prediction</li>
+                        <li><strong>One Health Approach:</strong> Integrating human, animal, and environmental health</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>💡 Activity: Future Health Innovation Design</h4>
+                    <p>Design an innovative health solution for a specific Alaska challenge using emerging technologies. Consider telemedicine, environmental monitoring, or community health innovations adapted to Alaska's unique conditions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Health Geography Research Project</h4>
+                    <p>Conduct comprehensive research on a specific health geography topic relevant to Alaska. Include spatial analysis, policy recommendations, and innovative solutions. Present findings as a professional report with data visualizations and implementation strategies.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit27.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit29.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

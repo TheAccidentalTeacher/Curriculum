@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 30: Geopolitics and International Relations - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "🌏";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .geopolitics-example {
+            background: #fff0f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #d63384;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 30: Geopolitics and International Relations</h1>
+            <p>Understanding Global Power, Politics, and Cooperation</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Countries and Cooperation</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: What is a Country?</h3>
+                <p><strong>Objective:</strong> Students will understand what makes a country and how countries are organized.</p>
+                
+                <div class="content-section">
+                    <h4>🏛️ Elements of a Country:</h4>
+                    <ul>
+                        <li><strong>Territory:</strong> A defined area of land with borders</li>
+                        <li><strong>Government:</strong> Leaders who make laws and decisions</li>
+                        <li><strong>People:</strong> Citizens who live in the country</li>
+                        <li><strong>Sovereignty:</strong> The right to govern itself</li>
+                        <li><strong>Recognition:</strong> Other countries accept it as a country</li>
+                        <li><strong>Symbols:</strong> Flag, anthem, and national identity</li>
+                    </ul>
+                    
+                    <div class="geopolitics-example">
+                        <strong>Alaska's Status:</strong>
+                        <ul>
+                            <li>Alaska is a state within the United States</li>
+                            <li>Has its own state government but follows federal laws</li>
+                            <li>Became the 49th state in 1959</li>
+                            <li>Strategic location near Russia and Canada</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Country Fact Cards</h4>
+                    <p>Create fact cards for five different countries, including the United States. Include territory size, population, government type, capital city, and one interesting fact about each country.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>List the five elements that make something a country. Explain why Alaska is a state rather than a separate country.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: Borders and Neighbors</h3>
+                <p><strong>Objective:</strong> Students will understand how countries interact with their neighbors.</p>
+                
+                <div class="content-section">
+                    <h4>🌐 International Borders:</h4>
+                    <ul>
+                        <li><strong>Physical Borders:</strong> Rivers, mountains, and oceans that separate countries</li>
+                        <li><strong>Political Borders:</strong> Lines drawn on maps to show where countries begin and end</li>
+                        <li><strong>Border Crossings:</strong> Places where people can travel between countries</li>
+                        <li><strong>Trade:</strong> Countries buy and sell goods with neighbors</li>
+                        <li><strong>Cooperation:</strong> Countries work together on shared problems</li>
+                        <li><strong>Disputes:</strong> Sometimes countries disagree about borders</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Alaska's Neighbors</h4>
+                    <p>Create a map showing Alaska's neighbors (Canada and Russia across the Bering Strait). Research how Alaska interacts with these neighbors through trade, cooperation, and shared challenges.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe Alaska's relationship with Canada and Russia. Give examples of cooperation and any challenges between these neighbors.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: International Organizations</h3>
+                <p><strong>Objective:</strong> Students will learn about organizations that help countries work together.</p>
+                
+                <div class="content-section">
+                    <h4>🤝 Global Cooperation:</h4>
+                    <ul>
+                        <li><strong>United Nations:</strong> Countries work together for peace and solving problems</li>
+                        <li><strong>UNICEF:</strong> Helps children around the world</li>
+                        <li><strong>World Health Organization:</strong> Works to keep people healthy globally</li>
+                        <li><strong>Olympics:</strong> Countries compete peacefully in sports</li>
+                        <li><strong>Trade Organizations:</strong> Help countries buy and sell fairly</li>
+                        <li><strong>Environmental Groups:</strong> Countries work together to protect Earth</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: UN Country Simulation</h4>
+                    <p>Participate in a mock United Nations meeting where each student represents a different country. Discuss a global issue and try to find solutions that all countries can agree on.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why countries form international organizations. Give three examples of how these organizations help solve global problems.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Alaska in the World</h3>
+                <p><strong>Objective:</strong> Students will understand Alaska's role in international relations.</p>
+                
+                <div class="content-section">
+                    <h4>🌎 Alaska's Global Connections:</h4>
+                    <ul>
+                        <li><strong>Strategic Location:</strong> Between North America and Asia</li>
+                        <li><strong>Military Importance:</strong> Air bases and defense systems</li>
+                        <li><strong>Arctic Cooperation:</strong> Working with other Arctic countries</li>
+                        <li><strong>Resource Trade:</strong> Oil, fish, and minerals sold worldwide</li>
+                        <li><strong>Environmental Leadership:</strong> Studying climate change effects</li>
+                        <li><strong>Cultural Exchange:</strong> Sharing Alaska Native cultures globally</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌐 Activity: Alaska's Global Role</h4>
+                    <p>Create a presentation showing how Alaska connects to the world. Include examples of trade, cooperation, military importance, and environmental research. Use maps and images to illustrate Alaska's global significance.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Alaska Diplomacy Project</h4>
+                    <p>Design a plan for Alaska to cooperate with another Arctic country on a shared challenge (climate change, wildlife protection, or cultural preservation). Explain your ideas and how both places would benefit.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Power, Alliances, and Global Issues</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Types of Power in International Relations</h3>
+                <p><strong>Objective:</strong> Students will analyze different forms of power that countries use in international relations.</p>
+                
+                <div class="content-section">
+                    <h4>💪 Forms of National Power:</h4>
+                    <ul>
+                        <li><strong>Military Power:</strong> Armed forces, weapons, defense capabilities</li>
+                        <li><strong>Economic Power:</strong> Wealth, trade influence, financial resources</li>
+                        <li><strong>Soft Power:</strong> Culture, values, attraction and persuasion</li>
+                        <li><strong>Geographic Power:</strong> Strategic location, natural resources, size</li>
+                        <li><strong>Technological Power:</strong> Innovation, scientific advancement, digital capabilities</li>
+                        <li><strong>Diplomatic Power:</strong> Alliances, negotiations, international relationships</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>⚖️ Activity: Power Analysis Matrix</h4>
+                    <p>Create a matrix comparing the different types of power held by major countries including the United States. Analyze how Alaska contributes to U.S. power through its strategic location and resources.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how Alaska's geographic location gives the United States strategic advantages. Compare military, economic, and geographic power in international relations.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Alliances and International Agreements</h3>
+                <p><strong>Objective:</strong> Students will examine how countries form alliances and make international agreements.</p>
+                
+                <div class="content-section">
+                    <h4>🤝 International Cooperation:</h4>
+                    <ul>
+                        <li><strong>Military Alliances:</strong> NATO, defense partnerships, security agreements</li>
+                        <li><strong>Economic Alliances:</strong> Trade agreements, economic unions</li>
+                        <li><strong>Environmental Agreements:</strong> Climate treaties, conservation pacts</li>
+                        <li><strong>Arctic Council:</strong> Cooperation among Arctic nations</li>
+                        <li><strong>Bilateral Relations:</strong> Agreements between two countries</li>
+                        <li><strong>Multilateral Relations:</strong> Agreements among many countries</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📜 Activity: Treaty Analysis</h4>
+                    <p>Research an international agreement that affects Alaska (Arctic cooperation, fishing rights, environmental protection). Analyze the benefits and challenges of the agreement for different countries involved.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why countries form alliances and make international agreements. How does the Arctic Council help countries cooperate in Alaska's region?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Global Conflicts and Cooperation</h3>
+                <p><strong>Objective:</strong> Students will analyze causes of international conflicts and methods for peaceful resolution.</p>
+                
+                <div class="content-section">
+                    <h4>⚔️ Conflict and Resolution:</h4>
+                    <ul>
+                        <li><strong>Resource Conflicts:</strong> Disputes over oil, water, fishing rights</li>
+                        <li><strong>Territorial Disputes:</strong> Disagreements over borders and sovereignty</li>
+                        <li><strong>Ideological Differences:</strong> Conflicts over political and economic systems</li>
+                        <li><strong>Peacekeeping:</strong> International efforts to prevent and stop conflicts</li>
+                        <li><strong>Diplomacy:</strong> Negotiations and peaceful problem-solving</li>
+                        <li><strong>International Law:</strong> Rules that govern relationships between countries</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🕊️ Activity: Conflict Resolution Simulation</h4>
+                    <p>Participate in a simulation of an Arctic territorial dispute. Represent different countries and work through diplomatic negotiations to find peaceful solutions that respect all parties' interests.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Identify three potential sources of conflict in the Arctic region. Propose diplomatic solutions that could prevent or resolve these conflicts peacefully.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Alaska and Arctic Geopolitics</h3>
+                <p><strong>Objective:</strong> Students will analyze Alaska's role in Arctic geopolitics and international relations.</p>
+                
+                <div class="content-section">
+                    <h4>🧊 Arctic Geopolitics:</h4>
+                    <ul>
+                        <li><strong>Strategic Importance:</strong> Military positioning and early warning systems</li>
+                        <li><strong>Resource Competition:</strong> Oil, gas, and mineral extraction rights</li>
+                        <li><strong>Shipping Routes:</strong> New passages opening due to ice melt</li>
+                        <li><strong>Environmental Cooperation:</strong> Shared responsibility for Arctic protection</li>
+                        <li><strong>Indigenous Rights:</strong> Respecting Native peoples across borders</li>
+                        <li><strong>Climate Diplomacy:</strong> Addressing Arctic climate change impacts</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: Arctic Strategy Development</h4>
+                    <p>Develop a comprehensive Arctic strategy for the United States that considers Alaska's interests. Address security, economics, environment, and indigenous rights in your policy recommendations.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Geopolitical Analysis Report</h4>
+                    <p>Write a detailed report analyzing a current geopolitical issue affecting Alaska and the Arctic. Include historical background, current stakeholder positions, and recommendations for U.S. policy. Support arguments with evidence and maps.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Advanced Geopolitical Analysis</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Geopolitical Theory and Models</h3>
+                <p><strong>Objective:</strong> Students will apply classical geopolitical theories to contemporary international relations.</p>
+                
+                <div class="content-section">
+                    <h4>📚 Geopolitical Theories:</h4>
+                    <ul>
+                        <li><strong>Heartland Theory:</strong> Control of Eurasia's heartland equals world power</li>
+                        <li><strong>Rimland Theory:</strong> Coastal areas are more important than interior regions</li>
+                        <li><strong>Sea Power Theory:</strong> Naval dominance determines global influence</li>
+                        <li><strong>Air Power Theory:</strong> Aviation and space control in modern warfare</li>
+                        <li><strong>Critical Geopolitics:</strong> How power shapes geographic knowledge</li>
+                        <li><strong>Arctic Geopolitics:</strong> Emerging theories for polar regions</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Geopolitical Theory Application</h4>
+                    <p>Apply different geopolitical theories to analyze Alaska's strategic importance. Create maps and arguments showing how various theories explain Alaska's role in U.S. and global power projection.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare how Heartland Theory and Sea Power Theory would evaluate Alaska's geopolitical significance. Which theory better explains Alaska's current strategic value?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Great Power Competition and Rivalry</h3>
+                <p><strong>Objective:</strong> Students will analyze competition between major powers and its effects on global geography.</p>
+                
+                <div class="content-section">
+                    <h4>🌐 Great Power Dynamics:</h4>
+                    <ul>
+                        <li><strong>Multipolar World:</strong> Multiple centers of power competing globally</li>
+                        <li><strong>Sphere of Influence:</strong> Regions dominated by particular powers</li>
+                        <li><strong>Proxy Conflicts:</strong> Competition through smaller states and regions</li>
+                        <li><strong>Economic Competition:</strong> Trade wars, sanctions, and economic influence</li>
+                        <li><strong>Technology Competition:</strong> Race for technological and digital dominance</li>
+                        <li><strong>Arctic Competition:</strong> U.S., Russia, and China in the Arctic</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: Arctic Power Competition Analysis</h4>
+                    <p>Analyze competition between the United States, Russia, and China in the Arctic region. Map their strategies, assess their capabilities, and evaluate implications for Alaska and global stability.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Evaluate how great power competition in the Arctic affects Alaska's security and economic interests. What strategies should the U.S. pursue to maintain its Arctic advantages?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: International Law and Sovereignty</h3>
+                <p><strong>Objective:</strong> Students will examine international legal frameworks and sovereignty challenges.</p>
+                
+                <div class="content-section">
+                    <h4>⚖️ International Legal Framework:</h4>
+                    <ul>
+                        <li><strong>United Nations Charter:</strong> Foundation of international law</li>
+                        <li><strong>Law of the Sea:</strong> Maritime boundaries and rights</li>
+                        <li><strong>Territorial Sovereignty:</strong> Control over land, sea, and airspace</li>
+                        <li><strong>Indigenous Rights:</strong> International protections for native peoples</li>
+                        <li><strong>Environmental Law:</strong> International environmental agreements</li>
+                        <li><strong>Arctic Governance:</strong> Legal frameworks for polar regions</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>⚖️ Activity: International Law Case Study</h4>
+                    <p>Research a specific international law case affecting Arctic regions or Alaska. Analyze legal arguments, examine precedents, and evaluate the case's implications for future Arctic governance.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze how international law affects Alaska's sovereignty and resource rights. What legal challenges might arise as the Arctic becomes more accessible?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Future Geopolitical Scenarios</h3>
+                <p><strong>Objective:</strong> Students will develop and analyze potential future geopolitical scenarios.</p>
+                
+                <div class="content-section">
+                    <h4>🔮 Future Geopolitical Trends:</h4>
+                    <ul>
+                        <li><strong>Climate Geopolitics:</strong> How environmental change reshapes power</li>
+                        <li><strong>Resource Scarcity:</strong> Competition for diminishing resources</li>
+                        <li><strong>Technological Disruption:</strong> How new technologies change power dynamics</li>
+                        <li><strong>Demographic Changes:</strong> Population shifts affecting international relations</li>
+                        <li><strong>Space Geopolitics:</strong> Competition extending beyond Earth</li>
+                        <li><strong>Arctic Transformation:</strong> Ice-free Arctic changing global geography</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌟 Activity: Alaska 2060 Geopolitical Scenarios</h4>
+                    <p>Develop three detailed scenarios for Alaska's geopolitical situation in 2060. Consider climate change, technological advances, demographic shifts, and changing global power structures. Present recommendations for Alaska's strategic positioning.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Strategic Geopolitical Analysis</h4>
+                    <p>Conduct a comprehensive geopolitical analysis of Alaska's future strategic importance. Include current situation assessment, trend analysis, scenario development, and strategic recommendations. Present findings as a professional intelligence briefing with supporting data and visualizations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit29.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit31.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

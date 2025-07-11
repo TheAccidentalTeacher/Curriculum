@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 26: Urban Geography - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f5f5, #e8eaf6);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #607D8B, #9C27B0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "🏙️";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #607D8B, #9C27B0);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #607D8B;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .city-example {
+            background: #f3e5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #9c27b0;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #607D8B, #9C27B0);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 26: Urban Geography</h1>
+            <p>Understanding Cities and Urban Development</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Cities and Towns</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: What Makes a City?</h3>
+                <p><strong>Objective:</strong> Students will identify characteristics that define cities and urban areas.</p>
+                
+                <div class="content-section">
+                    <h4>🏢 Urban Characteristics:</h4>
+                    <ul>
+                        <li><strong>Population Size:</strong> Large number of people living close together</li>
+                        <li><strong>Population Density:</strong> Many people per square mile</li>
+                        <li><strong>Buildings:</strong> Tall buildings, apartments, offices</li>
+                        <li><strong>Services:</strong> Hospitals, schools, police, fire departments</li>
+                        <li><strong>Jobs:</strong> Many different types of work available</li>
+                        <li><strong>Transportation:</strong> Roads, buses, trains to move people</li>
+                    </ul>
+                    
+                    <div class="city-example">
+                        <strong>Alaska Cities:</strong>
+                        <ul>
+                            <li><strong>Anchorage:</strong> Largest city (290,000+ people)</li>
+                            <li><strong>Fairbanks:</strong> Second largest (32,000+ people)</li>
+                            <li><strong>Juneau:</strong> Capital city (32,000+ people)</li>
+                            <li><strong>Ketchikan:</strong> Southeast Alaska (8,000+ people)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>🏙️ Activity: City Feature Hunt</h4>
+                    <p>Take a virtual tour of Anchorage using online maps and photos. Create a list of urban features you can identify: tall buildings, hospitals, schools, parks, shopping centers, transportation systems. Compare with a rural Alaskan community.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>List five features that make Anchorage a city. Explain why these features are important for people living in cities.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: City Functions</h3>
+                <p><strong>Objective:</strong> Students will describe the main functions that cities serve for people.</p>
+                
+                <div class="content-section">
+                    <h4>🎯 What Cities Do:</h4>
+                    <ul>
+                        <li><strong>Places to Live:</strong> Apartments, condos, houses for many people</li>
+                        <li><strong>Places to Work:</strong> Offices, stores, factories, hospitals</li>
+                        <li><strong>Places to Shop:</strong> Stores, malls, markets for goods and services</li>
+                        <li><strong>Places to Learn:</strong> Schools, libraries, museums</li>
+                        <li><strong>Places for Fun:</strong> Parks, theaters, sports stadiums</li>
+                        <li><strong>Transportation Hubs:</strong> Airports, train stations, bus terminals</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: City Function Map</h4>
+                    <p>Create a map of your nearest city showing different functional areas. Use colors to show residential (homes), commercial (stores), industrial (factories), and recreational (parks) areas. Include major transportation routes.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain three main functions of cities and give an example of each function from an Alaskan city.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Urban vs. Rural Life</h3>
+                <p><strong>Objective:</strong> Students will compare and contrast urban and rural ways of life.</p>
+                
+                <div class="content-section">
+                    <h4>🏙️🏞️ Urban vs. Rural Comparison:</h4>
+                    <ul>
+                        <li><strong>Population:</strong> Cities have many people close together, rural areas have fewer people spread out</li>
+                        <li><strong>Buildings:</strong> Cities have tall buildings, rural areas have shorter, spread-out buildings</li>
+                        <li><strong>Transportation:</strong> Cities have public transportation, rural areas rely more on personal vehicles</li>
+                        <li><strong>Nature:</strong> Rural areas have more open space and wildlife</li>
+                        <li><strong>Jobs:</strong> Cities have diverse jobs, rural areas often focus on natural resources</li>
+                        <li><strong>Services:</strong> Cities have more services nearby, rural areas may travel farther for services</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Urban vs. Rural Survey</h4>
+                    <p>Create a survey comparing urban and rural life in Alaska. Interview people who have lived in both settings. Ask about advantages and disadvantages of each lifestyle. Present your findings in a chart.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>List three advantages of urban life and three advantages of rural life in Alaska. Which would you prefer and why?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: City Problems and Solutions</h3>
+                <p><strong>Objective:</strong> Students will identify common urban problems and propose solutions.</p>
+                
+                <div class="content-section">
+                    <h4>⚠️ Urban Challenges:</h4>
+                    <ul>
+                        <li><strong>Traffic:</strong> Too many cars cause congestion and pollution</li>
+                        <li><strong>Housing:</strong> Finding affordable places to live</li>
+                        <li><strong>Pollution:</strong> Air, water, and noise pollution from many people</li>
+                        <li><strong>Crime:</strong> More people can mean more crime</li>
+                        <li><strong>Crowding:</strong> Not enough space for everyone</li>
+                        <li><strong>Infrastructure:</strong> Maintaining roads, water systems, electricity</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🛠️ Activity: City Problem Solvers</h4>
+                    <p>Choose one urban problem affecting Alaskan cities. Research how the city is currently addressing this problem. Propose three additional solutions and explain how they would help. Present your ideas as a city council proposal.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: My Ideal City</h4>
+                    <p>Design your ideal city for Alaska. Draw a simple map showing how you would organize different areas to avoid common urban problems. Write a paragraph explaining your design choices.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Urban Systems and Development</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Urban Hierarchy and Central Place Theory</h3>
+                <p><strong>Objective:</strong> Students will analyze urban hierarchy and understand central place theory.</p>
+                
+                <div class="content-section">
+                    <h4>🏗️ Urban Hierarchy:</h4>
+                    <ul>
+                        <li><strong>Megacities:</strong> Over 10 million people (New York, Tokyo, Mumbai)</li>
+                        <li><strong>Metropolitan Areas:</strong> 1-10 million people (Anchorage metro area)</li>
+                        <li><strong>Cities:</strong> 100,000-1 million people</li>
+                        <li><strong>Towns:</strong> 10,000-100,000 people (Fairbanks, Juneau)</li>
+                        <li><strong>Villages:</strong> Under 10,000 people (Bethel, Nome)</li>
+                        <li><strong>Central Place Theory:</strong> Larger places provide more services and have larger market areas</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Alaska Urban Hierarchy</h4>
+                    <p>Research population data for Alaska's largest settlements. Create a hierarchy diagram showing the relationship between settlement size and services offered. Analyze how distance affects the service areas of different-sized places.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why Anchorage serves a larger market area than Nome. How does central place theory apply to Alaska's unique geography?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Urban Land Use Models</h3>
+                <p><strong>Objective:</strong> Students will examine different models of urban land use patterns.</p>
+                
+                <div class="content-section">
+                    <h4>🎯 Urban Land Use Models:</h4>
+                    <ul>
+                        <li><strong>Concentric Zone Model:</strong> Rings of different land uses around city center</li>
+                        <li><strong>Sector Model:</strong> Pie-shaped wedges of similar land use</li>
+                        <li><strong>Multiple Nuclei Model:</strong> Several centers of activity in one city</li>
+                        <li><strong>Land Use Types:</strong> Residential, commercial, industrial, recreational, institutional</li>
+                        <li><strong>Alaska Adaptations:</strong> How harsh climate and geography affect urban patterns</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Anchorage Land Use Analysis</h4>
+                    <p>Create a detailed land use map of Anchorage. Identify patterns and determine which urban model best explains Anchorage's layout. Consider how Alaska-specific factors influence the city's spatial organization.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare how the concentric zone model and sector model would apply to an Alaskan city. Which factors unique to Alaska might alter these patterns?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Urbanization Processes</h3>
+                <p><strong>Objective:</strong> Students will analyze the causes and effects of urbanization.</p>
+                
+                <div class="content-section">
+                    <h4>🏙️ Urbanization Factors:</h4>
+                    <ul>
+                        <li><strong>Economic Opportunities:</strong> Jobs in manufacturing, services, technology</li>
+                        <li><strong>Rural Push Factors:</strong> Limited opportunities, mechanization of agriculture</li>
+                        <li><strong>Urban Pull Factors:</strong> Better services, education, healthcare</li>
+                        <li><strong>Natural Increase:</strong> Higher birth rates than death rates in cities</li>
+                        <li><strong>Government Policies:</strong> Investment in urban infrastructure and industries</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📈 Activity: Alaska Urbanization Timeline</h4>
+                    <p>Create a timeline showing Alaska's urbanization from the gold rush to present. Identify key events that caused urban growth and analyze how urbanization patterns in Alaska differ from other states due to unique geographic and economic factors.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain three factors that have driven urbanization in Alaska. How do these factors compare to urbanization drivers in other parts of the world?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Urban Planning and Sustainability</h3>
+                <p><strong>Objective:</strong> Students will evaluate urban planning approaches and sustainability strategies.</p>
+                
+                <div class="content-section">
+                    <h4>🌱 Sustainable Urban Planning:</h4>
+                    <ul>
+                        <li><strong>Smart Growth:</strong> Compact, walkable, mixed-use development</li>
+                        <li><strong>Green Infrastructure:</strong> Parks, green roofs, urban forests</li>
+                        <li><strong>Public Transportation:</strong> Reducing car dependence and emissions</li>
+                        <li><strong>Energy Efficiency:</strong> Green buildings, renewable energy systems</li>
+                        <li><strong>Waste Management:</strong> Recycling, composting, waste reduction</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🏗️ Activity: Sustainable City Design</h4>
+                    <p>Design a sustainable neighborhood for an Alaskan city. Consider harsh winter conditions, energy needs, transportation challenges, and environmental protection. Present your design with detailed explanations of sustainability features.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Urban Planning Proposal</h4>
+                    <p>Write a comprehensive urban planning proposal for addressing a specific challenge in an Alaskan city (housing, transportation, climate adaptation, etc.). Include research, analysis, and detailed recommendations with implementation timeline.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Global Urban Systems</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: World Cities and Global Networks</h3>
+                <p><strong>Objective:</strong> Students will analyze the role of world cities in global economic networks.</p>
+                
+                <div class="content-section">
+                    <h4>🌐 Global City Hierarchy:</h4>
+                    <ul>
+                        <li><strong>Alpha Cities:</strong> London, New York, Tokyo - global financial centers</li>
+                        <li><strong>Beta Cities:</strong> Los Angeles, Sydney, Toronto - important regional centers</li>
+                        <li><strong>Gamma Cities:</strong> Anchorage, Honolulu - specialized regional roles</li>
+                        <li><strong>Global Functions:</strong> Finance, headquarters, transportation hubs, culture</li>
+                        <li><strong>Network Connections:</strong> Air travel, telecommunications, economic flows</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔗 Activity: Global City Network Analysis</h4>
+                    <p>Research Anchorage's role in global networks. Analyze air traffic patterns, economic connections, and international relations. Create a network diagram showing Anchorage's connections to other cities and explain its specialized functions in the global system.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain Anchorage's unique position in global networks. How do its geographic location and specialized functions contribute to its role as a gateway city?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Megacities and Urban Challenges</h3>
+                <p><strong>Objective:</strong> Students will examine challenges facing the world's largest urban areas.</p>
+                
+                <div class="content-section">
+                    <h4>🏙️ Megacity Challenges:</h4>
+                    <ul>
+                        <li><strong>Infrastructure Strain:</strong> Overwhelmed transportation, utilities, services</li>
+                        <li><strong>Housing Shortages:</strong> Slums, informal settlements, homelessness</li>
+                        <li><strong>Environmental Degradation:</strong> Air pollution, water contamination, waste management</li>
+                        <li><strong>Social Inequality:</strong> Wealth gaps, unequal access to services</li>
+                        <li><strong>Governance:</strong> Managing complex, large-scale urban systems</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Megacity Case Study Comparison</h4>
+                    <p>Compare challenges and solutions in three different megacities from different continents. Analyze how geography, economy, and governance affect urban problems and solutions. Present findings with data visualizations and policy recommendations.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze why rapid urbanization can create more problems in developing countries than in developed countries. What lessons can smaller cities like Anchorage learn from megacity experiences?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Urban Economics and Innovation</h3>
+                <p><strong>Objective:</strong> Students will analyze how cities drive economic growth and innovation.</p>
+                
+                <div class="content-section">
+                    <h4>💼 Urban Economic Functions:</h4>
+                    <ul>
+                        <li><strong>Agglomeration Benefits:</strong> Businesses benefit from clustering together</li>
+                        <li><strong>Knowledge Spillovers:</strong> Innovation spreads through urban networks</li>
+                        <li><strong>Specialized Districts:</strong> Financial districts, tech clusters, creative quarters</li>
+                        <li><strong>Urban Productivity:</strong> Cities generate disproportionate economic output</li>
+                        <li><strong>Global Competition:</strong> Cities compete for investment and talent</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>💡 Activity: Innovation Ecosystem Analysis</h4>
+                    <p>Research how Alaska's cities foster innovation and economic development. Analyze the relationship between universities, businesses, government, and research institutions. Propose strategies for strengthening Alaska's urban innovation ecosystems.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how agglomeration benefits work in urban areas. Give three examples of how Alaskan cities could leverage these benefits for economic development.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Future Cities and Smart Urban Systems</h3>
+                <p><strong>Objective:</strong> Students will evaluate emerging technologies and concepts for future urban development.</p>
+                
+                <div class="content-section">
+                    <h4>🚀 Future Urban Technologies:</h4>
+                    <ul>
+                        <li><strong>Smart Cities:</strong> IoT sensors, data analytics, automated systems</li>
+                        <li><strong>Autonomous Transportation:</strong> Self-driving vehicles, drone delivery</li>
+                        <li><strong>Vertical Farms:</strong> Urban agriculture in controlled environments</li>
+                        <li><strong>Energy Systems:</strong> Microgrids, renewable integration, storage</li>
+                        <li><strong>Digital Governance:</strong> E-government, citizen participation platforms</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔮 Activity: Alaska Smart City Vision</h4>
+                    <p>Design a comprehensive smart city vision for an Alaskan city in 2050. Consider how emerging technologies could address specific challenges posed by Alaska's climate, geography, and economy. Include detailed implementation strategies and potential obstacles.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Urban Futures Research Project</h4>
+                    <p>Conduct comprehensive research on a specific aspect of future urban development (smart cities, sustainable transportation, urban resilience, etc.). Analyze global trends, emerging technologies, and potential applications to Alaska. Present findings as a professional report with policy recommendations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit25.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit27.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

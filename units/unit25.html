@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 25: Population and Migration - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #E91E63, #2196F3);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "👥";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #E91E63, #2196F3);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #E91E63;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .population-stat {
+            background: #e8eaf6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #3f51b5;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #E91E63, #2196F3);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 25: Population and Migration</h1>
+            <p>Understanding Human Population Patterns and Movement</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Population Basics</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: Understanding Population</h3>
+                <p><strong>Objective:</strong> Students will define population and analyze factors affecting population size.</p>
+                
+                <div class="content-section">
+                    <h4>👨‍👩‍👧‍👦 Population Basics:</h4>
+                    <ul>
+                        <li><strong>Population:</strong> The number of people living in a place</li>
+                        <li><strong>Population Density:</strong> How crowded an area is (people per square mile)</li>
+                        <li><strong>Birth Rate:</strong> Number of babies born each year</li>
+                        <li><strong>Death Rate:</strong> Number of people who die each year</li>
+                        <li><strong>Population Growth:</strong> When births exceed deaths</li>
+                    </ul>
+                    
+                    <div class="population-stat">
+                        <strong>Alaska Population Facts:</strong>
+                        <ul>
+                            <li>Population: About 730,000 people</li>
+                            <li>Largest state by area, 3rd smallest by population</li>
+                            <li>Population density: About 1.3 people per square mile</li>
+                            <li>Most people live in Anchorage area</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Population Comparison</h4>
+                    <p>Compare Alaska's population with three other states. Create a chart showing population size, area, and population density. Discuss why Alaska has such low population density.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain the difference between population size and population density. Why might a small country have higher population density than a large country?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: Where People Live</h3>
+                <p><strong>Objective:</strong> Students will identify factors that influence where people choose to live.</p>
+                
+                <div class="content-section">
+                    <h4>🏘️ Factors Affecting Settlement:</h4>
+                    <ul>
+                        <li><strong>Climate:</strong> Most people prefer moderate temperatures</li>
+                        <li><strong>Water Access:</strong> Rivers, lakes, oceans for drinking and transportation</li>
+                        <li><strong>Jobs:</strong> Employment opportunities attract people</li>
+                        <li><strong>Transportation:</strong> Roads, ports, airports</li>
+                        <li><strong>Natural Resources:</strong> Mining, fishing, agriculture</li>
+                        <li><strong>Safety:</strong> Away from natural disasters and conflict</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Alaska Settlement Patterns</h4>
+                    <p>Create a map of Alaska showing major cities and towns. Research why each location was settled and what factors keep people there today. Include Anchorage, Fairbanks, Juneau, and three smaller communities.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>List five factors that affect where people live. Explain which factors are most important for settlement in Alaska and why.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Why People Move</h3>
+                <p><strong>Objective:</strong> Students will identify reasons why people migrate from one place to another.</p>
+                
+                <div class="content-section">
+                    <h4>✈️ Reasons for Migration:</h4>
+                    <ul>
+                        <li><strong>Better Jobs:</strong> Moving for employment opportunities</li>
+                        <li><strong>Education:</strong> Moving to attend school or college</li>
+                        <li><strong>Family:</strong> Moving to be closer to relatives</li>
+                        <li><strong>Climate:</strong> Moving to a more comfortable climate</li>
+                        <li><strong>Safety:</strong> Escaping war, crime, or natural disasters</li>
+                        <li><strong>Adventure:</strong> Wanting to experience new places</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📋 Activity: Migration Stories</h4>
+                    <p>Interview someone who has moved to Alaska (family member, teacher, community member). Ask why they came to Alaska, what they like about it, and what challenges they faced. Present their story to the class.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe three different reasons why people might move to Alaska. Give specific examples for each reason.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Alaska's Population History</h3>
+                <p><strong>Objective:</strong> Students will trace the history of Alaska's population growth and changes.</p>
+                
+                <div class="content-section">
+                    <h4>📅 Alaska Population Timeline:</h4>
+                    <ul>
+                        <li><strong>Pre-1800s:</strong> Indigenous peoples for thousands of years</li>
+                        <li><strong>1800s:</strong> Russian settlements, fur trading</li>
+                        <li><strong>1896-1910:</strong> Gold Rush brings many people</li>
+                        <li><strong>1942:</strong> Military buildup during World War II</li>
+                        <li><strong>1968:</strong> Oil discovery brings workers</li>
+                        <li><strong>Present:</strong> Diverse population from all 50 states</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📈 Activity: Population Growth Graph</h4>
+                    <p>Create a line graph showing Alaska's population growth from 1890 to present. Mark major events that caused population increases and explain how each event affected population growth.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Population Report</h4>
+                    <p>Write a one-page report explaining how Alaska's population has changed over time. Include at least three major events that brought people to Alaska and describe Alaska's current population.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Migration Patterns and Demographics</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Types of Migration</h3>
+                <p><strong>Objective:</strong> Students will classify different types of migration and analyze their causes.</p>
+                
+                <div class="content-section">
+                    <h4>🚚 Migration Classifications:</h4>
+                    <ul>
+                        <li><strong>Internal Migration:</strong> Moving within the same country</li>
+                        <li><strong>International Migration:</strong> Moving between countries</li>
+                        <li><strong>Voluntary Migration:</strong> Choosing to move for better opportunities</li>
+                        <li><strong>Forced Migration:</strong> Must move due to war, disaster, persecution</li>
+                        <li><strong>Temporary Migration:</strong> Moving for a limited time (seasonal work)</li>
+                        <li><strong>Permanent Migration:</strong> Moving with intention to stay</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗃️ Activity: Migration Case Studies</h4>
+                    <p>Research three different migration examples: one voluntary international, one forced migration, and one internal migration. Analyze the push and pull factors for each case and present findings in a comparison chart.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Categorize each scenario: A family moves from Mexico to Alaska for work opportunities. A person evacuates due to a hurricane. College students move to different states for school.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Push and Pull Factors</h3>
+                <p><strong>Objective:</strong> Students will analyze push and pull factors that influence migration decisions.</p>
+                
+                <div class="content-section">
+                    <h4>⬅️➡️ Push and Pull Factors:</h4>
+                    <ul>
+                        <li><strong>Push Factors (why people leave):</strong>
+                            <ul>
+                                <li>Lack of jobs or low wages</li>
+                                <li>Political persecution or war</li>
+                                <li>Natural disasters</li>
+                                <li>Poor living conditions</li>
+                                <li>Limited educational opportunities</li>
+                            </ul>
+                        </li>
+                        <li><strong>Pull Factors (what attracts people):</strong>
+                            <ul>
+                                <li>Job opportunities and higher wages</li>
+                                <li>Political freedom and safety</li>
+                                <li>Better living conditions</li>
+                                <li>Educational opportunities</li>
+                                <li>Family connections</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>⚖️ Activity: Alaska Migration Analysis</h4>
+                    <p>Create a detailed analysis of push and pull factors for Alaska migration. Survey classmates about why their families came to Alaska and identify common patterns. Present data showing the strongest pull factors for Alaska.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>For a specific migration flow (e.g., people moving to Alaska for oil jobs), identify three push factors from origin areas and three pull factors in Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Demographic Transition</h3>
+                <p><strong>Objective:</strong> Students will examine how birth rates, death rates, and population growth change over time.</p>
+                
+                <div class="content-section">
+                    <h4>📊 Demographic Transition Model:</h4>
+                    <ul>
+                        <li><strong>Stage 1:</strong> High birth rates, high death rates (stable population)</li>
+                        <li><strong>Stage 2:</strong> High birth rates, declining death rates (rapid growth)</li>
+                        <li><strong>Stage 3:</strong> Declining birth rates, low death rates (slowing growth)</li>
+                        <li><strong>Stage 4:</strong> Low birth rates, low death rates (stable population)</li>
+                        <li><strong>Factors:</strong> Healthcare, education, economic development, urbanization</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📈 Activity: Country Comparison</h4>
+                    <p>Research demographic data for four countries in different stages of demographic transition. Create graphs showing birth rates, death rates, and population growth rates. Explain what factors influence each country's stage.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why death rates typically decline before birth rates during demographic transition. Give three factors that influence this pattern.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Alaska's Demographic Characteristics</h3>
+                <p><strong>Objective:</strong> Students will analyze Alaska's unique demographic patterns and their implications.</p>
+                
+                <div class="content-section">
+                    <h4>📋 Alaska Demographics:</h4>
+                    <ul>
+                        <li><strong>Age Structure:</strong> Younger than national average, many working-age adults</li>
+                        <li><strong>Gender Ratio:</strong> More males than females (especially in rural areas)</li>
+                        <li><strong>Ethnic Diversity:</strong> Large Alaska Native population, diverse immigrant groups</li>
+                        <li><strong>Urban vs Rural:</strong> Most live in Anchorage area, scattered rural communities</li>
+                        <li><strong>Mobility:</strong> High in-migration and out-migration rates</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: Demographic Profile Creation</h4>
+                    <p>Create a comprehensive demographic profile of Alaska using census data. Include population pyramids, ethnic composition charts, urban/rural distribution maps, and migration flow diagrams. Compare with national averages.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Policy Implications</h4>
+                    <p>Write a report analyzing how Alaska's demographic characteristics affect policy needs. Consider education, healthcare, housing, and economic development. Propose three specific policy recommendations based on demographic trends.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Global Population Challenges</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Global Population Distribution and Density</h3>
+                <p><strong>Objective:</strong> Students will analyze global patterns of population distribution and their causes.</p>
+                
+                <div class="content-section">
+                    <h4>🌍 Global Population Patterns:</h4>
+                    <ul>
+                        <li><strong>Population Clusters:</strong> East Asia, South Asia, Europe, Eastern North America</li>
+                        <li><strong>Sparse Areas:</strong> Polar regions, deserts, high mountains, dense forests</li>
+                        <li><strong>Carrying Capacity:</strong> Maximum population an environment can sustain</li>
+                        <li><strong>Ecumene:</strong> Permanently inhabited areas of Earth</li>
+                        <li><strong>Physiological Density:</strong> People per unit of arable land</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: Population Density Mapping</h4>
+                    <p>Create a detailed world map showing population density patterns. Analyze correlations between population density and physical geography, climate, economic development, and historical factors. Include statistical analysis and written explanations.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why the Eastern United States has higher population density than Alaska, considering at least four different geographic and economic factors.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Migration Theory and Models</h3>
+                <p><strong>Objective:</strong> Students will apply migration theories and models to analyze population movements.</p>
+                
+                <div class="content-section">
+                    <h4>📐 Migration Models and Theories:</h4>
+                    <ul>
+                        <li><strong>Gravity Model:</strong> Migration influenced by size and distance</li>
+                        <li><strong>Ravenstein's Laws:</strong> Principles governing migration flows</li>
+                        <li><strong>Life Course Migration:</strong> Age-related migration patterns</li>
+                        <li><strong>Chain Migration:</strong> Networks facilitating continued migration</li>
+                        <li><strong>Step Migration:</strong> Gradual movement through hierarchy of places</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔬 Activity: Migration Model Testing</h4>
+                    <p>Test migration theories using Alaska data. Analyze migration flows between Alaska and other states, considering distance, population size, economic factors, and social networks. Present statistical analysis of which models best explain Alaska migration patterns.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Apply the gravity model to predict migration between Alaska and three other states. Explain how factors beyond distance and size might modify the basic gravity model prediction.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Population Policies and Ethics</h3>
+                <p><strong>Objective:</strong> Students will evaluate population policies and their ethical implications.</p>
+                
+                <div class="content-section">
+                    <h4>⚖️ Population Policy Approaches:</h4>
+                    <ul>
+                        <li><strong>Pro-natalist Policies:</strong> Encourage higher birth rates</li>
+                        <li><strong>Anti-natalist Policies:</strong> Discourage high birth rates</li>
+                        <li><strong>Immigration Policies:</strong> Control international migration</li>
+                        <li><strong>Refugee Policies:</strong> Response to forced migration</li>
+                        <li><strong>Ethical Considerations:</strong> Human rights, cultural values, unintended consequences</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🏛️ Activity: Policy Debate</h4>
+                    <p>Research and debate different approaches to population challenges. Topics include China's former one-child policy, European immigration policies, refugee resettlement programs, and Alaska's strategies for attracting residents. Consider effectiveness, ethics, and unintended consequences.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze a specific population policy from any country. Evaluate its effectiveness, ethical implications, and suggest modifications or alternatives.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Future Population Projections and Scenarios</h3>
+                <p><strong>Objective:</strong> Students will analyze population projections and their implications for the future.</p>
+                
+                <div class="content-section">
+                    <h4>🔮 Future Population Trends:</h4>
+                    <ul>
+                        <li><strong>Global Projections:</strong> Peak population around 2070-2080</li>
+                        <li><strong>Regional Variations:</strong> Growth in Africa, decline in Europe/East Asia</li>
+                        <li><strong>Aging Populations:</strong> Increasing median age in developed countries</li>
+                        <li><strong>Urbanization:</strong> Continued growth of cities and megacities</li>
+                        <li><strong>Climate Migration:</strong> Population movements due to environmental change</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Alaska 2060 Scenarios</h4>
+                    <p>Develop three scenarios for Alaska's population in 2060: high growth, moderate growth, and decline. Consider climate change impacts, economic development, policy changes, and technological advances. Create detailed projections with supporting data and policy recommendations.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Population Futures Research Project</h4>
+                    <p>Conduct a comprehensive research project on global or regional population futures. Include demographic projections, economic implications, environmental impacts, and policy recommendations. Present findings as a professional report with data visualizations and executive summary.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit24.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit26.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

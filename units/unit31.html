@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 31: Sustainability and Environmental Ethics - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "🌱";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #4ecdc4;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .sustainability-principle {
+            background: #e8f5e8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #4ecdc4, #44a08d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 31: Sustainability and Environmental Ethics</h1>
+            <p>Building a Sustainable Future for Our Planet</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Taking Care of Our Earth</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: What is Sustainability?</h3>
+                <p><strong>Objective:</strong> Students will understand the concept of sustainability and why it matters.</p>
+                
+                <div class="content-section">
+                    <h4>♻️ Sustainability Basics:</h4>
+                    <ul>
+                        <li><strong>Sustainability:</strong> Using resources in a way that doesn't harm future generations</li>
+                        <li><strong>Renewable Resources:</strong> Resources that can be replaced naturally</li>
+                        <li><strong>Conservation:</strong> Using less and protecting what we have</li>
+                        <li><strong>Recycling:</strong> Turning old materials into new products</li>
+                        <li><strong>Reduce, Reuse, Recycle:</strong> The three Rs of sustainability</li>
+                        <li><strong>Future Generations:</strong> Thinking about people who will live after us</li>
+                    </ul>
+                    
+                    <div class="sustainability-principle">
+                        <strong>Alaska Sustainability Examples:</strong>
+                        <ul>
+                            <li>Sustainable fishing practices protect fish populations</li>
+                            <li>Renewable energy from wind and water</li>
+                            <li>Protecting wilderness areas for the future</li>
+                            <li>Traditional Alaska Native practices that protect nature</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>🌍 Activity: Sustainability in Action</h4>
+                    <p>Create a sustainability action plan for your school or home. List five specific actions you can take to use resources more sustainably. Track your progress for one week and report results.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain what sustainability means in your own words. Give three examples of sustainable practices that would work in Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: Protecting Natural Resources</h3>
+                <p><strong>Objective:</strong> Students will identify ways to protect and conserve natural resources.</p>
+                
+                <div class="content-section">
+                    <h4>🏞️ Resource Protection:</h4>
+                    <ul>
+                        <li><strong>National Parks:</strong> Protected areas that preserve nature</li>
+                        <li><strong>Wildlife Refuges:</strong> Safe places for animals to live</li>
+                        <li><strong>Forest Conservation:</strong> Protecting trees and forest ecosystems</li>
+                        <li><strong>Water Protection:</strong> Keeping rivers, lakes, and oceans clean</li>
+                        <li><strong>Soil Conservation:</strong> Preventing erosion and maintaining healthy soil</li>
+                        <li><strong>Endangered Species:</strong> Protecting animals and plants that might disappear</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🐻 Activity: Alaska Conservation Heroes</h4>
+                    <p>Research a conservation success story in Alaska (wolves, salmon, forests, etc.). Create a poster showing the problem, the solution, and the results. Include what students can do to help.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Choose one natural resource in Alaska and explain how it is being protected. Why is this protection important for the future?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Traditional Ecological Knowledge</h3>
+                <p><strong>Objective:</strong> Students will learn how indigenous knowledge contributes to sustainability.</p>
+                
+                <div class="content-section">
+                    <h4>🧠 Indigenous Wisdom:</h4>
+                    <ul>
+                        <li><strong>Traditional Knowledge:</strong> Information passed down through generations</li>
+                        <li><strong>Living with Nature:</strong> Indigenous ways of using resources sustainably</li>
+                        <li><strong>Seasonal Practices:</strong> Harvesting at the right times to protect species</li>
+                        <li><strong>Respectful Use:</strong> Taking only what is needed</li>
+                        <li><strong>Observation Skills:</strong> Learning from watching nature carefully</li>
+                        <li><strong>Cultural Values:</strong> Beliefs about respecting and protecting Earth</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>👵 Activity: Learning from Elders</h4>
+                    <p>Interview an elder or community member about traditional practices for using natural resources. Learn about seasonal harvesting, conservation methods, or traditional environmental knowledge. Share what you learn with the class.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe two examples of traditional ecological knowledge from Alaska Native cultures. How do these practices help protect the environment?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Individual Actions for Sustainability</h3>
+                <p><strong>Objective:</strong> Students will identify personal actions they can take to promote sustainability.</p>
+                
+                <div class="content-section">
+                    <h4>👤 Personal Sustainability Actions:</h4>
+                    <ul>
+                        <li><strong>Energy Conservation:</strong> Turn off lights, unplug devices</li>
+                        <li><strong>Water Conservation:</strong> Shorter showers, fix leaks</li>
+                        <li><strong>Waste Reduction:</strong> Use reusable bags and bottles</li>
+                        <li><strong>Transportation Choices:</strong> Walk, bike, or share rides</li>
+                        <li><strong>Food Choices:</strong> Eat local food, reduce food waste</li>
+                        <li><strong>Education:</strong> Learn and teach others about sustainability</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📋 Activity: My Sustainability Pledge</h4>
+                    <p>Create a personal sustainability pledge with specific actions you will take. Design a tracking system to monitor your progress and share your results with family and friends.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Sustainability Action Plan</h4>
+                    <p>Develop a comprehensive sustainability action plan for your family or school. Include specific goals, action steps, and ways to measure success. Present your plan and explain how it will benefit the environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Environmental Ethics and Global Responsibility</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Environmental Ethics and Values</h3>
+                <p><strong>Objective:</strong> Students will examine different ethical approaches to environmental protection.</p>
+                
+                <div class="content-section">
+                    <h4>⚖️ Environmental Ethics:</h4>
+                    <ul>
+                        <li><strong>Anthropocentric Ethics:</strong> Humans are the central concern</li>
+                        <li><strong>Biocentric Ethics:</strong> All living things have value</li>
+                        <li><strong>Ecocentric Ethics:</strong> Entire ecosystems have inherent worth</li>
+                        <li><strong>Intergenerational Justice:</strong> Responsibility to future generations</li>
+                        <li><strong>Environmental Justice:</strong> Fair treatment for all communities</li>
+                        <li><strong>Cultural Values:</strong> How different cultures view nature</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🤔 Activity: Environmental Ethics Debate</h4>
+                    <p>Debate different ethical approaches to an environmental issue affecting Alaska (mining vs. conservation, development vs. wildlife protection). Represent different ethical perspectives and find common ground.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare anthropocentric and ecocentric approaches to environmental protection. Which approach do you think is most appropriate for Alaska's environmental challenges?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Sustainable Development Goals</h3>
+                <p><strong>Objective:</strong> Students will analyze the UN Sustainable Development Goals and their global implementation.</p>
+                
+                <div class="content-section">
+                    <h4>🎯 UN Sustainable Development Goals:</h4>
+                    <ul>
+                        <li><strong>No Poverty:</strong> End poverty in all its forms everywhere</li>
+                        <li><strong>Clean Water and Sanitation:</strong> Ensure water availability for all</li>
+                        <li><strong>Affordable Clean Energy:</strong> Access to reliable, sustainable energy</li>
+                        <li><strong>Climate Action:</strong> Take urgent action on climate change</li>
+                        <li><strong>Life Below Water:</strong> Conserve and sustainably use oceans</li>
+                        <li><strong>Life on Land:</strong> Protect terrestrial ecosystems</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌍 Activity: SDGs in Alaska</h4>
+                    <p>Research how Alaska is working toward specific Sustainable Development Goals. Create a report card showing Alaska's progress and propose actions to accelerate achievement of these goals.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Choose three Sustainable Development Goals that are particularly relevant to Alaska. Explain why these goals matter for Alaska's future and how progress can be measured.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Corporate Environmental Responsibility</h3>
+                <p><strong>Objective:</strong> Students will evaluate how businesses can contribute to sustainability.</p>
+                
+                <div class="content-section">
+                    <h4>🏢 Business Sustainability:</h4>
+                    <ul>
+                        <li><strong>Corporate Social Responsibility:</strong> Business obligations to society</li>
+                        <li><strong>Sustainable Business Practices:</strong> Environmentally friendly operations</li>
+                        <li><strong>Green Technology:</strong> Innovation for environmental solutions</li>
+                        <li><strong>Supply Chain Sustainability:</strong> Ethical sourcing and production</li>
+                        <li><strong>Stakeholder Engagement:</strong> Including communities in business decisions</li>
+                        <li><strong>Triple Bottom Line:</strong> People, planet, and profit</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🏭 Activity: Sustainable Business Analysis</h4>
+                    <p>Research a company operating in Alaska and evaluate its sustainability practices. Analyze their environmental policies, community engagement, and actual performance. Propose improvements and recognition for good practices.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how businesses can balance profit with environmental protection. Give examples of sustainable business practices that would work well in Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: Environmental Policy and Governance</h3>
+                <p><strong>Objective:</strong> Students will examine how environmental policies are developed and implemented.</p>
+                
+                <div class="content-section">
+                    <h4>🏛️ Environmental Governance:</h4>
+                    <ul>
+                        <li><strong>Environmental Regulations:</strong> Laws that protect air, water, and land</li>
+                        <li><strong>Policy Development:</strong> How environmental laws are created</li>
+                        <li><strong>Stakeholder Participation:</strong> Public involvement in environmental decisions</li>
+                        <li><strong>Environmental Impact Assessment:</strong> Evaluating project effects on environment</li>
+                        <li><strong>Enforcement:</strong> Ensuring compliance with environmental laws</li>
+                        <li><strong>International Cooperation:</strong> Global environmental agreements</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>⚖️ Activity: Environmental Policy Simulation</h4>
+                    <p>Participate in a simulation of environmental policy-making for Alaska. Represent different stakeholders (government, business, environmental groups, communities) and work to develop balanced environmental policies.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Environmental Policy Proposal</h4>
+                    <p>Develop a comprehensive environmental policy proposal for Alaska addressing a specific issue (climate change, biodiversity, pollution). Include scientific justification, stakeholder analysis, implementation plan, and evaluation metrics.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Advanced Sustainability Science and Global Solutions</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Systems Thinking in Sustainability</h3>
+                <p><strong>Objective:</strong> Students will apply systems thinking to understand complex sustainability challenges.</p>
+                
+                <div class="content-section">
+                    <h4>🔄 Systems Approach:</h4>
+                    <ul>
+                        <li><strong>Interconnectedness:</strong> How environmental, social, and economic systems connect</li>
+                        <li><strong>Feedback Loops:</strong> How changes in one part affect the whole system</li>
+                        <li><strong>Emergent Properties:</strong> System behaviors that arise from interactions</li>
+                        <li><strong>Leverage Points:</strong> Places where small changes create big impacts</li>
+                        <li><strong>Unintended Consequences:</strong> Unexpected results of interventions</li>
+                        <li><strong>Adaptive Management:</strong> Learning and adjusting strategies over time</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🕸️ Activity: Alaska Systems Mapping</h4>
+                    <p>Create a detailed systems map showing connections between environmental, economic, and social factors in Alaska. Identify key leverage points for sustainable development and potential unintended consequences of policy interventions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how systems thinking helps us understand sustainability challenges. Give an example of how an environmental change in Alaska could have unexpected social or economic effects.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Life Cycle Assessment and Ecological Footprint</h3>
+                <p><strong>Objective:</strong> Students will analyze environmental impacts using scientific assessment methods.</p>
+                
+                <div class="content-section">
+                    <h4>📊 Environmental Assessment Tools:</h4>
+                    <ul>
+                        <li><strong>Life Cycle Assessment:</strong> Analyzing environmental impacts from production to disposal</li>
+                        <li><strong>Ecological Footprint:</strong> Measuring human demand on natural resources</li>
+                        <li><strong>Carbon Footprint:</strong> Calculating greenhouse gas emissions</li>
+                        <li><strong>Water Footprint:</strong> Measuring water consumption and pollution</li>
+                        <li><strong>Embodied Energy:</strong> Energy required to produce products and services</li>
+                        <li><strong>Sustainability Indicators:</strong> Metrics for measuring progress toward sustainability</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔬 Activity: Alaska Community Assessment</h4>
+                    <p>Conduct a comprehensive environmental assessment of your community using multiple tools (ecological footprint, carbon footprint, life cycle analysis). Compare results with state and national averages and propose improvement strategies.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Compare the ecological footprints of urban and rural Alaska communities. What factors contribute to differences, and how can both types of communities reduce their environmental impact?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Circular Economy and Regenerative Systems</h3>
+                <p><strong>Objective:</strong> Students will design circular economy solutions for sustainable resource use.</p>
+                
+                <div class="content-section">
+                    <h4>♻️ Advanced Sustainability Models:</h4>
+                    <ul>
+                        <li><strong>Circular Economy:</strong> Eliminating waste through design and systems thinking</li>
+                        <li><strong>Regenerative Development:</strong> Creating systems that restore and enhance ecosystems</li>
+                        <li><strong>Biomimicry:</strong> Learning from nature to solve human problems</li>
+                        <li><strong>Industrial Ecology:</strong> Applying ecosystem principles to industrial systems</li>
+                        <li><strong>Cradle-to-Cradle Design:</strong> Products designed for continuous material cycles</li>
+                        <li><strong>Nature-Based Solutions:</strong> Using natural systems to address challenges</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌿 Activity: Regenerative Alaska Design</h4>
+                    <p>Design a regenerative development project for Alaska that goes beyond sustainability to actively restore ecosystems while meeting human needs. Include detailed plans for implementation, monitoring, and adaptation.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain the difference between sustainable and regenerative approaches to development. How could regenerative principles be applied to Alaska's resource industries?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Global Sustainability Leadership and Innovation</h3>
+                <p><strong>Objective:</strong> Students will develop comprehensive sustainability leadership strategies.</p>
+                
+                <div class="content-section">
+                    <h4>🌟 Sustainability Leadership:</h4>
+                    <ul>
+                        <li><strong>Innovation for Sustainability:</strong> Developing breakthrough solutions</li>
+                        <li><strong>Change Leadership:</strong> Building movements for environmental action</li>
+                        <li><strong>Global Collaboration:</strong> International cooperation for sustainability</li>
+                        <li><strong>Youth Leadership:</strong> Young people driving environmental change</li>
+                        <li><strong>Technology Solutions:</strong> Digital tools for sustainability</li>
+                        <li><strong>Future Scenarios:</strong> Planning for multiple possible futures</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🚀 Activity: Sustainability Innovation Challenge</h4>
+                    <p>Develop a comprehensive innovation proposal to address a major sustainability challenge facing Alaska. Include technical solutions, implementation strategy, partnership development, and global scaling potential. Present to a panel of community leaders.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Sustainability Leadership Plan</h4>
+                    <p>Create a detailed sustainability leadership plan for your future career and community involvement. Include specific goals, skill development priorities, network building strategies, and measurable outcomes. Present as a comprehensive portfolio demonstrating readiness for sustainability leadership.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit30.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit32.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

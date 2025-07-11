@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 29: Technology and Society - Alaska World Geography</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dda0dd, #98fb98);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #8e44ad, #27ae60);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+        .header::after {
+            content: "💻";
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5em;
+        }
+        .grade-selector {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .grade-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .grade-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .grade-btn.active {
+            background: linear-gradient(135deg, #8e44ad, #27ae60);
+        }
+        .grade-content {
+            display: none;
+            padding: 30px;
+        }
+        .grade-content.active {
+            display: block;
+        }
+        .lesson {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-left: 5px solid #8e44ad;
+            transition: transform 0.3s;
+        }
+        .lesson:hover {
+            transform: translateY(-2px);
+        }
+        .lesson h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .activity {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        .assessment {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        .grade-6 { border-left-color: #2196F3; }
+        .grade-7 { border-left-color: #FF9800; }
+        .grade-8 { border-left-color: #4CAF50; }
+        .content-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+        }
+        .tech-example {
+            background: #f0f3ff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #6366f1;
+        }
+        .nav-buttons {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+        .nav-btn {
+            background: linear-gradient(135deg, #8e44ad, #27ae60);
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Unit 29: Technology and Society</h1>
+            <p>Exploring Technology's Impact on Geography and Culture</p>
+        </div>
+
+        <div class="grade-selector">
+            <button class="grade-btn active" onclick="showGrade(6)">6th Grade</button>
+            <button class="grade-btn" onclick="showGrade(7)">7th Grade</button>
+            <button class="grade-btn" onclick="showGrade(8)">8th Grade</button>
+        </div>
+
+        <!-- 6th Grade Content -->
+        <div id="grade-6" class="grade-content active">
+            <h2 style="color: #2196F3;">🌟 6th Grade: Technology in Daily Life</h2>
+            
+            <div class="lesson grade-6">
+                <h3>Lesson 1: Technology Around Us</h3>
+                <p><strong>Objective:</strong> Students will identify different types of technology and their uses.</p>
+                
+                <div class="content-section">
+                    <h4>📱 Types of Technology:</h4>
+                    <ul>
+                        <li><strong>Communication Technology:</strong> Phones, internet, email, social media</li>
+                        <li><strong>Transportation Technology:</strong> Cars, planes, GPS navigation</li>
+                        <li><strong>Medical Technology:</strong> X-rays, medicines, medical devices</li>
+                        <li><strong>Home Technology:</strong> Appliances, heating systems, lighting</li>
+                        <li><strong>Entertainment Technology:</strong> TV, video games, streaming services</li>
+                        <li><strong>Educational Technology:</strong> Computers, tablets, online learning</li>
+                    </ul>
+                    
+                    <div class="tech-example">
+                        <strong>Technology in Alaska:</strong>
+                        <ul>
+                            <li>Satellite internet connects remote communities</li>
+                            <li>GPS helps people navigate in wilderness areas</li>
+                            <li>Weather technology predicts storms and conditions</li>
+                            <li>Communication technology keeps families connected</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity">
+                    <h4>📋 Activity: Technology Inventory</h4>
+                    <p>Create a list of all the technology you use in one day. Categorize each item and explain how it helps you. Discuss how life would be different without these technologies.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Choose three types of technology that are especially important in Alaska. Explain why each one is valuable for people living in Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 2: How Technology Changes Places</h3>
+                <p><strong>Objective:</strong> Students will understand how technology transforms communities and landscapes.</p>
+                
+                <div class="content-section">
+                    <h4>🏘️ Technology's Impact on Places:</h4>
+                    <ul>
+                        <li><strong>Building and Construction:</strong> New materials and methods change architecture</li>
+                        <li><strong>Communication Infrastructure:</strong> Cell towers, internet cables connect places</li>
+                        <li><strong>Transportation Infrastructure:</strong> Roads, airports, ports enable movement</li>
+                        <li><strong>Energy Systems:</strong> Power plants, transmission lines provide electricity</li>
+                        <li><strong>Agriculture Technology:</strong> Machines and methods change farming</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📷 Activity: Technology in My Community</h4>
+                    <p>Take photos (or draw pictures) of technology infrastructure in your community. Create a poster showing how technology has changed the physical landscape and explain each example.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe three ways technology has changed the physical appearance of your community. Include both positive and negative changes.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 3: Connecting People Across Distances</h3>
+                <p><strong>Objective:</strong> Students will explore how technology connects people across geographic distances.</p>
+                
+                <div class="content-section">
+                    <h4>🌐 Global Connections:</h4>
+                    <ul>
+                        <li><strong>Internet:</strong> Connects people worldwide instantly</li>
+                        <li><strong>Video Calling:</strong> See and talk to people far away</li>
+                        <li><strong>Social Media:</strong> Share experiences with friends and family</li>
+                        <li><strong>Online Learning:</strong> Take classes from anywhere</li>
+                        <li><strong>E-commerce:</strong> Buy and sell products globally</li>
+                        <li><strong>Digital Friendship:</strong> Make friends in other countries</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🗺️ Activity: My Global Connections</h4>
+                    <p>Create a map showing all the places you've connected with through technology (family, friends, online games, etc.). Interview someone in your family about how they use technology to stay connected.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how technology helps Alaska communities stay connected to the rest of the world. Give three specific examples.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-6">
+                <h3>Lesson 4: Technology Solutions for Alaska</h3>
+                <p><strong>Objective:</strong> Students will identify how technology solves problems specific to Alaska.</p>
+                
+                <div class="content-section">
+                    <h4>❄️ Alaska Technology Solutions:</h4>
+                    <ul>
+                        <li><strong>Remote Healthcare:</strong> Telemedicine connects patients to doctors</li>
+                        <li><strong>Distance Education:</strong> Online classes reach rural students</li>
+                        <li><strong>Weather Monitoring:</strong> Satellites track storms and conditions</li>
+                        <li><strong>Emergency Communication:</strong> Satellite phones for rescue operations</li>
+                        <li><strong>Resource Exploration:</strong> Technology finds oil, minerals, and fish</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>💡 Activity: Alaska Problem Solvers</h4>
+                    <p>Choose a challenge facing Alaska communities (isolation, harsh weather, distance to services). Design a technology solution and explain how it would help. Draw or describe your invention.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Technology Impact Report</h4>
+                    <p>Write a one-page report about how technology has improved life in Alaska. Include at least three examples and explain both the benefits and any challenges of these technologies.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7th Grade Content -->
+        <div id="grade-7" class="grade-content">
+            <h2 style="color: #FF9800;">🌟 7th Grade: Digital Geography and Global Networks</h2>
+            
+            <div class="lesson grade-7">
+                <h3>Lesson 1: Geographic Information Systems (GIS)</h3>
+                <p><strong>Objective:</strong> Students will explore how GIS technology transforms geographic analysis.</p>
+                
+                <div class="content-section">
+                    <h4>🗺️ GIS Technology:</h4>
+                    <ul>
+                        <li><strong>Digital Mapping:</strong> Creating and analyzing computerized maps</li>
+                        <li><strong>Spatial Analysis:</strong> Studying patterns and relationships in geographic data</li>
+                        <li><strong>Remote Sensing:</strong> Satellite and aerial imagery for Earth observation</li>
+                        <li><strong>GPS Technology:</strong> Precise location tracking and navigation</li>
+                        <li><strong>Data Integration:</strong> Combining different types of geographic information</li>
+                        <li><strong>Real-world Applications:</strong> Urban planning, resource management, emergency response</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🛰️ Activity: GIS Mapping Project</h4>
+                    <p>Use online GIS tools to create a map analyzing a geographic issue in Alaska (climate change impacts, population distribution, resource locations). Present findings and recommend solutions based on spatial analysis.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain how GIS technology helps geographers study complex problems. Give three examples of how GIS could be used in Alaska.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 2: Digital Divide and Technology Access</h3>
+                <p><strong>Objective:</strong> Students will analyze inequalities in technology access and their geographic implications.</p>
+                
+                <div class="content-section">
+                    <h4>📶 Digital Divide Issues:</h4>
+                    <ul>
+                        <li><strong>Internet Access:</strong> Broadband availability varies by location</li>
+                        <li><strong>Device Access:</strong> Not everyone has computers or smartphones</li>
+                        <li><strong>Digital Literacy:</strong> Skills needed to use technology effectively</li>
+                        <li><strong>Economic Barriers:</strong> Cost of technology and internet service</li>
+                        <li><strong>Geographic Barriers:</strong> Remote areas face infrastructure challenges</li>
+                        <li><strong>Educational Impact:</strong> Digital divide affects learning opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📊 Activity: Digital Access Mapping</h4>
+                    <p>Research and map internet access across Alaska communities. Analyze patterns and identify factors that influence technology access. Propose solutions for reducing the digital divide.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Explain why rural Alaska communities might face greater challenges accessing technology. What are the consequences and potential solutions?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 3: Social Media and Cultural Geography</h3>
+                <p><strong>Objective:</strong> Students will examine how social media influences culture and place identity.</p>
+                
+                <div class="content-section">
+                    <h4>📱 Social Media Geography:</h4>
+                    <ul>
+                        <li><strong>Cultural Diffusion:</strong> Ideas spread rapidly through social networks</li>
+                        <li><strong>Place Representation:</strong> How places are portrayed online</li>
+                        <li><strong>Virtual Communities:</strong> Geographic communities forming online</li>
+                        <li><strong>Tourism Impact:</strong> Social media influences travel and destination choices</li>
+                        <li><strong>Cultural Preservation:</strong> Digital platforms preserve and share traditions</li>
+                        <li><strong>Identity Formation:</strong> Technology affects how people see themselves and their places</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🌐 Activity: Alaska Cultural Media Analysis</h4>
+                    <p>Analyze how Alaska is represented on social media platforms. Compare online representation with reality and discuss impacts on tourism, cultural understanding, and community identity.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Describe how social media can both positively and negatively affect cultural preservation and place identity. Use Alaska examples.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-7">
+                <h3>Lesson 4: E-commerce and Global Supply Chains</h3>
+                <p><strong>Objective:</strong> Students will analyze how digital technology transforms global trade and commerce.</p>
+                
+                <div class="content-section">
+                    <h4>🛒 Digital Commerce Geography:</h4>
+                    <ul>
+                        <li><strong>Online Shopping:</strong> E-commerce connects global buyers and sellers</li>
+                        <li><strong>Supply Chain Technology:</strong> Tracking products from origin to consumer</li>
+                        <li><strong>Digital Logistics:</strong> Technology optimizes shipping and delivery</li>
+                        <li><strong>Remote Work:</strong> Technology enables work from anywhere</li>
+                        <li><strong>Digital Payments:</strong> Electronic transactions cross borders instantly</li>
+                        <li><strong>Alaska Commerce:</strong> How technology affects Alaska's economy and trade</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>📦 Activity: Product Journey Tracking</h4>
+                    <p>Track a product from online purchase to delivery in Alaska. Map the supply chain, analyze technology's role at each step, and calculate the geographic distance and time involved.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Technology and Economic Geography Report</h4>
+                    <p>Research how digital technology is changing Alaska's economy. Analyze impacts on traditional industries, new opportunities, and challenges. Propose strategies for Alaska to benefit from technological change.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8th Grade Content -->
+        <div id="grade-8" class="grade-content">
+            <h2 style="color: #4CAF50;">🌟 8th Grade: Technology, Innovation, and Future Geography</h2>
+            
+            <div class="lesson grade-8">
+                <h3>Lesson 1: Artificial Intelligence and Smart Systems</h3>
+                <p><strong>Objective:</strong> Students will analyze how AI and smart systems are transforming geographic analysis and decision-making.</p>
+                
+                <div class="content-section">
+                    <h4>🤖 AI in Geography:</h4>
+                    <ul>
+                        <li><strong>Machine Learning:</strong> Algorithms analyze complex geographic patterns</li>
+                        <li><strong>Predictive Analytics:</strong> AI forecasts environmental and social changes</li>
+                        <li><strong>Smart Cities:</strong> Automated systems manage urban infrastructure</li>
+                        <li><strong>Environmental Monitoring:</strong> AI processes satellite data for environmental insights</li>
+                        <li><strong>Traffic Optimization:</strong> Smart systems improve transportation efficiency</li>
+                        <li><strong>Decision Support:</strong> AI assists planners and policymakers</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🧠 Activity: AI Application Design</h4>
+                    <p>Design an AI system to address a specific Alaska challenge (wildlife monitoring, weather prediction, resource management). Include technical specifications, data requirements, and expected outcomes.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Evaluate the potential benefits and risks of using AI for geographic analysis and planning. How might AI applications be particularly useful or challenging in Alaska?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 2: Cybersecurity and Digital Sovereignty</h3>
+                <p><strong>Objective:</strong> Students will examine cybersecurity challenges and digital rights from a geographic perspective.</p>
+                
+                <div class="content-section">
+                    <h4>🔒 Digital Security Geography:</h4>
+                    <ul>
+                        <li><strong>Cyber Threats:</strong> Geographic patterns of digital attacks and vulnerabilities</li>
+                        <li><strong>Critical Infrastructure:</strong> Protecting essential technology systems</li>
+                        <li><strong>Data Sovereignty:</strong> Control over data within national borders</li>
+                        <li><strong>Digital Rights:</strong> Privacy, access, and freedom in digital spaces</li>
+                        <li><strong>International Cooperation:</strong> Cross-border collaboration on cyber issues</li>
+                        <li><strong>Alaska Vulnerabilities:</strong> Remote systems and critical infrastructure protection</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🛡️ Activity: Cybersecurity Risk Assessment</h4>
+                    <p>Conduct a cybersecurity risk assessment for Alaska's critical infrastructure. Identify vulnerabilities, assess geographic factors, and propose protection strategies adapted to Alaska's unique conditions.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze why cybersecurity might be particularly challenging for remote Alaska communities. What geographic factors increase vulnerabilities and how can they be addressed?</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 3: Technology Ethics and Social Impact</h3>
+                <p><strong>Objective:</strong> Students will evaluate ethical implications of technology adoption and innovation.</p>
+                
+                <div class="content-section">
+                    <h4>⚖️ Technology Ethics:</h4>
+                    <ul>
+                        <li><strong>Privacy vs. Convenience:</strong> Balancing personal data use with benefits</li>
+                        <li><strong>Environmental Impact:</strong> Energy consumption and e-waste from technology</li>
+                        <li><strong>Social Disruption:</strong> Technology's effects on employment and communities</li>
+                        <li><strong>Cultural Sensitivity:</strong> Respecting traditional ways while adopting new technology</li>
+                        <li><strong>Equity and Access:</strong> Ensuring fair distribution of technology benefits</li>
+                        <li><strong>Indigenous Rights:</strong> Technology development and traditional knowledge</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🎯 Activity: Technology Ethics Debate</h4>
+                    <p>Debate ethical issues surrounding technology adoption in Alaska communities. Consider perspectives of different stakeholders including Alaska Native communities, environmental groups, and technology developers.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Quick Check:</h4>
+                    <p>Analyze a specific ethical dilemma related to technology use in Alaska. Consider multiple perspectives and propose a balanced approach that respects different values and interests.</p>
+                </div>
+            </div>
+
+            <div class="lesson grade-8">
+                <h3>Lesson 4: Emerging Technologies and Future Geography</h3>
+                <p><strong>Objective:</strong> Students will project how emerging technologies might reshape geography and society.</p>
+                
+                <div class="content-section">
+                    <h4>🚀 Future Technologies:</h4>
+                    <ul>
+                        <li><strong>Quantum Computing:</strong> Revolutionary processing power for complex problems</li>
+                        <li><strong>Biotechnology:</strong> Genetic engineering and synthetic biology applications</li>
+                        <li><strong>Space Technology:</strong> Satellite networks, space tourism, resource extraction</li>
+                        <li><strong>Nanotechnology:</strong> Molecular-scale engineering and materials</li>
+                        <li><strong>Brain-Computer Interfaces:</strong> Direct neural connections to digital systems</li>
+                        <li><strong>Climate Engineering:</strong> Large-scale technological interventions in Earth systems</li>
+                    </ul>
+                </div>
+
+                <div class="activity">
+                    <h4>🔮 Activity: Future Alaska Scenarios</h4>
+                    <p>Develop detailed scenarios for how emerging technologies might transform Alaska by 2060. Consider economic, social, environmental, and cultural implications. Present findings as comprehensive future studies reports.</p>
+                </div>
+
+                <div class="assessment">
+                    <h4>📝 Assessment: Technology Innovation Proposal</h4>
+                    <p>Design a comprehensive technology innovation strategy for Alaska's future. Include specific technologies, implementation timelines, stakeholder engagement, ethical considerations, and expected outcomes. Present as a formal policy proposal with supporting research and analysis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="unit28.html" class="nav-btn">← Previous Unit</a>
+            <a href="index.html" class="nav-btn">📚 Unit Directory</a>
+            <a href="unit30.html" class="nav-btn">Next Unit →</a>
+        </div>
+    </div>
+
+    <script>
+        function showGrade(grade) {
+            // Hide all grade content
+            document.querySelectorAll('.grade-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.grade-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected grade content
+            document.getElementById(`grade-${grade}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
