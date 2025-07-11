@@ -9,8 +9,13 @@
 <body>
     <header>
         <h1>Unit 8: South America</h1>
-        <nav>
-            <a href="../curriculum-main.html">Back to Curriculum Overview</a>
+        <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+            <a href="../curriculum-main.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">🏠 Back to Overview</a>
+            <div style="display: flex; gap: 15px;">
+                <a href="index.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">📚 All Units</a>
+                <a href="unit7.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 20px;">⬅ Previous</a>
+                <a href="unit9.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 20px;">Next ➡</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -177,6 +182,14 @@
             </ul>
         </section>
     </main>
+
+    <footer style="text-align: center; margin: 40px 0; padding: 20px; background: rgba(44, 90, 160, 0.1); border-radius: 10px;">
+        <div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
+            <a href="index.html" style="background: #2c5aa0; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold;">📚 Back to All Units</a>
+            <a href="unit9.html" style="background: #27ae60; color: white; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: bold;">Next: Unit 9 ➡</a>
+        </div>
+    </footer>
+
     <script>
     function showGradeContent() {
         var grade = document.getElementById('grade-select').value;
