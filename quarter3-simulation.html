@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Simulation: Global Resource Stewardship Initiative</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #27ae60, #16a085);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #27ae60;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 15px;
+        }
+
+        .standards-box {
+            background: linear-gradient(135deg, #004b87, #002855);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .standard-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .dok-indicator {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .crosscut-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #27ae60;
+        }
+
+        .lesson-day {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-day:hover {
+            border-color: #27ae60;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .day-number {
+            background: #27ae60;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .lesson-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .objective-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+
+        .assessment-rubric {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .role-card {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .sustainability-highlight {
+            background: linear-gradient(135deg, #e8f8f5, #a8e6cf);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ff9800;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge.social-studies { background: #004b87; }
+        .badge.ela { background: #e74c3c; }
+        .badge.science { background: #27ae60; }
+        .badge.dok { background: #ff9800; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lesson-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>♻️ Global Resource Stewardship Initiative</h1>
+            <div style="font-size: 1.4em; margin-top: 15px;">Quarter 3 Simulation • March 2-10, 2026</div>
+            <div style="font-size: 1.1em; margin-top: 10px; opacity: 0.9;">Sustainable Development Across Asia, Africa & Oceania</div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn active" onclick="showSection('overview')">📋 Overview</button>
+            <button class="nav-btn" onclick="showSection('standards')">🎯 Standards</button>
+            <button class="nav-btn" onclick="showSection('preparation')">🔧 Preparation</button>
+            <button class="nav-btn" onclick="showSection('lessons')">📚 Daily Lessons</button>
+            <button class="nav-btn" onclick="showSection('assessment')">📊 Assessment</button>
+            <button class="nav-btn" onclick="showSection('resources')">📖 Resources</button>
+        </div>
+
+        <div id="overview" class="section active">
+            <h2>🌍 Simulation Overview</h2>
+            
+            <div class="standards-box">
+                <h3>🎯 Simulation Focus</h3>
+                <p style="font-size: 1.2em; margin: 15px 0;">Students become <strong>International Resource Stewardship Managers</strong> tasked with balancing economic development needs with environmental sustainability and cultural preservation across the diverse regions of Asia, Africa, and Oceania.</p>
+                <div class="dok-indicator">DOK 3-4: Global Resource Management & Sustainability Design</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                <div class="role-card">
+                    <h4>🌿 Sustainability Director</h4>
+                    <p>Oversees overall sustainability strategy, coordinates all specialists, ensures environmental protection while meeting development needs.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🔬 Environmental Scientist</h4>
+                    <p>Analyzes ecosystems and biodiversity, develops conservation strategies, monitors environmental impacts, designs restoration programs.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🏗️ Development Coordinator</h4>
+                    <p>Plans sustainable economic development, balances resource use with community needs, manages infrastructure projects responsibly.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🎭 Cultural Preservation Specialist</h4>
+                    <p>Protects indigenous knowledge and practices, ensures community consent and engagement, integrates traditional wisdom with modern approaches.</p>
+                </div>
+                <div class="role-card">
+                    <h4>💡 Innovation & Technology Manager</h4>
+                    <p>Researches appropriate technologies, implements sustainable solutions, manages technology transfer, develops local capacity.</p>
+                </div>
+            </div>
+
+            <div class="sustainability-highlight">
+                <h3>🌏 Global Stewardship Route</h3>
+                <p><strong>Resource Management Circuit:</strong> Teams develop stewardship strategies across:</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li><strong>East Africa:</strong> Water resources and wildlife conservation (Kenya, Tanzania, Ethiopia)</li>
+                    <li><strong>Sahel Region:</strong> Desertification and agricultural sustainability (Niger, Mali, Burkina Faso)</li>
+                    <li><strong>West Africa:</strong> Forest conservation and sustainable development (Ghana, Côte d'Ivoire, Nigeria)</li>
+                    <li><strong>Central Africa:</strong> Rainforest preservation and sustainable logging (Congo Basin)</li>
+                    <li><strong>Southern Asia:</strong> Population pressure and resource management (India, Bangladesh)</li>
+                    <li><strong>Southeast Asia:</strong> Marine resources and island sustainability (Indonesia, Philippines)</li>
+                    <li><strong>Oceania:</strong> Climate change adaptation and marine conservation (Pacific Islands)</li>
+                </ul>
+            </div>
+
+            <div class="resource-card">
+                <h3>♻️ Sustainability Focus Areas</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                    <div><strong>Water Resources:</strong> Conservation, access, and quality management</div>
+                    <div><strong>Energy Systems:</strong> Renewable energy and sustainable power</div>
+                    <div><strong>Food Security:</strong> Sustainable agriculture and nutrition</div>
+                    <div><strong>Biodiversity:</strong> Ecosystem protection and restoration</div>
+                    <div><strong>Climate Adaptation:</strong> Resilience and mitigation strategies</div>
+                    <div><strong>Waste Management:</strong> Circular economy and waste reduction</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="standards" class="section">
+            <h2>🎯 Alaska State Standards Alignment</h2>
+            
+            <div class="standards-box">
+                <h3>📚 Alaska Social Studies Standards</h3>
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <h4>Geography (A.1-A.4)</h4>
+                        <ul>
+                            <li>A.1 - Analyze global resource distribution patterns</li>
+                            <li>A.2 - Understand Earth's systems and sustainability</li>
+                            <li>A.3 - Examine human-environment interactions</li>
+                            <li>A.4 - Compare cultural approaches to resource use</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>Economics (D.1-D.4)</h4>
+                        <ul>
+                            <li>D.1 - Analyze sustainable economic systems</li>
+                            <li>D.2 - Understand resource allocation and scarcity</li>
+                            <li>D.3 - Evaluate development patterns and impacts</li>
+                            <li>D.4 - Analyze global economic interdependence</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>Alaska Environment & Resources</h4>
+                        <ul>
+                            <li>Understand Alaska's resource management challenges</li>
+                            <li>Analyze traditional Alaska Native resource practices</li>
+                            <li>Evaluate climate change impacts on Alaska</li>
+                            <li>Apply sustainability principles to Alaska contexts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📖 Cross-Curricular Standards Integration</h3>
+                <div class="standards-grid">
+                    <div class="standard-card" style="background: rgba(231, 76, 60, 0.1); border-left-color: #e74c3c;">
+                        <h4>🔤 English Language Arts</h4>
+                        <ul>
+                            <li><strong>CCSS.ELA-LITERACY.RST.6-8.8:</strong> Distinguish among facts, opinions, and biased information</li>
+                            <li><strong>CCSS.ELA-LITERACY.WHST.6-8.2:</strong> Write informative/explanatory texts on complex topics</li>
+                            <li><strong>CCSS.ELA-LITERACY.SL.8.2:</strong> Analyze purpose of information in diverse media</li>
+                            <li><strong>CCSS.ELA-LITERACY.RST.6-8.9:</strong> Compare and contrast information from different sources</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card" style="background: rgba(39, 174, 96, 0.1); border-left-color: #27ae60;">
+                        <h4>🧪 Science (NGSS)</h4>
+                        <ul>
+                            <li><strong>MS-ESS3-1:</strong> Develop models to describe water cycling and its role in Earth's surface processes</li>
+                            <li><strong>MS-ESS3-2:</strong> Analyze interactions among organisms and their environment</li>
+                            <li><strong>MS-ESS3-4:</strong> Construct argument for impacts of human activities on environment</li>
+                            <li><strong>MS-ETS1-4:</strong> Develop models to generate data for iterative testing and modification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="preparation" class="section">
+            <h2>🔧 Teacher Preparation Guide</h2>
+            
+            <div class="lesson-day">
+                <h3>📋 Pre-Simulation Setup</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌍 Resource Data Compilation</h4>
+                        <ul>
+                            <li>Regional resource maps and data for Asia, Africa, and Oceania</li>
+                            <li>Environmental monitoring data and sustainability indicators</li>
+                            <li>Economic development statistics and poverty data</li>
+                            <li>Climate change impact projections and adaptation plans</li>
+                            <li>Indigenous knowledge systems and traditional practices</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🔬 Scientific Resources</h4>
+                        <ul>
+                            <li>Ecosystem and biodiversity assessments</li>
+                            <li>Water cycle and watershed management information</li>
+                            <li>Renewable energy potential maps and data</li>
+                            <li>Soil health and agricultural sustainability studies</li>
+                            <li>Marine conservation and fisheries management resources</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>💡 Technology & Innovation Examples</h4>
+                        <ul>
+                            <li>Appropriate technology case studies and applications</li>
+                            <li>Sustainable development success stories</li>
+                            <li>Traditional knowledge and modern science integration</li>
+                            <li>Community-based resource management models</li>
+                            <li>Green technology and clean energy solutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sustainability-highlight">
+                <h3>🏔️ Alaska Sustainability Connections</h3>
+                <p>Connect global sustainability challenges to Alaska's unique context: climate change impacts on Arctic communities, traditional subsistence practices, renewable energy development in remote areas, and balancing resource extraction with conservation.</p>
+            </div>
+        </div>
+
+        <div id="lessons" class="section">
+            <h2>📚 Daily Lesson Plans</h2>
+            
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">1</div>
+                    <div>
+                        <h3>Day 1: Global Resource Assessment & Team Formation</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Geography A.1-A.2</span>
+                            <span class="badge ela">RST.6-8.8</span>
+                            <span class="badge science">MS-ESS3-1</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lesson-objectives">
+                    <div class="objective-card">
+                        <h4>🎯 Social Studies Objectives</h4>
+                        <ul>
+                            <li>Analyze global resource distribution patterns</li>
+                            <li>Understand Earth's systems and resource sustainability</li>
+                            <li>Identify regional resource management challenges</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 ELA Objectives</h4>
+                        <ul>
+                            <li>Distinguish among facts, opinions, and biased information</li>
+                            <li>Develop research questions about sustainability</li>
+                            <li>Analyze multiple perspectives on resource use</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Science Objectives</h4>
+                        <ul>
+                            <li>Develop models of water cycling and resource systems</li>
+                            <li>Analyze interactions among organisms and environment</li>
+                            <li>Understand sustainability principles scientifically</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌍 Global Resource Crisis Simulation (20 min)</h4>
+                        <p><strong>Opening Challenge:</strong> Students experience a resource scarcity scenario to understand the urgency of sustainable resource management.</p>
+                        <p><strong>Alaska Connection:</strong> Begin with Alaska's water and energy challenges to establish local relevance.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🗺️ Resource Mapping Analysis (30 min)</h4>
+                        <p><strong>Data Analysis:</strong> Teams examine global resource distribution maps, identifying patterns, disparities, and sustainability challenges across Asia, Africa, and Oceania.</p>
+                        <p><strong>Scientific Approach:</strong> Use scientific data to analyze water systems, energy resources, and ecosystem health indicators.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>👥 Stewardship Team Assembly (25 min)</h4>
+                        <p><strong>Role Assignment:</strong> Students select specialist roles and begin exploring their responsibilities within the resource stewardship framework.</p>
+                        <p><strong>Regional Focus:</strong> Teams choose initial regional focus areas based on interests and resource data.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📊 Baseline Assessment (15 min)</h4>
+                        <p><strong>Current State Analysis:</strong> Teams assess current resource conditions in their chosen regions using provided data and establish baseline measurements.</p>
+                        <p><strong>Research Planning:</strong> Develop research questions and data collection strategies for their stewardship roles.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 1 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Resource analysis quality, scientific data interpretation, research question development</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students demonstrate strategic thinking by connecting resource patterns to sustainability challenges</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">2</div>
+                    <div>
+                        <h3>Day 2: Ecosystem Analysis & Sustainability Science</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Geography A.2-A.3</span>
+                            <span class="badge ela">WHST.6-8.2</span>
+                            <span class="badge science">MS-ESS3-2</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🔬 Ecosystem Health Assessment (35 min)</h4>
+                        <p><strong>Scientific Analysis:</strong> Specialists conduct detailed ecosystem assessments using biodiversity data, water quality measurements, and habitat condition indicators.</p>
+                        <p><strong>Regional Expertise:</strong></p>
+                        <ul>
+                            <li>Environmental Scientists: Analyze ecosystem health and biodiversity</li>
+                            <li>Development Coordinators: Assess infrastructure impacts on environment</li>
+                            <li>Cultural Specialists: Research traditional ecological knowledge</li>
+                            <li>Technology Managers: Identify sustainable technology opportunities</li>
+                            <li>Sustainability Directors: Coordinate comprehensive assessments</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>💧 Water Systems & Resource Cycles (30 min)</h4>
+                        <p><strong>Scientific Modeling:</strong> Teams develop models of water cycling and resource systems in their regions, identifying critical factors and sustainability challenges.</p>
+                        <p><strong>Climate Connections:</strong> Analyze how climate change affects water availability, agricultural systems, and resource accessibility.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌱 Sustainability Indicator Development (25 min)</h4>
+                        <p><strong>Metrics Creation:</strong> Teams develop scientific indicators for measuring sustainability success in their regions, incorporating environmental, social, and economic factors.</p>
+                        <p><strong>Data Integration:</strong> Combine multiple data sources to create comprehensive sustainability assessments.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 2 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Scientific analysis quality, model development, indicator creation effectiveness</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students synthesize scientific information to develop comprehensive sustainability frameworks</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">3</div>
+                    <div>
+                        <h3>Day 3: Community Engagement & Traditional Knowledge Integration</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Geography A.4, History B.4</span>
+                            <span class="badge ela">SL.8.2</span>
+                            <span class="badge science">MS-ESS3-4</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🎭 Cultural Knowledge Integration (35 min)</h4>
+                        <p><strong>Traditional Wisdom Research:</strong> Teams research indigenous and traditional knowledge systems related to resource management in their regions.</p>
+                        <p><strong>Alaska Connection:</strong> Special focus on Alaska Native traditional ecological knowledge and its applications to global sustainability challenges.</p>
+                        <p><strong>DOK 4 Application:</strong> Students must integrate traditional knowledge with modern scientific approaches to create comprehensive solutions.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🤝 Community Engagement Simulation (30 min)</h4>
+                        <p><strong>Stakeholder Perspectives:</strong> Students role-play different community stakeholders (farmers, business owners, indigenous leaders, youth) to understand diverse perspectives on resource management.</p>
+                        <p><strong>Consensus Building:</strong> Practice negotiation and compromise skills to develop community-supported sustainability plans.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌿 Sustainable Development Planning (25 min)</h4>
+                        <p><strong>Solution Design:</strong> Teams begin developing comprehensive sustainability plans that integrate community needs, environmental protection, and economic development.</p>
+                        <p><strong>Cultural Sensitivity:</strong> Ensure all plans respect cultural values and traditional practices while promoting sustainability.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 3 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Cultural knowledge integration, community engagement skills, solution development quality</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by integrating diverse knowledge systems</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">4</div>
+                    <div>
+                        <h3>Day 4: Technology Innovation & Implementation Strategies</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Economics D.1-D.3</span>
+                            <span class="badge ela">RST.6-8.9</span>
+                            <span class="badge science">MS-ETS1-4</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>💡 Appropriate Technology Selection (30 min)</h4>
+                        <p><strong>Technology Assessment:</strong> Teams evaluate various sustainable technologies for their regions, considering cultural appropriateness, cost, maintenance, and environmental impact.</p>
+                        <p><strong>Innovation Focus:</strong> Research renewable energy, water purification, sustainable agriculture, and waste management technologies.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🏗️ Implementation Strategy Development (30 min)</h4>
+                        <p><strong>Pilot Program Design:</strong> Teams design implementation strategies for introducing sustainable technologies and practices in their regions.</p>
+                        <p><strong>Capacity Building:</strong> Include training, education, and local capacity development in implementation plans.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📊 Economic Impact Analysis (25 min)</h4>
+                        <p><strong>Cost-Benefit Assessment:</strong> Teams analyze the economic impacts of their sustainability strategies, including initial costs, long-term savings, and job creation potential.</p>
+                        <p><strong>Financial Sustainability:</strong> Develop funding strategies and financial models for long-term project sustainability.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🔄 Adaptive Management Planning (5 min)</h4>
+                        <p><strong>Flexibility Design:</strong> Create adaptive management strategies that allow for adjustments based on monitoring results and changing conditions.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 4 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Technology evaluation, implementation strategy quality, economic analysis depth</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by developing comprehensive implementation strategies</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">5</div>
+                    <div>
+                        <h3>Day 5: Crisis Response & Adaptive Management</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">All Standards Integration</span>
+                            <span class="badge ela">SL.8.1</span>
+                            <span class="badge science">MS-ESS3-4</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌪️ Climate Crisis Simulation (35 min)</h4>
+                        <p><strong>Emergency Response:</strong> Teams face a major climate crisis (e.g., "Extreme weather events threaten resource systems across your regions") requiring immediate adaptation of their sustainability strategies.</p>
+                        <p><strong>DOK 4 Application:</strong> Students must rapidly redesign their approaches while maintaining sustainability principles and community support.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🔄 Adaptive Strategy Implementation (30 min)</h4>
+                        <p><strong>Real-Time Adaptation:</strong> Teams implement their adaptive management strategies, making decisions about resource reallocation, technology deployment, and community response.</p>
+                        <p><strong>Cross-Regional Cooperation:</strong> Teams must collaborate across regions to share resources and expertise during the crisis.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📈 Impact Monitoring & Evaluation (20 min)</h4>
+                        <p><strong>Success Assessment:</strong> Teams evaluate the effectiveness of their adapted strategies using their developed indicators and metrics.</p>
+                        <p><strong>Learning Integration:</strong> Identify lessons learned and improvements for future sustainability planning.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Stewardship Reflection (5 min)</h4>
+                        <p><strong>Personal Growth:</strong> Students reflect on their development as resource stewards and their understanding of global sustainability challenges.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 5 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Crisis response effectiveness, adaptation strategy quality, monitoring and evaluation skills</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by adapting complex systems under crisis conditions</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">6</div>
+                    <div>
+                        <h3>Day 6: Sustainability Showcase & Global Collaboration</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">All Standards Demonstration</span>
+                            <span class="badge ela">SL.8.4-8.6</span>
+                            <span class="badge science">Scientific Communication</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌍 Global Sustainability Conference (55 min)</h4>
+                        <p><strong>Professional Presentations:</strong> Teams present their comprehensive resource stewardship strategies as if at an international sustainability conference.</p>
+                        <p><strong>Presentation Requirements:</strong></p>
+                        <ul>
+                            <li>Regional resource assessment and challenges</li>
+                            <li>Scientific analysis and sustainability indicators</li>
+                            <li>Community engagement and cultural integration</li>
+                            <li>Technology implementation and innovation</li>
+                            <li>Economic analysis and financial sustainability</li>
+                            <li>Crisis response and adaptive management</li>
+                            <li>Global collaboration opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🤝 Global Partnership Development (25 min)</h4>
+                        <p><strong>Inter-Regional Collaboration:</strong> Teams negotiate formal partnerships and resource-sharing agreements to create a global sustainability network.</p>
+                        <p><strong>Knowledge Exchange:</strong> Establish systems for sharing successful strategies and innovations across regions.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🏆 Innovation Recognition (10 min)</h4>
+                        <p><strong>Excellence Awards:</strong> Recognize outstanding innovations, cultural sensitivity, scientific rigor, and collaborative excellence.</p>
+                        <p><strong>Best Practices Documentation:</strong> Identify and document best practices for future sustainability efforts.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 6 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Presentation quality, scientific accuracy, cultural sensitivity, collaboration effectiveness</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking through comprehensive sustainability strategy presentation</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">7</div>
+                    <div>
+                        <h3>Day 7: Global Stewardship Legacy & Local Action</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Civic Action</span>
+                            <span class="badge ela">WHST.6-8.2</span>
+                            <span class="badge science">Environmental Action</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🏔️ Alaska Sustainability Action Plan (35 min)</h4>
+                        <p><strong>Local Application:</strong> Students develop specific action plans for applying global sustainability lessons to Alaska communities, addressing climate change, resource management, and cultural preservation.</p>
+                        <p><strong>Community Focus:</strong> Create realistic, implementable projects for their local communities or schools.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Global Stewardship Manifesto (30 min)</h4>
+                        <p><strong>Comprehensive Reflection:</strong> Students write manifestos addressing:</p>
+                        <ul>
+                            <li>Personal commitment to environmental stewardship</li>
+                            <li>Understanding of global resource interconnections</li>
+                            <li>Integration of traditional and scientific knowledge</li>
+                            <li>Plans for continued learning and action</li>
+                            <li>Vision for sustainable future development</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌱 Stewardship Network Formation (20 min)</h4>
+                        <p><strong>Ongoing Commitment:</strong> Students establish a classroom stewardship network for continued collaboration on sustainability projects throughout the year.</p>
+                        <p><strong>Resource Sharing:</strong> Create systems for sharing sustainability information and supporting each other's environmental actions.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Connection Celebration (5 min)</h4>
+                        <p><strong>Achievement Recognition:</strong> Celebrate the development of global stewardship awareness and commitment to sustainable action.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 7 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Action plan quality, manifesto depth, real-world application, stewardship commitment</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by applying global learning to local action</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="assessment" class="section">
+            <h2>📊 Comprehensive Assessment Framework</h2>
+            
+            <div class="assessment-rubric">
+                <h3>🎯 Standards-Based Assessment Rubric</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div class="objective-card">
+                        <h4>🌍 Sustainability Understanding (Alaska Social Studies)</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates sophisticated understanding of sustainability principles, expertly integrates multiple perspectives, designs comprehensive solutions</p>
+                        <p><strong>Proficient (3):</strong> Shows solid sustainability understanding, integrates most perspectives, designs effective solutions</p>
+                        <p><strong>Developing (2):</strong> Shows basic sustainability awareness, integrates some perspectives, designs simple solutions</p>
+                        <p><strong>Beginning (1):</strong> Shows minimal sustainability understanding, limited perspective integration, needs support designing solutions</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 Research & Communication (ELA)</h4>
+                        <p><strong>Exemplary (4):</strong> Conducts sophisticated research, communicates complex information clearly, distinguishes expertly among sources</p>
+                        <p><strong>Proficient (3):</strong> Conducts solid research, communicates effectively, distinguishes appropriately among sources</p>
+                        <p><strong>Developing (2):</strong> Conducts basic research, communicates clearly, distinguishes among some sources</p>
+                        <p><strong>Beginning (1):</strong> Conducts minimal research, communicates with support, limited source distinction</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Scientific Analysis (NGSS)</h4>
+                        <p><strong>Exemplary (4):</strong> Applies scientific principles expertly to sustainability challenges, develops sophisticated models, constructs strong evidence-based arguments</p>
+                        <p><strong>Proficient (3):</strong> Applies scientific principles appropriately, develops effective models, constructs adequate arguments</p>
+                        <p><strong>Developing (2):</strong> Applies some scientific principles, develops basic models, constructs simple arguments</p>
+                        <p><strong>Beginning (1):</strong> Applies few scientific principles, needs support developing models, limited argument construction</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>♻️ Stewardship Leadership</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates exceptional stewardship leadership, integrates cultural sensitivity expertly, inspires collaborative action</p>
+                        <p><strong>Proficient (3):</strong> Demonstrates solid stewardship leadership, shows cultural sensitivity, contributes to collaboration</p>
+                        <p><strong>Developing (2):</strong> Demonstrates basic stewardship awareness, shows some cultural sensitivity, participates in collaboration</p>
+                        <p><strong>Beginning (1):</strong> Demonstrates minimal stewardship awareness, needs support with cultural sensitivity, limited collaboration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📋 Assessment Components</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🔬 Scientific Analysis (40%)</h4>
+                        <ul>
+                            <li>Ecosystem assessment quality</li>
+                            <li>Sustainability indicator development</li>
+                            <li>Data interpretation and model creation</li>
+                            <li>Evidence-based solution design</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌱 Stewardship Strategy (35%)</h4>
+                        <ul>
+                            <li>Comprehensive solution development</li>
+                            <li>Cultural knowledge integration</li>
+                            <li>Implementation strategy effectiveness</li>
+                            <li>Crisis response and adaptation</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Communication & Action (25%)</h4>
+                        <ul>
+                            <li>Presentation clarity and impact</li>
+                            <li>Written reflection depth</li>
+                            <li>Local action plan development</li>
+                            <li>Stewardship network contribution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resources" class="section">
+            <h2>📖 Resources & Materials</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="sustainability-highlight">
+                    <h3>🌍 Environmental Data Resources</h3>
+                    <ul>
+                        <li>Global resource distribution maps and datasets</li>
+                        <li>Climate change impact projections and scenarios</li>
+                        <li>Biodiversity and ecosystem health indicators</li>
+                        <li>Water quality and availability assessments</li>
+                        <li>Renewable energy potential maps and data</li>
+                        <li>Sustainable development goal progress reports</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>💡 Technology & Innovation Resources</h3>
+                    <ul>
+                        <li>Appropriate technology case studies</li>
+                        <li>Renewable energy system examples</li>
+                        <li>Sustainable agriculture techniques</li>
+                        <li>Water purification and conservation technologies</li>
+                        <li>Waste management and circular economy models</li>
+                        <li>Green building and eco-design principles</li>
+                    </ul>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>🎭 Cultural & Community Resources</h3>
+                    <ul>
+                        <li>Traditional ecological knowledge databases</li>
+                        <li>Indigenous resource management practices</li>
+                        <li>Community-based conservation examples</li>
+                        <li>Cultural sensitivity and engagement guidelines</li>
+                        <li>Alaska Native traditional practices and wisdom</li>
+                        <li>International indigenous cooperation models</li>
+                    </ul>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>🖥️ Digital Sustainability Tools</h3>
+                    <ul>
+                        <li>GIS mapping software for resource analysis</li>
+                        <li>Climate modeling and projection tools</li>
+                        <li>Sustainability indicator calculators</li>
+                        <li>Virtual field trips to conservation sites</li>
+                        <li>Collaboration platforms for global connection</li>
+                        <li>Digital portfolio tools for documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Simulation: Global Citizenship Summit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8e44ad, #6c3483);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #8e44ad;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            border-bottom: 3px solid #8e44ad;
+            padding-bottom: 15px;
+        }
+
+        .standards-box {
+            background: linear-gradient(135deg, #004b87, #002855);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .standard-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .dok-indicator {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .crosscut-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #8e44ad;
+        }
+
+        .lesson-day {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-day:hover {
+            border-color: #8e44ad;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .day-number {
+            background: #8e44ad;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .lesson-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .objective-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #8e44ad;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+
+        .assessment-rubric {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .role-card {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .citizenship-highlight {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #8e44ad;
+        }
+
+        .global-challenge-card {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #e91e63;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge.social-studies { background: #004b87; }
+        .badge.ela { background: #e74c3c; }
+        .badge.science { background: #27ae60; }
+        .badge.dok { background: #ff9800; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lesson-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Global Citizenship Summit</h1>
+            <div style="font-size: 1.4em; margin-top: 15px;">Quarter 4 Simulation • May 4-12, 2026</div>
+            <div style="font-size: 1.1em; margin-top: 10px; opacity: 0.9;">Designing Solutions for Global Challenges Through Historical Wisdom</div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn active" onclick="showSection('overview')">📋 Overview</button>
+            <button class="nav-btn" onclick="showSection('standards')">🎯 Standards</button>
+            <button class="nav-btn" onclick="showSection('preparation')">🔧 Preparation</button>
+            <button class="nav-btn" onclick="showSection('lessons')">📚 Daily Lessons</button>
+            <button class="nav-btn" onclick="showSection('assessment')">📊 Assessment</button>
+            <button class="nav-btn" onclick="showSection('resources')">📖 Resources</button>
+        </div>
+
+        <div id="overview" class="section active">
+            <h2>🌍 Simulation Overview</h2>
+            
+            <div class="standards-box">
+                <h3>🎯 Simulation Focus</h3>
+                <p style="font-size: 1.2em; margin: 15px 0;">Students become <strong>Global Citizenship Designers</strong> who apply historical lessons and geographic knowledge to design comprehensive solutions for contemporary global challenges, preparing them for active participation in our interconnected world.</p>
+                <div class="dok-indicator">DOK 4: Historical Synthesis & Global Solution Design</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                <div class="role-card">
+                    <h4>🏛️ Historical Synthesis Coordinator</h4>
+                    <p>Guides analysis of historical patterns, coordinates team synthesis, connects past lessons to present challenges, manages timeline.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🌍 Global Challenge Analyst</h4>
+                    <p>Researches contemporary global issues, analyzes root causes, identifies systemic connections, evaluates current solutions.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🎭 Cultural & Religious Perspectives Specialist</h4>
+                    <p>Integrates diverse cultural and religious viewpoints, ensures inclusive solutions, manages interfaith and intercultural dialogue.</p>
+                </div>
+                <div class="role-card">
+                    <h4>💡 Innovation & Technology Coordinator</h4>
+                    <p>Develops technological solutions, evaluates innovation potential, manages digital citizenship, addresses technology equity.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🤝 Civic Engagement Designer</h4>
+                    <p>Creates participation frameworks, designs democratic processes, develops civic education, promotes active citizenship.</p>
+                </div>
+            </div>
+
+            <div class="citizenship-highlight">
+                <h3>🌏 Global Citizenship Development Journey</h3>
+                <p><strong>Summit Structure:</strong> Teams progress through citizenship development stages:</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li><strong>Historical Foundation:</strong> Ancient civilizations to modern nations</li>
+                    <li><strong>Contemporary Challenge Analysis:</strong> Climate change, inequality, conflict, governance</li>
+                    <li><strong>Solution Design:</strong> Comprehensive approaches integrating multiple perspectives</li>
+                    <li><strong>Implementation Planning:</strong> Realistic strategies for global cooperation</li>
+                    <li><strong>Civic Action Development:</strong> Personal and community engagement plans</li>
+                </ul>
+            </div>
+
+            <div class="global-challenge-card">
+                <h3>🌐 Global Challenge Focus Areas</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                    <div><strong>Climate Action:</strong> Environmental sustainability and adaptation</div>
+                    <div><strong>Social Justice:</strong> Equality, human rights, and dignity</div>
+                    <div><strong>Economic Equity:</strong> Fair development and opportunity</div>
+                    <div><strong>Peace & Security:</strong> Conflict prevention and resolution</div>
+                    <div><strong>Democratic Governance:</strong> Participation and representation</div>
+                    <div><strong>Cultural Preservation:</strong> Diversity and heritage protection</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="standards" class="section">
+            <h2>🎯 Alaska State Standards Alignment</h2>
+            
+            <div class="standards-box">
+                <h3>📚 Alaska Social Studies Standards</h3>
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <h4>History (B.1-B.4)</h4>
+                        <ul>
+                            <li>B.1 - Analyze historical development patterns and their contemporary relevance</li>
+                            <li>B.2 - Understand connections between past and present global challenges</li>
+                            <li>B.3 - Evaluate historical events and their long-term impacts on society</li>
+                            <li>B.4 - Synthesize multiple historical perspectives to inform current decisions</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>Government & Citizenship (C.1-C.4)</h4>
+                        <ul>
+                            <li>C.1 - Analyze various government systems and their effectiveness</li>
+                            <li>C.2 - Evaluate civic ideals and practices in democratic societies</li>
+                            <li>C.3 - Understand rights, responsibilities, and active citizenship</li>
+                            <li>C.4 - Analyze public policy development and implementation</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>World Religions & Culture (Alaska-Specific)</h4>
+                        <ul>
+                            <li>Understand major world religions and their contributions to society</li>
+                            <li>Analyze cultural diversity and its impact on global perspectives</li>
+                            <li>Evaluate religious and cultural approaches to global challenges</li>
+                            <li>Demonstrate respect for diverse beliefs and practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📖 Cross-Curricular Standards Integration</h3>
+                <div class="standards-grid">
+                    <div class="standard-card" style="background: rgba(231, 76, 60, 0.1); border-left-color: #e74c3c;">
+                        <h4>🔤 English Language Arts</h4>
+                        <ul>
+                            <li><strong>CCSS.ELA-LITERACY.SL.8.3:</strong> Delineate speaker's argument and evaluate soundness</li>
+                            <li><strong>CCSS.ELA-LITERACY.WHST.6-8.4:</strong> Produce clear, coherent writing appropriate to task</li>
+                            <li><strong>CCSS.ELA-LITERACY.SL.8.6:</strong> Adapt speech to a variety of contexts and tasks</li>
+                            <li><strong>CCSS.ELA-LITERACY.RST.6-8.10:</strong> Read and comprehend complex technical texts</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card" style="background: rgba(39, 174, 96, 0.1); border-left-color: #27ae60;">
+                        <h4>🧪 Science (NGSS)</h4>
+                        <ul>
+                            <li><strong>MS-ESS3-5:</strong> Examine human impacts on environment and evaluate solutions</li>
+                            <li><strong>MS-ETS1-1:</strong> Define criteria and constraints for solution design</li>
+                            <li><strong>MS-ETS1-2:</strong> Evaluate competing design solutions based on prioritized criteria</li>
+                            <li><strong>MS-ESS2-1:</strong> Develop models to describe interactions between Earth's systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="preparation" class="section">
+            <h2>🔧 Teacher Preparation Guide</h2>
+            
+            <div class="lesson-day">
+                <h3>📋 Pre-Simulation Setup</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>📚 Historical Knowledge Base</h4>
+                        <ul>
+                            <li>Ancient civilizations achievements and lessons</li>
+                            <li>Major historical developments and their impacts</li>
+                            <li>Government systems evolution and effectiveness</li>
+                            <li>Economic systems development and outcomes</li>
+                            <li>Religious and philosophical traditions and contributions</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Contemporary Challenge Data</h4>
+                        <ul>
+                            <li>Current global issues data and analysis</li>
+                            <li>Climate change impacts and projections</li>
+                            <li>Social inequality and human rights issues</li>
+                            <li>International cooperation successes and failures</li>
+                            <li>Technology impacts on society and governance</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎭 Cultural & Religious Resources</h4>
+                        <ul>
+                            <li>World religions overview and key teachings</li>
+                            <li>Cultural diversity resources and perspectives</li>
+                            <li>Interfaith cooperation examples and models</li>
+                            <li>Traditional wisdom and knowledge systems</li>
+                            <li>Indigenous perspectives on global challenges</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="citizenship-highlight">
+                <h3>🏔️ Alaska Civic Engagement Connections</h3>
+                <p>Emphasize Alaska's unique position in global citizenship: Arctic leadership on climate change, indigenous rights advocacy, international cooperation through Arctic Council, and the state's role in global resource management.</p>
+            </div>
+        </div>
+
+        <div id="lessons" class="section">
+            <h2>📚 Daily Lesson Plans</h2>
+            
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">1</div>
+                    <div>
+                        <h3>Day 1: Historical Foundation & Contemporary Challenge Analysis</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">History B.1-B.2</span>
+                            <span class="badge ela">RST.6-8.10</span>
+                            <span class="badge science">MS-ESS3-5</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lesson-objectives">
+                    <div class="objective-card">
+                        <h4>🎯 Social Studies Objectives</h4>
+                        <ul>
+                            <li>Analyze historical patterns and their contemporary relevance</li>
+                            <li>Understand connections between past and present challenges</li>
+                            <li>Identify historical solutions applicable to current issues</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 ELA Objectives</h4>
+                        <ul>
+                            <li>Read and comprehend complex historical and contemporary texts</li>
+                            <li>Analyze multiple perspectives on global issues</li>
+                            <li>Develop evidence-based arguments connecting past and present</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Science Objectives</h4>
+                        <ul>
+                            <li>Examine human impacts on environment historically and currently</li>
+                            <li>Evaluate scientific solutions to environmental challenges</li>
+                            <li>Understand Earth's systems and human interactions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🏛️ Historical Wisdom Gallery Walk (25 min)</h4>
+                        <p><strong>Civilization Showcase:</strong> Students examine displays of achievements from ancient civilizations (Mesopotamia, Egypt, China, India, Greece, Rome, Maya, Aztec, Inca) and identify timeless solutions to human challenges.</p>
+                        <p><strong>Pattern Recognition:</strong> Students identify recurring themes in how civilizations addressed governance, economics, environment, and social issues.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Challenge Mapping (30 min)</h4>
+                        <p><strong>Contemporary Issues Analysis:</strong> Teams examine current global challenges (climate change, inequality, conflict, governance) and map their geographic, historical, and systemic connections.</p>
+                        <p><strong>Root Cause Analysis:</strong> Students identify underlying causes and patterns connecting contemporary challenges to historical precedents.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>👥 Global Citizenship Team Formation (25 min)</h4>
+                        <p><strong>Role Assignment:</strong> Students select specialist roles and begin exploring how their expertise contributes to global citizenship development.</p>
+                        <p><strong>Challenge Selection:</strong> Teams choose primary global challenges to address through their summit work.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎯 Summit Mission Development (10 min)</h4>
+                        <p><strong>Purpose Setting:</strong> Teams articulate their mission for the Global Citizenship Summit, connecting historical wisdom to contemporary action.</p>
+                        <p><strong>Success Criteria:</strong> Establish initial criteria for measuring the effectiveness of their citizenship solutions.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 1 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Historical pattern recognition, contemporary challenge analysis, mission development quality</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students demonstrate strategic thinking by connecting historical patterns to contemporary challenges</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">2</div>
+                    <div>
+                        <h3>Day 2: Cultural & Religious Perspectives Integration</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Culture & Religion</span>
+                            <span class="badge ela">SL.8.3</span>
+                            <span class="badge science">MS-ETS1-1</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🕌 World Religions & Global Challenges (35 min)</h4>
+                        <p><strong>Interfaith Dialogue Simulation:</strong> Students research and represent different religious perspectives (Christianity, Islam, Judaism, Buddhism, Hinduism, Indigenous traditions) on global challenges.</p>
+                        <p><strong>Wisdom Integration:</strong> Identify common values and complementary approaches from different faith traditions for addressing global issues.</p>
+                        <p><strong>Alaska Connection:</strong> Include Alaska Native spiritual perspectives and their contributions to global environmental stewardship.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌎 Cultural Diversity Solutions Analysis (30 min)</h4>
+                        <p><strong>Global Perspectives Study:</strong> Teams examine how different cultures approach similar challenges, identifying innovative solutions and diverse problem-solving strategies.</p>
+                        <p><strong>Cross-Cultural Synthesis:</strong> Develop approaches that honor cultural diversity while addressing universal human needs.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🤝 Inclusive Solution Design (25 min)</h4>
+                        <p><strong>Perspective Integration:</strong> Teams begin designing solutions that incorporate multiple cultural and religious viewpoints while maintaining effectiveness.</p>
+                        <p><strong>Ethical Framework Development:</strong> Create ethical guidelines for global citizenship that respect diverse values and beliefs.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 2 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Cultural perspective integration, interfaith dialogue quality, inclusive solution design</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students synthesize diverse perspectives to create inclusive approaches to global challenges</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">3</div>
+                    <div>
+                        <h3>Day 3: Democratic Governance & Civic Participation Design</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Government C.1-C.4</span>
+                            <span class="badge ela">WHST.6-8.4</span>
+                            <span class="badge science">MS-ETS1-2</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🏛️ Government Systems Analysis (30 min)</h4>
+                        <p><strong>Comparative Government Study:</strong> Teams analyze strengths and weaknesses of different government systems (democracy, republic, federal, unitary, parliamentary, presidential) in addressing global challenges.</p>
+                        <p><strong>Historical Effectiveness:</strong> Evaluate which governmental approaches have been most successful in different contexts and time periods.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🗳️ Democratic Participation Innovation (35 min)</h4>
+                        <p><strong>Civic Engagement Design:</strong> Teams design innovative approaches to increase citizen participation in democratic processes, addressing modern challenges like digital citizenship and global interconnectedness.</p>
+                        <p><strong>DOK 4 Application:</strong> Students must create comprehensive systems that balance individual rights with collective responsibility.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📊 Policy Development Simulation (25 min)</h4>
+                        <p><strong>Global Policy Design:</strong> Teams develop policy frameworks for addressing their chosen global challenges, incorporating democratic principles and international cooperation.</p>
+                        <p><strong>Implementation Planning:</strong> Create realistic strategies for implementing global policies while respecting national sovereignty.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 3 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Government analysis depth, civic participation innovation, policy development quality</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by designing comprehensive governance systems</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">4</div>
+                    <div>
+                        <h3>Day 4: Economic Systems & Global Justice</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Economics D.1-D.4</span>
+                            <span class="badge ela">RST.6-8.9</span>
+                            <span class="badge science">MS-ESS2-1</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>💰 Economic Justice Analysis (30 min)</h4>
+                        <p><strong>Global Inequality Study:</strong> Teams examine patterns of global economic inequality, analyzing historical causes and contemporary factors perpetuating disparities.</p>
+                        <p><strong>System Evaluation:</strong> Assess different economic systems (market, command, mixed, traditional) in terms of their effectiveness in promoting justice and sustainability.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌱 Sustainable Development Design (35 min)</h4>
+                        <p><strong>Economic Model Innovation:</strong> Teams design economic approaches that balance growth with sustainability, equity, and environmental protection.</p>
+                        <p><strong>Resource Management:</strong> Create systems for fair resource distribution that respect both human needs and environmental limits.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🤝 Global Economic Cooperation (25 min)</h4>
+                        <p><strong>International Partnership Design:</strong> Develop frameworks for global economic cooperation that address inequality while promoting sustainable development.</p>
+                        <p><strong>Trade Justice:</strong> Create fair trade mechanisms that benefit all participating nations and communities.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 4 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Economic analysis depth, sustainable development design, cooperation framework quality</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by creating comprehensive economic justice systems</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">5</div>
+                    <div>
+                        <h3>Day 5: Technology, Innovation & Global Citizenship</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Modern Challenges</span>
+                            <span class="badge ela">SL.8.6</span>
+                            <span class="badge science">MS-ETS1-1</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>💻 Digital Citizenship Framework (30 min)</h4>
+                        <p><strong>Technology & Democracy:</strong> Teams analyze how technology affects democratic participation, information access, and global communication.</p>
+                        <p><strong>Digital Rights & Responsibilities:</strong> Develop frameworks for ethical technology use that promote global citizenship and human rights.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🚀 Innovation for Global Good (35 min)</h4>
+                        <p><strong>Technology Solution Design:</strong> Teams design innovative technological approaches to address their chosen global challenges.</p>
+                        <p><strong>Equity & Access:</strong> Ensure technology solutions promote equity and are accessible to all global citizens, regardless of economic status.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌐 Global Communication Networks (25 min)</h4>
+                        <p><strong>Connection Building:</strong> Design systems for global citizens to collaborate effectively across cultural, linguistic, and geographic boundaries.</p>
+                        <p><strong>Information Integrity:</strong> Create mechanisms to ensure accurate information sharing and combat misinformation in global citizenship contexts.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 5 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Digital citizenship framework, innovation design quality, communication system effectiveness</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by integrating technology with global citizenship principles</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">6</div>
+                    <div>
+                        <h3>Day 6: Summit Presentations & Global Citizenship Showcase</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">All Standards Integration</span>
+                            <span class="badge ela">SL.8.4-8.6</span>
+                            <span class="badge science">Scientific Communication</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🎤 Global Citizenship Summit Presentations (60 min)</h4>
+                        <p><strong>Comprehensive Presentations:</strong> Teams present their complete global citizenship frameworks as keynote presentations at the Global Citizenship Summit.</p>
+                        <p><strong>Presentation Requirements:</strong></p>
+                        <ul>
+                            <li>Historical wisdom and contemporary challenge connections</li>
+                            <li>Cultural and religious perspective integration</li>
+                            <li>Democratic governance and civic participation innovations</li>
+                            <li>Economic justice and sustainable development approaches</li>
+                            <li>Technology and digital citizenship frameworks</li>
+                            <li>Implementation strategies and global cooperation plans</li>
+                            <li>Personal and community action commitments</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Citizenship Charter Development (25 min)</h4>
+                        <p><strong>Collaborative Charter:</strong> All teams contribute to developing a comprehensive Global Citizenship Charter that synthesizes the best ideas from all presentations.</p>
+                        <p><strong>Consensus Building:</strong> Practice democratic processes to reach agreement on shared global citizenship principles and commitments.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🏆 Excellence Recognition (5 min)</h4>
+                        <p><strong>Achievement Celebration:</strong> Recognize outstanding historical analysis, innovative solutions, cultural sensitivity, and collaborative excellence.</p>
+                        <p><strong>Wisdom Integration:</strong> Highlight examples of effective integration of historical wisdom with contemporary innovation.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 6 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Presentation quality, historical integration, solution comprehensiveness, charter contribution</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking through comprehensive global citizenship framework presentation</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">7</div>
+                    <div>
+                        <h3>Day 7: Personal Commitment & Lifelong Citizenship</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Civic Action</span>
+                            <span class="badge ela">WHST.6-8.4</span>
+                            <span class="badge science">Human Impact</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🏔️ Alaska Global Citizenship Action Plan (35 min)</h4>
+                        <p><strong>Local Implementation:</strong> Students develop specific, actionable plans for implementing global citizenship principles in their Alaska communities.</p>
+                        <p><strong>Arctic Leadership:</strong> Emphasize Alaska's unique role in global citizenship, particularly in climate action, indigenous rights, and international cooperation.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📜 Personal Citizenship Manifesto (30 min)</h4>
+                        <p><strong>Individual Commitment:</strong> Students write personal manifestos outlining their commitments to global citizenship, including:</p>
+                        <ul>
+                            <li>Historical lessons they will carry forward</li>
+                            <li>Personal values and principles for global engagement</li>
+                            <li>Specific actions they will take as global citizens</li>
+                            <li>Goals for continued learning and growth</li>
+                            <li>Vision for contributing to global solutions</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌐 Global Citizenship Network (20 min)</h4>
+                        <p><strong>Ongoing Connection:</strong> Students establish systems for maintaining their global citizenship development throughout high school and beyond.</p>
+                        <p><strong>Mentorship & Support:</strong> Create peer networks for supporting each other's global citizenship journeys.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎓 Citizenship Graduation Ceremony (5 min)</h4>
+                        <p><strong>Achievement Recognition:</strong> Celebrate students' development as informed, engaged global citizens ready to contribute to solving world challenges.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 7 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Action plan quality, manifesto depth, network development, citizenship commitment</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by creating lifelong global citizenship frameworks</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="assessment" class="section">
+            <h2>📊 Comprehensive Assessment Framework</h2>
+            
+            <div class="assessment-rubric">
+                <h3>🎯 Standards-Based Assessment Rubric</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div class="objective-card">
+                        <h4>🏛️ Historical Synthesis (Alaska History Standards)</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates sophisticated understanding of historical patterns, expertly connects past to present, synthesizes multiple perspectives</p>
+                        <p><strong>Proficient (3):</strong> Shows solid historical understanding, connects past to present effectively, synthesizes most perspectives</p>
+                        <p><strong>Developing (2):</strong> Shows basic historical understanding, makes some connections, synthesizes some perspectives</p>
+                        <p><strong>Beginning (1):</strong> Shows minimal historical understanding, limited connections, needs support synthesizing perspectives</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 Communication & Argumentation (ELA)</h4>
+                        <p><strong>Exemplary (4):</strong> Communicates complex ideas clearly, constructs compelling arguments, adapts expertly to different audiences</p>
+                        <p><strong>Proficient (3):</strong> Communicates effectively, constructs solid arguments, adapts appropriately to audiences</p>
+                        <p><strong>Developing (2):</strong> Communicates clearly, constructs basic arguments, adapts to some audiences</p>
+                        <p><strong>Beginning (1):</strong> Communicates with support, constructs minimal arguments, limited audience adaptation</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Solution Design & Innovation (Science)</h4>
+                        <p><strong>Exemplary (4):</strong> Designs sophisticated solutions, applies scientific principles expertly, innovates creatively</p>
+                        <p><strong>Proficient (3):</strong> Designs effective solutions, applies scientific principles appropriately, shows innovation</p>
+                        <p><strong>Developing (2):</strong> Designs basic solutions, applies some scientific principles, shows some innovation</p>
+                        <p><strong>Beginning (1):</strong> Designs minimal solutions, applies few scientific principles, needs support for innovation</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🌍 Global Citizenship Development</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates exceptional global citizenship understanding, commits deeply to action, inspires others</p>
+                        <p><strong>Proficient (3):</strong> Demonstrates solid global citizenship understanding, commits to action, collaborates effectively</p>
+                        <p><strong>Developing (2):</strong> Demonstrates basic global citizenship understanding, shows some commitment, participates in collaboration</p>
+                        <p><strong>Beginning (1):</strong> Demonstrates minimal global citizenship understanding, limited commitment, needs support for collaboration</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📋 Assessment Components</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🏛️ Historical Integration (30%)</h4>
+                        <ul>
+                            <li>Historical pattern recognition and analysis</li>
+                            <li>Past-present connection quality</li>
+                            <li>Multiple perspective synthesis</li>
+                            <li>Wisdom application to contemporary challenges</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Solution Design (40%)</h4>
+                        <ul>
+                            <li>Comprehensive approach development</li>
+                            <li>Cultural and religious perspective integration</li>
+                            <li>Democratic governance innovation</li>
+                            <li>Economic justice and sustainability</li>
+                            <li>Technology and digital citizenship frameworks</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎯 Citizenship Commitment (30%)</h4>
+                        <ul>
+                            <li>Personal manifesto depth and authenticity</li>
+                            <li>Local action plan quality and feasibility</li>
+                            <li>Presentation clarity and persuasiveness</li>
+                            <li>Network contribution and collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resources" class="section">
+            <h2>📖 Resources & Materials</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="citizenship-highlight">
+                    <h3>🏛️ Historical Resources</h3>
+                    <ul>
+                        <li>Ancient civilizations achievements and contributions</li>
+                        <li>Historical government systems and their outcomes</li>
+                        <li>Economic systems evolution and impacts</li>
+                        <li>Social movements and their effectiveness</li>
+                        <li>International cooperation successes and failures</li>
+                        <li>Primary source documents from different eras</li>
+                    </ul>
+                </div>
+                
+                <div class="global-challenge-card">
+                    <h3>🌍 Contemporary Challenge Resources</h3>
+                    <ul>
+                        <li>Current global issues data and statistics</li>
+                        <li>Climate change impacts and adaptation strategies</li>
+                        <li>Social justice movements and human rights progress</li>
+                        <li>Economic inequality data and analysis</li>
+                        <li>Democratic governance challenges and innovations</li>
+                        <li>Technology impacts on society and governance</li>
+                    </ul>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>🎭 Cultural & Religious Resources</h3>
+                    <ul>
+                        <li>World religions overview and teachings</li>
+                        <li>Cultural diversity and perspective resources</li>
+                        <li>Indigenous knowledge systems and wisdom</li>
+                        <li>Interfaith cooperation examples and models</li>
+                        <li>Alaska Native cultural perspectives and contributions</li>
+                        <li>Global cultural exchange and understanding resources</li>
+                    </ul>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>🖥️ Digital Citizenship Tools</h3>
+                    <ul>
+                        <li>Online collaboration platforms for global connection</li>
+                        <li>Digital presentation and multimedia tools</li>
+                        <li>Virtual reality experiences of historical sites</li>
+                        <li>Global communication and language tools</li>
+                        <li>Citizenship action planning and tracking apps</li>
+                        <li>Digital portfolio platforms for lifelong learning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

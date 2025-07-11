@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 Simulation: Transatlantic Cultural Exchange Network</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1em;
+        }
+
+        .nav-btn:hover, .nav-btn.active {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #f39c12;
+            margin-bottom: 25px;
+            font-size: 2.2em;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 15px;
+        }
+
+        .standards-box {
+            background: linear-gradient(135deg, #004b87, #002855);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .standard-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .dok-indicator {
+            background: linear-gradient(135deg, #ffd700, #ffb347);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .crosscut-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #27ae60;
+        }
+
+        .lesson-day {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .lesson-day:hover {
+            border-color: #f39c12;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .lesson-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .day-number {
+            background: #f39c12;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .lesson-objectives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .objective-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .activity-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #667eea;
+        }
+
+        .assessment-rubric {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+        }
+
+        .role-card {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .cultural-highlight {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd9);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #e91e63;
+        }
+
+        .route-card {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge.social-studies { background: #004b87; }
+        .badge.ela { background: #e74c3c; }
+        .badge.science { background: #27ae60; }
+        .badge.dok { background: #ff9800; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .lesson-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌐 Transatlantic Cultural Exchange Network</h1>
+            <div style="font-size: 1.4em; margin-top: 15px;">Quarter 2 Simulation • December 8-16, 2025</div>
+            <div style="font-size: 1.1em; margin-top: 10px; opacity: 0.9;">Connecting Americas & Europe Through Cultural Exchange</div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn active" onclick="showSection('overview')">📋 Overview</button>
+            <button class="nav-btn" onclick="showSection('standards')">🎯 Standards</button>
+            <button class="nav-btn" onclick="showSection('preparation')">🔧 Preparation</button>
+            <button class="nav-btn" onclick="showSection('lessons')">📚 Daily Lessons</button>
+            <button class="nav-btn" onclick="showSection('assessment')">📊 Assessment</button>
+            <button class="nav-btn" onclick="showSection('resources')">📖 Resources</button>
+        </div>
+
+        <div id="overview" class="section active">
+            <h2>🌍 Simulation Overview</h2>
+            
+            <div class="standards-box">
+                <h3>🎯 Simulation Focus</h3>
+                <p style="font-size: 1.2em; margin: 15px 0;">Students become <strong>Cultural Exchange Coordinators</strong> designing and managing sustainable networks that connect the Americas and Europe through cultural, educational, and economic exchanges that preserve heritage while fostering understanding.</p>
+                <div class="dok-indicator">DOK 3-4: Cross-Cultural Analysis & Network Design</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+                <div class="role-card">
+                    <h4>🗺️ Network Coordinator</h4>
+                    <p>Plans overall exchange network strategy, manages logistics, coordinates between all specialists, tracks network effectiveness.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🎭 Cultural Ambassador</h4>
+                    <p>Researches cultural traditions, develops respectful exchange programs, manages cultural sensitivity, preserves heritage.</p>
+                </div>
+                <div class="role-card">
+                    <h4>💼 Economic Exchange Specialist</h4>
+                    <p>Manages sustainable trade relationships, develops fair exchange systems, analyzes economic impacts, ensures mutual benefit.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🚢 Route & Logistics Manager</h4>
+                    <p>Plans transportation routes, manages geographic challenges, coordinates timing, addresses infrastructure needs.</p>
+                </div>
+                <div class="role-card">
+                    <h4>🤝 Diplomatic Relations Manager</h4>
+                    <p>Handles political relationships, negotiates agreements, resolves conflicts, manages international cooperation.</p>
+                </div>
+            </div>
+
+            <div class="route-card">
+                <h3>🗺️ Transatlantic Network Route</h3>
+                <p><strong>Atlantic Circuit:</strong> Teams design exchange networks connecting:</p>
+                <ul style="margin: 15px 0; padding-left: 20px;">
+                    <li><strong>North America:</strong> New York, Quebec City, Mexico City</li>
+                    <li><strong>South America:</strong> Buenos Aires, Rio de Janeiro, Lima</li>
+                    <li><strong>Europe:</strong> London, Paris, Madrid, Lisbon, Amsterdam</li>
+                    <li><strong>Special Focus:</strong> Cultural heritage sites and indigenous communities</li>
+                </ul>
+            </div>
+
+            <div class="cultural-highlight">
+                <h3>🎨 Cultural Exchange Focus Areas</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0;">
+                    <div><strong>Arts & Literature:</strong> Visual arts, music, literature, performing arts</div>
+                    <div><strong>Education:</strong> Student exchanges, teacher training, curriculum sharing</div>
+                    <div><strong>Heritage:</strong> Museum collaborations, archaeological partnerships</div>
+                    <div><strong>Language:</strong> Language preservation, multilingual education</div>
+                    <div><strong>Technology:</strong> Innovation sharing, technical education</div>
+                    <div><strong>Environment:</strong> Conservation practices, sustainable living</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="standards" class="section">
+            <h2>🎯 Alaska State Standards Alignment</h2>
+            
+            <div class="standards-box">
+                <h3>📚 Alaska Social Studies Standards</h3>
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <h4>Geography (A.1-A.4)</h4>
+                        <ul>
+                            <li>A.1 - Analyze spatial patterns across continents</li>
+                            <li>A.2 - Understand ocean-continent interactions</li>
+                            <li>A.3 - Examine cultural landscape creation</li>
+                            <li>A.4 - Compare cultural patterns globally</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>History (B.1-B.4)</h4>
+                        <ul>
+                            <li>B.1 - Analyze historical exchange patterns</li>
+                            <li>B.2 - Connect colonial to modern relationships</li>
+                            <li>B.3 - Evaluate cultural exchange impacts</li>
+                            <li>B.4 - Understand multiple cultural perspectives</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card">
+                        <h4>Culture & Diversity (Alaska-Specific)</h4>
+                        <ul>
+                            <li>Understand Alaska Native cultural connections</li>
+                            <li>Recognize cultural preservation importance</li>
+                            <li>Analyze multicultural exchange benefits</li>
+                            <li>Apply cultural sensitivity principles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📖 Cross-Curricular Standards Integration</h3>
+                <div class="standards-grid">
+                    <div class="standard-card" style="background: rgba(231, 76, 60, 0.1); border-left-color: #e74c3c;">
+                        <h4>🔤 English Language Arts</h4>
+                        <ul>
+                            <li><strong>CCSS.ELA-LITERACY.RST.6-8.9:</strong> Compare and contrast information from different sources</li>
+                            <li><strong>CCSS.ELA-LITERACY.WHST.6-8.7:</strong> Conduct research projects with multiple sources</li>
+                            <li><strong>CCSS.ELA-LITERACY.SL.8.1:</strong> Engage in collaborative discussions effectively</li>
+                            <li><strong>CCSS.ELA-LITERACY.L.8.6:</strong> Acquire domain-specific vocabulary</li>
+                        </ul>
+                    </div>
+                    <div class="standard-card" style="background: rgba(39, 174, 96, 0.1); border-left-color: #27ae60;">
+                        <h4>🧪 Science (NGSS)</h4>
+                        <ul>
+                            <li><strong>MS-ESS1-3:</strong> Analyze Earth's systems and their interactions</li>
+                            <li><strong>MS-ESS2-6:</strong> Develop models of water and atmosphere circulation</li>
+                            <li><strong>MS-ETS1-2:</strong> Evaluate competing design solutions</li>
+                            <li><strong>MS-ESS3-2:</strong> Analyze patterns of interactions among organisms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="preparation" class="section">
+            <h2>🔧 Teacher Preparation Guide</h2>
+            
+            <div class="lesson-day">
+                <h3>📋 Pre-Simulation Setup</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌍 Cultural Research Packets</h4>
+                        <ul>
+                            <li>Regional cultural profiles for each exchange location</li>
+                            <li>Historical exchange examples and case studies</li>
+                            <li>Cultural sensitivity guidelines and protocols</li>
+                            <li>Language resources and basic phrase guides</li>
+                            <li>Arts, music, and literature samples</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🗺️ Geographic Resources</h4>
+                        <ul>
+                            <li>Detailed maps of Atlantic Ocean and surrounding continents</li>
+                            <li>Transportation route planning materials</li>
+                            <li>Climate and weather pattern information</li>
+                            <li>Ocean current and wind pattern data</li>
+                            <li>Port cities and transportation hub information</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📚 Exchange Program Examples</h4>
+                        <ul>
+                            <li>Real-world cultural exchange program models</li>
+                            <li>International cooperation case studies</li>
+                            <li>UNESCO cultural heritage information</li>
+                            <li>Student exchange program examples</li>
+                            <li>Sister city partnership models</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cultural-highlight">
+                <h3>🎨 Alaska Cultural Connections</h3>
+                <p>Special emphasis on connecting Alaska Native cultures with indigenous cultures across the Americas and circumpolar regions. Include Alaska Native Heritage Center resources and connections to Sami, Inuit, and other indigenous cultures globally.</p>
+            </div>
+        </div>
+
+        <div id="lessons" class="section">
+            <h2>📚 Daily Lesson Plans</h2>
+            
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">1</div>
+                    <div>
+                        <h3>Day 1: Cultural Exploration & Team Formation</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Geography A.4, History B.4</span>
+                            <span class="badge ela">RST.6-8.9</span>
+                            <span class="badge science">MS-ESS1-3</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lesson-objectives">
+                    <div class="objective-card">
+                        <h4>🎯 Social Studies Objectives</h4>
+                        <ul>
+                            <li>Analyze cultural patterns across the Atlantic region</li>
+                            <li>Understand historical cultural exchange impacts</li>
+                            <li>Identify cultural preservation challenges and opportunities</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 ELA Objectives</h4>
+                        <ul>
+                            <li>Compare cultural information from multiple sources</li>
+                            <li>Develop cultural research questions</li>
+                            <li>Practice respectful cultural communication</li>
+                        </ul>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Science Objectives</h4>
+                        <ul>
+                            <li>Analyze Atlantic Ocean systems and patterns</li>
+                            <li>Understand climate impacts on cultural development</li>
+                            <li>Examine environmental factors in cultural exchange</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🎭 Cultural Immersion Opening (20 min)</h4>
+                        <p><strong>Multi-Cultural Experience:</strong> Students experience elements from different cultures (music, foods, arts) while discussing respectful cultural engagement principles.</p>
+                        <p><strong>Alaska Connection:</strong> Begin with Alaska Native cultural sharing to establish cultural sensitivity framework.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🗺️ Atlantic World Exploration (25 min)</h4>
+                        <p><strong>Geographic Analysis:</strong> Teams examine Atlantic region maps, ocean systems, and cultural distribution patterns using both physical and cultural maps.</p>
+                        <p><strong>Climate Connections:</strong> Analyze how Atlantic weather patterns influence cultural development and exchange possibilities.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>👥 Role Selection & Team Building (25 min)</h4>
+                        <p><strong>Specialist Roles:</strong> Students select roles based on interests and begin exploring their responsibilities within the cultural exchange framework.</p>
+                        <p><strong>Cultural Research Assignment:</strong> Each specialist begins researching their focus area across different regions.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎯 Network Vision Development (20 min)</h4>
+                        <p><strong>Initial Planning:</strong> Teams begin envisioning their cultural exchange network, identifying potential partner communities and exchange focuses.</p>
+                        <p><strong>Values Framework:</strong> Establish team values emphasizing cultural respect, mutual benefit, and heritage preservation.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 1 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Cultural sensitivity demonstration, geographic analysis quality, initial research planning</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students show strategic thinking by connecting cultural patterns to geographic factors</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">2</div>
+                    <div>
+                        <h3>Day 2: Deep Cultural Research & Exchange Design</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">History B.1-B.3</span>
+                            <span class="badge ela">WHST.6-8.7</span>
+                            <span class="badge science">MS-ESS2-6</span>
+                            <span class="badge dok">DOK 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>📚 Specialist Research Deep Dive (40 min)</h4>
+                        <p><strong>Cultural Ambassadors:</strong> Research traditional arts, languages, and customs across Atlantic regions</p>
+                        <p><strong>Economic Specialists:</strong> Analyze historical and modern trade patterns and fair exchange principles</p>
+                        <p><strong>Route Managers:</strong> Study ocean currents, weather patterns, and transportation infrastructure</p>
+                        <p><strong>Diplomatic Managers:</strong> Research international cooperation models and cultural agreements</p>
+                        <p><strong>Network Coordinators:</strong> Study successful exchange program models and logistics</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌊 Ocean Systems & Cultural Connections (25 min)</h4>
+                        <p><strong>Scientific Analysis:</strong> Teams examine how Atlantic Ocean currents, wind patterns, and seasonal changes affect cultural exchange possibilities.</p>
+                        <p><strong>Historical Patterns:</strong> Connect ocean systems to historical migration and exchange patterns.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🤝 Cultural Partnership Planning (25 min)</h4>
+                        <p><strong>Partner Selection:</strong> Teams identify potential partner communities in the Americas and Europe for their exchange network.</p>
+                        <p><strong>Exchange Focus Areas:</strong> Develop specific exchange programs (arts, education, heritage, technology, etc.)</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 2 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Research depth, scientific understanding, partnership planning quality</p>
+                    <p><strong>DOK 3 Evidence:</strong> Students synthesize information across multiple disciplines to design exchange programs</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">3</div>
+                    <div>
+                        <h3>Day 3: Network Construction & Cultural Navigation</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Geography A.1-A.3</span>
+                            <span class="badge ela">SL.8.1</span>
+                            <span class="badge science">MS-ETS1-2</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🗺️ Network Route Planning (30 min)</h4>
+                        <p><strong>Transportation Design:</strong> Teams plan specific routes connecting their partner communities, considering geographic obstacles, seasonal patterns, and infrastructure.</p>
+                        <p><strong>DOK 4 Focus:</strong> Students must balance multiple complex factors (cost, time, cultural sensitivity, environmental impact) in route design.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎨 Cultural Exchange Program Development (35 min)</h4>
+                        <p><strong>Program Design:</strong> Teams create detailed exchange programs addressing their chosen focus areas while ensuring cultural respect and mutual benefit.</p>
+                        <p><strong>Stakeholder Consideration:</strong> Programs must address needs of all participating communities and respect indigenous rights.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌊 Environmental Challenge Events (15 min)</h4>
+                        <p><strong>Challenge Cards:</strong> Teams face environmental challenges (storms, climate variations, seasonal changes) and must adapt their plans.</p>
+                        <p><strong>Scientific Problem-Solving:</strong> Use scientific understanding of ocean and weather systems to overcome challenges.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Cultural Sensitivity Review (10 min)</h4>
+                        <p><strong>Ethics Check:</strong> Teams review their plans for cultural sensitivity, ensuring respectful engagement and avoiding cultural appropriation.</p>
+                        <p><strong>Indigenous Perspectives:</strong> Special attention to respecting indigenous communities and their sovereignty.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 3 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Route planning effectiveness, cultural sensitivity, environmental problem-solving</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by integrating multiple complex systems</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">4</div>
+                    <div>
+                        <h3>Day 4: Cultural Diplomacy & Collaboration Building</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Government C.1-C.4</span>
+                            <span class="badge ela">SL.8.1, L.8.6</span>
+                            <span class="badge science">MS-ESS3-2</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🤝 Inter-Network Negotiations (30 min)</h4>
+                        <p><strong>Diplomatic Simulation:</strong> Teams negotiate with other teams representing different cultural regions to establish collaborative exchange agreements.</p>
+                        <p><strong>Cultural Protocols:</strong> Students must use appropriate cultural communication styles and respect different negotiation approaches.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Network Integration (25 min)</h4>
+                        <p><strong>Network Linking:</strong> Teams work to connect their individual networks into a larger, sustainable global cultural exchange system.</p>
+                        <p><strong>Resource Sharing:</strong> Negotiate shared resources, collaborative programs, and mutual support systems.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📊 Impact Assessment Development (25 min)</h4>
+                        <p><strong>Metrics Creation:</strong> Teams develop systems for measuring the success and impact of their cultural exchange programs.</p>
+                        <p><strong>Scientific Methods:</strong> Use scientific approaches to create measurable indicators of cultural, environmental, and economic impacts.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎯 Cultural Crisis Management (10 min)</h4>
+                        <p><strong>Scenario Response:</strong> Teams face cultural misunderstanding scenarios and must develop conflict resolution strategies.</p>
+                        <p><strong>Diplomatic Skills:</strong> Practice mediation, compromise, and culturally sensitive problem-solving.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 4 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Negotiation skills, cultural sensitivity, collaborative problem-solving</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by managing complex diplomatic relationships</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">5</div>
+                    <div>
+                        <h3>Day 5: Network Implementation & Cultural Crisis Response</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">All Standards Integration</span>
+                            <span class="badge ela">WHST.6-8.1</span>
+                            <span class="badge science">MS-ETS1-2</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🚀 Network Launch Simulation (35 min)</h4>
+                        <p><strong>Implementation Phase:</strong> Teams "launch" their cultural exchange networks, making real-time decisions about program execution and resource allocation.</p>
+                        <p><strong>Real-World Scenarios:</strong> Address realistic challenges like funding limitations, political changes, and cultural conflicts.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌪️ Cultural Crisis Challenge (30 min)</h4>
+                        <p><strong>Major Challenge:</strong> Teams face a significant crisis (e.g., "International political tensions threaten to shut down cultural exchanges") requiring rapid response and adaptation.</p>
+                        <p><strong>DOK 4 Application:</strong> Students must rapidly redesign their networks while maintaining cultural sensitivity and effectiveness.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📈 Success Measurement (15 min)</h4>
+                        <p><strong>Impact Evaluation:</strong> Teams assess their network's effectiveness using their developed metrics and adjust strategies based on results.</p>
+                        <p><strong>Scientific Analysis:</strong> Use data and evidence to evaluate program success and identify improvement areas.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Reflection & Documentation (10 min)</h4>
+                        <p><strong>Experience Synthesis:</strong> Students document their cultural exchange experiences, challenges overcome, and lessons learned.</p>
+                        <p><strong>Cultural Growth:</strong> Reflect on personal cultural understanding development and sensitivity growth.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 5 Assessment</h4>
+                    <p><strong>Formative Assessment:</strong> Implementation effectiveness, crisis response quality, reflection depth</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by adapting complex systems under pressure</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">6</div>
+                    <div>
+                        <h3>Day 6: Cultural Showcase & Network Presentations</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">All Standards Demonstration</span>
+                            <span class="badge ela">SL.8.4-8.6</span>
+                            <span class="badge science">Scientific Communication</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🎭 Cultural Exchange Showcase (50 min)</h4>
+                        <p><strong>Interactive Presentations:</strong> Teams present their cultural exchange networks through multimedia presentations incorporating cultural elements (music, art, food samples).</p>
+                        <p><strong>Presentation Requirements:</strong></p>
+                        <ul>
+                            <li>Network design and route explanation</li>
+                            <li>Cultural programs and partnership details</li>
+                            <li>Environmental and scientific considerations</li>
+                            <li>Diplomatic solutions and agreements</li>
+                            <li>Impact measurements and success indicators</li>
+                            <li>Crisis response strategies</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🌍 Global Network Visualization (25 min)</h4>
+                        <p><strong>Collaborative Mapping:</strong> All teams contribute to creating a comprehensive map of global cultural exchange networks.</p>
+                        <p><strong>System Integration:</strong> Demonstrate how individual networks connect to form a global system of cultural exchange.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🔍 Peer Network Evaluation (15 min)</h4>
+                        <p><strong>Critical Analysis:</strong> Students evaluate other teams' networks using cultural sensitivity, effectiveness, and sustainability criteria.</p>
+                        <p><strong>Best Practices Identification:</strong> Identify innovative solutions and approaches for potential integration.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 6 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Presentation quality, cultural sensitivity, network design effectiveness, peer evaluation skills</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking through comprehensive cultural exchange design</p>
+                </div>
+            </div>
+
+            <div class="lesson-day">
+                <div class="lesson-header">
+                    <div class="day-number">7</div>
+                    <div>
+                        <h3>Day 7: Global Connections & Cultural Legacy</h3>
+                        <div class="badges">
+                            <span class="badge social-studies">Cultural Synthesis</span>
+                            <span class="badge ela">WHST.6-8.9</span>
+                            <span class="badge science">Systems Thinking</span>
+                            <span class="badge dok">DOK 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🌎 Real-World Cultural Exchange Analysis (30 min)</h4>
+                        <p><strong>Contemporary Connections:</strong> Students examine current cultural exchange programs (Fulbright, Peace Corps, sister cities) and connect them to their simulation experience.</p>
+                        <p><strong>Alaska Connections:</strong> Explore how Alaska participates in global cultural exchange and how students could contribute.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Cultural Legacy Essay (35 min)</h4>
+                        <p><strong>Reflective Writing:</strong> Students write comprehensive essays addressing:</p>
+                        <ul>
+                            <li>Cultural understanding growth and changes in perspective</li>
+                            <li>Geographic factors affecting cultural exchange</li>
+                            <li>Scientific principles applied to global connections</li>
+                            <li>Personal role in promoting cultural understanding</li>
+                            <li>Connections between local Alaska culture and global communities</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🎯 Cultural Ambassador Action Plan (20 min)</h4>
+                        <p><strong>Personal Commitment:</strong> Students develop action plans for promoting cultural understanding in their own communities.</p>
+                        <p><strong>Local Application:</strong> Identify specific ways to apply simulation learning to their Alaska community context.</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🏆 Cultural Exchange Recognition (5 min)</h4>
+                        <p><strong>Achievement Celebration:</strong> Recognize outstanding cultural sensitivity, innovative solutions, and collaborative excellence.</p>
+                        <p><strong>Community Building:</strong> Reinforce the value of cultural diversity and mutual respect.</p>
+                    </div>
+                </div>
+
+                <div class="assessment-rubric">
+                    <h4>📊 Day 7 Assessment</h4>
+                    <p><strong>Summative Assessment:</strong> Essay quality, real-world connections, action plan development, cultural sensitivity demonstration</p>
+                    <p><strong>DOK 4 Evidence:</strong> Students demonstrate extended thinking by connecting simulation learning to real-world applications</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="assessment" class="section">
+            <h2>📊 Comprehensive Assessment Framework</h2>
+            
+            <div class="assessment-rubric">
+                <h3>🎯 Standards-Based Assessment Rubric</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div class="objective-card">
+                        <h4>🌍 Cultural Understanding (Alaska Social Studies)</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates deep cultural sensitivity, sophisticated understanding of cultural exchange impacts, respects diverse perspectives</p>
+                        <p><strong>Proficient (3):</strong> Shows solid cultural understanding, respects cultural differences, understands most exchange impacts</p>
+                        <p><strong>Developing (2):</strong> Shows basic cultural awareness, some respect for differences, understands some impacts</p>
+                        <p><strong>Beginning (1):</strong> Shows minimal cultural understanding, limited respect for differences, needs support understanding impacts</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>📖 Communication & Research (ELA)</h4>
+                        <p><strong>Exemplary (4):</strong> Conducts sophisticated research, communicates clearly across cultures, integrates multiple sources expertly</p>
+                        <p><strong>Proficient (3):</strong> Conducts solid research, communicates effectively, integrates sources appropriately</p>
+                        <p><strong>Developing (2):</strong> Conducts basic research, communicates clearly, integrates some sources</p>
+                        <p><strong>Beginning (1):</strong> Conducts minimal research, communicates with support, limited source integration</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🧪 Scientific Analysis (NGSS)</h4>
+                        <p><strong>Exemplary (4):</strong> Applies scientific principles expertly to cultural exchange challenges, analyzes complex systems effectively</p>
+                        <p><strong>Proficient (3):</strong> Applies scientific principles appropriately, analyzes most systems effectively</p>
+                        <p><strong>Developing (2):</strong> Applies some scientific principles, analyzes simple systems</p>
+                        <p><strong>Beginning (1):</strong> Applies few scientific principles, needs support analyzing systems</p>
+                    </div>
+                    <div class="objective-card">
+                        <h4>🤝 Collaboration & Diplomacy</h4>
+                        <p><strong>Exemplary (4):</strong> Demonstrates exceptional collaborative skills, resolves conflicts diplomatically, leads team effectively</p>
+                        <p><strong>Proficient (3):</strong> Collaborates effectively, handles most conflicts well, contributes to team leadership</p>
+                        <p><strong>Developing (2):</strong> Collaborates adequately, handles some conflicts, participates in team activities</p>
+                        <p><strong>Beginning (1):</strong> Collaborates with support, needs help with conflicts, limited team participation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crosscut-section">
+                <h3>📋 Assessment Components</h3>
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h4>🎭 Cultural Engagement (35%)</h4>
+                        <ul>
+                            <li>Cultural sensitivity demonstration</li>
+                            <li>Respectful interaction with diverse cultures</li>
+                            <li>Understanding of cultural preservation</li>
+                            <li>Diplomatic negotiation skills</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>🗺️ Network Design (35%)</h4>
+                        <ul>
+                            <li>Geographic route planning quality</li>
+                            <li>Cultural exchange program design</li>
+                            <li>Scientific principle application</li>
+                            <li>Sustainability and effectiveness</li>
+                        </ul>
+                    </div>
+                    <div class="activity-card">
+                        <h4>📝 Communication & Reflection (30%)</h4>
+                        <ul>
+                            <li>Presentation clarity and engagement</li>
+                            <li>Written reflection depth and insight</li>
+                            <li>Research quality and integration</li>
+                            <li>Real-world connection ability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resources" class="section">
+            <h2>📖 Resources & Materials</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="cultural-highlight">
+                    <h3>🎨 Cultural Resources</h3>
+                    <ul>
+                        <li>Regional cultural profiles and heritage information</li>
+                        <li>Traditional arts, music, and literature samples</li>
+                        <li>Language resources and basic phrase guides</li>
+                        <li>Cultural protocol and sensitivity guidelines</li>
+                        <li>Indigenous culture resources and perspectives</li>
+                        <li>Alaska Native Heritage Center materials</li>
+                    </ul>
+                </div>
+                
+                <div class="route-card">
+                    <h3>🗺️ Geographic Resources</h3>
+                    <ul>
+                        <li>Atlantic Ocean physical and political maps</li>
+                        <li>Ocean current and wind pattern charts</li>
+                        <li>Climate data and seasonal pattern information</li>
+                        <li>Transportation infrastructure maps</li>
+                        <li>Port cities and cultural center locations</li>
+                        <li>Historical migration and trade route maps</li>
+                    </ul>
+                </div>
+                
+                <div class="objective-card">
+                    <h3>📚 Research Materials</h3>
+                    <ul>
+                        <li>Cultural exchange program case studies</li>
+                        <li>International cooperation examples</li>
+                        <li>UNESCO World Heritage Site information</li>
+                        <li>Sister city partnership models</li>
+                        <li>Student exchange program examples</li>
+                        <li>Cross-cultural communication guides</li>
+                    </ul>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>🖥️ Digital Tools</h3>
+                    <ul>
+                        <li>Google Earth for geographic exploration</li>
+                        <li>Collaboration platforms for team work</li>
+                        <li>Presentation software with multimedia support</li>
+                        <li>Virtual museum and cultural site tours</li>
+                        <li>Translation tools and language resources</li>
+                        <li>Digital portfolio platforms</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
