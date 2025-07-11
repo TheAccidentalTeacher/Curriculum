@@ -30,47 +30,111 @@
         }
         .unit-section {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin: 25px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            margin: 35px 0;
+            border-left: 8px solid #f39c12;
+            position: relative;
+        }
+        .unit-section:before {
+            content: "📚 UNIT";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #f39c12;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: bold;
         }
         .unit-title {
-            color: #2c5aa0;
-            border-bottom: 3px solid #2c5aa0;
-            padding-bottom: 15px;
+            color: #f39c12;
+            border-bottom: 4px solid #f39c12;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .unit-description {
+            background: #fef9f2;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #f39c12;
+            margin-bottom: 25px;
+            font-style: italic;
+            color: #555;
+        }
+        .lesson-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
             margin-bottom: 20px;
-            font-size: 1.5em;
+            border-radius: 8px;
+            border-left: 4px solid #2c5aa0;
+        }
+        .lesson-header h3 {
+            color: #2c5aa0;
+            margin: 0;
+            font-size: 1.3em;
         }
         .lesson-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding-left: 20px;
         }
         .lesson-card {
-            background: #f8f9fa;
+            background: #fafafa;
             padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #f39c12;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
             transition: all 0.3s ease;
+            position: relative;
+        }
+        .lesson-card:before {
+            content: "📝";
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.2em;
         }
         .lesson-card:hover {
-            background: #e9ecef;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: white;
+            border-color: #2c5aa0;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 90, 160, 0.15);
         }
         .lesson-title {
             color: #2c5aa0;
             font-weight: bold;
             margin-bottom: 10px;
+            padding-left: 35px;
+            font-size: 1.1em;
+        }
+        .lesson-card p {
+            color: #666;
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 0.95em;
         }
         .lesson-link {
-            color: #f39c12;
+            background: #2c5aa0;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.9em;
+            margin-left: 35px;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
         .lesson-link:hover {
-            color: #e67e22;
+            background: #1e3f66;
+            transform: translateX(5px);
         }
         .grade-header {
             background: linear-gradient(135deg, #f39c12, #e67e22);
