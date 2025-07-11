@@ -1,19 +1,68 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Comprehensive Lesson Enhancement Script
+Enhances all lesson files to match the professional quality level
+"""
+
+import os
+import re
+from pathlib import Path
+
+# Define the comprehensive lesson template with all the enhanced sections
+def create_enhanced_lesson_content(unit_num, lesson_num, lesson_title, grade):
+    """Generate comprehensive, professionally enhanced lesson content"""
+    
+    # Map units to quarters and themes
+    quarter_map = {
+        range(1, 7): ("Quarter 1", "Geographic Foundations & North America"),
+        range(7, 14): ("Quarter 2", "Americas & Europe Integration"),
+        range(14, 23): ("Quarter 3", "Asia, Africa & Oceania"),
+        range(23, 50): ("Quarter 4", "Historical Synthesis & Modern Applications")  # Extended range for any extra units
+    }
+    
+    quarter, theme = next((q, t) for r, (q, t) in quarter_map.items() if unit_num in r)
+    
+    # Grade-specific differentiation
+    grade_info = {
+        6: {
+            "complexity": "Foundational",
+            "reading": "6th grade",
+            "focus": "hands-on, visual, collaborative",
+            "objectives_suffix": "with concrete examples and visual supports"
+        },
+        7: {
+            "complexity": "Developing",
+            "reading": "7th grade",
+            "focus": "analytical, research-based, discussion",
+            "objectives_suffix": "through analysis and comparison"
+        },
+        8: {
+            "complexity": "Advanced",
+            "reading": "8th grade",
+            "focus": "synthesis, evaluation, presentation",
+            "objectives_suffix": "with critical thinking and evaluation"
+        }
+    }
+    
+    grade_diff = grade_info[grade]
+    
+    # Enhanced lesson content template
+    content = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unit 34, Lesson 1: Introduction & Overview - 6th Grade</title>
+    <title>Unit {unit_num}, Lesson {lesson_num}: {lesson_title} - {grade}th Grade</title>
     <link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
     <header>
-        <h1>Lesson 1: Introduction & Overview</h1>
+        <h1>Lesson {lesson_num}: {lesson_title}</h1>
         <nav style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
-            <a href="../unit34.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">🏠 Back to Unit 34</a>
+            <a href="../unit{unit_num}.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">🏠 Back to Unit {unit_num}</a>
             <div style="display: flex; gap: 15px;">
-                
-                <a href="unit34-lesson2-grade6.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 20px;">Next Lesson ➡</a>
+                {"" if lesson_num == 1 else f'<a href="unit{unit_num}-lesson{lesson_num-1}-grade{grade}.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 20px;">⬅ Previous Lesson</a>'}
+                <a href="unit{unit_num}-lesson{lesson_num+1}-grade{grade}.html" style="color: white; text-decoration: none; background: rgba(255,255,255,0.3); padding: 8px 16px; border-radius: 20px;">Next Lesson ➡</a>
             </div>
         </nav>
     </header>
@@ -22,8 +71,8 @@
             <div style="display: flex; align-items: center; gap: 1em;">
                 <span style="font-size: 2em;">🌍</span>
                 <div>
-                    <h2 style="margin: 0;">Introduction & Overview</h2>
-                    <p style="margin: 0.5em 0; font-style: italic;">Grade 6 • Unit 34 • Quarter 4</p>
+                    <h2 style="margin: 0;">{lesson_title}</h2>
+                    <p style="margin: 0.5em 0; font-style: italic;">Grade {grade} • Unit {unit_num} • {quarter}</p>
                 </div>
             </div>
         </section>
@@ -34,17 +83,17 @@
                 <div>
                     <h4>Students will be able to:</h4>
                     <ul>
-                        <li>Understand key concepts of introduction & overview with concrete examples and visual supports</li>
+                        <li>Understand key concepts of {lesson_title.lower()} {grade_diff["objectives_suffix"]}</li>
                         <li>Apply geographic thinking to real-world Alaska examples</li>
                         <li>Analyze primary sources related to the lesson topic</li>
-                        <li>Demonstrate understanding through hands-on, visual, collaborative activities</li>
+                        <li>Demonstrate understanding through {grade_diff["focus"]} activities</li>
                     </ul>
                 </div>
                 <div>
-                    <h4>Grade 6 Differentiation:</h4>
-                    <p><strong>Complexity Level:</strong> Foundational</p>
-                    <p><strong>Reading Level:</strong> 6th grade</p>
-                    <p><strong>Activity Focus:</strong> hands-on, visual, collaborative</p>
+                    <h4>Grade {grade} Differentiation:</h4>
+                    <p><strong>Complexity Level:</strong> {grade_diff["complexity"]}</p>
+                    <p><strong>Reading Level:</strong> {grade_diff["reading"]}</p>
+                    <p><strong>Activity Focus:</strong> {grade_diff["focus"]}</p>
                     <p><strong>Alaska Standards:</strong> Geography A.1, A.2, B.1</p>
                 </div>
             </div>
@@ -56,9 +105,9 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
                 <div style="background: white; padding: 20px; border-radius: 10px; border-left: 4px solid #4CAF50;">
                     <h4>🎯 Core Concepts</h4>
-                    <p><strong>Essential Understanding:</strong> Introduction & Overview helps us understand how geographic factors shape human experience, particularly in Alaska's unique environment.</p>
+                    <p><strong>Essential Understanding:</strong> {lesson_title} helps us understand how geographic factors shape human experience, particularly in Alaska's unique environment.</p>
                     
-                    <h5>Key Vocabulary (Grade 6 Level):</h5>
+                    <h5>Key Vocabulary (Grade {grade} Level):</h5>
                     <ul>
                         <li><strong>Geographic perspective:</strong> Looking at the world through location, place, and spatial relationships</li>
                         <li><strong>Spatial thinking:</strong> Understanding how things are arranged across Earth's surface</li>
@@ -68,7 +117,7 @@
                     
                     <h5>Essential Questions:</h5>
                     <ul>
-                        <li>How does introduction & overview help us understand Alaska?</li>
+                        <li>How does {lesson_title.lower()} help us understand Alaska?</li>
                         <li>What patterns can we observe in our local community?</li>
                         <li>How do geographic factors influence daily life?</li>
                         <li>What connections exist between Alaska and the wider world?</li>
@@ -98,10 +147,10 @@
             </div>
             
             <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 20px;">
-                <h4>🔍 Deep Dive: Grade 6 Focus</h4>
-                <p><strong>For 6th graders:</strong> This lesson emphasizes hands-on, visual, collaborative to help students develop increasingly sophisticated geographic thinking skills.</p>
+                <h4>🔍 Deep Dive: Grade {grade} Focus</h4>
+                <p><strong>For {grade}th graders:</strong> This lesson emphasizes {grade_diff["focus"]} to help students develop increasingly sophisticated geographic thinking skills.</p>
                 <ul>
-                    <li><strong>Cognitive Development:</strong> Age-appropriate complexity matching 6th grade thinking abilities</li>
+                    <li><strong>Cognitive Development:</strong> Age-appropriate complexity matching {grade}th grade thinking abilities</li>
                     <li><strong>Skill Building:</strong> Progressive development of geographic analysis skills</li>
                     <li><strong>Cultural Sensitivity:</strong> Respectful integration of Alaska Native perspectives</li>
                     <li><strong>Real-World Application:</strong> Connecting concepts to students' lived experiences</li>
@@ -118,7 +167,7 @@
                         "Alaska's geography presents both tremendous opportunities and significant challenges for human settlement and development..."
                     </div>
                     <p><strong>Context:</strong> Understanding how geographic factors have shaped Alaska's development</p>
-                    <p><strong>Analysis Questions for Grade 6:</strong></p>
+                    <p><strong>Analysis Questions for Grade {grade}:</strong></p>
                     <ul>
                         <li>What geographic advantages does Alaska offer?</li>
                         <li>What challenges does Alaska's geography present?</li>
@@ -132,7 +181,7 @@
                         <p><strong>Traditional Ecological Knowledge:</strong> Indigenous understanding of environmental patterns and relationships developed over thousands of years</p>
                     </div>
                     <p><strong>Context:</strong> Indigenous geographic knowledge spanning millennia</p>
-                    <p><strong>Analysis Questions for Grade 6:</strong></p>
+                    <p><strong>Analysis Questions for Grade {grade}:</strong></p>
                     <ul>
                         <li>How does traditional knowledge complement scientific understanding?</li>
                         <li>What geographic insights can we gain from indigenous perspectives?</li>
@@ -144,7 +193,7 @@
             
             <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 15px;">
                 <h4>🎯 Primary Source Activity: Comparative Analysis</h4>
-                <p><strong>Scaffolded for Grade 6:</strong></p>
+                <p><strong>Scaffolded for Grade {grade}:</strong></p>
                 <ol>
                     <li><strong>Initial Reading:</strong> Students read documents with vocabulary support</li>
                     <li><strong>Guided Analysis:</strong> Teacher-led discussion of key concepts</li>
@@ -163,7 +212,7 @@
                     <div><strong>5 min</strong></div><div>Warm-up: Geographic thinking starter activity</div>
                     <div><strong>10 min</strong></div><div>Direct Instruction: Core concepts with Alaska examples</div>
                     <div><strong>15 min</strong></div><div>Guided Practice: Primary source analysis and discussion</div>
-                    <div><strong>10 min</strong></div><div>Independent Work: Application activity tailored to grade 6</div>
+                    <div><strong>10 min</strong></div><div>Independent Work: Application activity tailored to grade {grade}</div>
                     <div><strong>5 min</strong></div><div>Closure: Reflection and connection to next lesson</div>
                 </div>
             </div>
@@ -171,13 +220,13 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
                     <h4>🎨 Activity 1: Geographic Investigation</h4>
-                    <p><strong>Grade 6 Scaffolding:</strong> hands-on, visual, collaborative approach</p>
+                    <p><strong>Grade {grade} Scaffolding:</strong> {grade_diff["focus"]} approach</p>
                     
                     <h5>Materials:</h5>
                     <ul>
                         <li>Alaska maps at multiple scales</li>
                         <li>Primary source document packets</li>
-                        <li>Investigation worksheet (grade 6 level)</li>
+                        <li>Investigation worksheet (grade {grade} level)</li>
                         <li>Digital resources and tools</li>
                     </ul>
                     
@@ -199,7 +248,7 @@
                 
                 <div style="background: white; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
                     <h4>🗺️ Activity 2: Applied Geographic Analysis</h4>
-                    <p><strong>Grade 6 Focus:</strong> Building foundational skills</p>
+                    <p><strong>Grade {grade} Focus:</strong> Building {grade_diff["complexity"].lower()} skills</p>
                     
                     <h5>Step-by-Step Process:</h5>
                     <ol>
@@ -301,7 +350,7 @@
                     
                     <h5>Performance-Based Assessment:</h5>
                     <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; margin: 10px 0;">
-                        <p><strong>Geographic Analysis Project (Grade 6 Level):</strong></p>
+                        <p><strong>Geographic Analysis Project (Grade {grade} Level):</strong></p>
                         <ol>
                             <li><strong>Research Component:</strong> Investigate a geographic question about Alaska (25 points)</li>
                             <li><strong>Analysis Component:</strong> Apply geographic concepts and tools (25 points)</li>
@@ -350,7 +399,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h5>Grade 6 Proficiency Scale:</h5>
+                        <h5>Grade {grade} Proficiency Scale:</h5>
                         <ul>
                             <li><strong>Advanced (4):</strong> Exceeds grade-level expectations with sophisticated analysis</li>
                             <li><strong>Proficient (3):</strong> Meets grade-level expectations consistently</li>
@@ -453,9 +502,9 @@
                 <h4>📖 Recommended Reading & Media</h4>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                     <div>
-                        <h5>Student Resources (Grade 6 Level):</h5>
+                        <h5>Student Resources (Grade {grade} Level):</h5>
                         <ul>
-                            <li><strong>Books:</strong> Alaska geographic literature appropriate for 6th graders</li>
+                            <li><strong>Books:</strong> Alaska geographic literature appropriate for {grade}th graders</li>
                             <li><strong>Articles:</strong> Current events and geographic news from Alaska</li>
                             <li><strong>Websites:</strong> Curated online resources for student research</li>
                             <li><strong>Videos:</strong> Educational documentaries and geographic content</li>
@@ -475,4 +524,75 @@
         </section>
     </main>
 </body>
-</html>
+</html>'''
+    
+    return content
+
+def enhance_all_lessons():
+    """Enhance all existing lesson files to professional quality"""
+    lessons_dir = Path("/workspaces/Curriculum/units/lessons")
+    
+    if not lessons_dir.exists():
+        print(f"Lessons directory not found: {lessons_dir}")
+        return
+    
+    # Define lesson titles for each unit based on curriculum
+    lesson_titles = {
+        1: ["What is Geography?", "Physical & Human Geography", "Geographic Tools & Maps", "Spatial Thinking", "Geography Handbook & Review"],
+        2: ["Earth's Physical Systems", "Climate & Weather Patterns", "Landforms & Processes", "Water Systems"],
+        3: ["Population Geography", "Cultural Geography", "Economic Systems", "Settlement Patterns"],
+        4: ["United States Overview", "Physical Regions", "Cultural Diversity", "Economic Geography"],
+        5: ["Canada's Physical Geography", "Canadian Cultures", "Economic Resources", "Regional Comparisons"],
+        6: ["Mexico's Physical Features", "Mexican Culture & History", "Economic Development", "North American Connections"],
+        # Continue for all 32 units...
+    }
+    
+    # Default lesson titles for units not specifically defined
+    default_titles = ["Introduction & Overview", "Physical Characteristics", "Human Geography", "Economic & Cultural Systems"]
+    
+    enhanced_count = 0
+    
+    # Find all existing lesson files
+    lesson_files = list(lessons_dir.glob("unit*-lesson*-grade*.html"))
+    
+    for lesson_file in lesson_files:
+        # Parse filename to extract unit, lesson, and grade
+        filename = lesson_file.name
+        match = re.match(r'unit(\d+)-lesson(\d+)-grade(\d+)\.html', filename)
+        
+        if not match:
+            continue
+            
+        unit_num = int(match.group(1))
+        lesson_num = int(match.group(2))
+        grade = int(match.group(3))
+        
+        # Get lesson title
+        if unit_num in lesson_titles and lesson_num <= len(lesson_titles[unit_num]):
+            lesson_title = lesson_titles[unit_num][lesson_num - 1]
+        else:
+            # Use default titles
+            if lesson_num <= len(default_titles):
+                lesson_title = default_titles[lesson_num - 1]
+            else:
+                lesson_title = f"Lesson {lesson_num}"
+        
+        # Generate enhanced content
+        enhanced_content = create_enhanced_lesson_content(unit_num, lesson_num, lesson_title, grade)
+        
+        # Write enhanced content to file
+        try:
+            with open(lesson_file, 'w', encoding='utf-8') as f:
+                f.write(enhanced_content)
+            enhanced_count += 1
+            print(f"Enhanced: {filename} - {lesson_title} (Grade {grade})")
+        except Exception as e:
+            print(f"Error enhancing {filename}: {e}")
+    
+    print(f"\\nSuccessfully enhanced {enhanced_count} lesson files!")
+    return enhanced_count
+
+if __name__ == "__main__":
+    print("Starting comprehensive lesson enhancement...")
+    count = enhance_all_lessons()
+    print(f"Enhancement complete! {count} lessons upgraded to professional quality.")
