@@ -165,17 +165,18 @@
         }
 
         .badge {
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 6px 12px;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: normal;
         }
 
-        .badge.ela { background: #e74c3c; }
-        .badge.science { background: #27ae60; }
-        .badge.alaska { background: #004b87; }
+        .badge.ela { background: rgba(231, 76, 60, 0.1); color: #e74c3c; border-color: rgba(231, 76, 60, 0.3); }
+        .badge.science { background: rgba(39, 174, 96, 0.1); color: #27ae60; border-color: rgba(39, 174, 96, 0.3); }
+        .badge.alaska { background: rgba(0, 75, 135, 0.1); color: #004b87; border-color: rgba(0, 75, 135, 0.3); }
 
         .dok-indicator {
             background: linear-gradient(135deg, #ffd700, #ffb347);
@@ -271,6 +272,13 @@
         <h1>🌎 Alaska World Geography Curriculum</h1>
         <div class="subtitle">Standards-Aligned • Simulation-Based • Cross-Curricular</div>
         <div class="subtitle">DOK 3-4 Focused • Rural Alaska Ready</div>
+        
+        <!-- Prominent Curriculum Access -->
+        <div style="margin-top: 30px;">
+            <a href="curriculum-main.html" style="display: inline-block; background: #fff; color: #2c5aa0; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.3em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s;">
+                📚 ACCESS COMPLETE CURRICULUM
+            </a>
+        </div>
     </div>
 
     <div class="container">
@@ -467,12 +475,26 @@
             </div>
         </div>
 
-        <div class="action-buttons">
-            <a href="curriculum-main.html" class="btn primary" style="background: #2c5aa0; font-size: 1.2em;">📋 View Complete Curriculum</a>
-            <a href="quarter1-simulation.html" class="btn">📚 Access Quarter 1 Simulation</a>
-            <a href="quarter2-simulation.html" class="btn">🌐 Quarter 2 Simulation</a>
-            <a href="quarter3-simulation.html" class="btn">♻️ Quarter 3 Simulation</a>
-            <a href="quarter4-simulation.html" class="btn">🏛️ Quarter 4 Simulation</a>
+        <div style="margin-top: 30px; text-align: center;">
+            <h3 style="color: #2c5aa0; margin-bottom: 20px;">📚 Quarterly Learning Experiences</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #e74c3c;">
+                    <strong>📚 Quarter 1</strong><br>
+                    <span style="color: #666;">North American Sustainability Challenge</span>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #f39c12;">
+                    <strong>🌐 Quarter 2</strong><br>
+                    <span style="color: #666;">Transatlantic Cultural Exchange Network</span>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #27ae60;">
+                    <strong>♻️ Quarter 3</strong><br>
+                    <span style="color: #666;">Global Resource Stewardship Initiative</span>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #8e44ad;">
+                    <strong>🏛️ Quarter 4</strong><br>
+                    <span style="color: #666;">Historical Synthesis & Global Citizenship</span>
+                </div>
+            </div>
         </div>
 
         <div class="curriculum-overview">
