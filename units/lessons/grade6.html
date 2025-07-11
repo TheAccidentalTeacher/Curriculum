@@ -3,304 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6th Grade Lessons - Alaska World Geography</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <title>6th Grade World Geography Lessons - Alaska Aligned</title>
     <style>
-        .navigation {
-            background: #2c5aa0;
-            color: white;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            text-align: center;
         }
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 10px 20px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 25px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .nav-link:hover, .nav-link.active {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-        .unit-section {
+        .header {
             background: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            margin: 35px 0;
-            border-left: 8px solid #e74c3c;
-            position: relative;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .unit-section:before {
-            content: "📚 UNIT";
-            position: absolute;
-            top: -12px;
-            left: 20px;
-            background: #e74c3c;
-            color: white;
-            padding: 5px 15px;
+        .header h1 {
+            color: #e74c3c;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .unit-container {
+            background: white;
             border-radius: 15px;
-            font-size: 0.8em;
-            font-weight: bold;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 8px solid #e74c3c;
         }
         .unit-title {
             color: #e74c3c;
-            border-bottom: 4px solid #e74c3c;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            font-size: 2.2em;
+            font-size: 2em;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e74c3c;
         }
         .unit-description {
-            background: #fef5f5;
-            padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #e74c3c;
-            margin-bottom: 25px;
+            color: #666;
             font-style: italic;
-            color: #555;
-        }
-        .lesson-header {
-            background: #f8f9fa;
-            padding: 15px 20px;
             margin-bottom: 20px;
+            background: #fef5f5;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .lessons-container {
+            margin-top: 20px;
+        }
+        .lessons-title {
+            color: #2c5aa0;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #2c5aa0;
         }
-        .lesson-header h3 {
-            color: #2c5aa0;
-            margin: 0;
-            font-size: 1.3em;
-        }
-        .lesson-grid {
+        .lesson-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding-left: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-left: 20px;
         }
-        .lesson-card {
+        .lesson-item {
             background: #fafafa;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 8px;
             border: 2px solid #e9ecef;
             transition: all 0.3s ease;
-            position: relative;
         }
-        .lesson-card:before {
-            content: "📝";
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            font-size: 1.2em;
-        }
-        .lesson-card:hover {
-            background: white;
+        .lesson-item:hover {
             border-color: #2c5aa0;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(44, 90, 160, 0.15);
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.1);
         }
-        .lesson-title {
+        .lesson-name {
             color: #2c5aa0;
             font-weight: bold;
-            margin-bottom: 10px;
-            padding-left: 35px;
-            font-size: 1.1em;
+            margin-bottom: 8px;
         }
-        .lesson-card p {
+        .lesson-desc {
             color: #666;
-            margin-bottom: 15px;
-            padding-left: 35px;
-            font-size: 0.95em;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
         .lesson-link {
             background: #2c5aa0;
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 15px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-            margin-left: 35px;
+            font-size: 0.85em;
             display: inline-block;
-            transition: all 0.3s ease;
+            transition: background 0.3s ease;
         }
         .lesson-link:hover {
             background: #1e3f66;
-            transform: translateX(5px);
         }
-        .grade-header {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 30px;
-            border-radius: 15px;
+        .navigation {
             text-align: center;
-            margin-bottom: 30px;
+            margin: 30px 0;
+        }
+        .nav-btn {
+            background: #667eea;
+            color: white;
+            padding: 12px 25px;
+            margin: 0 10px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .nav-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body>
-    <div class="navigation">
-        <h1>📚 6th Grade Lessons</h1>
-        <div style="margin-top: 15px;">
-            <a href="../../index.html" class="nav-link">🏠 Home</a>
-            <a href="../index.html" class="nav-link">📋 Units Overview</a>
-            <a href="grade6.html" class="nav-link active">6th Grade</a>
-            <a href="grade7.html" class="nav-link">7th Grade</a>
-            <a href="grade8.html" class="nav-link">8th Grade</a>
-        </div>
-    </div>
-
-    <div style="max-width: 1400px; margin: 0 auto; padding: 20px;">
-        <div class="grade-header">
-            <h1>🎯 6th Grade Lessons</h1>
-            <p style="font-size: 1.2em; margin-top: 10px;">Foundational geography concepts with age-appropriate activities</p>
+    <div class="container">
+        <div class="header">
+            <h1>📚 6th Grade World Geography Lessons</h1>
+            <p>Foundational concepts with hands-on, age-appropriate activities</p>
         </div>
 
-        <div class="unit-section">
+        <div class="unit-container">
             <h2 class="unit-title">Unit 1: A Geographer's World</h2>
             <div class="unit-description">
                 Introduction to geography as a field of study, basic concepts and definitions
             </div>
-            <div class="lesson-header">
-                <h3>🎯 Unit 1 Lessons (4 lessons)</h3>
-            </div>
-            <div class="lesson-grid">
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 1: Introduction to Geography</div>
-                    <p>Basic geography concepts and why geography matters</p>
-                    <a href="unit1-lesson1-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 2: Geographic Tools</div>
-                    <p>Maps, globes, and basic geographic tools</p>
-                    <a href="unit1-lesson2-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 3: Maps and Location</div>
-                    <p>Reading maps and understanding location</p>
-                    <a href="unit1-lesson3-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 4: Spatial Thinking</div>
-                    <p>Understanding spatial relationships and patterns</p>
-                    <a href="unit1-lesson4-grade6.html" class="lesson-link">→ Access Lesson</a>
+            <div class="lessons-container">
+                <h3 class="lessons-title">📝 Unit 1 Lessons (4 total)</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 1: Introduction to Geography</div>
+                        <div class="lesson-desc">What is geography and why does it matter?</div>
+                        <a href="unit1-lesson1-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 2: Geographic Tools</div>
+                        <div class="lesson-desc">Maps, globes, and basic tools geographers use</div>
+                        <a href="unit1-lesson2-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 3: Maps and Location</div>
+                        <div class="lesson-desc">Reading maps and understanding location</div>
+                        <a href="unit1-lesson3-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 4: Spatial Thinking</div>
+                        <div class="lesson-desc">Understanding spatial relationships</div>
+                        <a href="unit1-lesson4-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="unit-section">
+        <div class="unit-container">
             <h2 class="unit-title">Unit 2: The Physical World</h2>
             <div class="unit-description">
                 Earth's physical features, weather patterns, and natural systems
             </div>
-            <div class="lesson-header">
-                <h3>🎯 Unit 2 Lessons (4 lessons)</h3>
-            </div>
-            <div class="lesson-grid">
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 1: Earth's Structure</div>
-                    <p>Layers of Earth and basic geological concepts</p>
-                    <a href="unit2-lesson1-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 2: Landforms</div>
-                    <p>Mountains, valleys, plains, and other landforms</p>
-                    <a href="unit2-lesson2-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 3: Weather and Climate</div>
-                    <p>Basic weather patterns and climate zones</p>
-                    <a href="unit2-lesson3-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 4: Water Systems</div>
-                    <p>Rivers, lakes, oceans, and water cycle</p>
-                    <a href="unit2-lesson4-grade6.html" class="lesson-link">→ Access Lesson</a>
+            <div class="lessons-container">
+                <h3 class="lessons-title">📝 Unit 2 Lessons (4 total)</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 1: Earth's Structure</div>
+                        <div class="lesson-desc">Layers of Earth and basic geology</div>
+                        <a href="unit2-lesson1-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 2: Landforms</div>
+                        <div class="lesson-desc">Mountains, valleys, plains, and more</div>
+                        <a href="unit2-lesson2-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 3: Weather and Climate</div>
+                        <div class="lesson-desc">Weather patterns and climate zones</div>
+                        <a href="unit2-lesson3-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 4: Water Systems</div>
+                        <div class="lesson-desc">Rivers, lakes, oceans, and water cycle</div>
+                        <a href="unit2-lesson4-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="unit-section">
+        <div class="unit-container">
             <h2 class="unit-title">Unit 3: The Human World</h2>
             <div class="unit-description">
                 How people interact with their environment and create communities
             </div>
-            <div class="lesson-header">
-                <h3>🎯 Unit 3 Lessons (4 lessons)</h3>
-            </div>
-            <div class="lesson-grid">
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 1: Population Patterns</div>
-                    <p>Where people live and why</p>
-                    <a href="unit3-lesson1-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 2: Culture and Society</div>
-                    <p>Understanding different cultures and traditions</p>
-                    <a href="unit3-lesson2-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 3: Cities and Communities</div>
-                    <p>Urban and rural communities</p>
-                    <a href="unit3-lesson3-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 4: Economic Systems</div>
-                    <p>Basic economic concepts and trade</p>
-                    <a href="unit3-lesson4-grade6.html" class="lesson-link">→ Access Lesson</a>
+            <div class="lessons-container">
+                <h3 class="lessons-title">📝 Unit 3 Lessons (4 total)</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 1: Population Patterns</div>
+                        <div class="lesson-desc">Where people live and why</div>
+                        <a href="unit3-lesson1-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 2: Culture and Society</div>
+                        <div class="lesson-desc">Understanding different cultures</div>
+                        <a href="unit3-lesson2-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 3: Cities and Communities</div>
+                        <div class="lesson-desc">Urban and rural communities</div>
+                        <a href="unit3-lesson3-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 4: Economic Systems</div>
+                        <div class="lesson-desc">Basic economics and trade</div>
+                        <a href="unit3-lesson4-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="unit-section">
+        <div class="unit-container">
             <h2 class="unit-title">Unit 4: The Americas - United States</h2>
             <div class="unit-description">
-                Exploring the geography, culture, and regions of the United States, with special focus on Alaska
+                Exploring US geography, culture, and regions, with special focus on Alaska
             </div>
-            <div class="lesson-header">
-                <h3>🎯 Unit 4 Lessons (4 lessons)</h3>
-            </div>
-            <div class="lesson-grid">
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 1: Physical Geography of the US</div>
-                    <p>Major landforms, rivers, and climate regions</p>
-                    <a href="unit4-lesson1-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 2: US Regions</div>
-                    <p>Northeast, Southeast, Midwest, West regions</p>
-                    <a href="unit4-lesson2-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 3: American Culture</div>
-                    <p>Diversity and traditions in the United States</p>
-                    <a href="unit4-lesson3-grade6.html" class="lesson-link">→ Access Lesson</a>
-                </div>
-                <div class="lesson-card">
-                    <div class="lesson-title">Lesson 4: Alaska Focus</div>
-                    <p>Alaska's unique geography and culture</p>
-                    <a href="unit4-lesson4-grade6.html" class="lesson-link">→ Access Lesson</a>
+            <div class="lessons-container">
+                <h3 class="lessons-title">📝 Unit 4 Lessons (4 total)</h3>
+                <div class="lesson-list">
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 1: Physical Geography of the US</div>
+                        <div class="lesson-desc">Major landforms and climate regions</div>
+                        <a href="unit4-lesson1-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 2: US Regions</div>
+                        <div class="lesson-desc">Northeast, Southeast, Midwest, West</div>
+                        <a href="unit4-lesson2-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 3: American Culture</div>
+                        <div class="lesson-desc">Diversity and traditions in the US</div>
+                        <a href="unit4-lesson3-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
+                    <div class="lesson-item">
+                        <div class="lesson-name">Lesson 4: Alaska Focus</div>
+                        <div class="lesson-desc">Alaska's unique geography and culture</div>
+                        <a href="unit4-lesson4-grade6.html" class="lesson-link">Access Lesson →</a>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; margin: 40px 0;">
-            <h3 style="color: #2c5aa0;">📊 Additional Units Available</h3>
-            <p>Units 5-37 continue with Canada, Mexico, Central America, South America, Europe, Asia, Africa, Oceania, Historical Civilizations, Government, Economics, and specialized topics.</p>
-            <p style="margin-top: 15px;"><strong>Each unit follows the same 4-lesson structure with grade-appropriate content.</strong></p>
+        <div style="background: white; padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;">
+            <h3 style="color: #2c5aa0; margin-bottom: 15px;">📊 Additional Units Available</h3>
+            <p>Units 5-32 continue with Canada, Mexico, Central America, South America, Europe, Asia, Africa, Oceania, Historical Civilizations, Government, Economics, and specialized topics.</p>
+            <p style="margin-top: 10px;"><strong>Each unit follows the same 4-lesson structure with grade-appropriate content.</strong></p>
         </div>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="grade7.html" style="background: #f39c12; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 0 10px;">➡️ Continue to 7th Grade</a>
-            <a href="../index.html" style="background: #2c5aa0; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: bold; margin: 0 10px;">📚 Back to Units</a>
+        <div class="navigation">
+            <a href="grade7.html" class="nav-btn">➡️ Continue to 7th Grade</a>
+            <a href="../index.html" class="nav-btn">📚 Back to Units Overview</a>
+            <a href="../../index.html" class="nav-btn">🏠 Home</a>
         </div>
     </div>
 </body>
