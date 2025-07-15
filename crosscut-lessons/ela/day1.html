@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 ELA Lesson - Argumentative Writing</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .lesson-header {
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .lesson-header h1 {
+            color: #e74c3c;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .lesson-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .meta-item {
+            font-weight: bold;
+        }
+
+        .objective-box {
+            background: linear-gradient(135deg, #fdf2f2, #fce4e4);
+            border-left: 5px solid #e74c3c;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .materials-list {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .activity-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .activity-section h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .time-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .standards-box {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📝 ELA Cross-Cut Lesson</h1>
+        <div class="subtitle">Day 1 • Argumentative Writing • Geographic Tools Integration</div>
+    </div>
+
+    <div class="container">
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <h1>Argumentative Writing: Geographic Evidence</h1>
+                <p><strong>Cross-curricular connection:</strong> Students use geographic tools and data to support argumentative writing about land use decisions.</p>
+            </div>
+
+            <div class="lesson-meta">
+                <div class="meta-item">
+                    <strong>Subject:</strong> ELA
+                </div>
+                <div class="meta-item">
+                    <strong>Grade:</strong> 6-8
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> 50 minutes
+                </div>
+                <div class="meta-item">
+                    <strong>Integration:</strong> Social Studies (Geographic Tools)
+                </div>
+            </div>
+
+            <div class="objective-box">
+                <h3>🎯 Learning Objectives</h3>
+                <ul>
+                    <li>Students will write argumentative claims supported by geographic evidence</li>
+                    <li>Students will use maps, charts, and geographic data as evidence</li>
+                    <li>Students will structure arguments using geographic reasoning</li>
+                    <li>Students will evaluate the strength of geographic evidence in arguments</li>
+                </ul>
+            </div>
+
+            <div class="standards-box">
+                <h3>📋 Standards Alignment</h3>
+                <p><strong>Common Core ELA:</strong></p>
+                <ul>
+                    <li>CCSS.ELA-LITERACY.WHST.6-8.1: Write arguments to support claims with clear reasons and relevant evidence</li>
+                    <li>CCSS.ELA-LITERACY.RST.6-8.7: Integrate quantitative or technical information expressed in words in a text with a version of that information expressed visually</li>
+                </ul>
+                <p><strong>Alaska Social Studies:</strong></p>
+                <ul>
+                    <li>Geography A.1: Use geographic tools to locate and analyze information about people, places, and environments</li>
+                </ul>
+            </div>
+
+            <div class="materials-list">
+                <h3>📚 Materials Needed</h3>
+                <ul>
+                    <li>Local community maps (digital or printed)</li>
+                    <li>Population density charts</li>
+                    <li>Land use data for Alaska communities</li>
+                    <li>Argumentative writing template</li>
+                    <li>Sample geographic evidence examples</li>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">10 minutes</div>
+                <h3>🚀 Opening: Hook & Context</h3>
+                <p><strong>Scenario:</strong> Present students with a real dilemma: "The city of Fairbanks is considering expanding a shopping center into a wetland area. As community members, you need to write a letter to the city council arguing for or against this development."</p>
+                <p><strong>Discussion:</strong> What kind of evidence would make your argument strongest? How can maps and geographic data help support your position?</p>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">15 minutes</div>
+                <h3>📖 Mini-Lesson: Geographic Evidence in Arguments</h3>
+                <p><strong>Teach:</strong></p>
+                <ul>
+                    <li>Types of geographic evidence (maps, charts, data, satellite images)</li>
+                    <li>How to read and interpret geographic data</li>
+                    <li>Connecting geographic evidence to argumentative claims</li>
+                    <li>Using geographic vocabulary in argumentative writing</li>
+                </ul>
+                <p><strong>Model:</strong> Show example argument using Alaska land use data with clear claim, evidence, and reasoning structure.</p>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">20 minutes</div>
+                <h3>✍️ Guided Practice: Building Arguments with Maps</h3>
+                <p><strong>Activity:</strong> Students work with partners to:</p>
+                <ol>
+                    <li>Analyze provided maps and data about the Fairbanks wetland scenario</li>
+                    <li>Identify at least 3 pieces of geographic evidence</li>
+                    <li>Write one strong argumentative paragraph using the evidence</li>
+                    <li>Use transition words and geographic vocabulary</li>
+                </ol>
+                <p><strong>Teacher Support:</strong> Circulate and provide feedback on evidence selection and argument structure.</p>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">5 minutes</div>
+                <h3>🎯 Closing: Reflection & Preview</h3>
+                <p><strong>Exit Ticket:</strong> Students write one sentence explaining how geographic evidence made their argument stronger.</p>
+                <p><strong>Preview:</strong> Tomorrow we'll learn how scientists use similar evidence-based reasoning to study Earth systems.</p>
+            </div>
+
+            <div class="objective-box">
+                <h3>📊 Assessment</h3>
+                <p><strong>Formative:</strong> Monitor partner discussions and review exit tickets</p>
+                <p><strong>Summative:</strong> Evaluate argumentative paragraphs using rubric focusing on:</p>
+                <ul>
+                    <li>Clear claim statement</li>
+                    <li>Relevant geographic evidence</li>
+                    <li>Logical reasoning connecting evidence to claim</li>
+                    <li>Use of geographic vocabulary</li>
+                </ul>
+            </div>
+
+            <div class="materials-list">
+                <h3>🔄 Differentiation</h3>
+                <p><strong>Support:</strong> Provide sentence frames and graphic organizers for argument structure</p>
+                <p><strong>Extension:</strong> Advanced students research additional geographic data sources and evaluate evidence quality</p>
+                <p><strong>ELL Support:</strong> Pre-teach geographic vocabulary with visual supports</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="../dashboard.html" class="nav-btn">← Back to Dashboard</a>
+            <a href="day2.html" class="nav-btn">Day 2 ELA →</a>
+            <a href="../science/day1.html" class="nav-btn">🔬 Day 1 Science</a>
+        </div>
+    </div>
+</body>
+</html>

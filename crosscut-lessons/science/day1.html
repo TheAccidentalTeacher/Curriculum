@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 Science Lesson - Earth Systems</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #27ae60, #229954);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .lesson-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .lesson-header {
+            border-bottom: 3px solid #27ae60;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .lesson-header h1 {
+            color: #27ae60;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .lesson-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .meta-item {
+            font-weight: bold;
+        }
+
+        .objective-box {
+            background: linear-gradient(135deg, #e8f5e8, #d5eddb);
+            border-left: 5px solid #27ae60;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .materials-list {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .activity-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .activity-section h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .time-badge {
+            background: #27ae60;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .standards-box {
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .safety-notice {
+            background: #fff2cc;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔬 Science Cross-Cut Lesson</h1>
+        <div class="subtitle">Day 1 • Earth Systems • Geographic Tools Integration</div>
+    </div>
+
+    <div class="container">
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <h1>Earth Systems: Geographic Evidence</h1>
+                <p><strong>Cross-curricular connection:</strong> Students use geographic tools to collect evidence about Earth system interactions and present findings using scientific reasoning.</p>
+            </div>
+
+            <div class="lesson-meta">
+                <div class="meta-item">
+                    <strong>Subject:</strong> Science
+                </div>
+                <div class="meta-item">
+                    <strong>Grade:</strong> 6-8
+                </div>
+                <div class="meta-item">
+                    <strong>Duration:</strong> 50 minutes
+                </div>
+                <div class="meta-item">
+                    <strong>Integration:</strong> Social Studies (Geographic Tools)
+                </div>
+            </div>
+
+            <div class="objective-box">
+                <h3>🎯 Learning Objectives</h3>
+                <ul>
+                    <li>Students will identify the four major Earth systems (geosphere, hydrosphere, atmosphere, biosphere)</li>
+                    <li>Students will use geographic tools to collect evidence of system interactions</li>
+                    <li>Students will apply scientific reasoning to explain system relationships</li>
+                    <li>Students will connect local Alaska examples to global Earth systems</li>
+                </ul>
+            </div>
+
+            <div class="standards-box">
+                <h3>📋 Standards Alignment</h3>
+                <p><strong>NGSS:</strong></p>
+                <ul>
+                    <li>5-ESS2-1: Develop a model using an example to describe ways the geosphere, biosphere, hydrosphere, and/or atmosphere interact</li>
+                    <li>MS-ESS2-1: Develop a model to describe the cycling of Earth's materials and the flow of energy that drives this process</li>
+                </ul>
+                <p><strong>Alaska Science Standards:</strong></p>
+                <ul>
+                    <li>SC5.3.1: The student demonstrates an understanding of cycles influenced by energy from the sun and by Earth's position and motion in our solar system</li>
+                </ul>
+            </div>
+
+            <div class="materials-list">
+                <h3>📚 Materials Needed</h3>
+                <ul>
+                    <li>Satellite images of Alaska (different seasons)</li>
+                    <li>Topographic maps of Alaska</li>
+                    <li>Weather data charts</li>
+                    <li>Earth systems interaction cards</li>
+                    <li>Digital mapping tools (Google Earth or similar)</li>
+                    <li>Scientific observation sheets</li>
+                </ul>
+            </div>
+
+            <div class="safety-notice">
+                <h3>⚠️ Safety Considerations</h3>
+                <p>No special safety requirements for this lesson. Standard classroom safety protocols apply.</p>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">5 minutes</div>
+                <h3>🚀 Opening: Phenomenon Introduction</h3>
+                <p><strong>Hook:</strong> Show before/after satellite images of the Mendenhall Glacier in Alaska (1999 vs 2019).</p>
+                <p><strong>Question:</strong> "What Earth systems do you think are involved in this change? How could we use geographic tools to study this phenomenon?"</p>
+                <p><strong>Purpose:</strong> Students will investigate Earth system interactions using the same tools geographers and scientists use.</p>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">15 minutes</div>
+                <h3>📖 Direct Instruction: Earth Systems & Geographic Tools</h3>
+                <p><strong>Teach the 4 Earth Systems:</strong></p>
+                <ul>
+                    <li><strong>Geosphere:</strong> Rocky parts of Earth (mountains, soil, rocks)</li>
+                    <li><strong>Hydrosphere:</strong> All water on Earth (oceans, rivers, ice, groundwater)</li>
+                    <li><strong>Atmosphere:</strong> Layer of gases surrounding Earth</li>
+                    <li><strong>Biosphere:</strong> All living things and their environments</li>
+                </ul>
+                <p><strong>Geographic Tools for Scientists:</strong></p>
+                <ul>
+                    <li>Satellite imagery shows changes over time</li>
+                    <li>Topographic maps reveal elevation and landforms</li>
+                    <li>Weather data tracks atmospheric conditions</li>
+                    <li>GIS technology combines multiple data layers</li>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">25 minutes</div>
+                <h3>🔍 Investigation: Alaska Earth Systems Evidence</h3>
+                <p><strong>Student Teams (3-4 students):</strong> Each team gets a different Alaska location to investigate:</p>
+                <ul>
+                    <li>Denali National Park</li>
+                    <li>Prince William Sound</li>
+                    <li>Arctic National Wildlife Refuge</li>
+                    <li>Aleutian Islands</li>
+                </ul>
+                
+                <p><strong>Investigation Process:</strong></p>
+                <ol>
+                    <li><strong>Observe (8 min):</strong> Use satellite images, topographic maps, and weather data to identify all 4 Earth systems in your location</li>
+                    <li><strong>Analyze (10 min):</strong> Find evidence of how the systems interact (e.g., how does the geosphere affect the hydrosphere?)</li>
+                    <li><strong>Document (7 min):</strong> Record observations using scientific vocabulary and geographic evidence</li>
+                </ol>
+                
+                <p><strong>Guiding Questions:</strong></p>
+                <ul>
+                    <li>What geographic tools provide the best evidence for each system?</li>
+                    <li>How do changes in one system affect the others?</li>
+                    <li>What patterns do you notice in the data?</li>
+                </ul>
+            </div>
+
+            <div class="activity-section">
+                <div class="time-badge">5 minutes</div>
+                <h3>🎯 Closing: Evidence-Based Conclusions</h3>
+                <p><strong>Quick Share:</strong> Each team shares one surprising discovery about Earth system interactions in Alaska.</p>
+                <p><strong>Reflection:</strong> "How is studying Earth systems similar to the way we analyze geographic evidence in social studies?"</p>
+                <p><strong>Preview:</strong> Tomorrow in ELA, we'll use this same type of evidence to support our arguments about land use decisions.</p>
+            </div>
+
+            <div class="objective-box">
+                <h3>📊 Assessment</h3>
+                <p><strong>Formative:</strong></p>
+                <ul>
+                    <li>Circulate during investigation to check understanding</li>
+                    <li>Review team observation sheets</li>
+                    <li>Listen to team discussions about system interactions</li>
+                </ul>
+                <p><strong>Summative:</strong> Students complete exit ticket explaining how two Earth systems interact in their assigned Alaska location, supported by geographic evidence.</p>
+            </div>
+
+            <div class="materials-list">
+                <h3>🔄 Differentiation</h3>
+                <p><strong>Support:</strong> Provide graphic organizers for system identification and interaction tracking</p>
+                <p><strong>Extension:</strong> Advanced students research how climate change affects Earth system interactions in Alaska</p>
+                <p><strong>ELL Support:</strong> Include visual vocabulary cards for Earth systems and geographic tools</p>
+                <p><strong>Technology Alternative:</strong> If digital tools unavailable, use printed maps and images with magnifying glasses</p>
+            </div>
+
+            <div class="objective-box">
+                <h3>🏠 Homework/Extension</h3>
+                <p>Students observe their local environment (school grounds, neighborhood) and identify examples of all four Earth systems. They should note any interactions they observe and bring findings to share tomorrow.</p>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="../dashboard.html" class="nav-btn">← Back to Dashboard</a>
+            <a href="day2.html" class="nav-btn">Day 2 Science →</a>
+            <a href="../ela/day1.html" class="nav-btn">📝 Day 1 ELA</a>
+        </div>
+    </div>
+</body>
+</html>

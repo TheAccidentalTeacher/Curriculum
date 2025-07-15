@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross-Curricular Dashboard - Alaska World Geography</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .progress-card, .current-lesson-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .progress-card h2, .current-lesson-card h2 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .current-day {
+            font-size: 3em;
+            font-weight: bold;
+            color: #e74c3c;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .lesson-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .lesson-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .lesson-btn {
+            padding: 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .ela-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .science-btn {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+        }
+
+        .lesson-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .mark-complete-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .mark-complete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .quarter-progress {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .quarter-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+        }
+
+        .quarter-1 { border-top-color: #e74c3c; }
+        .quarter-2 { border-top-color: #f39c12; }
+        .quarter-3 { border-top-color: #27ae60; }
+        .quarter-4 { border-top-color: #8e44ad; }
+
+        .progress-bar {
+            background: #ecf0f1;
+            border-radius: 10px;
+            height: 10px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .quarter-1 .progress-fill { background: #e74c3c; }
+        .quarter-2 .progress-fill { background: #f39c12; }
+        .quarter-3 .progress-fill { background: #27ae60; }
+        .quarter-4 .progress-fill { background: #8e44ad; }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .status-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lesson-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎯 Cross-Curricular Dashboard</h1>
+        <div class="subtitle">Daily Lesson Coordination • ELA & Science Integration</div>
+    </div>
+
+    <div class="container">
+        <div class="dashboard-grid">
+            <div class="progress-card">
+                <h2>📅 Current Progress</h2>
+                <div class="current-day" id="currentDay">Day 1</div>
+                <div class="lesson-info">
+                    <strong>Quarter:</strong> <span id="currentQuarter">1</span><br>
+                    <strong>Unit:</strong> <span id="currentUnit">Geographic Tools</span><br>
+                    <strong>Date:</strong> <span id="currentDate"></span>
+                </div>
+                <button class="mark-complete-btn" onclick="markDayComplete()">
+                    ✅ Mark Day <span id="completeDayNumber">1</span> Complete
+                </button>
+                <div class="status-message" id="statusMessage"></div>
+            </div>
+
+            <div class="current-lesson-card">
+                <h2>📚 Today's Cross-Cut Lessons</h2>
+                <div class="lesson-info">
+                    <strong>Social Studies Focus:</strong> <span id="ssiFocus">Geographic tools and map reading</span>
+                </div>
+                
+                <div class="lesson-links">
+                    <a href="#" class="lesson-btn ela-btn" id="elaLessonLink">
+                        📝 ELA Lesson<br>
+                        <small id="elaLessonTitle">Argumentative Writing</small>
+                    </a>
+                    <a href="#" class="lesson-btn science-btn" id="scienceLessonLink">
+                        🔬 Science Lesson<br>
+                        <small id="scienceLessonTitle">Earth Systems</small>
+                    </a>
+                </div>
+                
+                <div class="lesson-info">
+                    <strong>Integration Focus:</strong> <span id="integrationFocus">Students analyze geographic data while practicing evidence-based writing and understanding Earth systems.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="quarter-progress">
+            <div class="quarter-card quarter-1">
+                <h3>Q1: Geographic Foundations</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="q1Progress" style="width: 0%"></div>
+                </div>
+                <small><span id="q1Days">0</span> of 32 days complete</small>
+            </div>
+            
+            <div class="quarter-card quarter-2">
+                <h3>Q2: Americas & Europe</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="q2Progress" style="width: 0%"></div>
+                </div>
+                <small><span id="q2Days">0</span> of 35 days complete</small>
+            </div>
+            
+            <div class="quarter-card quarter-3">
+                <h3>Q3: Asia, Africa & Oceania</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="q3Progress" style="width: 0%"></div>
+                </div>
+                <small><span id="q3Days">0</span> of 36 days complete</small>
+            </div>
+            
+            <div class="quarter-card quarter-4">
+                <h3>Q4: Historical Synthesis</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="q4Progress" style="width: 0%"></div>
+                </div>
+                <small><span id="q4Days">0</span> of 35 days complete</small>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">🏠 Home</a>
+            <a href="units/index.html" class="nav-btn">📚 All Units</a>
+            <a href="units/lessons/" class="nav-btn">📋 All Lessons</a>
+            <button class="nav-btn" onclick="resetProgress()">🔄 Reset Progress</button>
+        </div>
+    </div>
+
+    <script>
+        // Complete curriculum data structure for all 175 days
+        const curriculumData = {
+            // QUARTER 1: Geographic Foundations & North America (Days 1-44)
+            // Unit 1: Geographic Tools (Days 1-7)
+            1: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Argumentative Writing", science: "Earth Systems", integration: "Students analyze geographic data while practicing evidence-based writing and understanding Earth systems." },
+            2: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Research Skills", science: "Scientific Method", integration: "Students research geographic phenomena using scientific methods and present findings in structured writing." },
+            3: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Data Analysis Writing", science: "Measurement & Scale", integration: "Students write analytical reports on geographic measurements and scaling concepts." },
+            4: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Technical Vocabulary", science: "Geographic Information Systems", integration: "Students learn technical writing using GIS terminology and scientific precision." },
+            5: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Comparative Analysis", science: "Remote Sensing", integration: "Students compare satellite imagery over time and write comparative analyses." },
+            6: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Explanatory Essays", science: "Coordinate Systems", integration: "Students explain how coordinate systems work using clear expository writing." },
+            7: { quarter: 1, unit: "Unit 1: Geographic Tools", ela: "Synthesis Writing", science: "Tool Integration", integration: "Students synthesize knowledge of multiple geographic tools through comprehensive writing." },
+
+            // Unit 2: Physical World - Landforms (Days 8-14)
+            8: { quarter: 1, unit: "Unit 2: Physical World", ela: "Descriptive Writing", science: "Plate Tectonics", integration: "Students describe landform formation processes using scientific vocabulary and descriptive techniques." },
+            9: { quarter: 1, unit: "Unit 2: Physical World", ela: "Process Writing", science: "Erosion & Weathering", integration: "Students write step-by-step explanations of erosion processes using scientific method." },
+            10: { quarter: 1, unit: "Unit 2: Physical World", ela: "Cause & Effect Essays", science: "Seismic Activity", integration: "Students analyze earthquake causes and effects through scientific writing." },
+            11: { quarter: 1, unit: "Unit 2: Physical World", ela: "Compare & Contrast", science: "Mountain Formation", integration: "Students compare different mountain formation processes through structured writing." },
+            12: { quarter: 1, unit: "Unit 2: Physical World", ela: "Technical Reports", science: "Rock Cycle", integration: "Students document rock cycle processes using technical writing skills." },
+            13: { quarter: 1, unit: "Unit 2: Physical World", ela: "Visual Analysis", science: "Geological Time", integration: "Students analyze geological timelines and write interpretive essays." },
+            14: { quarter: 1, unit: "Unit 2: Physical World", ela: "Research Papers", science: "Alaska Geology", integration: "Students research Alaska's unique geological features and present findings." },
+
+            // Unit 3: Physical World - Climate (Days 15-21)
+            15: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Data Interpretation", science: "Weather Patterns", integration: "Students interpret weather data and write analytical reports on climate patterns." },
+            16: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Prediction Writing", science: "Climate Modeling", integration: "Students write predictions about climate changes using scientific models." },
+            17: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Argumentative Essays", science: "Climate Change", integration: "Students argue about climate solutions using scientific evidence." },
+            18: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Narrative Stories", science: "Weather Events", integration: "Students write narratives about extreme weather while explaining scientific causes." },
+            19: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Informational Text", science: "Atmospheric Science", integration: "Students read and write informational texts about atmospheric processes." },
+            20: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Persuasive Writing", science: "Human Impact", integration: "Students write persuasive pieces about human effects on climate systems." },
+            21: { quarter: 1, unit: "Unit 3: Climate Systems", ela: "Review Essays", science: "Climate Assessment", integration: "Students synthesize climate knowledge through comprehensive assessment writing." },
+
+            // Unit 4: Human World (Days 22-28)
+            22: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Cultural Analysis", science: "Population Dynamics", integration: "Students analyze population growth patterns using both cultural and scientific perspectives." },
+            23: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Urban Planning", science: "Sustainability Science", integration: "Students design sustainable cities using scientific principles and persuasive writing." },
+            24: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Migration Stories", science: "Human Impact Studies", integration: "Students write migration narratives while studying environmental push-pull factors." },
+            25: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Economic Reports", science: "Resource Management", integration: "Students write economic analyses of natural resource use and conservation." },
+            26: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Policy Proposals", science: "Environmental Policy", integration: "Students draft policy proposals using scientific evidence and persuasive writing." },
+            27: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Cultural Essays", science: "Human-Environment Interaction", integration: "Students explore how cultures adapt to environments through scientific and cultural analysis." },
+            28: { quarter: 1, unit: "Unit 4: Human Geography", ela: "Synthesis Projects", science: "Systems Thinking", integration: "Students synthesize human-environment relationships through interdisciplinary projects." },
+
+            // Unit 5: United States (Days 29-35)
+            29: { quarter: 1, unit: "Unit 5: United States", ela: "Regional Analysis", science: "Ecosystem Diversity", integration: "Students analyze US regions while studying diverse ecosystems and writing regional profiles." },
+            30: { quarter: 1, unit: "Unit 5: United States", ela: "Historical Geography", science: "Natural Resources", integration: "Students trace US development through resource availability and historical narrative writing." },
+            31: { quarter: 1, unit: "Unit 5: United States", ela: "Comparative Essays", science: "Biome Analysis", integration: "Students compare US biomes using scientific classification and comparative writing." },
+            32: { quarter: 1, unit: "Unit 5: United States", ela: "Case Studies", science: "Conservation Biology", integration: "Students write case studies on US conservation efforts using scientific methodology." },
+            33: { quarter: 1, unit: "Unit 5: United States", ela: "Travel Writing", science: "Geographic Diversity", integration: "Students write travel guides incorporating scientific information about diverse US landscapes." },
+            34: { quarter: 1, unit: "Unit 5: United States", ela: "Policy Analysis", science: "Environmental Law", integration: "Students analyze US environmental policies using scientific evidence and analytical writing." },
+            35: { quarter: 1, unit: "Unit 5: United States", ela: "Research Projects", science: "Field Studies", integration: "Students conduct mini-research projects on local US geography using scientific methods." },
+
+            // Unit 6: Canada (Days 36-42)
+            36: { quarter: 1, unit: "Unit 6: Canada", ela: "Bilingual Studies", science: "Arctic Science", integration: "Students explore Canadian bilingualism while studying Arctic environmental science." },
+            37: { quarter: 1, unit: "Unit 6: Canada", ela: "Resource Essays", science: "Natural Resources", integration: "Students write about Canadian resource extraction using scientific and economic analysis." },
+            38: { quarter: 1, unit: "Unit 6: Canada", ela: "Indigenous Perspectives", science: "Traditional Ecological Knowledge", integration: "Students explore indigenous knowledge systems and their scientific contributions." },
+            39: { quarter: 1, unit: "Unit 6: Canada", ela: "Climate Reports", science: "Boreal Ecology", integration: "Students report on Canadian climate patterns and boreal forest ecosystems." },
+            40: { quarter: 1, unit: "Unit 6: Canada", ela: "Comparative Government", science: "Environmental Policy", integration: "Students compare US-Canada environmental policies using analytical writing." },
+            41: { quarter: 1, unit: "Unit 6: Canada", ela: "Trade Analysis", science: "Resource Economics", integration: "Students analyze US-Canada trade relationships through economic and scientific lenses." },
+            42: { quarter: 1, unit: "Unit 6: Canada", ela: "Cultural Exchange", science: "Binational Cooperation", integration: "Students write about scientific cooperation between US and Canada." },
+
+            // Unit 7: Mexico (Days 43-44) + Simulation Prep
+            43: { quarter: 1, unit: "Unit 7: Mexico", ela: "Cultural Geography", science: "Biodiversity Studies", integration: "Students explore Mexican cultural diversity while studying its rich biodiversity." },
+            44: { quarter: 1, unit: "Unit 7: Mexico", ela: "Simulation Prep", science: "Systems Integration", integration: "Students prepare for North American Sustainability Challenge using integrated knowledge." },
+
+            // QUARTER 2: Americas & Europe Integration (Days 45-79)
+            // Unit 8: Central America (Days 45-50)
+            45: { quarter: 2, unit: "Unit 8: Central America", ela: "Research Methods", science: "Tropical Ecosystems", integration: "Students research Central American countries while studying tropical ecosystem science." },
+            46: { quarter: 2, unit: "Unit 8: Central America", ela: "Isthmus Geography", science: "Land Bridge Ecology", integration: "Students write about the geographic significance of isthmuses and their ecological importance." },
+            47: { quarter: 2, unit: "Unit 8: Central America", ela: "Migration Studies", science: "Species Migration", integration: "Students study both human and animal migration patterns through Central America." },
+            48: { quarter: 2, unit: "Unit 8: Central America", ela: "Economic Geography", science: "Agricultural Science", integration: "Students analyze Central American agriculture using economic and scientific perspectives." },
+            49: { quarter: 2, unit: "Unit 8: Central America", ela: "Environmental Issues", science: "Conservation Biology", integration: "Students write about environmental challenges and conservation efforts in Central America." },
+            50: { quarter: 2, unit: "Unit 8: Central America", ela: "Cultural Synthesis", science: "Human-Environment Interaction", integration: "Students synthesize Central American cultural and environmental knowledge." },
+
+            // Unit 9: South America (Days 51-57)
+            51: { quarter: 2, unit: "Unit 9: South America", ela: "Continental Analysis", science: "Plate Tectonics", integration: "Students analyze South American geography through geological and written analysis." },
+            52: { quarter: 2, unit: "Unit 9: South America", ela: "Amazon Studies", science: "Rainforest Ecology", integration: "Students write about the Amazon while studying rainforest ecosystem science." },
+            53: { quarter: 2, unit: "Unit 9: South America", ela: "Andes Geography", science: "Mountain Ecosystems", integration: "Students explore Andes mountain geography and high-altitude ecosystem adaptations." },
+            54: { quarter: 2, unit: "Unit 9: South America", ela: "Economic Development", science: "Sustainable Development", integration: "Students write about South American development using sustainability science principles." },
+            55: { quarter: 2, unit: "Unit 9: South America", ela: "Cultural Diversity", science: "Biodiversity", integration: "Students explore parallels between cultural and biological diversity in South America." },
+            56: { quarter: 2, unit: "Unit 9: South America", ela: "Resource Management", science: "Environmental Science", integration: "Students analyze South American resource use through environmental science and policy writing." },
+            57: { quarter: 2, unit: "Unit 9: South America", ela: "Regional Comparison", science: "Comparative Ecology", integration: "Students compare South American regions using ecological and geographic analysis." },
+
+            // Unit 10: Western Europe (Days 58-64)
+            58: { quarter: 2, unit: "Unit 10: Western Europe", ela: "European Integration", science: "Transboundary Issues", integration: "Students write about European cooperation while studying transboundary environmental issues." },
+            59: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Industrial Geography", science: "Industrial Ecology", integration: "Students analyze European industrialization through environmental and economic perspectives." },
+            60: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Urban Planning", science: "Sustainable Cities", integration: "Students study European city planning and sustainable urban development science." },
+            61: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Agricultural Systems", science: "Agricultural Science", integration: "Students write about European farming while studying agricultural sustainability science." },
+            62: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Climate Action", science: "Climate Science", integration: "Students analyze European climate policies using scientific evidence and policy writing." },
+            63: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Cultural Heritage", science: "Environmental Conservation", integration: "Students explore how Europeans balance cultural heritage with environmental protection." },
+            64: { quarter: 2, unit: "Unit 10: Western Europe", ela: "Economic Geography", science: "Green Economics", integration: "Students write about European green economy initiatives using economic and scientific analysis." },
+
+            // Unit 11: Eastern Europe (Days 65-71)
+            65: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Transition Studies", science: "Environmental Transition", integration: "Students write about post-communist transitions while studying environmental recovery science." },
+            66: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Resource Geography", science: "Resource Science", integration: "Students analyze Eastern European natural resources using scientific and economic methods." },
+            67: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Cultural Geography", science: "Human Ecology", integration: "Students explore Eastern European cultures and their environmental relationships." },
+            68: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Regional Development", science: "Sustainable Development", integration: "Students write about Eastern European development using sustainability principles." },
+            69: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Border Studies", science: "Ecosystem Boundaries", integration: "Students study political borders and ecological boundaries in Eastern Europe." },
+            70: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Environmental Policy", science: "Environmental Science", integration: "Students analyze Eastern European environmental policies using scientific evidence." },
+            71: { quarter: 2, unit: "Unit 11: Eastern Europe", ela: "Integration Analysis", science: "Systems Thinking", integration: "Students synthesize Eastern European knowledge using systems thinking approaches." },
+
+            // Unit 12: Southern Europe (Days 72-78)
+            72: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Mediterranean Studies", science: "Mediterranean Ecology", integration: "Students write about Mediterranean geography while studying unique Mediterranean ecosystems." },
+            73: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Tourism Geography", science: "Tourism Ecology", integration: "Students analyze Mediterranean tourism using economic and environmental impact science." },
+            74: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Agricultural Heritage", science: "Traditional Agriculture", integration: "Students explore traditional Mediterranean agriculture and its scientific sustainability." },
+            75: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Coastal Geography", science: "Marine Science", integration: "Students study Mediterranean coasts using geographical and marine science perspectives." },
+            76: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Cultural Landscapes", science: "Landscape Ecology", integration: "Students write about how cultures shape landscapes using ecological science principles." },
+            77: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Water Resources", science: "Hydrology", integration: "Students analyze Mediterranean water issues using hydrological science and policy writing." },
+            78: { quarter: 2, unit: "Unit 12: Southern Europe", ela: "Climate Adaptation", science: "Climate Science", integration: "Students write about Mediterranean climate adaptation using climate science evidence." },
+
+            // Unit 13: Russia (Day 79) + Simulation Prep
+            79: { quarter: 2, unit: "Unit 13: Russia", ela: "Simulation Prep", science: "Transatlantic Systems", integration: "Students prepare for Transatlantic Cultural Exchange simulation using integrated knowledge." },
+
+            // QUARTER 3: Asia, Africa & Oceania (Days 80-115)
+            // Unit 14: East Asia (Days 80-86)
+            80: { quarter: 3, unit: "Unit 14: East Asia", ela: "Regional Analysis", science: "Monsoon Systems", integration: "Students analyze East Asian geography while studying monsoon climate science." },
+            81: { quarter: 3, unit: "Unit 14: East Asia", ela: "Economic Geography", science: "Industrial Ecology", integration: "Students write about East Asian economic development and its environmental impacts." },
+            82: { quarter: 3, unit: "Unit 14: East Asia", ela: "Population Studies", science: "Population Ecology", integration: "Students study East Asian population patterns using demographic and ecological science." },
+            83: { quarter: 3, unit: "Unit 14: East Asia", ela: "Urban Geography", science: "Urban Ecology", integration: "Students analyze East Asian megacities using urban planning and ecological science." },
+            84: { quarter: 3, unit: "Unit 14: East Asia", ela: "Cultural Geography", science: "Environmental Philosophy", integration: "Students explore East Asian environmental philosophies and their scientific applications." },
+            85: { quarter: 3, unit: "Unit 14: East Asia", ela: "Trade Networks", science: "Global Systems", integration: "Students write about East Asian trade while studying global economic and environmental systems." },
+            86: { quarter: 3, unit: "Unit 14: East Asia", ela: "Technology & Environment", science: "Green Technology", integration: "Students analyze how East Asian technology addresses environmental challenges." },
+
+            // Unit 15: Southeast Asia (Days 87-93)
+            87: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Island Geography", science: "Island Biogeography", integration: "Students write about Southeast Asian islands while studying island ecosystem science." },
+            88: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Biodiversity Essays", science: "Tropical Biodiversity", integration: "Students explore Southeast Asian biodiversity using scientific and descriptive writing." },
+            89: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Maritime Geography", science: "Marine Ecosystems", integration: "Students study Southeast Asian seas using geographic and marine science perspectives." },
+            90: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Resource Management", science: "Conservation Science", integration: "Students write about Southeast Asian resource challenges using conservation science." },
+            91: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Cultural Diversity", science: "Human Ecology", integration: "Students explore cultural adaptation to tropical environments using ecological principles." },
+            92: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Development Issues", science: "Sustainable Development", integration: "Students analyze Southeast Asian development using sustainability science frameworks." },
+            93: { quarter: 3, unit: "Unit 15: Southeast Asia", ela: "Climate Impacts", science: "Climate Change Science", integration: "Students write about climate change impacts in Southeast Asia using scientific evidence." },
+
+            // Unit 16: South Asia (Days 94-100)
+            94: { quarter: 3, unit: "Unit 16: South Asia", ela: "Subcontinental Geography", science: "Tectonic Science", integration: "Students analyze South Asian geography through geological and written analysis." },
+            95: { quarter: 3, unit: "Unit 16: South Asia", ela: "Water Geography", science: "Hydrology", integration: "Students write about South Asian water systems using hydrological science." },
+            96: { quarter: 3, unit: "Unit 16: South Asia", ela: "Agricultural Systems", science: "Agricultural Science", integration: "Students study South Asian agriculture using scientific and economic analysis." },
+            97: { quarter: 3, unit: "Unit 16: South Asia", ela: "Population Dynamics", science: "Demography", integration: "Students analyze South Asian population trends using demographic science and analytical writing." },
+            98: { quarter: 3, unit: "Unit 16: South Asia", ela: "Environmental Challenges", science: "Environmental Science", integration: "Students write about South Asian environmental issues using scientific evidence." },
+            99: { quarter: 3, unit: "Unit 16: South Asia", ela: "Development Geography", science: "Development Science", integration: "Students analyze South Asian development using scientific and policy frameworks." },
+            100: { quarter: 3, unit: "Unit 16: South Asia", ela: "Regional Synthesis", science: "Systems Analysis", integration: "Students synthesize South Asian knowledge using systems thinking and analytical writing." },
+
+            // Continued in next part...
+            // Unit 17: Southwest Asia (Days 101-107)
+            101: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Arid Geography", science: "Desert Ecology", integration: "Students write about Southwest Asian landscapes while studying desert ecosystem science." },
+            102: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Resource Geography", science: "Energy Science", integration: "Students analyze Southwest Asian energy resources using scientific and economic methods." },
+            103: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Cultural Geography", science: "Human Adaptation", integration: "Students explore cultural adaptations to arid environments using scientific principles." },
+            104: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Water Scarcity", science: "Water Science", integration: "Students write about water issues using hydrological science and policy analysis." },
+            105: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Geopolitical Analysis", science: "Resource Science", integration: "Students analyze regional conflicts through resource science and analytical writing." },
+            106: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Ancient Geography", science: "Historical Ecology", integration: "Students study how ancient civilizations adapted to environments using ecological science." },
+            107: { quarter: 3, unit: "Unit 17: Southwest Asia", ela: "Modern Challenges", science: "Environmental Science", integration: "Students write about contemporary environmental challenges using scientific evidence." },
+
+            // Unit 18: Africa North (Days 108-114)
+            108: { quarter: 3, unit: "Unit 18: North Africa", ela: "Desert Geography", science: "Arid Ecosystems", integration: "Students write about Saharan geography while studying desert ecosystem adaptations." },
+            109: { quarter: 3, unit: "Unit 18: North Africa", ela: "Nile Geography", science: "River Systems", integration: "Students analyze the Nile River system using geographic and hydrological science." },
+            110: { quarter: 3, unit: "Unit 18: North Africa", ela: "Cultural Geography", science: "Human Ecology", integration: "Students explore North African cultures and their environmental relationships." },
+            111: { quarter: 3, unit: "Unit 18: North Africa", ela: "Economic Geography", science: "Resource Science", integration: "Students write about North African economies using resource science and economic analysis." },
+            112: { quarter: 3, unit: "Unit 18: North Africa", ela: "Climate Geography", science: "Climate Science", integration: "Students study North African climate patterns using meteorological science." },
+            113: { quarter: 3, unit: "Unit 18: North Africa", ela: "Historical Geography", science: "Environmental History", integration: "Students trace North African environmental changes through historical and scientific analysis." },
+            114: { quarter: 3, unit: "Unit 18: North Africa", ela: "Development Issues", science: "Sustainability Science", integration: "Students analyze North African development using sustainability frameworks." },
+
+            // Unit 19: Africa South (Day 115) + Simulation Prep
+            115: { quarter: 3, unit: "Unit 19: Africa South", ela: "Simulation Prep", science: "Global Resource Systems", integration: "Students prepare for Global Resource Stewardship simulation using integrated knowledge." },
+
+            // QUARTER 4: Historical Synthesis & Modern Applications (Days 116-175)
+            // Unit 20-32 covering Historical Synthesis, Economics, Government, and Global Applications
+            116: { quarter: 4, unit: "Unit 20: Oceania", ela: "Island Nations", science: "Island Ecology", integration: "Students write about Pacific island nations while studying island ecosystem science and challenges." },
+            125: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Historical Analysis", science: "Environmental History", integration: "Students analyze how ancient civilizations adapted to their environments using historical and scientific methods." },
+            135: { quarter: 4, unit: "Unit 22: Modern World", ela: "Globalization", science: "Global Systems", integration: "Students write about globalization while studying global environmental and social systems." },
+            145: { quarter: 4, unit: "Unit 23: Economics", ela: "Economic Geography", science: "Resource Economics", integration: "Students analyze global economic patterns using economic and environmental science." },
+            155: { quarter: 4, unit: "Unit 24: Government", ela: "Policy Analysis", science: "Environmental Policy", integration: "Students write policy analyses using scientific evidence and persuasive writing techniques." },
+            165: { quarter: 4, unit: "Unit 25: Global Issues", ela: "Problem-Solution Essays", science: "Applied Science", integration: "Students write about global challenges and solutions using scientific reasoning and argumentation." },
+            // Continued Quarter 4 progression...
+            // Unit 20: Oceania (Days 116-122)
+            117: { quarter: 4, unit: "Unit 20: Oceania", ela: "Pacific Geography", science: "Marine Science", integration: "Students write about Pacific island challenges while studying marine ecosystem science." },
+            118: { quarter: 4, unit: "Unit 20: Oceania", ela: "Cultural Geography", science: "Island Ecosystems", integration: "Students explore Pacific cultures and their adaptation to island environments." },
+            119: { quarter: 4, unit: "Unit 20: Oceania", ela: "Environmental Issues", science: "Climate Change", integration: "Students write about sea level rise impacts using climate science evidence." },
+            120: { quarter: 4, unit: "Unit 20: Oceania", ela: "Resource Management", science: "Marine Conservation", integration: "Students analyze Pacific resource management using conservation science." },
+            121: { quarter: 4, unit: "Unit 20: Oceania", ela: "Tourism Geography", science: "Ecosystem Services", integration: "Students study Pacific tourism impacts using ecosystem science." },
+            122: { quarter: 4, unit: "Unit 20: Oceania", ela: "Regional Synthesis", science: "Island Biogeography", integration: "Students synthesize Oceania knowledge using biogeographic principles." },
+
+            // Unit 21: Ancient Civilizations (Days 123-129)
+            123: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Historical Geography", science: "Paleoclimatology", integration: "Students study ancient civilizations and climate through historical and scientific analysis." },
+            124: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Mesopotamia", science: "Agricultural Science", integration: "Students analyze ancient agriculture using modern agricultural science." },
+            126: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Egypt", science: "River Systems", integration: "Students study Nile civilization using hydrological science and historical writing." },
+            127: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Greece & Rome", science: "Mediterranean Ecology", integration: "Students explore classical civilizations and Mediterranean environmental science." },
+            128: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Asian Civilizations", science: "Environmental Adaptation", integration: "Students study Asian civilizations' environmental adaptations using ecological science." },
+            129: { quarter: 4, unit: "Unit 21: Ancient Civilizations", ela: "Environmental Lessons", science: "Sustainability History", integration: "Students extract environmental lessons from ancient civilizations for modern application." },
+
+            // Unit 22: Modern World History (Days 130-136)
+            130: { quarter: 4, unit: "Unit 22: Modern World", ela: "Industrial Revolution", science: "Industrial Ecology", integration: "Students analyze industrialization's geographic and environmental impacts." },
+            131: { quarter: 4, unit: "Unit 22: Modern World", ela: "World Wars Geography", science: "Environmental Warfare", integration: "Students study how geography influenced wars and their environmental consequences." },
+            132: { quarter: 4, unit: "Unit 22: Modern World", ela: "Cold War Geography", science: "Nuclear Science", integration: "Students analyze Cold War geographic strategies and nuclear environmental impacts." },
+            133: { quarter: 4, unit: "Unit 22: Modern World", ela: "Decolonization", science: "Environmental Justice", integration: "Students write about decolonization while studying environmental justice science." },
+            134: { quarter: 4, unit: "Unit 22: Modern World", ela: "Globalization Effects", science: "Global Systems Science", integration: "Students analyze globalization using systems science and analytical writing." },
+            136: { quarter: 4, unit: "Unit 22: Modern World", ela: "Contemporary Issues", science: "Applied Environmental Science", integration: "Students address modern global issues using scientific reasoning and persuasive writing." },
+
+            // Unit 23: Economic Geography (Days 137-143)
+            137: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Economic Systems", science: "Ecological Economics", integration: "Students write about economic systems while studying ecological economics principles." },
+            138: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Trade Networks", science: "Transportation Science", integration: "Students analyze global trade using transportation and environmental science." },
+            139: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Development Theory", science: "Sustainable Development", integration: "Students study development theories using sustainability science frameworks." },
+            140: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Resource Economics", science: "Natural Resource Science", integration: "Students write about resource economics using natural science principles." },
+            141: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Urban Economics", science: "Urban Ecology", integration: "Students analyze urban economic patterns using urban ecological science." },
+            142: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Global Markets", science: "Systems Economics", integration: "Students study global markets as complex systems using scientific methodology." },
+            143: { quarter: 4, unit: "Unit 23: Economic Geography", ela: "Economic Policy", science: "Policy Science", integration: "Students write economic policy proposals using scientific evidence and analysis." },
+
+            // Unit 24: Political Geography (Days 144-150)
+            144: { quarter: 4, unit: "Unit 24: Political Geography", ela: "Government Systems", science: "Social Science", integration: "Students analyze government systems using social science research methods and analytical writing." },
+            146: { quarter: 4, unit: "Unit 24: Political Geography", ela: "Border Studies", science: "Ecosystem Boundaries", integration: "Students study political borders and natural boundaries using geographic and ecological science." },
+            147: { quarter: 4, unit: "Unit 24: Political Geography", ela: "Sovereignty Issues", science: "Resource Management", integration: "Students write about sovereignty while studying transboundary resource management science." },
+            148: { quarter: 4, unit: "Unit 24: Political Geography", ela: "International Law", science: "Environmental Law", integration: "Students analyze international environmental law using legal and scientific frameworks." },
+            149: { quarter: 4, unit: "Unit 24: Political Geography", ela: "Conflict Geography", science: "Peace Science", integration: "Students study geographic factors in conflict using peace science methodologies." },
+            150: { quarter: 4, unit: "Unit 24: Political Geography", ela: "Democratic Processes", science: "Decision Science", integration: "Students analyze democratic decision-making using scientific reasoning and persuasive writing." },
+
+            // Unit 25: Cultural Geography (Days 151-157)
+            151: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Cultural Analysis", science: "Anthropological Science", integration: "Students analyze world cultures using anthropological science methods and cultural writing." },
+            152: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Language Geography", science: "Communication Science", integration: "Students study language distribution using communication science and geographic analysis." },
+            153: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Religion Geography", science: "Social Science", integration: "Students explore religious geography using social science research and analytical writing." },
+            154: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Cultural Diffusion", science: "Network Science", integration: "Students study cultural spread using network science and geographic analysis." },
+            156: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Cultural Landscapes", science: "Landscape Science", integration: "Students analyze cultural landscapes using landscape science and descriptive writing." },
+            157: { quarter: 4, unit: "Unit 25: Cultural Geography", ela: "Cultural Preservation", science: "Conservation Science", integration: "Students write about cultural preservation using conservation science principles." },
+
+            // Unit 26: Environmental Geography (Days 158-164)
+            158: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Environmental Issues", science: "Environmental Science", integration: "Students analyze global environmental issues using comprehensive environmental science." },
+            159: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Climate Policy", science: "Climate Science", integration: "Students write climate policy proposals using climate science evidence." },
+            160: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Conservation Writing", science: "Conservation Biology", integration: "Students create conservation plans using scientific methodology and persuasive writing." },
+            161: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Sustainability Reports", science: "Sustainability Science", integration: "Students write sustainability assessments using interdisciplinary science approaches." },
+            162: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Environmental Justice", science: "Public Health", integration: "Students analyze environmental justice using public health science and advocacy writing." },
+            163: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Green Technology", science: "Technology Assessment", integration: "Students evaluate green technologies using scientific assessment and technical writing." },
+            164: { quarter: 4, unit: "Unit 26: Environmental Geography", ela: "Future Scenarios", science: "Scenario Planning", integration: "Students create environmental future scenarios using scientific modeling and narrative writing." },
+
+            // Unit 27-32: Synthesis and Application (Days 165-175)
+            166: { quarter: 4, unit: "Unit 27: Global Challenges", ela: "Challenge Analysis", science: "Systems Science", integration: "Students analyze interconnected global challenges using systems science and analytical writing." },
+            167: { quarter: 4, unit: "Unit 28: Solution Design", ela: "Solution Writing", science: "Design Science", integration: "Students design solutions to global problems using scientific design principles." },
+            168: { quarter: 4, unit: "Unit 29: Implementation Planning", ela: "Project Planning", science: "Implementation Science", integration: "Students create implementation plans using project management and scientific methodology." },
+            169: { quarter: 4, unit: "Unit 30: Global Cooperation", ela: "Diplomatic Writing", science: "Cooperation Science", integration: "Students write about international cooperation using cooperation science principles." },
+            170: { quarter: 4, unit: "Unit 31: Future Geography", ela: "Futurism Writing", science: "Predictive Science", integration: "Students envision future geography using predictive science and creative writing." },
+            171: { quarter: 4, unit: "Unit 32: Capstone Preparation", ela: "Portfolio Development", science: "Research Synthesis", integration: "Students compile portfolios demonstrating integrated learning across all disciplines." },
+            172: { quarter: 4, unit: "Unit 32: Capstone Projects", ela: "Project Presentation", science: "Scientific Communication", integration: "Students present capstone projects using scientific communication and presentation skills." },
+            173: { quarter: 4, unit: "Unit 32: Peer Review", ela: "Critical Analysis", science: "Peer Review Process", integration: "Students conduct peer reviews using scientific peer review methods and critical writing." },
+            174: { quarter: 4, unit: "Unit 32: Reflection", ela: "Reflective Writing", science: "Learning Science", integration: "Students reflect on learning using metacognitive science and reflective writing practices." }
+        };
+
+        // Default to day 1 if no saved progress
+        function getCurrentDay() {
+            return parseInt(localStorage.getItem('currentDay') || '1');
+        }
+
+        function setCurrentDay(day) {
+            localStorage.setItem('currentDay', day.toString());
+        }
+
+        function getLessonData(day) {
+            // Find the closest lesson data for the current day
+            let closestDay = 1;
+            for (let lessonDay in curriculumData) {
+                if (parseInt(lessonDay) <= day) {
+                    closestDay = parseInt(lessonDay);
+                }
+            }
+            return curriculumData[closestDay];
+        }
+
+        function updateDashboard() {
+            const currentDay = getCurrentDay();
+            const lessonData = getLessonData(currentDay);
+            
+            // Update current day display
+            document.getElementById('currentDay').textContent = `Day ${currentDay}`;
+            document.getElementById('completeDayNumber').textContent = currentDay;
+            
+            // Update lesson information
+            document.getElementById('currentQuarter').textContent = lessonData.quarter;
+            document.getElementById('currentUnit').textContent = lessonData.unit;
+            document.getElementById('ssiFocus').textContent = lessonData.unit;
+            document.getElementById('elaLessonTitle').textContent = lessonData.ela;
+            document.getElementById('scienceLessonTitle').textContent = lessonData.science;
+            document.getElementById('integrationFocus').textContent = lessonData.integration;
+            
+            // Update current date
+            const startDate = new Date('2025-09-02'); // School year start
+            const currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + (currentDay - 1));
+            document.getElementById('currentDate').textContent = currentDate.toLocaleDateString();
+            
+            // Update lesson links
+            document.getElementById('elaLessonLink').href = `crosscut-lessons/ela/day${currentDay}.html`;
+            document.getElementById('scienceLessonLink').href = `crosscut-lessons/science/day${currentDay}.html`;
+            
+            // Update quarter progress
+            updateQuarterProgress(currentDay);
+        }
+
+        function updateQuarterProgress(currentDay) {
+            const quarterLimits = {
+                1: { start: 1, end: 32 },
+                2: { start: 33, end: 67 },
+                3: { start: 68, end: 103 },
+                4: { start: 104, end: 138 }
+            };
+
+            for (let q = 1; q <= 4; q++) {
+                const limits = quarterLimits[q];
+                let daysComplete = 0;
+                
+                if (currentDay > limits.end) {
+                    daysComplete = limits.end - limits.start + 1;
+                } else if (currentDay >= limits.start) {
+                    daysComplete = currentDay - limits.start + 1;
+                }
+                
+                const totalDays = limits.end - limits.start + 1;
+                const percentage = Math.min((daysComplete / totalDays) * 100, 100);
+                
+                document.getElementById(`q${q}Days`).textContent = daysComplete;
+                document.getElementById(`q${q}Progress`).style.width = `${percentage}%`;
+            }
+        }
+
+        function markDayComplete() {
+            const currentDay = getCurrentDay();
+            const newDay = currentDay + 1;
+            
+            setCurrentDay(newDay);
+            showStatusMessage(`Day ${currentDay} marked complete! Moving to Day ${newDay}.`);
+            updateDashboard();
+        }
+
+        function resetProgress() {
+            if (confirm('Are you sure you want to reset all progress to Day 1?')) {
+                setCurrentDay(1);
+                showStatusMessage('Progress reset to Day 1.');
+                updateDashboard();
+            }
+        }
+
+        function showStatusMessage(message) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.style.display = 'block';
+            
+            setTimeout(() => {
+                statusEl.style.display = 'none';
+            }, 3000);
+        }
+
+        // Initialize dashboard on page load
+        document.addEventListener('DOMContentLoaded', updateDashboard);
+    </script>
+</body>
+</html>
