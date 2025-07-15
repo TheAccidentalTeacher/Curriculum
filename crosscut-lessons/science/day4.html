@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day '$i' Science: Measurement & Scale Analysis</title>
+    <title>Day 4 Science: Ecosystem Interactions Investigation - Maps and Coordinates</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: linear-gradient(135deg, #27ae60, #2ecc71); min-height: 100vh; }
         .container { max-width: 1000px; margin: 0 auto; background: white; border-radius: 15px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
@@ -21,83 +21,174 @@
         .header h1 { color: white; margin: 0; }
         ul, ol { padding-left: 25px; }
         .time-indicator { background: #27ae60; color: white; padding: 5px 15px; border-radius: 15px; display: inline-block; margin: 10px 0; }
+        
+        .materials-list { background: #f0f8ff; border-left-color: #0066cc; }
+        .safety-note { background: #fff3cd; border: 2px solid #ffc107; padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .alaska-connection { background: #e6f3ff; border-left-color: #1e90ff; }
+        .differentiation { background: #f0fff0; border-left-color: #32cd32; }
+        .detailed-activity { background: #f8f9fa; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 3px solid #6c757d; }
+        .teacher-note { background: #fff9e6; border: 1px solid #ffeb3b; padding: 10px; border-radius: 5px; margin: 10px 0; font-style: italic; }
+        .rubric-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .rubric-table th, .rubric-table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .rubric-table th { background-color: #f2f2f2; }
+        .student-handout { background: #f5f5f5; border: 2px dashed #999; padding: 20px; margin: 20px 0; }
+    
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🔬 Day '$i' Science: Geographic Measurement Systems</h1>
-            <p>Unit 1: Geographic Tools • Quarter 1 • Measurement & Scale</p>
+            <h1>🔬 Day 4 Science: Ecosystem Interactions Investigation - Maps and Coordinates</h1>
+            <p>Unit 1: Geographic Tools • Quarter 1 • Standards-Aligned</p>
         </div>
+        
         <div class="nav-buttons">
             <a href="../../dashboard.html" class="btn">← Dashboard</a>
-            <a href="day'$(($i-1))'.html" class="btn">← Day '$(($i-1))'</a>
-            <a href="day'$(($i+1))'.html" class="btn">Day '$(($i+1))' →</a>
-            <a href="../ela/day'$i'.html" class="btn">📝 ELA Day '$i'</a>
+            <a href="day3.html" class="btn">← Day 3</a>
+            <a href="day5.html" class="btn">Day 5 →</a>
+            <a href="../ela/day4.html" class="btn">📝 ELA Day 4</a>
         </div>
+        
         <div class="integration-box">
             <h3>🌍 Cross-Curricular Integration Focus</h3>
-            <p><strong>Geography Connection:</strong> Understanding scale, measurement, and spatial relationships</p>
-            <p><strong>ELA Integration:</strong> Technical vocabulary and precise measurement language from ELA class</p>
-            <p><strong>Science Skills:</strong> Measurement accuracy, scale conversion, and data analysis</p>
+            <p><strong>Geography Connection:</strong> Maps and Coordinates through SCIENCE lens</p>
+            <p><strong>ELA-Science Integration:</strong> Scientific investigation of ecosystem interactions in maps and coordinates context</p>
+            <p><strong>Alaska Context:</strong> Local examples and cultural connections throughout</p>
         </div>
+        
         <div class="lesson-section objectives">
             <h2>🎯 Learning Objectives</h2>
             <ul>
-                <li>Use appropriate tools to measure geographic features</li>
-                <li>Convert between different measurement scales</li>
-                <li>Understand the relationship between map scale and real distances</li>
-                <li>Apply measurement skills to Alaska geographic features</li>
-                <li>Record and analyze measurement data accurately</li>
+                <li>Investigate ecosystem interactions through hands-on experimentation</li><li>Collect and analyze data related to maps and coordinates</li><li>Develop scientific models to explain ecosystem interactions</li><li>Use evidence to support scientific explanations</li><li>Connect Alaska examples to global ecosystem interactions patterns</li>
             </ul>
         </div>
+        
         <div class="lesson-section standards">
             <h2>📋 Standards Alignment</h2>
             <ul>
-                <li>NGSS MS-ESS2-1: Develop models using scale, proportion, and quantity</li>
-                <li>AK.SCI.MS.ESS2.A: Develop models of Earth'\''s systems</li>
-                <li>AK.GEO.A.1: Use maps and geographic tools</li>
-                <li>AK.MATH.7.RP.1: Compute unit rates and ratios</li>
+                <li>NGSS MS-ESS2-1: Develop models to describe cycling of Earth's materials</li><li>NGSS MS-ESS2-2: Analyze data to construct explanations for interactions</li><li>NGSS MS-ETS1-1: Define criteria and constraints of design problems</li><li>AK.SCI.MS.ESS2.A: Develop models of Earth's systems and interactions</li>
             </ul>
         </div>
-        <div class="lesson-section activities">
-            <h2>🔬 Learning Activities</h2>
-            <div class="time-indicator">10 minutes</div>
-            <h3>Opening: Measurement Review</h3>
-            <ul><li>Review scientific method from previous lesson</li><li>Discuss importance of accurate measurement in geography</li></ul>
-            <div class="time-indicator">20 minutes</div>
-            <h3>Scale and Measurement Workshop</h3>
-            <ul><li>Learn about map scales and conversion factors</li><li>Practice measuring distances on Alaska maps</li><li>Convert map distances to real-world distances</li></ul>
-            <div class="time-indicator">25 minutes</div>
-            <h3>Hands-On Measurement Lab</h3>
-            <ul><li>Measure classroom and school features</li><li>Create scale drawings of familiar spaces</li><li>Calculate areas and perimeters using scientific methods</li></ul>
-            <div class="time-indicator">10 minutes</div>
-            <h3>Data Analysis</h3>
-            <ul><li>Compare measurement results between groups</li><li>Identify sources of measurement error</li><li>Discuss accuracy vs. precision</li></ul>
-            <div class="time-indicator">5 minutes</div>
-            <h3>Closing</h3>
-            <ul><li>Connect measurements to geographic information systems</li><li>Preview tomorrow'\''s lesson on remote sensing</li></ul>
-        </div>
-        <div class="lesson-section assessment">
-            <h2>📊 Assessment</h2>
+        
+        <div class="lesson-section materials-list">
+            <h2>📦 Materials Needed</h2>
             <ul>
-                <li>Measurement accuracy and technique</li>
-                <li>Scale conversion calculations</li>
-                <li>Quality of scale drawings</li>
-                <li>Understanding of measurement concepts</li>
+                <li>Investigation materials for ecosystem interactions study</li><li>Data collection sheets and graphing materials</li><li>Digital thermometers and measuring tools</li><li>Alaska reference maps and data sets</li><li>Safety equipment (goggles, aprons as needed)</li>
             </ul>
+            <div class="teacher-note">
+                <strong>Teacher Note:</strong> All digital tools have offline alternatives. Materials can be adapted based on availability.
+            </div>
         </div>
+        
+        
+        <div class="safety-note">
+            <h4>🚨 Safety Note</h4>
+            <p>Review proper handling of materials; supervise temperature measurements; ensure workspace safety</p>
+        </div>
+        
+        <div class="lesson-section activities">
+            <h2>🔬 Detailed Learning Activities</h2>
+            
+            <div class="detailed-activity">
+                <h4>Hook</h4>
+                <p>Phenomenon observation: Real ecosystem interactions example from Alaska (5 min)</p>
+            </div>
+            <div class="detailed-activity">
+                <h4>Investigation</h4>
+                <p>Hands-on ecosystem interactions experiment with data collection (20 min)</p>
+            </div>
+            <div class="detailed-activity">
+                <h4>Analysis</h4>
+                <p>Graph and analyze ecosystem interactions data; look for patterns (15 min)</p>
+            </div>
+            <div class="detailed-activity">
+                <h4>Modeling</h4>
+                <p>Create scientific model explaining ecosystem interactions processes (15 min)</p>
+            </div>
+            <div class="detailed-activity">
+                <h4>Application</h4>
+                <p>Connect findings to maps and coordinates and Alaska examples (10 min)</p>
+            </div>
+        </div>
+        
+        <div class="lesson-section assessment">
+            <h2>📊 Assessment & Rubric</h2>
+            <p><strong>Assessment Focus:</strong> Investigation lab report rubric; scientific reasoning checklist; peer collaboration assessment</p>
+            
+            <table class="rubric-table">
+                <tr>
+                    <th>Criteria</th>
+                    <th>Excellent (4)</th>
+                    <th>Proficient (3)</th>
+                    <th>Developing (2)</th>
+                    <th>Beginning (1)</th>
+                </tr>
+                <tr>
+                    <td>Content Understanding</td>
+                    <td>Demonstrates deep understanding with Alaska connections</td>
+                    <td>Shows solid understanding of key concepts</td>
+                    <td>Basic understanding with some gaps</td>
+                    <td>Limited understanding of concepts</td>
+                </tr>
+                <tr>
+                    <td>Scientific Reasoning</td>
+                    <td>Clear, detailed, well-organized explanations</td>
+                    <td>Generally clear and organized</td>
+                    <td>Some clarity, basic organization</td>
+                    <td>Unclear or minimal reasoning</td>
+                </tr>
+                <tr>
+                    <td>Collaboration</td>
+                    <td>Actively contributes and supports others</td>
+                    <td>Participates effectively in group work</td>
+                    <td>Some participation in group activities</td>
+                    <td>Limited participation or contribution</td>
+                </tr>
+            </table>
+        </div>
+        
+        
+        <div class="lesson-section alaska-connection">
+            <h2>🏔️ Alaska Cultural Connection</h2>
+            <p>How do ecosystem interactions patterns affect Alaska communities and ecosystems?</p>
+        </div>
+        
+        
+        <div class="lesson-section differentiation">
+            <h2>🎯 Differentiation Strategies</h2>
+            <p>Visual models for abstract concepts; varied data recording options; flexible grouping for investigations</p>
+        </div>
+        
         <div class="lesson-section">
             <h2>🏠 Homework & Extension</h2>
+            <p><strong>Tonight's Assignment:</strong> Complete ecosystem interactions investigation report; observe ecosystem interactions examples at home</p>
+            
+            <div class="student-handout">
+                <h4>📋 Student Assignment Sheet</h4>
+                <p><strong>Day 4 SCIENCE Homework:</strong></p>
+                <ol>
+                    <li>Complete ecosystem interactions investigation report; observe ecosystem interactions examples at home</li>
+                    <li>Review today's maps and coordinates vocabulary</li>
+                    <li>Prepare for tomorrow's lesson by thinking about Alaska connections</li>
+                </ol>
+                <p><strong>Due:</strong> Next class period</p>
+                <p><strong>Need Help?</strong> Contact teacher or work with study partner</p>
+            </div>
+        </div>
+        
+        <div class="teacher-note">
+            <h4>📝 Teacher Notes for Tomorrow</h4>
             <ul>
-                <li>Measure and map your home or yard area</li>
-                <li>Find the scale on a map of Alaska</li>
-                <li>Calculate distance between two Alaska cities</li>
+                <li>Review homework completion and provide feedback</li>
+                <li>Check for understanding of today's scientific investigation of ecosystem interactions in maps and coordinates context</li>
+                <li>Prepare materials for Day 5 lesson</li>
+                <li>Follow up with students who need additional support</li>
             </ul>
         </div>
+        
         <div class="nav-buttons">
             <a href="../../dashboard.html" class="btn">← Back to Dashboard</a>
-            <a href="day'$(($i+1))'.html" class="btn">Continue to Day '$(($i+1))' →</a>
+            <a href="day5.html" class="btn">Continue to Day 5 →</a>
         </div>
     </div>
 </body>
