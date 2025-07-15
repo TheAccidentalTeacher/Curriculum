@@ -233,22 +233,12 @@
     <div class="container">
         <div class="dashboard-grid">
             <div class="progress-card">
-                <h2>📅 Current Progress</h2>
+                <h2>📅 Current Progress & Today's Lessons</h2>
                 <div class="current-day" id="currentDay">Day 1</div>
                 <div class="lesson-info">
                     <strong>Quarter:</strong> <span id="currentQuarter">1</span><br>
                     <strong>Unit:</strong> <span id="currentUnit">Geographic Tools</span><br>
-                    <strong>Date:</strong> <span id="currentDate"></span>
-                </div>
-                <button class="mark-complete-btn" onclick="markDayComplete()">
-                    ✅ Mark Day <span id="completeDayNumber">1</span> Complete
-                </button>
-                <div class="status-message" id="statusMessage"></div>
-            </div>
-
-            <div class="current-lesson-card">
-                <h2>📚 Today's Cross-Cut Lessons</h2>
-                <div class="lesson-info">
+                    <strong>Date:</strong> <span id="currentDate"></span><br>
                     <strong>Social Studies Focus:</strong> <span id="ssiFocus">Geographic tools and map reading</span>
                 </div>
                 
@@ -266,6 +256,11 @@
                 <div class="lesson-info">
                     <strong>Integration Focus:</strong> <span id="integrationFocus">Students analyze geographic data while practicing evidence-based writing and understanding Earth systems.</span>
                 </div>
+                
+                <button class="mark-complete-btn" onclick="markDayComplete()">
+                    ✅ Mark Day <span id="completeDayNumber">1</span> Complete
+                </button>
+                <div class="status-message" id="statusMessage"></div>
             </div>
         </div>
 
