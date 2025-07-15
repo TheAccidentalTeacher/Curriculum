@@ -190,6 +190,17 @@
             border-radius: 20px;
             font-size: 0.9em;
             font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            color: white;
+            text-decoration: none;
         }
 
         .badge.ela { background: #e74c3c; }
@@ -321,10 +332,10 @@
                 <div class="info-header">
                     <h3>🎯 Alaska Cross-Curricular World Geography</h3>
                     <div class="crosscut-badges">
-                        <span class="badge alaska">Alaska Social Studies</span>
-                        <span class="badge ela">Common Core ELA</span>
-                        <span class="badge science">NGSS Science</span>
-                        <span class="badge">DOK 3-4 Focus</span>
+                        <a href="standards-info/alaska-standards.html" class="badge alaska">Alaska Social Studies</a>
+                        <a href="standards-info/ela-standards.html" class="badge ela">Common Core ELA</a>
+                        <a href="standards-info/science-standards.html" class="badge science">NGSS Science</a>
+                        <a href="standards-info/dok-levels.html" class="badge">DOK 3-4 Focus</a>
                     </div>
                 </div>
                 

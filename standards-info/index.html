@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standards & Learning Framework</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        
+        .nav-btn {
+            background: linear-gradient(135deg, #2c5aa0, #1e3f66);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 10px 20px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .standard-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 5px solid;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .standard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .alaska-card { border-top-color: #004b87; }
+        .ela-card { border-top-color: #e74c3c; }
+        .science-card { border-top-color: #27ae60; }
+        .dok-card { border-top-color: #667eea; }
+        
+        .card-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .alaska-card .card-icon { color: #004b87; }
+        .ela-card .card-icon { color: #e74c3c; }
+        .science-card .card-icon { color: #27ae60; }
+        .dok-card .card-icon { color: #667eea; }
+        
+        .card-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .alaska-card .card-title { color: #004b87; }
+        .ela-card .card-title { color: #e74c3c; }
+        .science-card .card-title { color: #27ae60; }
+        .dok-card .card-title { color: #667eea; }
+        
+        .overview-section {
+            background: #f8f9fa;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border-left: 5px solid #2c5aa0;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📚 Standards & Learning Framework</h1>
+            <p>Comprehensive guide to our integrated curriculum standards and learning approach</p>
+        </div>
+        
+        <a href="../index.html" class="nav-btn">← Back to Home</a>
+        <a href="../dashboard.html" class="nav-btn">Dashboard</a>
+        
+        <div class="overview-section">
+            <h2>🎯 Our Integrated Approach</h2>
+            <p>Our curriculum uniquely integrates multiple educational standards and frameworks to create deep, meaningful learning experiences. Every lesson connects Alaska contexts with global understanding while developing both literacy and scientific thinking skills.</p>
+        </div>
+        
+        <div class="standards-grid">
+            <a href="alaska-standards.html" class="standard-card alaska-card">
+                <div class="card-icon">🏔️</div>
+                <div class="card-title">Alaska State Standards</div>
+                <p>Learn how our curriculum meets Alaska's unique educational requirements and cultural standards, connecting students to their local environment and heritage.</p>
+                <ul>
+                    <li>Alaska Social Studies Standards</li>
+                    <li>Alaska Cultural Standards</li>
+                    <li>Place-based learning approach</li>
+                    <li>Local-global connections</li>
+                </ul>
+            </a>
+            
+            <a href="ela-standards.html" class="standard-card ela-card">
+                <div class="card-icon">📝</div>
+                <div class="card-title">Common Core ELA Standards</div>
+                <p>Discover how we develop literacy skills through geographic content, building reading, writing, speaking, and listening abilities.</p>
+                <ul>
+                    <li>Reading informational texts</li>
+                    <li>Argumentative & expository writing</li>
+                    <li>Research & source evaluation</li>
+                    <li>Academic discussions</li>
+                </ul>
+            </a>
+            
+            <a href="science-standards.html" class="standard-card science-card">
+                <div class="card-icon">🔬</div>
+                <div class="card-title">NGSS Science Standards</div>
+                <p>Explore how we use geographic phenomena to develop scientific thinking, investigation skills, and understanding of Earth systems.</p>
+                <ul>
+                    <li>Earth Systems Science</li>
+                    <li>Scientific practices</li>
+                    <li>Engineering design</li>
+                    <li>Crosscutting concepts</li>
+                </ul>
+            </a>
+            
+            <a href="dok-levels.html" class="standard-card dok-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-title">DOK 3-4 Learning Focus</div>
+                <p>Understand our emphasis on higher-order thinking skills - strategic thinking and extended thinking that prepare students for complex challenges.</p>
+                <ul>
+                    <li>Strategic thinking (DOK 3)</li>
+                    <li>Extended thinking (DOK 4)</li>
+                    <li>Complex problem-solving</li>
+                    <li>Real-world applications</li>
+                </ul>
+            </a>
+        </div>
+        
+        <div class="highlight">
+            <h3>💡 Why This Integration Matters</h3>
+            <p>By weaving together Alaska standards, literacy development, scientific thinking, and higher-order reasoning, we create learning experiences that:</p>
+            <ul>
+                <li><strong>Connect to students' lives</strong> through Alaska contexts and cultural connections</li>
+                <li><strong>Develop multiple literacies</strong> including reading, writing, and scientific reasoning</li>
+                <li><strong>Prepare students for the future</strong> with critical thinking and problem-solving skills</li>
+                <li><strong>Create global citizens</strong> who understand their place in the world</li>
+            </ul>
+        </div>
+        
+        <div class="overview-section">
+            <h2>📊 How Standards Work Together</h2>
+            <p>Each lesson demonstrates how these standards reinforce each other:</p>
+            <ul>
+                <li><strong>Alaska contexts</strong> make learning relevant and meaningful</li>
+                <li><strong>Geographic content</strong> provides rich material for literacy development</li>
+                <li><strong>Scientific investigation</strong> develops critical thinking skills</li>
+                <li><strong>Higher-order questions</strong> challenge students to analyze, evaluate, and create</li>
+            </ul>
+        </div>
+        
+        <div class="nav-btn" style="text-align: center; margin-top: 30px;">
+            <a href="../dashboard.html" class="nav-btn">Continue to Dashboard</a>
+            <a href="../index.html" class="nav-btn">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
