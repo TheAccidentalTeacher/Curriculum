@@ -1,0 +1,130 @@
+{
+  "region_name": "North America",
+  "vocabulary": [
+    {
+      "term": "continent",
+      "definition": "One of the Earth's seven main divisions of land"
+    },
+    {
+      "term": "Great Plains",
+      "definition": "A vast grassland region in central North America"
+    },
+    {
+      "term": "Rocky Mountains",
+      "definition": "A major mountain range in western North America"
+    },
+    {
+      "term": "Great Lakes",
+      "definition": "A series of interconnected freshwater lakes in northeastern North America"
+    },
+    {
+      "term": "Mississippi River",
+      "definition": "The second-longest river in North America, flowing from Minnesota to the Gulf of Mexico"
+    },
+    {
+      "term": "tundra",
+      "definition": "A vast, flat, treeless Arctic region in which the subsoil is permanently frozen"
+    },
+    {
+      "term": "prairie",
+      "definition": "A large open area of grassland"
+    },
+    {
+      "term": "indigenous",
+      "definition": "Originating or occurring naturally in a particular place"
+    },
+    {
+      "term": "urbanization",
+      "definition": "The process by which towns and cities are formed and become larger"
+    },
+    {
+      "term": "natural resources",
+      "definition": "Materials or substances occurring in nature which can be exploited for economic gain"
+    }
+  ],
+  "reading_passages": [
+    {
+      "title": "About North America",
+      "text": "North America is the third-largest continent, extending from the Arctic Circle in the north to the tropics in the south. It encompasses diverse landscapes including mountains, plains, forests, deserts, and tundra. The continent is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the east, the Pacific Ocean to the west, and South America and the Caribbean Sea to the south. North America's physical geography has significantly influenced human settlement patterns and economic development throughout history.",
+      "main_idea": "North America is the third-largest continent, extending from the Arctic Circle in the north to the tropics in the south.",
+      "supporting_details": [
+        "It encompasses diverse landscapes including mountains, plains, forests, deserts, and tundra.",
+        "The continent is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the east, the Pacific Ocean to the west, and South America and the Caribbean Sea to the south.",
+        "North America's physical geography has significantly influenced human settlement patterns and economic development throughout history."
+      ]
+    },
+    {
+      "title": "North American Geography",
+      "text": "North America's geography features several major regions. The Canadian Shield is an ancient geological formation covering much of Canada. The Great Plains stretch from Canada to Mexico in the continent's interior. The Rocky Mountains form a spine along western North America, while the Appalachian Mountains run through the east. The continent contains significant water features including the Great Lakes, the Mississippi River system, and numerous other rivers and lakes. These diverse geographical features have shaped human settlement, agriculture, industry, and transportation networks across the continent.",
+      "main_idea": "North America's geography features several major regions.",
+      "supporting_details": [
+        "The Canadian Shield is an ancient geological formation covering much of Canada.",
+        "The Great Plains stretch from Canada to Mexico in the continent's interior.",
+        "The continent contains significant water features including the Great Lakes, the Mississippi River system, and numerous other rivers and lakes."
+      ]
+    }
+  ],
+  "scientific_phenomena": [
+    {
+      "title": "North America Climate",
+      "description": "North America spans multiple climate zones, from Arctic in the north to tropical in the south. The continent's climate is influenced by ocean currents, mountain ranges, and prevailing winds, creating diverse regional weather patterns and seasonal variations.",
+      "observation_prompts": [
+        "What climate features can you identify in North America?",
+        "How might climate affect people living in different regions of North America?",
+        "What patterns do you notice about climate zones from north to south in North America?"
+      ]
+    },
+    {
+      "title": "North America Ecosystems",
+      "description": "North America contains diverse ecosystems including tundra, boreal forests, temperate deciduous forests, grasslands, deserts, and tropical forests. These ecosystems support unique plant and animal communities adapted to specific environmental conditions.",
+      "observation_prompts": [
+        "What ecosystem features can you identify in North America?",
+        "How might these ecosystems affect human settlement and activities?",
+        "What patterns do you notice about how ecosystems are distributed across North America?"
+      ]
+    }
+  ],
+  "writing_prompts": [
+    "Using information from the passage and your own knowledge, write an informative paragraph about North America. Include at least three vocabulary terms from Part 1.",
+    "Describe an important geographic feature of North America and explain its significance to human settlement and development.",
+    "Compare and contrast two regions of North America discussed in the reading passage."
+  ],
+  "system_identification": {
+    "title": "HUMAN GEOGRAPHY SYSTEMS",
+    "instructions": "Label each description with the correct human geography system: Urban, Cultural, Economic, Political, or Infrastructure.",
+    "items": [
+      {
+        "description": "Major cities in North America",
+        "system": "Urban"
+      },
+      {
+        "description": "Languages spoken in North America",
+        "system": "Cultural"
+      },
+      {
+        "description": "Economic activities in North America",
+        "system": "Economic"
+      },
+      {
+        "description": "Political boundaries in North America",
+        "system": "Political"
+      },
+      {
+        "description": "Transportation networks in North America",
+        "system": "Infrastructure"
+      },
+      {
+        "description": "Indigenous cultures in North America",
+        "system": "Cultural"
+      },
+      {
+        "description": "Agricultural patterns in North America",
+        "system": "Economic"
+      },
+      {
+        "description": "Historical settlements in North America",
+        "system": "Historical"
+      }
+    ]
+  }
+}

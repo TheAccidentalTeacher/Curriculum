@@ -1,0 +1,130 @@
+{
+  "region_name": "The Human World",
+  "vocabulary": [
+    {
+      "term": "culture",
+      "definition": "The customs, arts, social institutions, and achievements of a particular nation, people, or social group"
+    },
+    {
+      "term": "population",
+      "definition": "The number of people living in a particular area"
+    },
+    {
+      "term": "settlement",
+      "definition": "A place where people establish a community"
+    },
+    {
+      "term": "urbanization",
+      "definition": "The process by which towns and cities are formed and become larger"
+    },
+    {
+      "term": "migration",
+      "definition": "Movement of people from one place to another"
+    },
+    {
+      "term": "economy",
+      "definition": "The system of production, distribution, and consumption of goods and services"
+    },
+    {
+      "term": "agriculture",
+      "definition": "The science or practice of farming"
+    },
+    {
+      "term": "industry",
+      "definition": "Economic activity concerned with the processing of raw materials and manufacture of goods"
+    },
+    {
+      "term": "globalization",
+      "definition": "The process by which businesses or other organizations develop international influence"
+    },
+    {
+      "term": "development",
+      "definition": "The process of economic and social transformation"
+    }
+  ],
+  "reading_passages": [
+    {
+      "title": "About The Human World",
+      "text": "The human world encompasses all aspects of human society and how people interact with their environment. It includes population patterns, cultural practices, economic activities, and political systems. Human geography examines how people organize themselves across Earth's surface and how they modify their environment to meet their needs. Understanding the human world helps us comprehend the complex relationships between people and places.",
+      "main_idea": "The human world encompasses all aspects of human society and how people interact with their environment.",
+      "supporting_details": [
+        "It includes population patterns, cultural practices, economic activities, and political systems.",
+        "Human geography examines how people organize themselves across Earth's surface and how they modify their environment.",
+        "Understanding the human world helps us comprehend the complex relationships between people and places."
+      ]
+    },
+    {
+      "title": "Human Systems",
+      "text": "Human systems include cultural, economic, political, and urban frameworks that organize society. Cultural systems encompass language, religion, customs, and traditions that define different groups. Economic systems determine how resources are allocated and goods are produced and distributed. Political systems establish governance structures and boundaries. Urban systems shape how cities develop and function. These systems interact with each other and with the physical environment in complex ways.",
+      "main_idea": "Human systems include cultural, economic, political, and urban frameworks that organize society.",
+      "supporting_details": [
+        "Cultural systems encompass language, religion, customs, and traditions that define different groups.",
+        "Economic systems determine how resources are allocated and goods are produced and distributed.",
+        "Political systems establish governance structures and boundaries."
+      ]
+    }
+  ],
+  "scientific_phenomena": [
+    {
+      "title": "The Human World Population",
+      "description": "Human population is distributed unevenly across Earth's surface, with concentrations in areas with favorable climate, resources, and historical development. Population growth, density, and movement are influenced by birth rates, death rates, and migration patterns.",
+      "observation_prompts": [
+        "What population patterns can you identify in The Human World?",
+        "How might population density affect quality of life in different regions?",
+        "What patterns do you notice about population distribution in relation to physical geography?"
+      ]
+    },
+    {
+      "title": "The Human World Urbanization",
+      "description": "Urbanization is the process by which an increasing percentage of a population lives in cities. This global trend has accelerated in recent centuries, creating megacities, urban sprawl, and new challenges for infrastructure and services.",
+      "observation_prompts": [
+        "What urbanization features can you identify in The Human World?",
+        "How might urbanization affect the environment and natural resources?",
+        "What patterns do you notice about urban development in different regions?"
+      ]
+    }
+  ],
+  "writing_prompts": [
+    "Using information from the passage and your own knowledge, write an informative paragraph about The Human World. Include at least three vocabulary terms from Part 1.",
+    "Describe an important cultural or economic feature of human society and explain its significance.",
+    "Compare and contrast two human systems discussed in the reading passage."
+  ],
+  "system_identification": {
+    "title": "HUMAN GEOGRAPHY SYSTEMS",
+    "instructions": "Label each description with the correct human geography system: Urban, Cultural, Economic, Political, or Infrastructure.",
+    "items": [
+      {
+        "description": "Major cities around the world",
+        "system": "Urban"
+      },
+      {
+        "description": "Languages spoken in different regions",
+        "system": "Cultural"
+      },
+      {
+        "description": "Trade networks between countries",
+        "system": "Economic"
+      },
+      {
+        "description": "National boundaries and territories",
+        "system": "Political"
+      },
+      {
+        "description": "Transportation networks connecting regions",
+        "system": "Infrastructure"
+      },
+      {
+        "description": "Religious practices in various societies",
+        "system": "Cultural"
+      },
+      {
+        "description": "Agricultural patterns in rural areas",
+        "system": "Economic"
+      },
+      {
+        "description": "Government structures in different nations",
+        "system": "Political"
+      }
+    ]
+  }
+}

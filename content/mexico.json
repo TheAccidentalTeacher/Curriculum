@@ -1,0 +1,361 @@
+{
+  "region_name": "Mexico",
+  "vocabulary": [
+    {
+      "term": "Confirms or adjusts \nyour prediction \nbased on what you \njust read\nThe prediction \nwas correct",
+      "definition": "\u201cFor"
+    },
+    {
+      "term": "Your \nmind follows these four steps when you make predictions as you read",
+      "definition": "Reading Social Studies"
+    },
+    {
+      "term": "See how you might make a prediction from the following text",
+      "definition": "Mexico has a democratic government."
+    },
+    {
+      "term": "Mexico",
+      "definition": "Climate"
+    },
+    {
+      "term": "Mexico",
+      "definition": "Physical"
+    },
+    {
+      "term": "Mexico",
+      "definition": "ClimateMexico\u2019s Diverse Geography"
+    },
+    {
+      "term": "a \nAttack of the Dinosaur",
+      "definition": "Killing Asteroid"
+    },
+    {
+      "term": "Possible answer",
+      "definition": "The area"
+    },
+    {
+      "term": "Connect to History",
+      "definition": "Site of Mexico"
+    },
+    {
+      "term": "City  Mexico City was built on a dried",
+      "definition": "out"
+    },
+    {
+      "term": "Consider the MOUNTAIN landscape of the coast",
+      "definition": "\u2022There are scenic views."
+    },
+    {
+      "term": "Consider the PLATEAU landscape of the interior",
+      "definition": "\u2022It is mostly flat."
+    },
+    {
+      "term": "Direct Teach  Introduce the Big Idea",
+      "definition": "Mexico is a"
+    },
+    {
+      "term": "Graphic \nOrganizers\nONLINE DOCUMENT",
+      "definition": "BASED INVESTIGATION"
+    },
+    {
+      "term": "Climate is the first of five document",
+      "definition": "based"
+    },
+    {
+      "term": "Sunny weather and \ngood beaches bring tourists year",
+      "definition": "round. Now you are on"
+    },
+    {
+      "term": "yoo-kah",
+      "definition": "TAHN ) Peninsula."
+    },
+    {
+      "term": "SYER -rah MAH",
+      "definition": "dray), or \u201cmother range.\u201dLesson 1"
+    },
+    {
+      "term": "Students can \nreview their graphic organizer notes at the end of \nthe lesson to answer the following question",
+      "definition": "Analyze Cause and Effect  How have Mexico\u2019s"
+    },
+    {
+      "term": "s key terms \nand places",
+      "definition": "R\u00edo Bravo (Rio Grande), peninsula,"
+    },
+    {
+      "term": "ONLINE INTERACTIVE MAPS\nMexico",
+      "definition": "Physical"
+    },
+    {
+      "term": "at the Isthmus of Tehuantepec\nONLINE INTERACTIVE VISUALS\nImage Compare",
+      "definition": "Mexico\u2019s Diverse"
+    },
+    {
+      "term": "Below\nsea levelFeet MetersELEVATION\nProjection",
+      "definition": "Lambert Conformal Conic"
+    },
+    {
+      "term": "the coun",
+      "definition": "try\u2019s capital, is located there. The mountains"
+    },
+    {
+      "term": "poh-puh-cah-TE-\npet",
+      "definition": "uhl) near Mexico City has been erupting"
+    },
+    {
+      "term": "n Peninsula on the Mexico",
+      "definition": "Physical  map. As you can see,"
+    },
+    {
+      "term": "steep",
+      "definition": "sided depressio ns"
+    },
+    {
+      "term": "Mexico",
+      "definition": "Physical"
+    }
+  ],
+  "reading_passages": [
+    {
+      "title": "About Mexico",
+      "text": "Lesson 1 Big Idea Mexico is a large country with different natural environments in its northern, central, and southern regions. Main Ideas \u2022Mexico\u2019s physical features include plateaus, mountains, and coastal lowlands.",
+      "main_idea": "Lesson 1 Big Idea Mexico is a large country with different natural environments in its northern, central, and southern regions.",
+      "supporting_details": [
+        "Main Ideas \u2022Mexico\u2019s physical features include plateaus, mountains, and coastal lowlands."
+      ]
+    },
+    {
+      "title": "About Mexico",
+      "text": "Key natural resources in Mexico include oil, silver, gold, and scenic landscapes.",
+      "main_idea": "Key natural resources in Mexico include oil, silver, gold, and scenic landscapes.",
+      "supporting_details": []
+    },
+    {
+      "title": "About Mexico",
+      "text": "Main Ideas \u2022Early cultures of Mexico included the Olmec, the Maya, and the Aztecs.",
+      "main_idea": "Main Ideas \u2022Early cultures of Mexico included the Olmec, the Maya, and the Aztecs.",
+      "supporting_details": []
+    }
+  ],
+  "scientific_phenomena": [
+    {
+      "title": "Mexico Climate",
+      "description": "Mexico\u2019s climate and vegetation include deserts, tropical forests, and cool highlands.",
+      "observation_prompts": [
+        "What features of climate can you identify in Mexico?",
+        "How might climate affect people living in Mexico?",
+        "What patterns do you notice about climate in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Climate",
+      "description": "What you already knowNew information Your predictionCheck your predictionFrom snowcapped mountain peaks to warm, sunny beaches, Mexico has many different climates.",
+      "observation_prompts": [
+        "What features of climate can you identify in Mexico?",
+        "How might climate affect people living in Mexico?",
+        "What patterns do you notice about climate in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Landform",
+      "description": "Which landform in Mexico is most likely to have a mild climate? a coastal plain a coastal valley a mountain peak a mountain valley 3. Which natural resource\u2019s limited supply poses a serious threat in Mexico?",
+      "observation_prompts": [
+        "What features of landform can you identify in Mexico?",
+        "How might landform affect people living in Mexico?",
+        "What patterns do you notice about landform in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico River",
+      "description": "Mexico City PueblaChihuahuaCiudad Ju\u00e1rez Monterrey GuadalajaraMEXICO OaxacaTijuana Veracruz AcapulcoRio Bravo Rio Lerma Balsas RiverUsumacinta R.",
+      "observation_prompts": [
+        "What features of river can you identify in Mexico?",
+        "How might river affect people living in Mexico?",
+        "What patterns do you notice about river in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico River",
+      "description": "Grijalva River25\u00b0N 20\u00b0N 20\u00b0N25\u00b0N Tropic of Cancer 15\u00b0N30\u00b0N Tropic of Cancer 90\u00b0W 85\u00b0WGulf of California PACIFIC OCEANGulf of Mexico Caribbean Sea Gulf of TehuantepecBay of CampecheYucat\u00e1n Channel Rio Lerma Balsas River Grijalva RiverUsumacinta R.",
+      "observation_prompts": [
+        "What features of river can you identify in Mexico?",
+        "How might river affect people living in Mexico?",
+        "What patterns do you notice about river in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Mountain",
+      "description": "Main Ideas \u2022Mexico\u2019s physical features include plateaus, mountains, and coastal lowlands.",
+      "observation_prompts": [
+        "What features of mountain can you identify in Mexico?",
+        "How might mountain affect people living in Mexico?",
+        "What patterns do you notice about mountain in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Mountain",
+      "description": "high plateaus and mountains, tropical beaches, a long river on its northern border Online Module Flip Cards Use the flip cards as a whole class activity or in student pairs to preview the module\u2019s Key Terms and Places. Students can guess the meaning of each word, then review its definition, or do the reverse, using the flip card\u2019s toggle button to switch from \u201cTerm\u201d to \u201cDefinition\u201d mode. Students can also use the flip cards at the end of the module as a review tool before taking the Module Assessment.",
+      "observation_prompts": [
+        "What features of mountain can you identify in Mexico?",
+        "How might mountain affect people living in Mexico?",
+        "What patterns do you notice about mountain in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Ocean",
+      "description": "Grijalva River25\u00b0N 20\u00b0N 20\u00b0N25\u00b0N Tropic of Cancer 15\u00b0N30\u00b0N Tropic of Cancer 90\u00b0W 85\u00b0WGulf of California PACIFIC OCEANGulf of Mexico Caribbean Sea Gulf of TehuantepecBay of CampecheYucat\u00e1n Channel Rio Lerma Balsas River Grijalva RiverUsumacinta R.",
+      "observation_prompts": [
+        "What features of ocean can you identify in Mexico?",
+        "How might ocean affect people living in Mexico?",
+        "What patterns do you notice about ocean in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Ocean",
+      "description": "north\u2014R\u00edo Bravo (Rio Grande); west\u2014Pacific Ocean; east\u2014 Gulf of Mexico Identify What does Sierra Madre mean?",
+      "observation_prompts": [
+        "What features of ocean can you identify in Mexico?",
+        "How might ocean affect people living in Mexico?",
+        "What patterns do you notice about ocean in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Weather",
+      "description": "Takes what you already know I know Mexico has warm weather and beaches.",
+      "observation_prompts": [
+        "What features of weather can you identify in Mexico?",
+        "How might weather affect people living in Mexico?",
+        "What patterns do you notice about weather in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Weather",
+      "description": "Forms a prediction that makes sense Maybe Mexico has some cool weather in the mountains.",
+      "observation_prompts": [
+        "What features of weather can you identify in Mexico?",
+        "How might weather affect people living in Mexico?",
+        "What patterns do you notice about weather in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Environment",
+      "description": "Lesson 1 Big Idea Mexico is a large country with different natural environments in its northern, central, and southern regions. Main Ideas \u2022Mexico\u2019s physical features include plateaus, mountains, and coastal lowlands.",
+      "observation_prompts": [
+        "What features of environment can you identify in Mexico?",
+        "How might environment affect people living in Mexico?",
+        "What patterns do you notice about environment in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Environment",
+      "description": "Explore the Essential Question \u2022Point out that because the United States and Mexico share a border, we share some of the same physical environments. Explain that Mexico generally has warmer and more tropical environments than the United States because it is located farther south.",
+      "observation_prompts": [
+        "What features of environment can you identify in Mexico?",
+        "How might environment affect people living in Mexico?",
+        "What patterns do you notice about environment in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Water",
+      "description": "plants that need little water to survive, such as cacti and shrubs 3. What are some characteristics of Mexico\u2019s geography? high plateaus and mountains, tropical beaches, a long river on its northern border Online Module Flip Cards Use the flip cards as a whole class activity or in student pairs to preview the module\u2019s Key Terms and Places.",
+      "observation_prompts": [
+        "What features of water can you identify in Mexico?",
+        "How might water affect people living in Mexico?",
+        "What patterns do you notice about water in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Water",
+      "description": "When the Spaniards conquered the Aztecs in 1521, they cut the aqueducts that brought water to the city. Canals that had connected the island to the mainland were filled in with rubble from the Aztec buildings. Misconception Alert Some students may believe that because Mexico is a part of Latin America, it is located in Central or South America.",
+      "observation_prompts": [
+        "What features of water can you identify in Mexico?",
+        "How might water affect people living in Mexico?",
+        "What patterns do you notice about water in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Forest",
+      "description": "Mexico\u2019s climate and vegetation include deserts, tropical forests, and cool highlands.",
+      "observation_prompts": [
+        "What features of forest can you identify in Mexico?",
+        "How might forest affect people living in Mexico?",
+        "What patterns do you notice about forest in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Forest",
+      "description": "Mexico\u2019s climate and vegetation include deserts, tropical forests, and cool highlands.",
+      "observation_prompts": [
+        "What features of forest can you identify in Mexico?",
+        "How might forest affect people living in Mexico?",
+        "What patterns do you notice about forest in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Desert",
+      "description": "Mexico\u2019s climate and vegetation include deserts, tropical forests, and cool highlands.",
+      "observation_prompts": [
+        "What features of desert can you identify in Mexico?",
+        "How might desert affect people living in Mexico?",
+        "What patterns do you notice about desert in Mexico?"
+      ]
+    },
+    {
+      "title": "Mexico Desert",
+      "description": "Geography The Sonoran Desert of northern Mexico extends north into several U.",
+      "observation_prompts": [
+        "What features of desert can you identify in Mexico?",
+        "How might desert affect people living in Mexico?",
+        "What patterns do you notice about desert in Mexico?"
+      ]
+    }
+  ],
+  "writing_prompts": [
+    "Using information from the passage and your own knowledge, write an informative paragraph about Mexico. Include at least three vocabulary terms from Part 1.",
+    "Describe an important geographic feature of Mexico and explain its significance to the region.",
+    "Compare and contrast two aspects of Mexico discussed in the reading passage."
+  ],
+  "reflection_questions": [
+    "What new information did you learn about Mexico?",
+    "What questions do you still have about Mexico?",
+    "How does learning about Mexico help you understand our world better?",
+    "How might life in Mexico be similar to or different from your own?"
+  ],
+  "system_identification": {
+    "title": "HUMAN GEOGRAPHY SYSTEMS",
+    "instructions": "Label each description with the correct human geography system: Urban, Cultural, Economic, Political, or Infrastructure.",
+    "items": [
+      {
+        "description": "Major cities in Mexico",
+        "system": "Urban"
+      },
+      {
+        "description": "Languages spoken in Mexico",
+        "system": "Cultural"
+      },
+      {
+        "description": "Economic activities in Mexico",
+        "system": "Economic"
+      },
+      {
+        "description": "Political boundaries in Mexico",
+        "system": "Political"
+      },
+      {
+        "description": "Transportation networks in Mexico",
+        "system": "Infrastructure"
+      },
+      {
+        "description": "Religious practices in Mexico",
+        "system": "Cultural"
+      },
+      {
+        "description": "Agricultural patterns in Mexico",
+        "system": "Economic"
+      },
+      {
+        "description": "Historical settlements in Mexico",
+        "system": "Historical"
+      }
+    ]
+  }
+}

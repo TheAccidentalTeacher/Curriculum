@@ -1,0 +1,130 @@
+{
+  "region_name": "The Physical World",
+  "vocabulary": [
+    {
+      "term": "geography",
+      "definition": "The study of Earth's landscapes, peoples, places, and environments"
+    },
+    {
+      "term": "landform",
+      "definition": "A natural feature of the Earth's surface"
+    },
+    {
+      "term": "climate",
+      "definition": "The average weather conditions in an area over a long period"
+    },
+    {
+      "term": "ecosystem",
+      "definition": "A community of living organisms and their physical environment"
+    },
+    {
+      "term": "biome",
+      "definition": "A large naturally occurring community of flora and fauna"
+    },
+    {
+      "term": "continent",
+      "definition": "One of the Earth's seven main divisions of land"
+    },
+    {
+      "term": "hemisphere",
+      "definition": "Half of the Earth, usually divided into Northern, Southern, Eastern, and Western"
+    },
+    {
+      "term": "latitude",
+      "definition": "The distance north or south of the equator"
+    },
+    {
+      "term": "longitude",
+      "definition": "The distance east or west of the prime meridian"
+    },
+    {
+      "term": "topography",
+      "definition": "The arrangement of the natural and artificial physical features of an area"
+    }
+  ],
+  "reading_passages": [
+    {
+      "title": "About The Physical World",
+      "text": "The physical world encompasses all of Earth's natural features and systems. It includes landforms like mountains, plains, and valleys, as well as water bodies such as oceans, rivers, and lakes. Climate patterns and weather systems are also part of the physical world, influencing ecosystems and biomes across the planet. Understanding the physical world helps us comprehend how natural systems function and how they impact human activities.",
+      "main_idea": "The physical world encompasses all of Earth's natural features and systems.",
+      "supporting_details": [
+        "It includes landforms like mountains, plains, and valleys, as well as water bodies such as oceans, rivers, and lakes.",
+        "Climate patterns and weather systems are also part of the physical world, influencing ecosystems and biomes across the planet.",
+        "Understanding the physical world helps us comprehend how natural systems function and how they impact human activities."
+      ]
+    },
+    {
+      "title": "Earth's Systems",
+      "text": "Earth's physical systems include the lithosphere (solid earth), hydrosphere (water), atmosphere (air), and biosphere (living things). These systems interact constantly, creating the dynamic environment we live in. The lithosphere includes the crust and upper mantle, forming continents and ocean basins. The hydrosphere encompasses all water on Earth, from oceans to groundwater. The atmosphere is the layer of gases surrounding Earth, protecting life and regulating temperature. The biosphere includes all living organisms and their habitats.",
+      "main_idea": "Earth's physical systems include the lithosphere (solid earth), hydrosphere (water), atmosphere (air), and biosphere (living things).",
+      "supporting_details": [
+        "These systems interact constantly, creating the dynamic environment we live in.",
+        "The lithosphere includes the crust and upper mantle, forming continents and ocean basins.",
+        "The hydrosphere encompasses all water on Earth, from oceans to groundwater."
+      ]
+    }
+  ],
+  "scientific_phenomena": [
+    {
+      "title": "The Physical World Climate",
+      "description": "Climate patterns on Earth are determined by factors including latitude, altitude, ocean currents, and prevailing winds. These patterns create distinct climate zones from the equator to the poles, affecting temperature, precipitation, and seasonal variations.",
+      "observation_prompts": [
+        "What climate features can you identify in The Physical World?",
+        "How might climate affect people living in different regions of Earth?",
+        "What patterns do you notice about climate zones from the equator to the poles?"
+      ]
+    },
+    {
+      "title": "The Physical World Landforms",
+      "description": "Earth's surface features include mountains, valleys, plains, plateaus, and basins. These landforms are created by tectonic forces, erosion, deposition, and other geological processes over millions of years.",
+      "observation_prompts": [
+        "What landforms can you identify in The Physical World?",
+        "How might landforms affect human settlement patterns?",
+        "What patterns do you notice about how landforms are distributed across Earth?"
+      ]
+    }
+  ],
+  "writing_prompts": [
+    "Using information from the passage and your own knowledge, write an informative paragraph about The Physical World. Include at least three vocabulary terms from Part 1.",
+    "Describe an important geographic feature of Earth and explain its significance to human societies.",
+    "Compare and contrast two of Earth's physical systems discussed in the reading passage."
+  ],
+  "system_identification": {
+    "title": "EARTH'S SYSTEMS IDENTIFICATION",
+    "instructions": "Label each description with the correct Earth system: Lithosphere, Hydrosphere, Atmosphere, or Biosphere.",
+    "items": [
+      {
+        "description": "Major mountain ranges on Earth",
+        "system": "Lithosphere"
+      },
+      {
+        "description": "Rivers and lakes across continents",
+        "system": "Hydrosphere"
+      },
+      {
+        "description": "Global climate patterns",
+        "system": "Atmosphere"
+      },
+      {
+        "description": "Plant and animal life in various regions",
+        "system": "Biosphere"
+      },
+      {
+        "description": "Natural resources found in the crust",
+        "system": "Lithosphere"
+      },
+      {
+        "description": "Ocean currents affecting coastal regions",
+        "system": "Hydrosphere"
+      },
+      {
+        "description": "Weather patterns across the globe",
+        "system": "Atmosphere"
+      },
+      {
+        "description": "Ecosystems in different biomes",
+        "system": "Biosphere"
+      }
+    ]
+  }
+}
