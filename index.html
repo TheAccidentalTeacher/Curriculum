@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alaska World Geography Curriculum - Standards-Aligned & Simulation-Based</title>
+    <title>Geography Curriculum Dashboard - Daily Lesson Center</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Comprehensive Alaska-aligned World Geography curriculum with quarterly simulations, cross-curricular integration, and DOK 3-4 learning experiences.">
-    <meta name="keywords" content="Alaska education, world geography, social studies standards, ELA integration, science integration, simulations, DOK 3-4">
+    <meta name="description" content="Daily curriculum dashboard for Alaska-aligned World Geography with lesson tracking, cross-curricular links, and progress monitoring.">
+    <meta name="keywords" content="Alaska education, curriculum dashboard, world geography, daily lessons, progress tracking">
     <meta name="author" content="The Accidental Teacher">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Alaska World Geography Curriculum">
-    <meta property="og:description" content="Standards-aligned curriculum with quarterly simulations and cross-curricular integration">
+    <meta property="og:title" content="Geography Curriculum Dashboard">
+    <meta property="og:description" content="Daily dashboard for standards-aligned curriculum with lesson tracking and cross-curricular integration">
     <meta property="og:type" content="website">
     
     <style>
@@ -24,217 +24,106 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: linear-gradient(135deg, #2c5aa0, #1e3f66);
             min-height: 100vh;
+            color: #333;
         }
 
-        .header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            text-align: center;
-            color: white;
-            margin-bottom: 40px;
-        }
-
-        .header h1 {
-            font-size: 3.5em;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .header .subtitle {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .alaska-banner {
-            background: linear-gradient(135deg, #004b87, #002855);
-            color: white;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .container {
+        .dashboard-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        .curriculum-overview {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
         }
 
-        .info-summary {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 25px;
-            margin: 20px 0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
-        .info-header {
-            text-align: center;
-            margin-bottom: 20px;
+
+        .date-display {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 5px;
         }
-        
-        .info-header h3 {
-            color: white;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-        }
-        
-        .quick-stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .stat-item {
-            color: white;
-            font-size: 1.1em;
-            text-align: center;
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            min-width: 120px;
-        }
-        
-        .info-description {
-            color: rgba(255, 255, 255, 0.9);
-            text-align: center;
+
+        .school-day {
             font-size: 1em;
-            line-height: 1.5;
-            margin-top: 15px;
+            opacity: 0.8;
         }
 
-        .quarters-grid {
+        .main-dashboard {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: 2fr 1fr;
             gap: 30px;
-            margin: 40px 0;
+            margin-bottom: 30px;
         }
 
-        .quarter-card {
+        .today-section {
             background: white;
             border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border-top: 5px solid;
-            cursor: pointer;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        .quarter-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .quarter-1 { border-top-color: #e74c3c; }
-        .quarter-2 { border-top-color: #f39c12; }
-        .quarter-3 { border-top-color: #27ae60; }
-        .quarter-4 { border-top-color: #8e44ad; }
-
-        .quarter-header {
+        .today-header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .quarter-number {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+        .today-header h2 {
+            color: #2c5aa0;
+            font-size: 2em;
+        }
+
+        .lesson-complete-btn {
+            background: linear-gradient(135deg, #27ae60, #229954);
             color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-right: 15px;
-        }
-
-        .simulation-preview {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 15px 0;
-        }
-
-        .crosscut-badges {
-            display: flex;
-            gap: 10px;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: #667eea;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .badge:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            color: white;
-            text-decoration: none;
-        }
-
-        .badge.ela { background: #e74c3c; }
-        .badge.science { background: #27ae60; }
-        .badge.alaska { background: #004b87; }
-
-        .dok-indicator {
-            background: linear-gradient(135deg, #ffd700, #ffb347);
-            color: #333;
-            padding: 10px 20px;
+            border: none;
+            padding: 12px 25px;
             border-radius: 25px;
+            cursor: pointer;
             font-weight: bold;
-            display: inline-block;
-            margin: 10px 0;
+            transition: all 0.3s ease;
         }
 
-        .calendar-note {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            color: #856404;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
+        .lesson-complete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin: 40px 0;
-            flex-wrap: wrap;
+        .lesson-complete-btn.completed {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
         }
 
-        .btn {
+        .lesson-content {
+            margin-bottom: 25px;
+        }
+
+        .lesson-title {
+            font-size: 1.4em;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .lesson-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .see-lesson-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 15px 30px;
@@ -242,312 +131,593 @@
             border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s ease;
             display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 1.1em;
         }
 
-        .btn:hover {
+        .see-lesson-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
         }
 
-        .btn.primary {
+        .crosscut-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .crosscut-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .crosscut-btn.ela {
             background: linear-gradient(135deg, #e74c3c, #c0392b);
-            font-size: 1.2em;
-            padding: 20px 40px;
         }
 
-        .implementation-timeline {
+        .crosscut-btn.science {
+            background: linear-gradient(135deg, #27ae60, #229954);
+        }
+
+        .crosscut-btn:hover {
+            transform: translateY(-2px);
+            text-decoration: none;
+            color: white;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .look-ahead {
             background: white;
             border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
+            padding: 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
-        .timeline-item {
-            display: flex;
-            margin: 20px 0;
-            padding: 20px;
+        .look-ahead h3 {
+            color: #2c5aa0;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .upcoming-lesson {
+            padding: 12px;
+            margin-bottom: 10px;
             background: #f8f9fa;
             border-radius: 10px;
-            border-left: 5px solid #667eea;
+            border-left: 4px solid #2c5aa0;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .timeline-date {
-            min-width: 150px;
+        .upcoming-lesson:hover {
+            background: #e3f2fd;
+            transform: translateX(5px);
+        }
+
+        .upcoming-lesson.current {
+            background: #e8f5e8;
+            border-left-color: #27ae60;
+        }
+
+        .lesson-day {
             font-weight: bold;
-            color: #667eea;
+            color: #2c5aa0;
+            font-size: 0.9em;
         }
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
-            }
-            
-            .quarters-grid {
+        .lesson-name {
+            color: #333;
+            font-size: 0.85em;
+            margin-top: 2px;
+        }
+
+        .upcoming-sim {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .upcoming-sim h4 {
+            margin-bottom: 10px;
+        }
+
+        .sim-date {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .calendar-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            grid-column: 1 / -1;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: #1e3f66;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 2px;
+            background: #ecf0f1;
+            padding: 2px;
+            border-radius: 10px;
+        }
+
+        .calendar-day {
+            background: white;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .calendar-day:hover {
+            background: #e3f2fd;
+        }
+
+        .calendar-day.school-day {
+            background: #f8f9fa;
+            border: 2px solid #2c5aa0;
+        }
+
+        .calendar-day.current-day {
+            background: #27ae60;
+            color: white;
+            font-weight: bold;
+        }
+
+        .calendar-day.completed {
+            background: #d5f4e6;
+            color: #27ae60;
+        }
+
+        .calendar-day.weekend {
+            background: #ecf0f1;
+            color: #95a5a6;
+        }
+
+        .day-number {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .day-lesson {
+            font-size: 0.7em;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        .info-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        .info-toggle {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .info-toggle:hover {
+            background: white;
+            color: #2c5aa0;
+        }
+
+        .info-content {
+            display: none;
+        }
+
+        .info-content.visible {
+            display: block;
+        }
+
+        @media (max-width: 1024px) {
+            .main-dashboard {
                 grid-template-columns: 1fr;
             }
             
-            .action-buttons {
+            .crosscut-links {
                 flex-direction: column;
-                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>🌎 Alaska World Geography Curriculum</h1>
-        <div class="subtitle">Standards-Aligned • Simulation-Based • Cross-Curricular</div>
-        <div class="subtitle">DOK 3-4 Focused • Rural Alaska Ready</div>
-    </div>
-
-    <div class="container">
-        <div class="alaska-banner">
-            🏔️ Aligned with Alaska State Social Studies, ELA, and Science Standards 🏔️<br>
-            Designed for Rural Alaska Schools with Limited Technology Access
+    <div class="dashboard-container">
+        <div class="header">
+            <h1>🌎 Geography Curriculum Dashboard</h1>
+            <div class="date-display" id="currentDate"></div>
+            <div class="school-day" id="schoolDay"></div>
         </div>
 
-        <div class="curriculum-overview">
-            <h2 style="color: #2c5aa0; margin-bottom: 30px; text-align: center;">Comprehensive World Geography Learning Experience</h2>
-            
-            <div class="calendar-note">
-                <strong>📅 Academic Year Structure:</strong> Curriculum begins after 9-day pre-instruction period, aligning with Copper River School District calendar (August 18, 2025 - May 21, 2026)
-            </div>
+        <div class="main-dashboard">
+            <div class="today-section">
+                <div class="today-header">
+                    <h2>Today's Lesson</h2>
+                    <button class="lesson-complete-btn" id="completeBtn" onclick="markComplete()">
+                        ✓ Mark Complete
+                    </button>
+                </div>
 
-            <div style="text-align: center; margin: 30px 0;">
-                <a href="curriculum-dashboard.html" class="btn primary" style="display: inline-block; margin-right: 20px;">
-                    📊 Daily Curriculum Dashboard
-                </a>
-                <a href="units/index.html" class="btn" style="display: inline-block; margin-right: 20px;">
-                    📚 Browse All 32 Units & Lessons
-                </a>
-                <a href="units/lessons/" class="btn" style="display: inline-block; margin-right: 20px;">
-                    📋 Access Individual Lessons
-                </a>
-                <a href="dashboard.html" class="btn" style="display: inline-block;">
-                    🎯 Cross-Curricular Dashboard
-                </a>
-            </div>
-
-            <div class="info-summary">
-                <div class="info-header">
-                    <h3>🎯 Alaska Cross-Curricular World Geography</h3>
-                    <div class="crosscut-badges">
-                        <a href="standards-info/alaska-standards.html" class="badge alaska">Alaska Social Studies</a>
-                        <a href="standards-info/ela-standards.html" class="badge ela">Common Core ELA</a>
-                        <a href="standards-info/science-standards.html" class="badge science">NGSS Science</a>
-                        <a href="standards-info/dok-levels.html" class="badge">DOK 3-4 Focus</a>
+                <div class="lesson-content">
+                    <div class="lesson-title" id="lessonTitle">A Geographer's World - Studying Geography</div>
+                    <div class="lesson-meta">
+                        <div><strong>Unit:</strong> <span id="lessonUnit">A Geographer's World</span></div>
+                        <div><strong>Day:</strong> <span id="lessonDay">1 of 175</span></div>
+                        <div><strong>Quarter:</strong> <span id="lessonQuarter">Q1 - Foundations</span></div>
+                        <div><strong>Standards:</strong> <span id="lessonStandards">AK.SS.3-5.1</span></div>
+                    </div>
+                    
+                    <a href="#" class="see-lesson-btn" id="seeLessonBtn">📖 See Full Lesson</a>
+                    
+                    <div class="crosscut-links">
+                        <a href="#" class="crosscut-btn ela" id="elaBtn">📚 ELA Connection</a>
+                        <a href="#" class="crosscut-btn science" id="scienceBtn">🔬 Science Connection</a>
                     </div>
                 </div>
-                
-                <div class="quick-stats">
-                    <span class="stat-item"><strong>4</strong> Quarterly Simulations</span>
-                    <span class="stat-item"><strong>32</strong> Geographic Units</span>
-                    <span class="stat-item"><strong>175</strong> Instructional Days</span>
-                    <span class="stat-item"><strong>DOK 3-4</strong> Learning Focus</span>
-                </div>
-                
-                <p class="info-description">Every lesson integrates Alaska State Standards across multiple disciplines, emphasizing analysis, synthesis, and evaluation (DOK 3-4) rather than recall and basic application.</p>
             </div>
-        </div>
 
-        <div class="quarters-grid">
-            <a href="quarter1.html" style="text-decoration: none; color: inherit;">
-                <div class="quarter-card quarter-1">
-                    <div class="quarter-header">
-                        <div class="quarter-number">Q1</div>
-                        <div>
-                            <h3>Geographic Foundations & North America</h3>
-                            <div class="dok-indicator">DOK 3-4: Strategic Thinking & Extended Thinking</div>
-                        </div>
+            <div class="sidebar">
+                <div class="look-ahead">
+                    <h3>Look Ahead - Next 10 Lessons</h3>
+                    <div id="upcomingLessons">
+                        <!-- Populated by JavaScript -->
                     </div>
-                
-                <div class="simulation-preview">
-                    <h4>🏗️ Quarterly Simulation: North American Sustainability Challenge</h4>
-                    <p><strong>Duration:</strong> 7 days (Oct 6-14, 2025)</p>
-                    <p><strong>Role:</strong> Regional Development Consultants</p>
-                    <p><strong>Challenge:</strong> Design sustainable development strategies across US, Canada, and Mexico</p>
-                </div>
-
-                <div class="crosscut-badges">
-                    <span class="badge ela">Argumentative Writing</span>
-                    <span class="badge science">Earth Systems</span>
-                    <span class="badge alaska">Geography & Resources</span>
-                </div>
-
-                <p><strong>Units Covered:</strong> Geographic Tools, Physical World, Human World, United States, Canada, Mexico</p>
-                <p><strong>Key Skills:</strong> Spatial analysis, systems thinking, evidence-based argumentation</p>
-                </div>
-            </a>
-
-            <a href="quarter2.html" style="text-decoration: none; color: inherit;">
-                <div class="quarter-card quarter-2">
-                <div class="quarter-header">
-                    <div class="quarter-number">Q2</div>
-                    <div>
-                        <h3>Americas & Europe Integration</h3>
-                        <div class="dok-indicator">DOK 3-4: Cross-Cultural Analysis</div>
+                    
+                    <div class="upcoming-sim">
+                        <h4>🏗️ Next Simulation</h4>
+                        <div>North American Sustainability Challenge</div>
+                        <div class="sim-date">October 6-14, 2025</div>
                     </div>
                 </div>
-                
-                <div class="simulation-preview">
-                    <h4>🌐 Quarterly Simulation: Transatlantic Cultural Exchange Network</h4>
-                    <p><strong>Duration:</strong> 7 days (Dec 8-16, 2025)</p>
-                    <p><strong>Role:</strong> Cultural Exchange Coordinators</p>
-                    <p><strong>Challenge:</strong> Build sustainable cultural and economic networks across the Atlantic</p>
-                </div>
-
-                <div class="crosscut-badges">
-                    <span class="badge ela">Research & Synthesis</span>
-                    <span class="badge science">Climate Systems</span>
-                    <span class="badge alaska">Cultural Studies</span>
-                </div>
-
-                <p><strong>Units Covered:</strong> Central America, South America, Western Europe, Eastern Europe, Southern Europe, Russia</p>
-                <p><strong>Key Skills:</strong> Comparative analysis, cultural synthesis, network design</p>
-                </div>
-            </a>
-
-            <a href="quarter3.html" style="text-decoration: none; color: inherit;">
-                <div class="quarter-card quarter-3">
-                <div class="quarter-header">
-                    <div class="quarter-number">Q3</div>
-                    <div>
-                        <h3>Asia, Africa & Oceania</h3>
-                        <div class="dok-indicator">DOK 3-4: Global Resource Management</div>
-                    </div>
-                </div>
-                
-                <div class="simulation-preview">
-                    <h4>♻️ Quarterly Simulation: Global Resource Stewardship Initiative</h4>
-                    <p><strong>Duration:</strong> 7 days (Mar 2-10, 2026)</p>
-                    <p><strong>Role:</strong> International Resource Managers</p>
-                    <p><strong>Challenge:</strong> Balance development with sustainability across diverse regions</p>
-                </div>
-
-                <div class="crosscut-badges">
-                    <span class="badge ela">Technical Writing</span>
-                    <span class="badge science">Ecology & Conservation</span>
-                    <span class="badge alaska">Resource Management</span>
-                </div>
-
-                <p><strong>Units Covered:</strong> East Asia, Southeast Asia, South Asia, Southwest Asia, Middle East, Africa regions, Oceania</p>
-                <p><strong>Key Skills:</strong> Resource analysis, sustainability planning, impact assessment</p>
-                </div>
-            </a>
-
-            <a href="quarter4.html" style="text-decoration: none; color: inherit;">
-                <div class="quarter-card quarter-4">
-                <div class="quarter-header">
-                    <div class="quarter-number">Q4</div>
-                    <div>
-                        <h3>Historical Synthesis & Modern Applications</h3>
-                        <div class="dok-indicator">DOK 4: Global Citizenship Design</div>
-                    </div>
-                </div>
-                
-                <div class="simulation-preview">
-                    <h4>🏛️ Quarterly Simulation: Global Citizenship Summit</h4>
-                    <p><strong>Duration:</strong> 7 days (May 4-12, 2026)</p>
-                    <p><strong>Role:</strong> Global Citizenship Designers</p>
-                    <p><strong>Challenge:</strong> Apply historical lessons to design solutions for contemporary global challenges</p>
-                </div>
-
-                <div class="crosscut-badges">
-                    <span class="badge ela">Persuasive Speaking</span>
-                    <span class="badge science">Human Impact</span>
-                    <span class="badge alaska">Civic Ideals</span>
-                </div>
-
-                <p><strong>Units Covered:</strong> Ancient civilizations, Modern history, Economics, Government, World religions</p>
-                <p><strong>Key Skills:</strong> Historical synthesis, solution design, global perspective</p>
-                </div>
-            </a>
-        </div>
-
-        <div class="implementation-timeline">
-            <h2 style="color: #2c5aa0; margin-bottom: 30px;">📅 Academic Year Implementation Timeline</h2>
-            
-            <div class="timeline-item">
-                <div class="timeline-date">Aug 18-30, 2025</div>
-                <div>
-                    <strong>Pre-Instruction Period (9 days)</strong><br>
-                    Classroom setup, student orientation, baseline assessments, geographic skills introduction
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-date">Sep 2 - Oct 17</div>
-                <div>
-                    <strong>Quarter 1: Geographic Foundations</strong><br>
-                    Units 1-6, culminating in North American Sustainability Challenge
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-date">Oct 20 - Dec 19</div>
-                <div>
-                    <strong>Quarter 2: Americas & Europe</strong><br>
-                    Units 7-13, culminating in Transatlantic Cultural Exchange Network
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-date">Jan 5 - Mar 12</div>
-                <div>
-                    <strong>Quarter 3: Global Diversity</strong><br>
-                    Units 14-22, culminating in Global Resource Stewardship Initiative
-                </div>
-            </div>
-            
-            <div class="timeline-item">
-                <div class="timeline-date">Mar 16 - May 21</div>
-                <div>
-                    <strong>Quarter 4: Historical Synthesis</strong><br>
-                    Units 23-32, culminating in Global Citizenship Summit
-                </div>
             </div>
         </div>
 
-        <div class="action-buttons">
-            <a href="curriculum-main.html" class="btn primary">📚 Access Complete Curriculum</a>
-            <a href="units/lessons/index.html" class="btn">🎓 Browse Lessons by Grade</a>
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <h3 id="calendarMonth">July 2025</h3>
+                <div class="calendar-nav">
+                    <button class="nav-btn" onclick="changeMonth(-1)">‹ Previous</button>
+                    <button class="nav-btn" onclick="changeMonth(1)">Next ›</button>
+                </div>
+            </div>
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- Populated by JavaScript -->
+            </div>
         </div>
 
-        <div class="action-buttons" style="margin-top: 20px;">
-            <a href="quarter1-simulation.html" class="btn">🌍 Quarter 1 Simulation</a>
-            <a href="quarter2-simulation.html" class="btn">🗺️ Quarter 2 Simulation</a>
-            <a href="quarter3-simulation.html" class="btn">🌏 Quarter 3 Simulation</a>
-            <a href="quarter4-simulation.html" class="btn">🏛️ Quarter 4 Simulation</a>
-        </div>
-
-        <div class="curriculum-overview">
-            <h2 style="color: #2c5aa0; margin-bottom: 30px;">🎯 Learning Philosophy & Approach</h2>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                    <h3 style="color: #e74c3c; margin-bottom: 15px;">DOK 3-4 Focus</h3>
-                    <p>Every lesson emphasizes strategic thinking, complex reasoning, and extended thinking tasks that require students to analyze, synthesize, and evaluate geographic information.</p>
-                </div>
-                
-                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                    <h3 style="color: #27ae60; margin-bottom: 15px;">Cross-Curricular Integration</h3>
-                    <p>Each simulation integrates ELA and Science standards, creating authentic learning experiences that mirror real-world problem-solving.</p>
-                </div>
-                
-                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                    <h3 style="color: #004b87; margin-bottom: 15px;">Alaska-Centered</h3>
-                    <p>All content connects to Alaska's unique geographic, cultural, and economic context while meeting state educational standards.</p>
-                </div>
-                
-                <div style="background: #f8f9fa; padding: 25px; border-radius: 15px;">
-                    <h3 style="color: #8e44ad; margin-bottom: 15px;">Rural-Ready Design</h3>
-                    <p>Created specifically for rural Alaska schools with consideration for technology limitations and cultural contexts.</p>
+        <div class="info-section">
+            <button class="info-toggle" onclick="toggleInfo()">ℹ️ Curriculum Information & Navigation</button>
+            <div class="info-content" id="infoContent">
+                <h3>🎯 Alaska Cross-Curricular World Geography</h3>
+                <p><strong>175 Instructional Days</strong> • <strong>4 Quarterly Simulations</strong> • <strong>32 Geographic Units</strong></p>
+                <p>Every lesson integrates Alaska State Standards across multiple disciplines, emphasizing analysis, synthesis, and evaluation (DOK 3-4).</p>
+                <div style="margin-top: 15px;">
+                    <a href="units/" style="color: white; text-decoration: underline;">📚 Browse All Units & Lessons</a> |
+                    <a href="standards-info/" style="color: white; text-decoration: underline;">📋 Standards Alignment</a> |
+                    <a href="quarter1.html" style="color: white; text-decoration: underline;">🎮 Q1 Simulation</a> |
+                    <a href="quarter2.html" style="color: white; text-decoration: underline;">🎮 Q2 Simulation</a> |
+                    <a href="quarter3.html" style="color: white; text-decoration: underline;">🎮 Q3 Simulation</a> |
+                    <a href="quarter4.html" style="color: white; text-decoration: underline;">🎮 Q4 Simulation</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Curriculum data structure
+        const curriculumData = {
+            currentDay: parseInt(localStorage.getItem('currentDay') || '1'),
+            totalDays: 0, // Will be calculated from loaded data
+            completedLessons: JSON.parse(localStorage.getItem('completedLessons') || '[]'),
+            lessons: [], // Will be loaded from simple-curriculum-index.json
+            
+            // School calendar based on uploaded image
+            schoolCalendar: {
+                schoolStart: new Date(2025, 7, 18), // August 18, 2025
+                schoolEnd: new Date(2026, 4, 21),   // May 21, 2026
+                breaks: [
+                    { start: new Date(2025, 8, 12), end: new Date(2025, 8, 15) }, // Fall Break
+                    { start: new Date(2025, 10, 27), end: new Date(2025, 10, 28) }, // Thanksgiving
+                    { start: new Date(2025, 11, 22), end: new Date(2026, 0, 6) }, // Winter Break
+                    { start: new Date(2026, 2, 9), end: new Date(2026, 2, 13) }, // Spring Break
+                ]
+            }
+        };
+
+        // Load curriculum data from simple index
+        async function loadCurriculumData() {
+            try {
+                const response = await fetch('simple-curriculum-index.json');
+                const units = await response.json();
+                
+                let dayCounter = 1;
+                curriculumData.lessons = [];
+                
+                units.forEach((unit, unitIndex) => {
+                    const quarter = unitIndex < 6 ? 'Q1' : 
+                                  unitIndex < 12 ? 'Q2' : 
+                                  unitIndex < 18 ? 'Q3' : 'Q4';
+                    
+                    unit.lessons.forEach(lesson => {
+                        curriculumData.lessons.push({
+                            day: dayCounter,
+                            unit: unit.unit,
+                            lesson: lesson,
+                            quarter: quarter
+                        });
+                        dayCounter++;
+                    });
+                });
+                
+                curriculumData.totalDays = curriculumData.lessons.length;
+                console.log(`Loaded ${curriculumData.totalDays} lessons`);
+                
+            } catch (error) {
+                console.error('Error loading curriculum data:', error);
+                // Fallback to sample data if loading fails
+                curriculumData.lessons = [
+                    { day: 1, unit: "A Geographer's World", lesson: "Studying Geography", quarter: "Q1" }
+                ];
+                curriculumData.totalDays = 1;
+            }
+        }
+
+        // Initialize dashboard
+        async function init() {
+            await loadCurriculumData();
+            updateCurrentDate();
+            updateTodaysLesson();
+            updateLookAhead();
+            updateCalendar();
+            updateCompleteButton();
+        }
+
+        function updateCurrentDate() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('en-US', options);
+            
+            // Calculate school day
+            const schoolDay = calculateSchoolDay(now);
+            document.getElementById('schoolDay').textContent = schoolDay > 0 ? `School Day ${schoolDay}` : 'Not a school day';
+        }
+
+        function calculateSchoolDay(date) {
+            // Simple calculation - would need to account for actual school calendar
+            const schoolStart = curriculumData.schoolCalendar.schoolStart;
+            if (date < schoolStart) return 0;
+            
+            // For prototype, just return current curriculum day
+            return curriculumData.currentDay;
+        }
+
+        function updateTodaysLesson() {
+            const currentLesson = curriculumData.lessons[curriculumData.currentDay - 1];
+            if (currentLesson) {
+                document.getElementById('lessonTitle').textContent = 
+                    `${currentLesson.unit} - ${currentLesson.lesson}`;
+                document.getElementById('lessonUnit').textContent = currentLesson.unit;
+                document.getElementById('lessonDay').textContent = 
+                    `${currentLesson.day} of ${curriculumData.totalDays}`;
+                document.getElementById('lessonQuarter').textContent = 
+                    `${currentLesson.quarter} - Foundations`;
+                
+                // Update links
+                document.getElementById('seeLessonBtn').href = `units/lessons/day${currentLesson.day}.html`;
+                document.getElementById('elaBtn').href = `crosscut-lessons/ela/day${currentLesson.day}.html`;
+                document.getElementById('scienceBtn').href = `crosscut-lessons/science/day${currentLesson.day}.html`;
+            }
+        }
+
+        function updateLookAhead() {
+            const container = document.getElementById('upcomingLessons');
+            container.innerHTML = '';
+            
+            for (let i = 1; i <= 10; i++) {
+                const dayIndex = curriculumData.currentDay + i - 1;
+                if (dayIndex < curriculumData.lessons.length) {
+                    const lesson = curriculumData.lessons[dayIndex];
+                    const div = document.createElement('div');
+                    div.className = 'upcoming-lesson';
+                    div.onclick = () => jumpToDay(lesson.day);
+                    
+                    div.innerHTML = `
+                        <div class="lesson-day">Day ${lesson.day}</div>
+                        <div class="lesson-name">${lesson.unit} - ${lesson.lesson}</div>
+                    `;
+                    container.appendChild(div);
+                }
+            }
+        }
+
+        function updateCalendar() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            
+            document.getElementById('calendarMonth').textContent = 
+                now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+            
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+            
+            // Add day headers
+            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.style.backgroundColor = '#2c5aa0';
+                header.style.color = 'white';
+                header.style.fontWeight = 'bold';
+                header.style.padding = '10px';
+                header.textContent = day;
+                grid.appendChild(header);
+            });
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const daysInMonth = lastDay.getDate();
+            
+            // Add empty cells for days before the first day of the month
+            for (let i = 0; i < firstDay.getDay(); i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day weekend';
+                grid.appendChild(emptyDay);
+            }
+            
+            // Add days of the month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                
+                const currentDate = new Date(year, month, day);
+                const isToday = currentDate.toDateString() === now.toDateString();
+                const isWeekend = currentDate.getDay() === 0 || currentDate.getDay() === 6;
+                const isSchoolDay = isSchoolDayCheck(currentDate);
+                
+                if (isToday) dayElement.classList.add('current-day');
+                if (isWeekend) dayElement.classList.add('weekend');
+                if (isSchoolDay) dayElement.classList.add('school-day');
+                
+                dayElement.innerHTML = `
+                    <div class="day-number">${day}</div>
+                    ${isSchoolDay ? '<div class="day-lesson">Geography</div>' : ''}
+                `;
+                
+                dayElement.onclick = () => selectDate(currentDate);
+                grid.appendChild(dayElement);
+            }
+        }
+
+        function isSchoolDayCheck(date) {
+            const dayOfWeek = date.getDay();
+            if (dayOfWeek === 0 || dayOfWeek === 6) return false; // Weekend
+            
+            // Check if it's within school year
+            const schoolStart = curriculumData.schoolCalendar.schoolStart;
+            const schoolEnd = curriculumData.schoolCalendar.schoolEnd;
+            
+            return date >= schoolStart && date <= schoolEnd;
+        }
+
+        function markComplete() {
+            const currentDay = curriculumData.currentDay;
+            if (!curriculumData.completedLessons.includes(currentDay)) {
+                curriculumData.completedLessons.push(currentDay);
+                localStorage.setItem('completedLessons', JSON.stringify(curriculumData.completedLessons));
+            }
+            
+            // Move to next day
+            if (curriculumData.currentDay < curriculumData.totalDays) {
+                curriculumData.currentDay++;
+                localStorage.setItem('currentDay', curriculumData.currentDay.toString());
+                updateTodaysLesson();
+                updateLookAhead();
+                updateCompleteButton();
+            }
+        }
+
+        function updateCompleteButton() {
+            const btn = document.getElementById('completeBtn');
+            if (curriculumData.completedLessons.includes(curriculumData.currentDay)) {
+                btn.textContent = '✓ Completed';
+                btn.classList.add('completed');
+            } else {
+                btn.textContent = '✓ Mark Complete';
+                btn.classList.remove('completed');
+            }
+        }
+
+        function jumpToDay(day) {
+            curriculumData.currentDay = day;
+            localStorage.setItem('currentDay', curriculumData.currentDay.toString());
+            updateTodaysLesson();
+            updateLookAhead();
+            updateCompleteButton();
+        }
+
+        function selectDate(date) {
+            // Calculate which lesson day this corresponds to
+            console.log('Selected date:', date);
+            // Implementation would calculate lesson day based on school calendar
+        }
+
+        function changeMonth(delta) {
+            // Implementation for calendar navigation
+            console.log('Change month by:', delta);
+        }
+
+        function toggleInfo() {
+            const content = document.getElementById('infoContent');
+            content.classList.toggle('visible');
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
