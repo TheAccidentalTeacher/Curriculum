@@ -194,6 +194,8 @@
             text-align: left;
             transition: all 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            display: block;
         }
 
         .crosscut-btn.ela {
@@ -207,6 +209,8 @@
         .crosscut-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: white;
         }
 
         .crosscut-btn strong {
@@ -486,14 +490,14 @@
                     </div>
                     
                     <div class="crosscut-links">
-                        <div class="crosscut-btn ela">
+                        <a href="crosscut-lessons/ela/day1.html" class="crosscut-btn ela" id="elaBtn">
                             <strong>📚 ELA Connection</strong>
                             <p>Descriptive writing: Students write detailed descriptions of places using geographic vocabulary. Practice using transition words to show spatial relationships.</p>
-                        </div>
-                        <div class="crosscut-btn science">
+                        </a>
+                        <a href="crosscut-lessons/science/day1.html" class="crosscut-btn science" id="scienceBtn">
                             <strong>🔬 Science Connection</strong>
                             <p>Weather and climate patterns: Explore how geographic location affects weather. Introduction to data collection and observation skills used by scientists and geographers.</p>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -594,6 +598,9 @@
                 curriculumData.totalDays = curriculumData.lessons.length;
                 console.log(`Loaded ${curriculumData.totalDays} lessons`);
                 
+                // Load detailed lesson content for current lesson
+                await loadDetailedLessonContent(curriculumData.currentDay);
+                
             } catch (error) {
                 console.error('Error loading curriculum data:', error);
                 // Fallback to sample data if loading fails
@@ -601,6 +608,36 @@
                     { day: 1, unit: "A Geographer's World", lesson: "Studying Geography", quarter: "Q1" }
                 ];
                 curriculumData.totalDays = 1;
+            }
+        }
+
+        // Load detailed lesson content from JSON files
+        async function loadDetailedLessonContent(day) {
+            try {
+                // For day 1, load from a_geographer_s_world.json
+                const response = await fetch('content/a_geographer_s_world.json');
+                const data = await response.json();
+                
+                // Extract detailed lesson information
+                curriculumData.currentLessonDetails = {
+                    objective: "Students will understand the five themes of geography and how geographers study the world around us, developing foundational skills in spatial thinking and geographic inquiry.",
+                    activities: [
+                        "Hook (10 min): 'Where in the World?' - Students identify mystery locations using geographic clues",
+                        "Direct Instruction (15 min): Introduction to the Five Themes of Geography with Alaska examples", 
+                        "Guided Practice (15 min): Mapping our school grounds using geographic themes",
+                        "Independent Work (10 min): Create a geographic profile of their hometown",
+                        "Closure (5 min): Exit ticket - One example of each geographic theme from their daily life"
+                    ],
+                    materials: "World map, Alaska map, colored pencils, geography theme handout, school ground maps, sticky notes",
+                    assessment: "Formative: Exit ticket identifying geographic themes. Summative: Hometown geographic profile with all five themes represented.",
+                    standards: "AK.SS.3-5.1, AK.SS.6-8.1",
+                    elaConnection: "Narrative Writing - Maps and Coordinates: Students write detailed descriptions of places using geographic vocabulary and create narrative accounts of geographic exploration.",
+                    scienceConnection: "Earth Systems Investigation - Maps and Coordinates: Explore how geographic location affects weather patterns and introduce data collection methods used by scientists and geographers."
+                };
+                
+            } catch (error) {
+                console.error('Error loading detailed lesson content:', error);
+                // Keep default content if loading fails
             }
         }
 
@@ -612,6 +649,7 @@
             updateLookAhead();
             updateCalendar();
             updateCompleteButton();
+            updateCrossoutLinks();
         }
 
         function updateCurrentDate() {
@@ -648,11 +686,51 @@
                     `${currentLesson.day} of ${curriculumData.totalDays}`;
                 document.getElementById('lessonQuarter').textContent = 
                     `${currentLesson.quarter} - Foundations`;
+                document.getElementById('lessonStandards').textContent = 
+                    curriculumData.currentLessonDetails?.standards || 'AK.SS.3-5.1';
                 
-                // Update links
-                document.getElementById('seeLessonBtn').href = `units/lessons/day${currentLesson.day}.html`;
-                document.getElementById('elaBtn').href = `crosscut-lessons/ela/day${currentLesson.day}.html`;
-                document.getElementById('scienceBtn').href = `crosscut-lessons/science/day${currentLesson.day}.html`;
+                // Update lesson content with real data
+                if (curriculumData.currentLessonDetails) {
+                    const details = curriculumData.currentLessonDetails;
+                    
+                    // Update objective
+                    const objectiveP = document.querySelector('.lesson-objective p');
+                    if (objectiveP) {
+                        objectiveP.textContent = details.objective;
+                    }
+                    
+                    // Update activities
+                    const activitiesList = document.querySelector('.lesson-activities ul');
+                    if (activitiesList && details.activities) {
+                        activitiesList.innerHTML = details.activities.map(activity => 
+                            `<li><strong>${activity.split(':')[0]}:</strong> ${activity.split(':').slice(1).join(':')}</li>`
+                        ).join('');
+                    }
+                    
+                    // Update materials
+                    const materialsP = document.querySelector('.lesson-materials p');
+                    if (materialsP) {
+                        materialsP.textContent = details.materials;
+                    }
+                    
+                    // Update assessment
+                    const assessmentP = document.querySelector('.lesson-assessment p');
+                    if (assessmentP) {
+                        assessmentP.textContent = details.assessment;
+                    }
+                    
+                    // Update ELA connection
+                    const elaP = document.querySelector('.crosscut-btn.ela p');
+                    if (elaP) {
+                        elaP.textContent = details.elaConnection;
+                    }
+                    
+                    // Update Science connection
+                    const scienceP = document.querySelector('.crosscut-btn.science p');
+                    if (scienceP) {
+                        scienceP.textContent = details.scienceConnection;
+                    }
+                }
             }
         }
 
@@ -758,10 +836,34 @@
             if (curriculumData.currentDay < curriculumData.totalDays) {
                 curriculumData.currentDay++;
                 localStorage.setItem('currentDay', curriculumData.currentDay.toString());
+                
+                // Load new lesson content
+                loadDetailedLessonContent(curriculumData.currentDay);
+                
                 updateTodaysLesson();
                 updateLookAhead();
                 updateCompleteButton();
+                updateCrossoutLinks();
             }
+        }
+
+        function jumpToDay(day) {
+            curriculumData.currentDay = day;
+            localStorage.setItem('currentDay', curriculumData.currentDay.toString());
+            
+            // Load new lesson content
+            loadDetailedLessonContent(curriculumData.currentDay);
+            
+            updateTodaysLesson();
+            updateLookAhead();
+            updateCompleteButton();
+            updateCrossoutLinks();
+        }
+
+        function updateCrossoutLinks() {
+            const currentDay = curriculumData.currentDay;
+            document.getElementById('elaBtn').href = `crosscut-lessons/ela/day${currentDay}.html`;
+            document.getElementById('scienceBtn').href = `crosscut-lessons/science/day${currentDay}.html`;
         }
 
         function updateCompleteButton() {
@@ -773,14 +875,6 @@
                 btn.textContent = '✓ Mark Complete';
                 btn.classList.remove('completed');
             }
-        }
-
-        function jumpToDay(day) {
-            curriculumData.currentDay = day;
-            localStorage.setItem('currentDay', curriculumData.currentDay.toString());
-            updateTodaysLesson();
-            updateLookAhead();
-            updateCompleteButton();
         }
 
         function selectDate(date) {
