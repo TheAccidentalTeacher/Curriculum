@@ -60,7 +60,7 @@
 
         .main-dashboard {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 3fr 1fr;
             gap: 30px;
             margin-bottom: 30px;
         }
@@ -123,6 +123,43 @@
             color: #666;
         }
 
+        .lesson-full-content {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #2c5aa0;
+        }
+
+        .lesson-full-content h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .lesson-full-content > div {
+            margin-bottom: 20px;
+        }
+
+        .lesson-full-content > div:last-child {
+            margin-bottom: 0;
+        }
+
+        .lesson-full-content ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .lesson-full-content li {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .lesson-full-content p {
+            line-height: 1.5;
+            color: #444;
+        }
+
         .see-lesson-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
@@ -144,20 +181,17 @@
         }
 
         .crosscut-links {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-top: 20px;
         }
 
         .crosscut-btn {
-            flex: 1;
-            padding: 15px;
-            border: none;
+            padding: 20px;
             border-radius: 15px;
             color: white;
-            font-weight: bold;
-            text-decoration: none;
-            text-align: center;
+            text-align: left;
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -172,8 +206,20 @@
 
         .crosscut-btn:hover {
             transform: translateY(-2px);
-            text-decoration: none;
-            color: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .crosscut-btn strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .crosscut-btn p {
+            font-size: 0.9em;
+            line-height: 1.4;
+            opacity: 0.95;
+            margin: 0;
         }
 
         .sidebar {
@@ -375,7 +421,11 @@
             }
             
             .crosscut-links {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            
+            .lesson-meta {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -406,11 +456,44 @@
                         <div><strong>Standards:</strong> <span id="lessonStandards">AK.SS.3-5.1</span></div>
                     </div>
                     
-                    <a href="#" class="see-lesson-btn" id="seeLessonBtn">📖 See Full Lesson</a>
+                    <!-- Full Lesson Content -->
+                    <div class="lesson-full-content" id="lessonFullContent">
+                        <div class="lesson-objective">
+                            <h4>🎯 Learning Objective</h4>
+                            <p>Students will understand the five themes of geography and how geographers study the world around us, developing foundational skills in spatial thinking and geographic inquiry.</p>
+                        </div>
+                        
+                        <div class="lesson-activities">
+                            <h4>📚 Today's Activities</h4>
+                            <ul>
+                                <li><strong>Hook (10 min):</strong> "Where in the World?" - Students identify mystery locations using geographic clues</li>
+                                <li><strong>Direct Instruction (15 min):</strong> Introduction to the Five Themes of Geography with Alaska examples</li>
+                                <li><strong>Guided Practice (15 min):</strong> Mapping our school grounds using geographic themes</li>
+                                <li><strong>Independent Work (10 min):</strong> Create a geographic profile of their hometown</li>
+                                <li><strong>Closure (5 min):</strong> Exit ticket - One example of each geographic theme from their daily life</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="lesson-materials">
+                            <h4>📋 Materials Needed</h4>
+                            <p>World map, Alaska map, colored pencils, geography theme handout, school ground maps, sticky notes</p>
+                        </div>
+                        
+                        <div class="lesson-assessment">
+                            <h4>✅ Assessment</h4>
+                            <p>Formative: Exit ticket identifying geographic themes. Summative: Hometown geographic profile with all five themes represented.</p>
+                        </div>
+                    </div>
                     
                     <div class="crosscut-links">
-                        <a href="#" class="crosscut-btn ela" id="elaBtn">📚 ELA Connection</a>
-                        <a href="#" class="crosscut-btn science" id="scienceBtn">🔬 Science Connection</a>
+                        <div class="crosscut-btn ela">
+                            <strong>📚 ELA Connection</strong>
+                            <p>Descriptive writing: Students write detailed descriptions of places using geographic vocabulary. Practice using transition words to show spatial relationships.</p>
+                        </div>
+                        <div class="crosscut-btn science">
+                            <strong>🔬 Science Connection</strong>
+                            <p>Weather and climate patterns: Explore how geographic location affects weather. Introduction to data collection and observation skills used by scientists and geographers.</p>
+                        </div>
                     </div>
                 </div>
             </div>
