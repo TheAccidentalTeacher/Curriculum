@@ -1,0 +1,351 @@
+{
+  "total_units": 33,
+  "total_lessons": 5,
+  "units": [
+    {
+      "filename": "a_geographer_s_world",
+      "title": "A Geographer's World",
+      "lessons": [
+        "Studying Geography",
+        "The Branches of Geography",
+        "Geographic Tools",
+        "Geographic Perspectives",
+        "Geographic Themes"
+      ],
+      "lesson_count": 5,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "physical_world",
+      "title": "Physical World",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_physical_world",
+      "title": "The Physical World",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "human_world",
+      "title": "Human World",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_human_world",
+      "title": "The Human World",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_united_states",
+      "title": "The United States",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "canada",
+      "title": "Canada",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "mexico",
+      "title": "Mexico",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "central_america_and_the_caribbean",
+      "title": "Central America And The Caribbean",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "north_america",
+      "title": "North America",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "south_america",
+      "title": "South America",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "early_civilizations_of_latin_america",
+      "title": "Early Civilizations Of Latin America",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "europe_before_the_1700s",
+      "title": "Europe Before The 1700S",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "southern_europe",
+      "title": "Southern Europe",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "eastern_europe",
+      "title": "Eastern Europe",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "history_of_modern_europe",
+      "title": "History Of Modern Europe",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "north_africa",
+      "title": "North Africa",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "west_and_central_africa",
+      "title": "West And Central Africa",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "east_and_southern_africa",
+      "title": "East And Southern Africa",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "history_of_sub-saharan_africa",
+      "title": "History Of Sub-Saharan Africa",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_eastern_mediterranean",
+      "title": "The Eastern Mediterranean",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_arabian_peninsula_to_central_asia",
+      "title": "The Arabian Peninsula To Central Asia",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "the_indian_subcontinent",
+      "title": "The Indian Subcontinent",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "indian_early_civilizations,_empires,_and_world_religions",
+      "title": "Indian Early Civilizations, Empires, And World Religions",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "china,_mongolia,_and_taiwan",
+      "title": "China, Mongolia, And Taiwan",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "early_civilizations_of_china",
+      "title": "Early Civilizations Of China",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "japan_and_the_koreas",
+      "title": "Japan And The Koreas",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "southeast_asia",
+      "title": "Southeast Asia",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "oceania_and_antarctica",
+      "title": "Oceania And Antarctica",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "economics",
+      "title": "Economics",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "government_and_citizenship",
+      "title": "Government And Citizenship",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "early_civilizations_of_the_fertile_crescent_and_the_nile_valley",
+      "title": "Early Civilizations Of The Fertile Crescent And The Nile Valley",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    },
+    {
+      "filename": "russia_and_the_caucasus",
+      "title": "Russia And The Caucasus",
+      "lessons": [],
+      "lesson_count": 0,
+      "quarter": "Q1"
+    }
+  ],
+  "lesson_sequence": [
+    {
+      "day": 1,
+      "unit": "A Geographer's World",
+      "lesson": "Studying Geography",
+      "quarter": "Q1",
+      "unit_filename": "a_geographer_s_world",
+      "ela_link": "crosscut-lessons/ela/day1.html",
+      "science_link": "crosscut-lessons/science/day1.html",
+      "lesson_link": "units/lessons/day1.html"
+    },
+    {
+      "day": 2,
+      "unit": "A Geographer's World",
+      "lesson": "The Branches of Geography",
+      "quarter": "Q1",
+      "unit_filename": "a_geographer_s_world",
+      "ela_link": "crosscut-lessons/ela/day2.html",
+      "science_link": "crosscut-lessons/science/day2.html",
+      "lesson_link": "units/lessons/day2.html"
+    },
+    {
+      "day": 3,
+      "unit": "A Geographer's World",
+      "lesson": "Geographic Tools",
+      "quarter": "Q1",
+      "unit_filename": "a_geographer_s_world",
+      "ela_link": "crosscut-lessons/ela/day3.html",
+      "science_link": "crosscut-lessons/science/day3.html",
+      "lesson_link": "units/lessons/day3.html"
+    },
+    {
+      "day": 4,
+      "unit": "A Geographer's World",
+      "lesson": "Geographic Perspectives",
+      "quarter": "Q1",
+      "unit_filename": "a_geographer_s_world",
+      "ela_link": "crosscut-lessons/ela/day4.html",
+      "science_link": "crosscut-lessons/science/day4.html",
+      "lesson_link": "units/lessons/day4.html"
+    },
+    {
+      "day": 5,
+      "unit": "A Geographer's World",
+      "lesson": "Geographic Themes",
+      "quarter": "Q1",
+      "unit_filename": "a_geographer_s_world",
+      "ela_link": "crosscut-lessons/ela/day5.html",
+      "science_link": "crosscut-lessons/science/day5.html",
+      "lesson_link": "units/lessons/day5.html"
+    }
+  ],
+  "quarterly_breakdown": {
+    "Q1": {
+      "units": [
+        "A Geographer's World",
+        "Physical World",
+        "The Physical World",
+        "Human World",
+        "The Human World",
+        "The United States",
+        "Canada",
+        "Mexico",
+        "Central America And The Caribbean",
+        "North America",
+        "South America",
+        "Early Civilizations Of Latin America",
+        "Europe Before The 1700S",
+        "Southern Europe",
+        "Eastern Europe",
+        "History Of Modern Europe",
+        "North Africa",
+        "West And Central Africa",
+        "East And Southern Africa",
+        "History Of Sub-Saharan Africa",
+        "The Eastern Mediterranean",
+        "The Arabian Peninsula To Central Asia",
+        "The Indian Subcontinent",
+        "Indian Early Civilizations, Empires, And World Religions",
+        "China, Mongolia, And Taiwan",
+        "Early Civilizations Of China",
+        "Japan And The Koreas",
+        "Southeast Asia",
+        "Oceania And Antarctica",
+        "Economics",
+        "Government And Citizenship",
+        "Early Civilizations Of The Fertile Crescent And The Nile Valley",
+        "Russia And The Caucasus"
+      ],
+      "lesson_count": 5,
+      "simulation": "North American Sustainability Challenge"
+    },
+    "Q2": {
+      "units": [],
+      "lesson_count": 0,
+      "simulation": "Transatlantic Cultural Exchange Network"
+    },
+    "Q3": {
+      "units": [],
+      "lesson_count": 0,
+      "simulation": "African Development Summit"
+    },
+    "Q4": {
+      "units": [],
+      "lesson_count": 0,
+      "simulation": "Asian Pacific Cooperation Forum"
+    }
+  }
+}

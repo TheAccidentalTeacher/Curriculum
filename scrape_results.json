@@ -1,0 +1,104 @@
+{
+  "scrape_timestamp": 1753318847.6739607,
+  "geography_links": [
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/a_geographer_s_world.json",
+      "text": "A Geographer's World",
+      "href": "data/a_geographer_s_world.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/the_physical_world.json",
+      "text": "The Physical World",
+      "href": "data/the_physical_world.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/the_human_world.json",
+      "text": "The Human World",
+      "href": "data/the_human_world.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/the_indian_subcontinent.json",
+      "text": "The Indian Subcontinent",
+      "href": "data/the_indian_subcontinent.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/indian_early_civilizations_empires_and_world_religions.json",
+      "text": "Indian Early Civilizations, Empires, and World Religions",
+      "href": "data/indian_early_civilizations_empires_and_world_religions.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/world_religions_of_southwest_asia.json",
+      "text": "World Religions of Southwest Asia",
+      "href": "data/world_religions_of_southwest_asia.json"
+    },
+    {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/data/economics.json",
+      "text": "Economics",
+      "href": "data/economics.json"
+    }
+  ],
+  "curriculum_data": {
+    "index": {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/",
+      "title": "Social Studies Curriculum AI Repository",
+      "units": [],
+      "lessons": [],
+      "resources": [],
+      "standards": [],
+      "raw_text": "\n\n\n\n\nSocial Studies Curriculum AI Repository\n\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Studies Curriculum AI Repository\nA comprehensive, machine-readable repository of social studies curriculum data\n\n\n\n\n\nOverview\nCurriculum Data\nData Structure\nAPI Reference\nDocumentation\n\n\n\n\n\nOverview\nThis repository contains structured data extracted from 32 social studies curriculum PDFs, covering geography, regional studies, historical studies, and social studies. The data is organized in a format that is easily parsable by AI systems and web scrapers.\n\n\nComplete Content\nALL information from the original PDFs is preserved\n\n\nStructured Format\nWell-organized JSON format for easy parsing\n\n\nCross-References\nRelationships between curriculum elements are explicitly defined\n\n\nSemantic Search\nFind curriculum content semantically related to queries\n\n\n\n\nCurriculum Data\nBelow is a list of all curriculum units available in this repository. Each unit has its own JSON file containing the complete structured data.\n\nGeography Units\n\nA Geographer's World\nThe Physical World\nThe Human World\n\nRegional Studies Units\n\nCanada\nMexico\nCentral America and the Caribbean\nSouth America\nWestern Europe\nSouthern Europe\nEastern Europe\nRussia and the Caucasus\nNorth Africa\nWest and Central Africa\nEast and Southern Africa\nThe Arabian Peninsula to Central Asia\nThe Eastern Mediterranean\nThe Indian Subcontinent\nChina, Mongolia, and Taiwan\nJapan and the Koreas\nSoutheast Asia\nOceania and Antarctica\nThe United States\n\nHistorical Studies Units\n\nEarly Civilizations of the Fertile Crescent and the Nile Valley\nEarly Civilizations of China\nEarly Civilizations of Latin America\nIndian Early Civilizations, Empires, and World Religions\nWorld Religions of Southwest Asia\nEurope before the 1700s\nHistory of Modern Europe\nHistory of Sub-Saharan Africa\n\nSocial Studies Units\n\nEconomics\nGovernment and Citizenship\n\n\n\nComplete Dataset\nYou can also access the complete curriculum map that contains all cross-references and relationships:\n\nComplete Curriculum Map (JSON)\n\n\n\n\nData Structure\nEach curriculum unit is represented in a structured JSON format that preserves all content from the original PDFs.\nCurriculum Map Structure\n{\n  \"units\": [\n    {\n      \"name\": \"a_geographer_s_world\",\n      \"lessons\": [\"Studying Geography\", \"The Branches of Geography\", ...],\n      \"lesson_count\": 5,\n      \"big_ideas\": [\"The study of geography helps us view the world in new ways\", ...],\n      \"essential_questions\": [\"How does the use of geographic tools help us view the world in new ways?\", ...],\n      \"key_terms\": [\"geography\", \"landscape\", \"social science\", ...]\n    },\n    ...\n  ],\n  \"lessons\": [...],\n  \"key_terms\": {...},\n  \"big_ideas\": [...],\n  \"essential_questions\": [...],\n  \"content_blocks\": [...],\n  \"cross_references\": {...}\n}\nUnit Structure\n{\n  \"metadata\": {...},\n  \"filename\": \"a_geographer_s_world\",\n  \"lessons\": [...],\n  \"content\": {\n    \"blocks\": {\n      \"layout\": [...],\n      \"raw\": [...]\n    },\n    \"sections\": [...],\n    \"big_ideas\": [...],\n    \"essential_questions\": [...],\n    \"key_terms\": {...},\n    \"teacher_content\": [...],\n    \"student_content\": [...],\n    \"activities\": [...],\n    \"resources\": [...],\n    \"assessments\": [...]\n  },\n  \"text_files\": {...},\n  \"images\": {...},\n  \"content_fingerprint\": {...}\n}\n\n\nAPI Reference\nThis static site provides a simple API for accessing curriculum data:\nEndpoints\n\n/data/curriculum_map.json - Complete curriculum map\n/data/{unit_name}.json - Individual unit data\n\nExample Usage\n// Fetch the curriculum map\nfetch('/data/curriculum_map.json')\n  .then(response => response.json())\n  .then(data => console.log(data));\n\n// Fetch a specific unit\nfetch('/data/a_geographer_s_world.json')\n  .then(response => response.json())\n  .then(data => console.log(data));\n\n\nDocumentation\nDetailed documentation is available to help you understand and use the curriculum data:\n\nData Format Documentation\nExtraction Guide\nComparison Guide\nUser Guide\nTroubleshooting Guide\nExample Scripts Guide\n\n\n\n\n\n\u00a9 2025 Social Studies Curriculum AI Repository. Available under the MIT License.\nThis repository is designed to be easily scraped and used by AI systems.\n\n\n\n\n"
+    },
+    "index.html": {
+      "url": "https://gorgeous-flan-dcd8c9.netlify.app/index.html",
+      "title": "Social Studies Curriculum AI Repository",
+      "units": [],
+      "lessons": [],
+      "resources": [],
+      "standards": [],
+      "raw_text": "\n\n\n\n\nSocial Studies Curriculum AI Repository\n\n\n\n\n\n\n\n\n\n\n\n\n\nSocial Studies Curriculum AI Repository\nA comprehensive, machine-readable repository of social studies curriculum data\n\n\n\n\n\nOverview\nCurriculum Data\nData Structure\nAPI Reference\nDocumentation\n\n\n\n\n\nOverview\nThis repository contains structured data extracted from 32 social studies curriculum PDFs, covering geography, regional studies, historical studies, and social studies. The data is organized in a format that is easily parsable by AI systems and web scrapers.\n\n\nComplete Content\nALL information from the original PDFs is preserved\n\n\nStructured Format\nWell-organized JSON format for easy parsing\n\n\nCross-References\nRelationships between curriculum elements are explicitly defined\n\n\nSemantic Search\nFind curriculum content semantically related to queries\n\n\n\n\nCurriculum Data\nBelow is a list of all curriculum units available in this repository. Each unit has its own JSON file containing the complete structured data.\n\nGeography Units\n\nA Geographer's World\nThe Physical World\nThe Human World\n\nRegional Studies Units\n\nCanada\nMexico\nCentral America and the Caribbean\nSouth America\nWestern Europe\nSouthern Europe\nEastern Europe\nRussia and the Caucasus\nNorth Africa\nWest and Central Africa\nEast and Southern Africa\nThe Arabian Peninsula to Central Asia\nThe Eastern Mediterranean\nThe Indian Subcontinent\nChina, Mongolia, and Taiwan\nJapan and the Koreas\nSoutheast Asia\nOceania and Antarctica\nThe United States\n\nHistorical Studies Units\n\nEarly Civilizations of the Fertile Crescent and the Nile Valley\nEarly Civilizations of China\nEarly Civilizations of Latin America\nIndian Early Civilizations, Empires, and World Religions\nWorld Religions of Southwest Asia\nEurope before the 1700s\nHistory of Modern Europe\nHistory of Sub-Saharan Africa\n\nSocial Studies Units\n\nEconomics\nGovernment and Citizenship\n\n\n\nComplete Dataset\nYou can also access the complete curriculum map that contains all cross-references and relationships:\n\nComplete Curriculum Map (JSON)\n\n\n\n\nData Structure\nEach curriculum unit is represented in a structured JSON format that preserves all content from the original PDFs.\nCurriculum Map Structure\n{\n  \"units\": [\n    {\n      \"name\": \"a_geographer_s_world\",\n      \"lessons\": [\"Studying Geography\", \"The Branches of Geography\", ...],\n      \"lesson_count\": 5,\n      \"big_ideas\": [\"The study of geography helps us view the world in new ways\", ...],\n      \"essential_questions\": [\"How does the use of geographic tools help us view the world in new ways?\", ...],\n      \"key_terms\": [\"geography\", \"landscape\", \"social science\", ...]\n    },\n    ...\n  ],\n  \"lessons\": [...],\n  \"key_terms\": {...},\n  \"big_ideas\": [...],\n  \"essential_questions\": [...],\n  \"content_blocks\": [...],\n  \"cross_references\": {...}\n}\nUnit Structure\n{\n  \"metadata\": {...},\n  \"filename\": \"a_geographer_s_world\",\n  \"lessons\": [...],\n  \"content\": {\n    \"blocks\": {\n      \"layout\": [...],\n      \"raw\": [...]\n    },\n    \"sections\": [...],\n    \"big_ideas\": [...],\n    \"essential_questions\": [...],\n    \"key_terms\": {...},\n    \"teacher_content\": [...],\n    \"student_content\": [...],\n    \"activities\": [...],\n    \"resources\": [...],\n    \"assessments\": [...]\n  },\n  \"text_files\": {...},\n  \"images\": {...},\n  \"content_fingerprint\": {...}\n}\n\n\nAPI Reference\nThis static site provides a simple API for accessing curriculum data:\nEndpoints\n\n/data/curriculum_map.json - Complete curriculum map\n/data/{unit_name}.json - Individual unit data\n\nExample Usage\n// Fetch the curriculum map\nfetch('/data/curriculum_map.json')\n  .then(response => response.json())\n  .then(data => console.log(data));\n\n// Fetch a specific unit\nfetch('/data/a_geographer_s_world.json')\n  .then(response => response.json())\n  .then(data => console.log(data));\n\n\nDocumentation\nDetailed documentation is available to help you understand and use the curriculum data:\n\nData Format Documentation\nExtraction Guide\nComparison Guide\nUser Guide\nTroubleshooting Guide\nExample Scripts Guide\n\n\n\n\n\n\u00a9 2025 Social Studies Curriculum AI Repository. Available under the MIT License.\nThis repository is designed to be easily scraped and used by AI systems.\n\n\n\n\n"
+    }
+  },
+  "comparison": {
+    "local_files": [
+      "indian_early_civilizations,_empires,_and_world_religions.json",
+      "early_civilizations_of_latin_america.json",
+      "mexico.json",
+      "north_africa.json",
+      "china,_mongolia,_and_taiwan.json",
+      "a_geographer_s_world.json",
+      "russia_and_the_caucasus.json",
+      "south_america.json",
+      "canada.json",
+      "government_and_citizenship.json",
+      "central_america_and_the_caribbean.json",
+      "europe_before_the_1700s.json",
+      "west_and_central_africa.json",
+      "human_world.json",
+      "early_civilizations_of_china.json",
+      "the_human_world.json",
+      "the_eastern_mediterranean.json",
+      "oceania_and_antarctica.json",
+      "early_civilizations_of_the_fertile_crescent_and_the_nile_valley.json",
+      "physical_world.json",
+      "the_indian_subcontinent.json",
+      "north_america.json",
+      "economics.json",
+      "the_united_states.json",
+      "history_of_sub-saharan_africa.json",
+      "east_and_southern_africa.json",
+      "the_physical_world.json",
+      "japan_and_the_koreas.json",
+      "southeast_asia.json",
+      "the_arabian_peninsula_to_central_asia.json",
+      "eastern_europe.json",
+      "southern_europe.json",
+      "history_of_modern_europe.json"
+    ],
+    "scraped_pages": [
+      "index",
+      "index.html"
+    ],
+    "missing_in_local": [],
+    "missing_in_scraped": [],
+    "content_analysis": {}
+  }
+}
