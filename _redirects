@@ -1,9 +1,14 @@
 # Netlify redirects file
-# Handle routing for the rural geography curriculum site
+# Handle routing for the clean curriculum site
+
+# Redirect old broken paths to clean curriculum
+/units/* /curriculum_index.html 301
+/units/lessons/* /curriculum_index.html 301
+/units/lessons/grade6 /curriculum_index.html 301
 
 # Main redirects
 /home /
-/curriculum /
+/curriculum /curriculum_index.html
 /simulations /
 
 # Individual simulation shortcuts
@@ -17,5 +22,9 @@
 /saharan /trans_saharan_complete.html
 /teaching-guide /Rural_Geography_Teaching_Sequence_Guide.html
 
+# Clean curriculum paths
+/modules /clean_lessons/
+/module/* /clean_lessons/:splat
+
 # Fallback for any other routes
-/* /index.html 200
+/* /curriculum_index.html 200
