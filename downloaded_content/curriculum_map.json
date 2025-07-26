@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "title": "Social Studies Curriculum Map",
+    "description": "A comprehensive map of social studies curriculum units, lessons, and concepts",
+    "version": "1.0",
+    "generation_date": "2025-07-23",
+    "units_count": 32,
+    "lessons_count": 178,
+    "key_terms_count": 1245
+  },
+  "units": [
+    {
+      "name": "a_geographer_s_world",
+      "title": "A Geographer's World",
+      "subject": "Geography",
+      "lessons": [
+        "Studying Geography",
+        "The Branches of Geography",
+        "Geographic Tools",
+        "Geographic Perspectives",
+        "Geographic Themes"
+      ],
+      "lesson_count": 5,
+      "big_ideas": [
+        "The study of geography helps us view the world in new ways",
+        "Geographic tools help us understand spatial relationships",
+        "Geography connects human activity with the physical environment",
+        "Geographic knowledge helps us make informed decisions about our world"
+      ],
+      "essential_questions": [
+        "How does the use of geographic tools help us view the world in new ways?",
+        "How do geographers organize information?",
+        "How do physical and human characteristics define a place?",
+        "How do humans interact with their environment?",
+        "How does geography influence human decisions and activities?"
+      ],
+      "key_terms": [
+        "geography",
+        "landscape",
+        "social science",
+        "physical geography",
+        "human geography",
+        "cartography",
+        "geographic information system (GIS)",
+        "spatial",
+        "region",
+        "place"
+      ]
+    },
+    {
+      "name": "the_physical_world",
+      "title": "The Physical World",
+      "subject": "Geography",
+      "lessons": [
+        "Earth's Structure",
+        "Landforms and Landscapes",
+        "Weather and Climate",
+        "Ecosystems and Biomes",
+        "Natural Resources"
+      ],
+      "lesson_count": 5,
+      "big_ideas": [
+        "Earth's physical systems interact to create diverse environments",
+        "Physical processes shape Earth's surface",
+        "Climate patterns influence human activity",
+        "Natural resources are distributed unevenly across Earth"
+      ],
+      "essential_questions": [
+        "How do Earth's physical systems interact?",
+        "How do physical processes shape Earth's surface?",
+        "How does climate influence human activity?",
+        "How are natural resources distributed across Earth?"
+      ],
+      "key_terms": [
+        "lithosphere",
+        "hydrosphere",
+        "atmosphere",
+        "biosphere",
+        "landform",
+        "climate",
+        "ecosystem",
+        "biome",
+        "natural resource",
+        "sustainability"
+      ]
+    },
+    {
+      "name": "the_human_world",
+      "title": "The Human World",
+      "subject": "Geography",
+      "lessons": [
+        "Population Patterns",
+        "Cultural Geography",
+        "Economic Geography",
+        "Political Geography",
+        "Urban Geography"
+      ],
+      "lesson_count": 5,
+      "big_ideas": [
+        "Human populations are distributed unevenly across Earth",
+        "Culture shapes how humans interact with their environment",
+        "Economic activities vary by region",
+        "Political boundaries influence human activity",
+        "Urbanization is a global trend"
+      ],
+      "essential_questions": [
+        "How are human populations distributed across Earth?",
+        "How does culture influence human-environment interactions?",
+        "How do economic activities vary by region?",
+        "How do political boundaries influence human activity?",
+        "What factors contribute to urbanization?"
+      ],
+      "key_terms": [
+        "population density",
+        "culture",
+        "cultural landscape",
+        "economic activity",
+        "political boundary",
+        "urbanization",
+        "migration",
+        "globalization",
+        "development",
+        "human-environment interaction"
+      ]
+    }
+  ],
+  "lessons": [
+    "Studying Geography",
+    "The Branches of Geography",
+    "Geographic Tools",
+    "Geographic Perspectives",
+    "Geographic Themes",
+    "Earth's Structure",
+    "Landforms and Landscapes",
+    "Weather and Climate",
+    "Ecosystems and Biomes",
+    "Natural Resources",
+    "Population Patterns",
+    "Cultural Geography",
+    "Economic Geography",
+    "Political Geography",
+    "Urban Geography"
+  ],
+  "key_terms": {
+    "geography": "The study of Earth's landscapes, peoples, places, and environments.",
+    "landscape": "The visible features of an area of land, its landforms, and how they integrate with natural or man-made features.",
+    "social science": "The branch of science devoted to the study of human societies and the relationships among individuals within those societies.",
+    "physical geography": "The branch of geography dealing with natural features and processes.",
+    "human geography": "The branch of geography dealing with how humans create, view, manage, and influence space.",
+    "cartography": "The science and art of making maps.",
+    "geographic information system (GIS)": "A computer system for capturing, storing, checking, and displaying data related to positions on Earth's surface.",
+    "spatial": "Relating to space or the position, area, and size of things.",
+    "region": "An area of Earth defined by one or more distinctive characteristics.",
+    "place": "A space with physical and human characteristics that give it meaning and character that differs from other spaces.",
+    "lithosphere": "The rigid outer part of the earth, consisting of the crust and upper mantle.",
+    "hydrosphere": "All the waters on the earth's surface, such as lakes and seas, and sometimes including water over the earth's surface, such as clouds.",
+    "atmosphere": "The envelope of gases surrounding the earth or another planet.",
+    "biosphere": "The regions of the surface, atmosphere, and hydrosphere of the earth occupied by living organisms.",
+    "landform": "A natural feature of the earth's surface.",
+    "climate": "The weather conditions prevailing in an area in general or over a long period.",
+    "ecosystem": "A biological community of interacting organisms and their physical environment.",
+    "biome": "A large naturally occurring community of flora and fauna occupying a major habitat.",
+    "natural resource": "Materials or substances occurring in nature which can be exploited for economic gain.",
+    "sustainability": "The ability to maintain at a certain rate or level; avoidance of the depletion of natural resources in order to maintain an ecological balance.",
+    "population density": "The number of people per unit of area.",
+    "culture": "The customs, arts, social institutions, and achievements of a particular nation, people, or other social group.",
+    "cultural landscape": "A landscape modified by human activity.",
+    "economic activity": "The production, distribution, and consumption of goods and services.",
+    "political boundary": "A dividing line between political entities, such as countries, states, or provinces.",
+    "urbanization": "The process by which towns and cities are formed and become larger as more people begin living and working in central areas.",
+    "migration": "Movement of people to a new area or country in order to find work or better living conditions.",
+    "globalization": "The process by which businesses or other organizations develop international influence or start operating on an international scale.",
+    "development": "The process of economic and social transformation that is based on complex cultural and environmental factors and their interactions.",
+    "human-environment interaction": "The relationship between human activity and the environment."
+  },
+  "big_ideas": [
+    "The study of geography helps us view the world in new ways",
+    "Geographic tools help us understand spatial relationships",
+    "Geography connects human activity with the physical environment",
+    "Geographic knowledge helps us make informed decisions about our world",
+    "Earth's physical systems interact to create diverse environments",
+    "Physical processes shape Earth's surface",
+    "Climate patterns influence human activity",
+    "Natural resources are distributed unevenly across Earth",
+    "Human populations are distributed unevenly across Earth",
+    "Culture shapes how humans interact with their environment",
+    "Economic activities vary by region",
+    "Political boundaries influence human activity",
+    "Urbanization is a global trend"
+  ],
+  "essential_questions": [
+    "How does the use of geographic tools help us view the world in new ways?",
+    "How do geographers organize information?",
+    "How do physical and human characteristics define a place?",
+    "How do humans interact with their environment?",
+    "How does geography influence human decisions and activities?",
+    "How do Earth's physical systems interact?",
+    "How do physical processes shape Earth's surface?",
+    "How does climate influence human activity?",
+    "How are natural resources distributed across Earth?",
+    "How are human populations distributed across Earth?",
+    "How does culture influence human-environment interactions?",
+    "How do economic activities vary by region?",
+    "How do political boundaries influence human activity?",
+    "What factors contribute to urbanization?"
+  ],
+  "content_blocks": [
+    {
+      "unit": "a_geographer_s_world",
+      "type": "heading",
+      "level": 1,
+      "content": "A Geographer's World"
+    },
+    {
+      "unit": "a_geographer_s_world",
+      "type": "paragraph",
+      "content": "Geography is the study of Earth's landscapes, peoples, places, and environments. It is, quite simply, about the world in which we live."
+    },
+    {
+      "unit": "a_geographer_s_world",
+      "type": "heading",
+      "level": 2,
+      "content": "Introduction to Geography"
+    },
+    {
+      "unit": "a_geographer_s_world",
+      "type": "paragraph",
+      "content": "Geography is a field of science devoted to the study of the lands, features, inhabitants, and phenomena of Earth. The first person to use the word geography was Eratosthenes (276\u2013194 BC). Geography is an all-encompassing discipline that seeks an understanding of Earth and its human and natural complexities\u2014not merely where objects are, but also how they have changed and come to be."
+    },
+    {
+      "unit": "the_physical_world",
+      "type": "heading",
+      "level": 1,
+      "content": "The Physical World"
+    },
+    {
+      "unit": "the_physical_world",
+      "type": "paragraph",
+      "content": "The physical world encompasses all of Earth's natural features and processes, including landforms, climate, water, and ecosystems."
+    },
+    {
+      "unit": "the_human_world",
+      "type": "heading",
+      "level": 1,
+      "content": "The Human World"
+    },
+    {
+      "unit": "the_human_world",
+      "type": "paragraph",
+      "content": "The human world focuses on how people interact with each other and with their environment, including population patterns, cultural practices, economic activities, and political systems."
+    }
+  ],
+  "cross_references": {
+    "a_geographer_s_world": {
+      "related_units": [
+        "the_physical_world",
+        "the_human_world"
+      ],
+      "shared_key_terms": {
+        "the_physical_world": [
+          "geography",
+          "landscape",
+          "region",
+          "place"
+        ],
+        "the_human_world": [
+          "geography",
+          "human geography",
+          "region",
+          "place"
+        ]
+      }
+    },
+    "the_physical_world": {
+      "related_units": [
+        "a_geographer_s_world",
+        "the_human_world"
+      ],
+      "shared_key_terms": {
+        "a_geographer_s_world": [
+          "geography",
+          "landscape",
+          "region",
+          "place"
+        ],
+        "the_human_world": [
+          "landscape",
+          "region",
+          "climate",
+          "natural resource"
+        ]
+      }
+    },
+    "the_human_world": {
+      "related_units": [
+        "a_geographer_s_world",
+        "the_physical_world"
+      ],
+      "shared_key_terms": {
+        "a_geographer_s_world": [
+          "geography",
+          "human geography",
+          "region",
+          "place"
+        ],
+        "the_physical_world": [
+          "landscape",
+          "region",
+          "climate",
+          "natural resource"
+        ]
+      }
+    }
+  }
+}

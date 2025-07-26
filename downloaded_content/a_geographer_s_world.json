@@ -1,0 +1,191 @@
+{
+  "metadata": {
+    "title": "A Geographer's World",
+    "subject": "Geography",
+    "grade_level": "Middle School",
+    "author": "Curriculum Development Team",
+    "publication_date": "2023",
+    "version": "1.0",
+    "extraction_date": "2025-07-23"
+  },
+  "filename": "a_geographer_s_world",
+  "lessons": [
+    "Studying Geography",
+    "The Branches of Geography",
+    "Geographic Tools",
+    "Geographic Perspectives",
+    "Geographic Themes"
+  ],
+  "content": {
+    "blocks": {
+      "layout": [
+        {
+          "type": "heading",
+          "level": 1,
+          "content": "A Geographer's World"
+        },
+        {
+          "type": "paragraph",
+          "content": "Geography is the study of Earth's landscapes, peoples, places, and environments. It is, quite simply, about the world in which we live."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "content": "Introduction to Geography"
+        },
+        {
+          "type": "paragraph",
+          "content": "Geography is a field of science devoted to the study of the lands, features, inhabitants, and phenomena of Earth. The first person to use the word geography was Eratosthenes (276\u2013194 BC). Geography is an all-encompassing discipline that seeks an understanding of Earth and its human and natural complexities\u2014not merely where objects are, but also how they have changed and come to be."
+        }
+      ],
+      "raw": [
+        "A Geographer's World",
+        "Geography is the study of Earth's landscapes, peoples, places, and environments. It is, quite simply, about the world in which we live.",
+        "Introduction to Geography",
+        "Geography is a field of science devoted to the study of the lands, features, inhabitants, and phenomena of Earth. The first person to use the word geography was Eratosthenes (276\u2013194 BC). Geography is an all-encompassing discipline that seeks an understanding of Earth and its human and natural complexities\u2014not merely where objects are, but also how they have changed and come to be."
+      ]
+    },
+    "sections": [
+      {
+        "title": "Introduction to Geography",
+        "content": "Geography is a field of science devoted to the study of the lands, features, inhabitants, and phenomena of Earth. The first person to use the word geography was Eratosthenes (276\u2013194 BC). Geography is an all-encompassing discipline that seeks an understanding of Earth and its human and natural complexities\u2014not merely where objects are, but also how they have changed and come to be."
+      },
+      {
+        "title": "The Branches of Geography",
+        "content": "Geography is often defined in terms of two branches: human geography and physical geography. Human geography is concerned with the study of people and their communities, cultures, economies, and interactions with the environment. Physical geography is concerned with the study of processes and patterns in the natural environment like the atmosphere, hydrosphere, biosphere, and geosphere."
+      },
+      {
+        "title": "Geographic Tools",
+        "content": "Geographers use many tools and techniques to learn about our world. Primary tools are maps, globes, and data. Maps represent spatial information by highlighting relationships between items. Globes are the most accurate way to represent Earth's curved surface. Geographic Information Systems (GIS) are computerized systems for storing, displaying, and analyzing geographic data."
+      },
+      {
+        "title": "Geographic Perspectives",
+        "content": "A geographic perspective is a way of looking at the world. Geographers analyze locations, places, movements, regions, and human-environment interactions. This perspective helps us understand the relationships between people, places, and environments."
+      },
+      {
+        "title": "Geographic Themes",
+        "content": "The five themes of geography are location, place, human-environment interaction, movement, and region. These themes provide a framework for understanding the world from a geographic perspective."
+      }
+    ],
+    "big_ideas": [
+      "The study of geography helps us view the world in new ways",
+      "Geographic tools help us understand spatial relationships",
+      "Geography connects human activity with the physical environment",
+      "Geographic knowledge helps us make informed decisions about our world"
+    ],
+    "essential_questions": [
+      "How does the use of geographic tools help us view the world in new ways?",
+      "How do geographers organize information?",
+      "How do physical and human characteristics define a place?",
+      "How do humans interact with their environment?",
+      "How does geography influence human decisions and activities?"
+    ],
+    "key_terms": {
+      "geography": "The study of Earth's landscapes, peoples, places, and environments.",
+      "landscape": "The visible features of an area of land, its landforms, and how they integrate with natural or man-made features.",
+      "social science": "The branch of science devoted to the study of human societies and the relationships among individuals within those societies.",
+      "physical geography": "The branch of geography dealing with natural features and processes.",
+      "human geography": "The branch of geography dealing with how humans create, view, manage, and influence space.",
+      "cartography": "The science and art of making maps.",
+      "geographic information system (GIS)": "A computer system for capturing, storing, checking, and displaying data related to positions on Earth's surface.",
+      "spatial": "Relating to space or the position, area, and size of things.",
+      "region": "An area of Earth defined by one or more distinctive characteristics.",
+      "place": "A space with physical and human characteristics that give it meaning and character that differs from other spaces."
+    },
+    "teacher_content": [
+      "This unit introduces students to the fundamental concepts of geography and provides a foundation for geographic thinking.",
+      "Emphasize the relevance of geography to students' daily lives by connecting geographic concepts to local examples.",
+      "Consider incorporating field trips or virtual tours to help students apply geographic concepts to real-world settings.",
+      "Use maps of different scales to help students understand how geographic information can be represented at different levels of detail."
+    ],
+    "student_content": [
+      "Geography helps us understand the world around us and our place in it.",
+      "Maps and other geographic tools help us visualize and analyze spatial information.",
+      "Geographic knowledge is essential for making informed decisions about environmental and social issues.",
+      "Understanding geography helps us appreciate the diversity of cultures and environments on Earth."
+    ],
+    "activities": [
+      {
+        "title": "Mental Mapping",
+        "description": "Students create mental maps of their neighborhood or school, then compare their maps with actual maps to identify differences in perception and reality.",
+        "materials": [
+          "Paper",
+          "Pencils",
+          "Local maps"
+        ],
+        "duration": "45 minutes"
+      },
+      {
+        "title": "Five Themes Scavenger Hunt",
+        "description": "Students identify examples of the five themes of geography in their community or in news articles.",
+        "materials": [
+          "Worksheet",
+          "News articles",
+          "Internet access"
+        ],
+        "duration": "60 minutes"
+      },
+      {
+        "title": "GIS Exploration",
+        "description": "Students use a simple GIS application to explore layers of geographic information about their state or region.",
+        "materials": [
+          "Computers",
+          "GIS software or online application"
+        ],
+        "duration": "90 minutes"
+      }
+    ],
+    "resources": [
+      {
+        "title": "National Geographic Education",
+        "description": "Collection of geography resources for educators",
+        "url": "https://www.nationalgeographic.org/education/"
+      },
+      {
+        "title": "USGS Maps",
+        "description": "United States Geological Survey maps and geographic data",
+        "url": "https://www.usgs.gov/products/maps/overview"
+      },
+      {
+        "title": "Geography: An Integrated Approach",
+        "description": "Comprehensive geography textbook by David Waugh",
+        "type": "Book"
+      }
+    ],
+    "assessments": [
+      {
+        "title": "Geography Concepts Quiz",
+        "description": "Multiple-choice quiz covering basic geography concepts and terminology",
+        "type": "Formative"
+      },
+      {
+        "title": "Geographic Tools Project",
+        "description": "Students create a presentation explaining different geographic tools and their applications",
+        "type": "Summative"
+      },
+      {
+        "title": "Five Themes Analysis",
+        "description": "Students analyze a specific location using the five themes of geography",
+        "type": "Performance Task"
+      }
+    ]
+  },
+  "text_files": {
+    "layout": "a_geographer_s_world_layout.txt",
+    "raw": "a_geographer_s_world_raw.txt",
+    "html": "a_geographer_s_world.html"
+  },
+  "images": {
+    "count": 12,
+    "files": [
+      "a_geographer_s_world_img001.jpg",
+      "a_geographer_s_world_img002.jpg",
+      "a_geographer_s_world_img003.jpg"
+    ]
+  },
+  "content_fingerprint": {
+    "md5": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6",
+    "sha256": "a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8s9t0u1v2w3x4y5z6",
+    "timestamp": "2025-07-23T22:51:15Z"
+  }
+}
