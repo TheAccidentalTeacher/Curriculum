@@ -1,0 +1,233 @@
+{
+  "curriculum_info": {
+    "total_modules": 32,
+    "organization": "Each PDF = One Module with its specific lessons",
+    "structure": "32 modules organized across 4 quarters"
+  },
+  "modules": [
+    {
+      "module_number": 1,
+      "pdf_file": "compressed_A Geographer_s World Teacher Guide PDF.pdf",
+      "title": "A Geographer_s World",
+      "filename": "a_geographer_s_world",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 2,
+      "pdf_file": "compressed_Canada Teacher Guide PDF.pdf",
+      "title": "Canada",
+      "filename": "canada",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 3,
+      "pdf_file": "compressed_Central America and the Caribbean Teacher Guide PDF.pdf",
+      "title": "Central America and the Caribbean",
+      "filename": "central_america_and_the_caribbean",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 4,
+      "pdf_file": "compressed_China, Mongolia, and Taiwan Teacher Guide PDF.pdf",
+      "title": "China, Mongolia, and Taiwan",
+      "filename": "china_mongolia_and_taiwan",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 5,
+      "pdf_file": "compressed_Early Civilizations of China Teacher Guide PDF.pdf",
+      "title": "Early Civilizations of China",
+      "filename": "early_civilizations_of_china",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 6,
+      "pdf_file": "compressed_Early Civilizations of Latin America Teacher Guide PDF.pdf",
+      "title": "Early Civilizations of Latin America",
+      "filename": "early_civilizations_of_latin_america",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 7,
+      "pdf_file": "compressed_Early Civilizations of the Fertile Crescent and the Nile Valley Teacher Guide PDF.pdf",
+      "title": "Early Civilizations of the Fertile Crescent and the Nile Valley",
+      "filename": "early_civilizations_of_the_fertile_crescent_and_the_nile_valley",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 8,
+      "pdf_file": "compressed_East and Southern Africa Teacher Guide PDF.pdf",
+      "title": "East and Southern Africa",
+      "filename": "east_and_southern_africa",
+      "quarter": "Q1"
+    },
+    {
+      "module_number": 9,
+      "pdf_file": "compressed_Eastern Europe Teacher Guide PDF.pdf",
+      "title": "Eastern Europe",
+      "filename": "eastern_europe",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 10,
+      "pdf_file": "compressed_Economics Teacher Guide PDF.pdf",
+      "title": "Economics",
+      "filename": "economics",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 11,
+      "pdf_file": "compressed_Europe before the 1700s Teacher Guide PDF.pdf",
+      "title": "Europe before the 1700s",
+      "filename": "europe_before_the_1700s",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 12,
+      "pdf_file": "compressed_Government and Citizenship Teacher Guide PDF.pdf",
+      "title": "Government and Citizenship",
+      "filename": "government_and_citizenship",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 13,
+      "pdf_file": "compressed_History of Modern Europe Teacher Guide PDF.pdf",
+      "title": "History of Modern Europe",
+      "filename": "history_of_modern_europe",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 14,
+      "pdf_file": "compressed_History of Sub-Saharan Africa Teacher Guide PDF.pdf",
+      "title": "History of Sub-Saharan Africa",
+      "filename": "history_of_sub_saharan_africa",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 15,
+      "pdf_file": "compressed_Indian Early Civilizations, Empires, and World Religions Teacher Guide PDF.pdf",
+      "title": "Indian Early Civilizations, Empires, and World Religions",
+      "filename": "indian_early_civilizations_empires_and_world_religions",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 16,
+      "pdf_file": "compressed_Japan and the Koreas Teacher Guide PDF.pdf",
+      "title": "Japan and the Koreas",
+      "filename": "japan_and_the_koreas",
+      "quarter": "Q2"
+    },
+    {
+      "module_number": 17,
+      "pdf_file": "compressed_Mexico Teacher Guide PDF.pdf",
+      "title": "Mexico",
+      "filename": "mexico",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 18,
+      "pdf_file": "compressed_North Africa Teacher Guide PDF.pdf",
+      "title": "North Africa",
+      "filename": "north_africa",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 19,
+      "pdf_file": "compressed_Oceania and Antarctica Teacher Guide PDF.pdf",
+      "title": "Oceania and Antarctica",
+      "filename": "oceania_and_antarctica",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 20,
+      "pdf_file": "compressed_Russia and the Caucasus Teacher Guide PDF.pdf",
+      "title": "Russia and the Caucasus",
+      "filename": "russia_and_the_caucasus",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 21,
+      "pdf_file": "compressed_South America Teacher Guide PDF.pdf",
+      "title": "South America",
+      "filename": "south_america",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 22,
+      "pdf_file": "compressed_Southeast Asia Teacher Guide PDF.pdf",
+      "title": "Southeast Asia",
+      "filename": "southeast_asia",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 23,
+      "pdf_file": "compressed_Southern Europe Teacher Guide PDF.pdf",
+      "title": "Southern Europe",
+      "filename": "southern_europe",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 24,
+      "pdf_file": "compressed_The Arabian Peninsula to Central Asia Teacher Guide PDF.pdf",
+      "title": "The Arabian Peninsula to Central Asia",
+      "filename": "the_arabian_peninsula_to_central_asia",
+      "quarter": "Q3"
+    },
+    {
+      "module_number": 25,
+      "pdf_file": "compressed_The Eastern Mediterranean Teacher Guide PDF.pdf",
+      "title": "The Eastern Mediterranean",
+      "filename": "the_eastern_mediterranean",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 26,
+      "pdf_file": "compressed_The Human World Teacher Guide PDF.pdf",
+      "title": "The Human World",
+      "filename": "the_human_world",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 27,
+      "pdf_file": "compressed_The Indian Subcontinent Teacher Guide PDF.pdf",
+      "title": "The Indian Subcontinent",
+      "filename": "the_indian_subcontinent",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 28,
+      "pdf_file": "compressed_The Physical World Teacher Guide PDF.pdf",
+      "title": "The Physical World",
+      "filename": "the_physical_world",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 29,
+      "pdf_file": "compressed_The United States Teacher Guide PDF.pdf",
+      "title": "The United States",
+      "filename": "the_united_states",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 30,
+      "pdf_file": "compressed_West and Central Africa Teacher Guide PDF.pdf",
+      "title": "West and Central Africa",
+      "filename": "west_and_central_africa",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 31,
+      "pdf_file": "compressed_Western Europe Teacher Guide PDF.pdf",
+      "title": "Western Europe",
+      "filename": "western_europe",
+      "quarter": "Q4"
+    },
+    {
+      "module_number": 32,
+      "pdf_file": "compressed_World Religions of Southwest Asia Teacher Guide PDF.pdf",
+      "title": "World Religions of Southwest Asia",
+      "filename": "world_religions_of_southwest_asia",
+      "quarter": "Q4"
+    }
+  ]
+}
